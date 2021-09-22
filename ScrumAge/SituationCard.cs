@@ -1,6 +1,6 @@
 ﻿/*-------------
-Name: ScrumAge
-Date created: 09/18/21
+Name: Garrett Dyer
+Date created: 09/22/21
 File name: SituationCard
 Purpose: Template for creating a situation card
 -------------*/
@@ -14,39 +14,24 @@ namespace ScrumAge
 {
     class SituationCard
     {
-        public int payment;
-        public int points;
-        public int cost;
+        /* Creating properties for the situtation cards*/
+        public int id { get; set; }
+        public string situation { get; set; }
+        public Dictionary<int, string> cost { get; set; } /* int is the cost, string the resource used*/
+        public Dictionary<int, string> reward { get; set; } /* int is the amount given, string the resource given*/
+        public bool used { get; set; }
 
-       
-        public int GetPayment()
+        /* Creating constructor for situation cards*/
+        public SituationCard(int id, string situation, Dictionary<int, string> cost, Dictionary<int, string> reward, bool used)
         {
-            return payment;
-        }
-
-        public int GetPoints()
-        {
-            return points;
-        }
-
-        public int GetCost()
-        {
-            return cost;
+            this.id = id;
+            this.situation = situation;
+            this.cost = cost;
+            this.reward = reward;
+            this.used = used;
         }
 
-        public void SetPayment(int payment_)
-        {
-            payment = payment_;
-        }
-
-        public void SetPoints(int points_)
-        {
-            points = points_;
-        }
-        public void SetCost(int cost_)
-        {
-            cost = cost_;
-        }
+        
 
     }
 }
