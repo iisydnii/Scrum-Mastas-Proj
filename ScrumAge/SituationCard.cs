@@ -20,11 +20,19 @@ namespace ScrumAge
         public Dictionary<int, string> cost { get; set; } /* int is the cost, string the resource used*/
         public Dictionary<int, string> reward { get; set; } /* int is the amount given, string the resource given*/
         public bool used { get; set; }
+<<<<<<< Updated upstream
+=======
+	public string certifications {get; set;}
+>>>>>>> Stashed changes
 
         /* Creating constructor for situation cards*/
         public SituationCard(int id, string situation, Dictionary<int, string> cost, Dictionary<int, string> reward, bool used)
         {
+<<<<<<< Updated upstream
              this.id = id;
+=======
+            this.id = id;
+>>>>>>> Stashed changes
             this.situation = situation;
             this.cost = cost;
             this.reward = reward;
