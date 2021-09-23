@@ -24,7 +24,7 @@ namespace ScrumAge
         /* Creating constructor for situation cards*/
         public SituationCard(int id, string situation, Dictionary<int, string> cost, Dictionary<int, string> reward, bool used)
         {
-            this.id = id;
+             this.id = id;
             this.situation = situation;
             this.cost = cost;
             this.reward = reward;
