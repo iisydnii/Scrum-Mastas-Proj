@@ -1,30 +1,39 @@
-﻿/*-------------
-Name: Sydni Ward
-Date created: 09/20/21
+/*-------------
+Name: Garrett Dyer
+Date created: 09/22/21
 File name: SituationCard
 Purpose: Template for creating a situation card
 -------------*/
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace ScrumAge
 {
-    public class SituationCard
+    class SituationCard
     {
-        /* Create rules for the inputs*/
+        /* Creating properties for the situtation cards*/
         public int id { get; set; }
         public string situation { get; set; }
-        public Array cost { get; set; }
-        public Array reward { get; set; }
-        public int used { get; set; }
+        public Dictionary<int, string> cost { get; set; } /* int is the cost, string the resource used*/
+        public Dictionary<int, string> reward { get; set; } /* int is the amount given, string the resource given*/
+        public bool used { get; set; }
+	    public string certifications {get; set;}
 
-        public SituationCard(int id, string situation, Array cost,
-            Array reward, int used)
+
+        /* Creating constructor for situation cards*/
+        public SituationCard(int id, string situation, Dictionary<int, string> cost, Dictionary<int, string> reward, bool used, string certifications)
         {
+
+            this.id = id;
             this.id = id;
             this.situation = situation;
             this.cost = cost;
             this.reward = reward;
             this.used = used;
+            this.certifications = certifications;
         }
+
     }
 }
