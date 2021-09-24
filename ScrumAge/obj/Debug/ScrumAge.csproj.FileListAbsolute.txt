@@ -1,0 +1,18 @@
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.AssemblyReference.cache
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Properties.Resources.resources
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.GenerateResource.cache
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
+C:\Users\chibi\source\repos\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csprojAssemblyReference.cache
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Properties.Resources.resources
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.GenerateResource.cache
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
+C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb
