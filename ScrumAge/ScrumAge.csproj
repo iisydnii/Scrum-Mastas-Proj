@@ -83,7 +83,7 @@
     <MonoDevelop>
       <Properties>
         <Policies>
-          <StandardHeader IncludeInNewFiles="True" Text="Headers of files you have created or modified should consist of....&#xA;/*&#xA; Page Created &#xA;     File Name: ${FileName}&#xA;     Creator Name: ${AuthorName}&#xA;     Created Date:${Date}&#xA;     Purpose: &#xA;________________________________________________________________________________&#xA;Page Modified&#xA;    Name: ${AuthorName}                  Date:${Date}&#xA;&#xA;*/" />
+          <StandardHeader IncludeInNewFiles="True" Text="Headers of files you have created or modified should consist of....&#xA;&#xA; Page Created &#xA;     File Name: ${FileName}&#xA;     Creator Name: ${AuthorName}&#xA;     Created Date:${Date}&#xA;     Purpose: &#xA;________________________________________________________________________________&#xA;Page Modified&#xA;    Name: ${AuthorName}                  Date:${Date}" />
         </Policies>
       </Properties>
     </MonoDevelop>
