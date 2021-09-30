@@ -23,6 +23,10 @@ namespace ScrumAge
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
+            ///Test
+            Application.Run(new Placement_Board());
         }
     }
 }
