@@ -60,6 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SituationCard.cs" />
+    <Compile Include="SituationDeck.cs" />
     <EmbeddedResource Include="Placement_Board.resx">
       <DependentUpon>Placement_Board.cs</DependentUpon>
     </EmbeddedResource>

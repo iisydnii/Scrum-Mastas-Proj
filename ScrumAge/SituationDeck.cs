@@ -15,14 +15,16 @@ namespace ScrumAge
 {
     class SituationDeck
     {
-        public HashSet<object> situationDeck { get; set; }
+        private HashSet<object> situationDeck { get; set; }
 
         /* Creating constructor for situation deck */
         public SituationDeck()
         {
             situationDeck = new HashSet<object>();
+            createDeck(); // Added this so the deck is automatically created upon the creation of the situationdeck object. -- Austin
         }
 
+        // Updated the situation attributes for these cards to represent the perspective of the player --Austin
         /* Creates situation cards and adds them to the deck */
         public void createDeck()
         {
@@ -36,7 +38,7 @@ namespace ScrumAge
                         {
                             SituationCard card1 = new SituationCard();
                             card1.id = i;
-                            card1.situation = "You are having problems getting Github to work. Lose 2 Training points.";
+                            card1.situation = "A developer is having problems getting Github to work. Lose 2 Training points.";
                             card1.cost.Add(2, "Training");
                             card1.reward.Add(10, "Bitcoin");
                             card1.used = false;
@@ -49,7 +51,7 @@ namespace ScrumAge
                         {
                             SituationCard card2 = new SituationCard();
                             card2.id = i;
-                            card2.situation = "You need to call out sick today. Lose 2 Training points.";
+                            card2.situation = "One of your developers called out sick today. Lose 2 Training points.";
                             card2.cost.Add(2, "Training");
                             card2.reward.Add(10, "Bitcoin");
                             card2.used = false;
@@ -62,7 +64,7 @@ namespace ScrumAge
                         {
                             SituationCard card3 = new SituationCard();
                             card3.id = i;
-                            card3.situation = "A coworker would not stop talking to you in the kitchen. Lose 2 Training points.";
+                            card3.situation = "A developer's coworker would not stop talking to one of your developers in the kitchen. Lose 2 Training points.";
                             card3.cost.Add(2, "Training");
                             card3.reward.Add(10, "Bitcoin");
                             card3.used = false;
@@ -75,7 +77,7 @@ namespace ScrumAge
                         {
                             SituationCard card4 = new SituationCard();
                             card4.id = i;
-                            card4.situation = "You are unexpectedly given more work to do. Lose 2 Training points.";
+                            card4.situation = "The team was unexpectedly given more work to do. Lose 2 Training points.";
                             card4.cost.Add(2, "Training");
                             card4.reward.Add(10, "Bitcoin");
                             card4.used = false;
@@ -88,7 +90,7 @@ namespace ScrumAge
                         {
                             SituationCard card5 = new SituationCard();
                             card5.id = i;
-                            card5.situation = "A resource you are trying to access is blocked by the firewall. Contact IT. Lose 2 Training points.";
+                            card5.situation = "A resource a developer is trying to access is blocked by the firewall. Contact IT. Lose 2 Training points.";
                             card5.cost.Add(2, "Training");
                             card5.reward.Add(10, "Bitcoin");
                             card5.used = false;
@@ -101,7 +103,7 @@ namespace ScrumAge
                         {
                             SituationCard card6 = new SituationCard();
                             card6.id = i;
-                            card6.situation = "Your child is sick at school. Leave work early. Lose 4 training points";
+                            card6.situation = "A developer's child is sick at school. Leave work early. Lose 4 training points";
                             card6.cost.Add(4, "Training");
                             card6.reward.Add(10, "Bitcoin");
                             card6.used = false;
@@ -128,7 +130,7 @@ namespace ScrumAge
                         {
                             SituationCard card8 = new SituationCard();
                             card8.id = i;
-                            card8.situation = "A coworker comes to work drunk. Lose 5 Design points";
+                            card8.situation = "A developer came to work drunk. Lose 5 Design points";
                             card8.cost.Add(5, "Design");
                             card8.reward.Add(5, "Bitcoin");
                             card8.reward.Add(4, "Training");
@@ -142,7 +144,7 @@ namespace ScrumAge
                         {
                             SituationCard card9 = new SituationCard();
                             card9.id = i;
-                            card9.situation = "You dropped your phone in your coffee. Lose 10 Bitcoin";
+                            card9.situation = "A developer dropped their phone in coffee. Lose 10 Bitcoin";
                             card9.cost.Add(10, "Bitcoin");
                             card9.reward.Add(5, "Training");
                             card9.reward.Add(4, "Design");
@@ -156,7 +158,7 @@ namespace ScrumAge
                         {
                             SituationCard card10 = new SituationCard();
                             card10.id = i;
-                            card10.situation = "You left your work badge at home. Lose 7 Bitcoin";
+                            card10.situation = "A developer left their work badge at home. Lose 7 Bitcoin";
                             card10.cost.Add(7, "Bitcoin");
                             card10.reward.Add(7, "Design");
                             card10.used = false;
@@ -315,5 +317,5 @@ namespace ScrumAge
         }
     }
 }
-}
+
 
