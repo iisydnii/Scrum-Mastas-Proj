@@ -34,6 +34,12 @@ namespace ScrumAge
             //situationDeck.shuffleDeck();
             //situationDeck.test();
             //situationDeck.displayCard();
+
+            // Test of Dice Class --Austin
+            //Dice dice = new Dice();
+
+            //Console.WriteLine(dice.RollDice());
+
         }
     }
 }
