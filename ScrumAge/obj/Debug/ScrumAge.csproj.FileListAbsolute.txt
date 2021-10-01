@@ -17,3 +17,13 @@ C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\De
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.AssemblyReference.cache
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Placement_Board.resources
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Properties.Resources.resources
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.GenerateResource.cache
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
+C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
