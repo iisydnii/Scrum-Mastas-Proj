@@ -23,7 +23,7 @@ namespace ScrumAge
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Test
+            // Test -- Macen
             SelectPlayersForm playersForm = new SelectPlayersForm();
             Application.Run(playersForm);
             var list = playersForm.GetPlayers();

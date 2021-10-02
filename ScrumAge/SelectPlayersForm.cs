@@ -180,7 +180,9 @@ Purpose: Add functionality to SelectPlayersForm
                 players.Add(player2);
                 players.Add(player3);
                 players.Add(player4);
-            }   
+            }
+
+            this.Close();
         }
 
         public List<Player> GetPlayers()
