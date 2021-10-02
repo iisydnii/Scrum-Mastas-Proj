@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class Player
+    public class Player
     {
 /*-------------
 Name: Macen Busic

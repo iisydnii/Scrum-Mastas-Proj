@@ -22,9 +22,11 @@ namespace ScrumAge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectPlayersForm());
 
-
+            // Test
+            SelectPlayersForm playersForm = new SelectPlayersForm();
+            Application.Run(playersForm);
+            var list = playersForm.GetPlayers();
             ///Test
             Application.Run(new Placement_Board());
 

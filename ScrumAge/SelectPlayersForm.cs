@@ -18,6 +18,7 @@ Purpose: Add functionality to SelectPlayersForm
 -------------*/
     public partial class SelectPlayersForm : Form
     {
+        private List<Player> players = new List<Player>();
         public SelectPlayersForm()
         {
             InitializeComponent();
@@ -92,6 +93,8 @@ Purpose: Add functionality to SelectPlayersForm
                 {
                     player2 = new Player(2, Player2Textbox.Text);
                 }
+                players.Add(player1);
+                players.Add(player2);
             }
 
             // If 3 players were selected
@@ -126,6 +129,9 @@ Purpose: Add functionality to SelectPlayersForm
                 {
                     player3 = new Player(3, Player3Textbox.Text);
                 }
+                players.Add(player1);
+                players.Add(player2);
+                players.Add(player3);
             }
 
             // If 4 players were selected
@@ -170,7 +176,16 @@ Purpose: Add functionality to SelectPlayersForm
                 {
                     player4 = new Player(4, Player4Textbox.Text);
                 }
+                players.Add(player1);
+                players.Add(player2);
+                players.Add(player3);
+                players.Add(player4);
             }   
+        }
+
+        public List<Player> GetPlayers()
+        {
+            return players;
         }
     }
 }

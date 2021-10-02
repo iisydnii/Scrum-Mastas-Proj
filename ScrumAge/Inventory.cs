@@ -13,7 +13,7 @@ File name: Inventory.cs
 Purpose: Create and update
 Player Inventory
 -------------*/
-    class Inventory
+    public class Inventory
     {
         public int Bitcoin { get; set; }
         public int TrainingPoints { get; set; }
