@@ -28,22 +28,22 @@ namespace ScrumAge
             InitializeComponent();
         }
 
-        private void Recruiting_Click(object sender, EventArgs e)
+        private void Recruiting_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void BootCamp_Click(object sender, EventArgs e)
+        private void BootCamp_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void WhiteBoard_Click(object sender, EventArgs e)
+        private void WhiteBoard_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void CryptoMarket_Click(object sender, EventArgs e)
+        private void CryptoMarket_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
