@@ -40,6 +40,8 @@ namespace ScrumAge
 
             //Console.WriteLine(dice.RollDice());
 
+            Application.Run(new DiceForm());
+
         }
     }
 }
