@@ -24,6 +24,8 @@ namespace ScrumAge
             Application.SetCompatibleTextRenderingDefault(false);
 
             ///Test
+            Application.Run(new Form1());
+
             Application.Run(new Placement_Board());
 
             // Test of Situation Deck --Austin
