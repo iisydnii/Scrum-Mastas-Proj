@@ -6,8 +6,6 @@ File name: DiceForm.cs
 Purpose: Creates the methods for the button clicks and labels for the Dice form
 -------------*/
 
-
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +58,7 @@ namespace ScrumAge
 
         }
 
+        // Would remove these unneeded methods -- Austin
         private void label1_Click(object sender, EventArgs e)
         {
             
