@@ -31,10 +31,10 @@ namespace ScrumAge
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Placement_Board));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Recruiting = new System.Windows.Forms.Button();
-            this.BootCamp = new System.Windows.Forms.Button();
-            this.WhiteBoard = new System.Windows.Forms.Button();
-            this.CryptoMarket = new System.Windows.Forms.Button();
+            this.Recruiting = new System.Windows.Forms.ComboBox();
+            this.BootCamp = new System.Windows.Forms.ComboBox();
+            this.WhiteBoard = new System.Windows.Forms.ComboBox();
+            this.CryptoMarket = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,43 +49,39 @@ namespace ScrumAge
             // 
             // Recruiting
             // 
-            this.Recruiting.Location = new System.Drawing.Point(132, 187);
+            this.Recruiting.FormattingEnabled = true;
+            this.Recruiting.Location = new System.Drawing.Point(116, 187);
             this.Recruiting.Name = "Recruiting";
-            this.Recruiting.Size = new System.Drawing.Size(75, 23);
-            this.Recruiting.TabIndex = 6;
-            this.Recruiting.Text = "Recruiting";
-            this.Recruiting.UseVisualStyleBackColor = true;
-            this.Recruiting.Click += new System.EventHandler(this.Recruiting_Click);
+            this.Recruiting.Size = new System.Drawing.Size(121, 21);
+            this.Recruiting.TabIndex = 11;
+            this.Recruiting.SelectedIndexChanged += new System.EventHandler(this.Recruiting_SelectedIndexChanged);
             // 
             // BootCamp
             // 
-            this.BootCamp.Location = new System.Drawing.Point(302, 187);
+            this.BootCamp.FormattingEnabled = true;
+            this.BootCamp.Location = new System.Drawing.Point(272, 187);
             this.BootCamp.Name = "BootCamp";
-            this.BootCamp.Size = new System.Drawing.Size(75, 23);
-            this.BootCamp.TabIndex = 7;
-            this.BootCamp.Text = "BootCamp";
-            this.BootCamp.UseVisualStyleBackColor = true;
-            this.BootCamp.Click += new System.EventHandler(this.BootCamp_Click);
+            this.BootCamp.Size = new System.Drawing.Size(121, 21);
+            this.BootCamp.TabIndex = 12;
+            this.BootCamp.SelectedIndexChanged += new System.EventHandler(this.BootCamp_SelectedIndexChanged);
             // 
             // WhiteBoard
             // 
-            this.WhiteBoard.Location = new System.Drawing.Point(450, 187);
+            this.WhiteBoard.FormattingEnabled = true;
+            this.WhiteBoard.Location = new System.Drawing.Point(432, 187);
             this.WhiteBoard.Name = "WhiteBoard";
-            this.WhiteBoard.Size = new System.Drawing.Size(81, 23);
-            this.WhiteBoard.TabIndex = 8;
-            this.WhiteBoard.Text = "WhiteBoard";
-            this.WhiteBoard.UseVisualStyleBackColor = true;
-            this.WhiteBoard.Click += new System.EventHandler(this.WhiteBoard_Click);
+            this.WhiteBoard.Size = new System.Drawing.Size(121, 21);
+            this.WhiteBoard.TabIndex = 13;
+            this.WhiteBoard.SelectedIndexChanged += new System.EventHandler(this.WhiteBoard_SelectedIndexChanged);
             // 
             // CryptoMarket
             // 
-            this.CryptoMarket.Location = new System.Drawing.Point(598, 187);
+            this.CryptoMarket.FormattingEnabled = true;
+            this.CryptoMarket.Location = new System.Drawing.Point(590, 187);
             this.CryptoMarket.Name = "CryptoMarket";
-            this.CryptoMarket.Size = new System.Drawing.Size(81, 23);
-            this.CryptoMarket.TabIndex = 9;
-            this.CryptoMarket.Text = "CryptoMarket";
-            this.CryptoMarket.UseVisualStyleBackColor = true;
-            this.CryptoMarket.Click += new System.EventHandler(this.CryptoMarket_Click);
+            this.CryptoMarket.Size = new System.Drawing.Size(121, 21);
+            this.CryptoMarket.TabIndex = 14;
+            this.CryptoMarket.SelectedIndexChanged += new System.EventHandler(this.CryptoMarket_SelectedIndexChanged);
             // 
             // Placement_Board
             // 
@@ -107,9 +103,9 @@ namespace ScrumAge
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Recruiting;
-        private System.Windows.Forms.Button BootCamp;
-        private System.Windows.Forms.Button WhiteBoard;
-        private System.Windows.Forms.Button CryptoMarket;
+        private System.Windows.Forms.ComboBox Recruiting;
+        private System.Windows.Forms.ComboBox BootCamp;
+        private System.Windows.Forms.ComboBox WhiteBoard;
+        private System.Windows.Forms.ComboBox CryptoMarket;
     }
 }
