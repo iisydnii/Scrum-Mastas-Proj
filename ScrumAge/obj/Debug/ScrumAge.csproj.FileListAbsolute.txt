@@ -27,3 +27,14 @@ C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\Sc
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Form1.resources
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Placement_Board.resources
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Properties.Resources.resources
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.GenerateResource.cache
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
+E:\Fall 2021\CSCI-4250\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb

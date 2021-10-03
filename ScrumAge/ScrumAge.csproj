@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Certifications.cs" />
     <Compile Include="Dice.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs" />
     <Compile Include="Placement_Board.cs">
       <SubType>Form</SubType>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="SituationCard.cs" />
     <Compile Include="SituationDeck.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Placement_Board.resx">
       <DependentUpon>Placement_Board.cs</DependentUpon>
     </EmbeddedResource>
