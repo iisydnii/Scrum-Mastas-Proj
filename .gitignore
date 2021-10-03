@@ -85,3 +85,11 @@ artifacts/
 
 # Visual Studio Trace Files
 *.e2e
+*.cs
+*.cache
+*.cache
+*.txt
+ScrumAge/obj/Debug/ScrumAge.csproj.FileListAbsolute.txt
+ScrumAge/Program.cs
+*.cs
+*.csproj
