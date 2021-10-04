@@ -192,7 +192,11 @@ Purpose: Add functionality to SelectPlayersForm
 
         private void Begin_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            //Open the player select form
+            Placement_Board board = new Placement_Board();
+            board.ShowDialog();
+            this.Close();
         }
     }
 }

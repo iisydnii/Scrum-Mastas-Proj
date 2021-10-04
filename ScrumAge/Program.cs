@@ -26,7 +26,7 @@ namespace ScrumAge
 
 
             ///Test
-            Application.Run(new Placement_Board());
+            // Application.Run(new Placement_Board());
 
             // Test of Situation Deck --Austin
             //SituationDeck situationDeck = new SituationDeck();
