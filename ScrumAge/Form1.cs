@@ -24,7 +24,11 @@ namespace ScrumAge
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            //Open the player select form
+            SelectPlayersForm playersForm = new SelectPlayersForm();
+            playersForm.ShowDialog();
+            this.Close();
         }
     }
 }

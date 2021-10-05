@@ -39,3 +39,5 @@ C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.DiceForm.resources
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Form1.resources
+C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.DiceForm.resources
+C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
