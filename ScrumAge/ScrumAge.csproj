@@ -54,13 +54,13 @@
     <Compile Include="DiceForm.Designer.cs">
       <DependentUpon>DiceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Inventory.cs" />
+    <Compile Include="LandingPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LandingPageForm.Designer.cs">
+      <DependentUpon>LandingPageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.cs" />
     <Compile Include="Placement_Board.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +70,12 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RulesForm.designer.cs">
+      <DependentUpon>RulesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectPlayersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="SituationDeck.cs" />
     <EmbeddedResource Include="DiceForm.resx">
       <DependentUpon>DiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandingPageForm.resx">
+      <DependentUpon>LandingPageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Placement_Board.resx">
       <DependentUpon>Placement_Board.cs</DependentUpon>
@@ -93,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RulesForm.resx">
+      <DependentUpon>RulesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectPlayersForm.resx">
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
     </EmbeddedResource>

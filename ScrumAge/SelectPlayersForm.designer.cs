@@ -1,7 +1,7 @@
 ﻿/*-------------
 Name: ScrumAge
 Date created: 09/13/21
-File name: Form1
+File name: SelectPlayersForm
 Purpose: display the form to start the game
 -------------*/
 namespace ScrumAge
