@@ -2,7 +2,15 @@
 Name: ScrumAge
 Date created: 09/13/21
 File name: Program
-Purpose:
+Purpose: this is the main entry point for the application
+         Used for testings purposes.
+________________________________________________________________________________
+Page Modified
+    Name: Nataliya Chibizova
+    Date: 10/04
+    Line change: 32
+    What is the change: Form1 deleted, LandingPageForm added
+
 -------------*/
 using System;
 using System.Collections.Generic;
@@ -22,9 +30,8 @@ namespace ScrumAge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-
-
+            Application.Run(new LandingPageForm());
+            
             ///Test
             // Application.Run(new Placement_Board());
 
@@ -42,6 +49,6 @@ namespace ScrumAge
 
             Application.Run(new DiceForm());
 
-        }
-    }
+        } // end of main
+    }//end of class
 }

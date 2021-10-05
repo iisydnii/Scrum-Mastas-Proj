@@ -41,3 +41,17 @@ C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Form1.resources
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.DiceForm.resources
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe.config
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.exe
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\bin\Debug\ScrumAge.pdb
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.AssemblyReference.cache
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.DiceForm.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.LandingPageForm.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Placement_Board.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.Properties.Resources.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.RulesForm.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.GenerateResource.cache
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.CoreCompileInputs.cache
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.exe
+C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.pdb
