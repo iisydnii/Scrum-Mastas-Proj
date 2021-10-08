@@ -32,7 +32,7 @@ namespace ScrumAge
         {
 
             Dice dice = new Dice();
-            label4.Text = dice.RollDice().ToString();
+            label4.Text = dice.Total.ToString();
 
             int count = 0;
             count++;
