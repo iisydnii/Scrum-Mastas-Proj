@@ -61,7 +61,6 @@ namespace ScrumAge
             this.Begin.Text = "Begin";
             this.Begin.UseVisualStyleBackColor = false;
             this.Begin.Click += new System.EventHandler(this.Begin_Click);
-            this.Begin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Begin_MouseClick);
             // 
             // label1
             // 
