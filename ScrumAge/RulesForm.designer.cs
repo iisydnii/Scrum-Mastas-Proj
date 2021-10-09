@@ -49,7 +49,7 @@ namespace ScrumAge
             // 
             // start
             // 
-            this.start.BackColor = System.Drawing.SystemColors.Highlight;
+            this.start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.start.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.start.Location = new System.Drawing.Point(662, 405);
             this.start.Name = "start";
@@ -61,7 +61,7 @@ namespace ScrumAge
             // 
             // goBack
             // 
-            this.goBack.BackColor = System.Drawing.SystemColors.Highlight;
+            this.goBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
             this.goBack.Cursor = System.Windows.Forms.Cursors.Default;
             this.goBack.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.goBack.Location = new System.Drawing.Point(12, 405);
@@ -74,6 +74,7 @@ namespace ScrumAge
             // 
             // myRules
             // 
+            this.myRules.BackColor = System.Drawing.SystemColors.MenuBar;
             this.myRules.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myRules.Location = new System.Drawing.Point(22, 25);
             this.myRules.Name = "myRules";
@@ -85,7 +86,7 @@ namespace ScrumAge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.myRules);
             this.Controls.Add(this.goBack);
@@ -93,6 +94,7 @@ namespace ScrumAge
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "RulesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rules";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -57,3 +57,5 @@ C:\Users\chibi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\Sc
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.LandingPageForm.resources
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.RulesForm.resources
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
+C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.LandingPageForm.resources
+C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.RulesForm.resources

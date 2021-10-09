@@ -37,7 +37,7 @@ namespace ScrumAge
             // 
             // start
             // 
-            this.start.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.start.Cursor = System.Windows.Forms.Cursors.Cross;
             this.start.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start.Location = new System.Drawing.Point(654, 400);
@@ -50,7 +50,7 @@ namespace ScrumAge
             // 
             // rules
             // 
-            this.rules.BackColor = System.Drawing.SystemColors.Highlight;
+            this.rules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
             this.rules.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.rules.Location = new System.Drawing.Point(26, 400);
             this.rules.Name = "rules";
@@ -83,6 +83,7 @@ namespace ScrumAge
             this.Controls.Add(this.start);
             this.DoubleBuffered = true;
             this.Name = "LandingPageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LandingPage";
             this.ResumeLayout(false);
             this.PerformLayout();

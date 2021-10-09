@@ -62,5 +62,6 @@ namespace ScrumAge
             RulesForm rules = new RulesForm();
             rules.Show();
         }
+
     }// end of LandingPageForm
 }
