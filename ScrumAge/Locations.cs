@@ -16,7 +16,7 @@ namespace ScrumAge
         int[,] savePlayerList = new int[2, 4];
 
         //Save the players to location 
-        void setLocation(int playerId, int holdDevs)
+        void placeDevs(int playerId, int holdDevs)
         {
             //Save to list
             switch (playerId)

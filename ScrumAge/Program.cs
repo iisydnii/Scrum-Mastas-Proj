@@ -52,9 +52,9 @@ namespace ScrumAge
             //Testing Abstract class
             TestLocations test = new TestLocations();
             
-            test.setLocation(1, 3);
-            test.setLocation(2, 1);
-            test.setLocation(3, 2);
+            test.placeDevs(1, 3);
+            test.placeDevs(2, 1);
+            test.placeDevs(3, 2);
 
             Console.WriteLine(test.printTestResults());
 

@@ -21,7 +21,7 @@ namespace ScrumAge
         }
 
         //Save the players to location 
-        public void setLocation(int playerId, int holdDevs)
+        public void placeDevs(int playerId, int holdDevs)
         {
             //Save to list
             switch (playerId)
