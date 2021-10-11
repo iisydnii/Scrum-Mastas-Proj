@@ -61,6 +61,7 @@
     <Compile Include="LandingPageForm.Designer.cs">
       <DependentUpon>LandingPageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Locations.cs" />
     <Compile Include="Placement_Board.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +85,7 @@
     </Compile>
     <Compile Include="SituationCard.cs" />
     <Compile Include="SituationDeck.cs" />
+    <Compile Include="TestLocations.cs" />
     <EmbeddedResource Include="DiceForm.resx">
       <DependentUpon>DiceForm.cs</DependentUpon>
     </EmbeddedResource>

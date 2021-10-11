@@ -31,7 +31,7 @@ namespace ScrumAge
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LandingPageForm());
-            
+
             ///Test
             // Application.Run(new Placement_Board());
 
@@ -47,7 +47,20 @@ namespace ScrumAge
 
             //Console.WriteLine(dice.RollDice());
 
-            Application.Run(new DiceForm());
+            //Application.Run(new DiceForm());
+
+            //Testing Abstract class
+            TestLocations test = new TestLocations();
+            
+            test.setLocation(1, 3);
+            test.setLocation(2, 1);
+            test.setLocation(3, 2);
+
+            Console.WriteLine(test.printTestResults());
+
+            test.returnPlayers(1);
+            
+            Console.WriteLine(test.printTestResults());
 
         } // end of main
     }//end of class
