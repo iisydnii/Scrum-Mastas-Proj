@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +26,12 @@ namespace ScrumAge
     {
         PictureBox[] boxes;
         PictureBox selected;
-        Player player;
 
         public Placement_Board(Player player)
         {
             InitializeComponent();
 
             boxes = new PictureBox[] { HRBox, BootCampBox, WhiteBoardBox, BitcoinMarketBox, holdDevelopers };
-            this.player = player;
 
             try
             {
@@ -40,16 +39,16 @@ namespace ScrumAge
                 switch (player.Id)
                 {
                     case 1:
-                        holdDevelopers.Image = Image.FromFile(@"Images\red.png");
+                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\red.png");
                         break;
                     case 2:
-                        holdDevelopers.Image = Image.FromFile(@"Images\yellow.png");
+                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\yellow.png");
                         break;
                     case 3:
-                        holdDevelopers.Image = Image.FromFile(@"Images\green.png");
+                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\green.png");
                         break;
                     case 4:
-                        holdDevelopers.Image = Image.FromFile(@"Images\gray.png");
+                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\gray.png");
                         break;
                 }
 
@@ -76,7 +75,7 @@ namespace ScrumAge
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PictureBox_DragDrop(object sender, DragEventArgs e)
+        private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             var target = (PictureBox)sender;
             if (e.Data.GetDataPresent(typeof(PictureBox)))
@@ -101,7 +100,7 @@ namespace ScrumAge
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PictureBox_DragEnter(object sender, DragEventArgs e)
+        private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
         }
@@ -111,7 +110,7 @@ namespace ScrumAge
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PictureBox_MouseClick(object sender, MouseEventArgs e)
+        private void PictureBox_MouseClick(object sender, MouseEventArgs e)
         {
             SelectBox((PictureBox)sender);
         }
@@ -121,7 +120,7 @@ namespace ScrumAge
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -138,17 +137,17 @@ namespace ScrumAge
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PictureBox_Paint(object sender, PaintEventArgs e)
+        private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             var pb = (PictureBox)sender;
-            pb.BackColor = Color.White;
+            pb.BackColor = Color.FromArgb(245, 235, 208); //set to tan
             if (selected == pb)
             {
                 ControlPaint.DrawBorder(e.Graphics, pb.ClientRectangle,
-                   Color.Blue, 5, ButtonBorderStyle.Solid,  // Left
-                   Color.Blue, 5, ButtonBorderStyle.Solid,  // Top
-                   Color.Blue, 5, ButtonBorderStyle.Solid,  // Right
-                   Color.Blue, 5, ButtonBorderStyle.Solid); // Bottom
+                   Color.Blue, 1, ButtonBorderStyle.Solid,  // Left
+                   Color.Blue, 1, ButtonBorderStyle.Solid,  // Top
+                   Color.Blue, 1, ButtonBorderStyle.Solid,  // Right
+                   Color.Blue, 1, ButtonBorderStyle.Solid); // Bottom
             }
         }
 
@@ -156,11 +155,12 @@ namespace ScrumAge
         /// Set the selected image, and trigger repaint on all boxes.
         /// </summary>
         /// <param name="pb"></param>
-        void SelectBox(PictureBox pb)
+        private void SelectBox(PictureBox pb)
         {
             if (selected != pb)
             {
                 selected = pb;
+                Console.WriteLine("selectbox");
             }
             else
             {
@@ -176,7 +176,7 @@ namespace ScrumAge
         /// </summary>
         /// <param name="source"></param>
         /// <param name="target"></param>
-        void SwapImages(PictureBox source, PictureBox target)
+        private void SwapImages(PictureBox source, PictureBox target)
         {
             if (source.BackgroundImage == null && target.BackgroundImage == null)
             {
@@ -185,7 +185,19 @@ namespace ScrumAge
 
             var temp = target.BackgroundImage;
             target.BackgroundImage = source.BackgroundImage;
-            source.BackgroundImage = temp;
+            if (source.Name == "holdDevelopers" )
+            {
+                //source.BackgroundImage = temp;
+            }
+            else if (target.Name == "holdDevelopers")
+            {
+                source.BackgroundImage = null;
+            }
+            else
+            {
+                source.BackgroundImage = temp;
+            }
+
         }
     }
 }

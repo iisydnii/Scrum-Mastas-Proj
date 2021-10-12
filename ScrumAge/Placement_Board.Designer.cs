@@ -109,9 +109,10 @@ namespace ScrumAge
             // 
             // holdDevelopers
             // 
-            this.holdDevelopers.Location = new System.Drawing.Point(312, 49);
+            this.holdDevelopers.Location = new System.Drawing.Point(312, 53);
             this.holdDevelopers.Name = "holdDevelopers";
-            this.holdDevelopers.Size = new System.Drawing.Size(50, 85);
+            this.holdDevelopers.Size = new System.Drawing.Size(50, 60);
+            this.holdDevelopers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.holdDevelopers.TabIndex = 0;
             this.holdDevelopers.TabStop = false;
             // 
@@ -138,7 +139,8 @@ namespace ScrumAge
             this.HRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HRBox.Location = new System.Drawing.Point(42, 172);
             this.HRBox.Name = "HRBox";
-            this.HRBox.Size = new System.Drawing.Size(130, 84);
+            this.HRBox.Size = new System.Drawing.Size(50, 85);
+            this.HRBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.HRBox.TabIndex = 6;
             this.HRBox.TabStop = false;
             // 
@@ -148,6 +150,7 @@ namespace ScrumAge
             this.BootCampBox.Location = new System.Drawing.Point(239, 172);
             this.BootCampBox.Name = "BootCampBox";
             this.BootCampBox.Size = new System.Drawing.Size(130, 84);
+            this.BootCampBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BootCampBox.TabIndex = 7;
             this.BootCampBox.TabStop = false;
             // 
@@ -157,6 +160,7 @@ namespace ScrumAge
             this.WhiteBoardBox.Location = new System.Drawing.Point(428, 172);
             this.WhiteBoardBox.Name = "WhiteBoardBox";
             this.WhiteBoardBox.Size = new System.Drawing.Size(130, 84);
+            this.WhiteBoardBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.WhiteBoardBox.TabIndex = 8;
             this.WhiteBoardBox.TabStop = false;
             // 
@@ -166,6 +170,7 @@ namespace ScrumAge
             this.BitcoinMarketBox.Location = new System.Drawing.Point(612, 172);
             this.BitcoinMarketBox.Name = "BitcoinMarketBox";
             this.BitcoinMarketBox.Size = new System.Drawing.Size(130, 84);
+            this.BitcoinMarketBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BitcoinMarketBox.TabIndex = 7;
             this.BitcoinMarketBox.TabStop = false;
             // 
