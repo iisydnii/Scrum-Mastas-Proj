@@ -122,5 +122,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\BobTheDev - Copy.PNG" />
+    <Content Include="Images\BobTheDev.PNG" />
+    <Content Include="Images\bobthedev___copy.ico" />
+    <Content Include="Images\Bootcamp.png" />
+    <Content Include="Images\Dice.jpg" />
+    <Content Include="Images\gray.png" />
+    <Content Include="Images\green.png" />
+    <Content Include="Images\hr.png" />
+    <Content Include="Images\LandingPage.PNG" />
+    <Content Include="Images\Market.png" />
+    <Content Include="Images\PlacementBoard.png" />
+    <Content Include="Images\PlacementBoardM.png" />
+    <Content Include="Images\red.png" />
+    <Content Include="Images\Webp.net-resizeimage %281%29.png" />
+    <Content Include="Images\Webp.net-resizeimage %282%29.png" />
+    <Content Include="Images\Webp.net-resizeimage.png" />
+    <Content Include="Images\Whiteboard.png" />
+    <Content Include="Images\yellow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,13 +25,17 @@ namespace ScrumAge
     public partial class Placement_Board : Form
     {
         PictureBox[] boxes;
+        PictureBox[] bootcamp;
         PictureBox selected;
 
         public Placement_Board(Player player)
         {
             InitializeComponent();
 
-            boxes = new PictureBox[] { HRBox, BootCampBox, WhiteBoardBox, BitcoinMarketBox, holdDevelopers };
+            boxes = new PictureBox[] { HRBox, BootCampBox1, BootCampBox2, BootCampBox3, BootCampBox4, BootCampBox5,
+                BootCampBox6, BootCampBox7, BootCampBox8, WhiteBoardBox2, WhiteBoardBox3, WhiteBoardBox4, WhiteBoardBox5,
+                WhiteBoardBox6, WhiteBoardBox7, WhiteBoardBox8, BitcoinMarketBox1, BitcoinMarketBox2, BitcoinMarketBox3,
+                BitcoinMarketBox4, BitcoinMarketBox5, BitcoinMarketBox6, BitcoinMarketBox7, BitcoinMarketBox8, holdDevelopers };
 
             try
             {
@@ -195,6 +199,7 @@ namespace ScrumAge
             }
             else
             {
+                
                 source.BackgroundImage = temp;
             }
 
