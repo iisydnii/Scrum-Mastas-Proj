@@ -76,7 +76,7 @@ public static class Game
 
     public static void CloseForm(Form form)
     {
-        form.
+        form.Close();
     }
 
 
