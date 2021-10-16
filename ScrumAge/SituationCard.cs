@@ -1,8 +1,12 @@
 ﻿/*-------------
 Name: Garrett Dyer
 Date created: 09/22/21
+Date Modified: 10/16/21
 File name: SituationCard
 Purpose: Template for creating a situation card
+________________________________________________________________________________
+Page Modified
+        Garrett Dyer, 10/16/21, removed properties.
 -------------*/
 
 // --Austin wuz here !!!!
@@ -14,14 +18,10 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class SituationCard
+    class SituationCard : Card
     {
         /* Creating properties for the situtation cards*/
-        public int id { get; set; }
         public string situation { get; set; }
-        public Dictionary<int, string> cost { get; set; } /* int is the cost, string the resource used*/
-        public Dictionary<int, string> reward { get; set; } /* int is the amount given, string the resource given*/
-        public bool used { get; set; }
         public string certifications { get; set; }
         public int diffculty { get; set; }
 
