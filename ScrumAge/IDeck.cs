@@ -11,12 +11,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Fixed some pascal casing issues here --Austin
+//Make sure in the future to always capitalize Pascal Case Properties and Methods :: like MethodName or PropertyName
+
 namespace ScrumAge
 {
     interface IDeck
     {
-        void createDeck();
-        void shuffleDeck();
-        void drawCard();
+        void CreateDeck();
+        void ShuffleDeck();
+        void DrawCard();
     }
 }

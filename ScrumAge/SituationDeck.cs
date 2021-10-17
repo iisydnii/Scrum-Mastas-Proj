@@ -14,6 +14,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Fixed some pascal casing issues here --Austin
+//Make sure in the future to always capitalize Pascal Case Properties and Methods :: like MethodName or PropertyName
+
 namespace ScrumAge
 {
     class SituationDeck : IDeck
@@ -24,12 +27,12 @@ namespace ScrumAge
         public SituationDeck()
         {
             situationDeck = new HashSet<object>();
-            createDeck(); // Added this so the deck is automatically created upon the creation of the situationdeck object. -- Austin
+            CreateDeck(); // Added this so the deck is automatically created upon the creation of the situationdeck object. -- Austin
         }
 
         // Updated the situation attributes for these cards to represent the perspective of the player --Austin
         /* Creates situation cards and adds them to the deck */
-        public void createDeck()
+        public void CreateDeck()
         {
             int cardsToCreate = 32;
 
@@ -464,7 +467,7 @@ namespace ScrumAge
         }
 
 
-        public void shuffleDeck() //shuffles the deck of cards. Puts 4 cards at the front of the deck for easy completion.
+        public void ShuffleDeck() //shuffles the deck of cards. Puts 4 cards at the front of the deck for easy completion.
         {
             Random rand = new Random();
             HashSet<object> tempDeck = new HashSet<object>();
@@ -502,7 +505,7 @@ namespace ScrumAge
         //}
 
 
-        public string displayCard() //testing purposes
+        public string DisplayCard() //testing purposes
         {
             SituationCard tempCard = (SituationCard)situationDeck.ElementAt(0);
             string cardText = "";
@@ -523,7 +526,7 @@ namespace ScrumAge
             return "";
         }
 
-        public void displayCards() //displays cards for testing purposes
+        public void DisplayCards() //displays cards for testing purposes
         {
             for (int i = 0; i < situationDeck.Count; i++)
             {
@@ -555,8 +558,8 @@ namespace ScrumAge
             for (int i = 0; i < 1000; i++)
             {
                 SituationDeck deckTest = new SituationDeck();
-                deckTest.createDeck();
-                deckTest.shuffleDeck();
+                deckTest.CreateDeck();
+                deckTest.ShuffleDeck();
                 SituationCard card0 = (SituationCard)situationDeck.ElementAt(0);
                 SituationCard card1 = (SituationCard)situationDeck.ElementAt(1);
                 SituationCard card2 = (SituationCard)situationDeck.ElementAt(2);
@@ -605,7 +608,7 @@ namespace ScrumAge
 
         }
 
-        public void drawCard()
+        public void DrawCard()
         {
             throw new NotImplementedException();
         }

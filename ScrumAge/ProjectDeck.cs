@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Fixed some pascal casing issues here --Austin
+//Make sure in the future to always capitalize Pascal Case Properties and Methods :: like MethodName or PropertyName
+
 namespace ScrumAge
 {
     class ProjectDeck : IDeck
@@ -20,10 +23,11 @@ namespace ScrumAge
         public ProjectDeck()
         {
             projectDeck = new HashSet<object>();
+            CreateDeck(); // Added this so the deck is automatically created upon the creation of the ProjectTile object. -- Austin
 
         }
 
-        public void createDeck() // creates the project tile deck.
+        public void CreateDeck() // creates the project tile deck. 
         {
             int cardsToCreate = 1;
 
@@ -35,7 +39,7 @@ namespace ScrumAge
                         {
                             ProjectTile card1 = new ProjectTile();
                             card1.id = i;
-                            card1.description = "temp project";
+                            card1.Description = "temp project";
                             card1.cost.Add(2, "Training");
                             card1.reward.Add(10, "Bitcoin");
                             card1.used = false;
@@ -46,12 +50,12 @@ namespace ScrumAge
             }
         }
 
-        public string displayCard() //displays cards for testing purposes
+        public string DisplayCard() //displays cards for testing purposes
         {
             ProjectTile tempTile = (ProjectTile)projectDeck.ElementAt(0);
             string cardText = "";
             cardText += $"-------------------";
-            cardText += $"\n\nSituation: {tempTile.description}";
+            cardText += $"\n\nSituation: {tempTile.Description}";
             foreach (var k in tempTile.cost)
             {
                 cardText += $"\n\nCost: This costs {k.Key} {k.Value} ";
@@ -65,12 +69,12 @@ namespace ScrumAge
             return "";
         }
 
-        public void shuffleDeck()
+        public void ShuffleDeck()
         {
             throw new NotImplementedException();
         }
 
-        public void drawCard()
+        public void DrawCard()
         {
             throw new NotImplementedException();
         }

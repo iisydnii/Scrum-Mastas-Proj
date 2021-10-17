@@ -63,6 +63,18 @@ namespace ScrumAge
             
             Console.WriteLine(test.printTestResults());
 
+            //Testing Garret's New Situation Card Class --Austin
+            ProjectDeck projectTileDeck = new ProjectDeck();
+            projectTileDeck.CreateDeck();
+            projectTileDeck.DisplayCard();
+
+            SituationDeck situationDeck = new SituationDeck();
+            situationDeck.DisplayCards();          
+            situationDeck.ShuffleDeck();
+            Console.WriteLine("\n \n NEW DECK \n");
+            situationDeck.DisplayCards();
+
+
         } // end of main
     }//end of class
 }

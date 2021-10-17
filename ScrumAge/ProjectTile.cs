@@ -11,16 +11,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Fixed some pascal casing issues here --Austin
+//Make sure in the future to always capitalize Pascal Case Properties and Methods :: like MethodName or PropertyName
+
 namespace ScrumAge
 {
     class ProjectTile : Card
     {
-        public string description { get; set; }
+        public string Description { get; set; }
 
         public ProjectTile(int id, string description, Dictionary<int, string> cost, Dictionary<int, string> reward, bool used)
         {
             this.id = id;
-            this.description = description;
+            this.Description = description;
             this.cost = cost;
             this.reward = reward;
             this.used = used;
