@@ -28,13 +28,15 @@ namespace ScrumAge
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LandingPageForm());
+            Game.Test();
 
-            ///Test
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new LandingPageForm());
+
+            // Test
             // Application.Run(new Placement_Board());
-
+            
             // Test of Situation Deck --Austin
             //SituationDeck situationDeck = new SituationDeck();
             //situationDeck.displayCards();
@@ -43,13 +45,14 @@ namespace ScrumAge
             //situationDeck.displayCard();
 
             // Test of Dice Class --Austin
-            //Dice dice = new Dice();
+            // Dice dice = new Dice();
 
             //Console.WriteLine(dice.RollDice());
 
             //Application.Run(new DiceForm());
 
-            //Testing Abstract class
+            ////Testing Abstract class
+
             //TestLocations test = new TestLocations();
 
             //test.SetPlayerList(test.placeDevs( 1, 3));
@@ -77,4 +80,4 @@ namespace ScrumAge
 
         } // end of main
     }//end of class
-}
+}//end of ScrumAge
