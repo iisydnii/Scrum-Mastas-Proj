@@ -12,7 +12,7 @@ namespace ScrumAge
 {
     class TestLocations : Locations
     {
-        String locationName = "Test";
+        
         private int[,] TestPlayerList = new int[2, 4];
 
        public void SetPlayerList(int[,] playerList)

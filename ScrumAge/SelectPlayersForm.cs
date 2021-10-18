@@ -65,136 +65,126 @@ Purpose: Add functionality to SelectPlayersForm
         }
 
         // Once Begin is clicked 
-        private void Begin_MouseClick(object sender, MouseEventArgs e)
+        private void Begin_Click(object sender, EventArgs e)
         {
-            Player player1;
-            Player player2;
-            Player player3;
-            Player player4;
+            Player player1 = new Player(1);
+            Player player2 = new Player(2);
+            players.Add(player1);
+            players.Add(player2);
+
             //if 2 players were selected 
             if (Player3Label.Visible == false)
             {
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                   player1 = new Player(1, "Player 1");
+                    player1.Name = "Player 1";
                 }
                 else
                 {
-                    player1 = new Player(1, Player1TextBox.Text);
+                    player1.Name = Player1TextBox.Text;
                 }
 
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2 = new Player(2, "Player 2");
+                    player2.Name = "Player 2";
                 }
                 else
                 {
-                    player2 = new Player(2, Player2Textbox.Text);
+                    player2.Name = Player2Textbox.Text;
                 }
-                players.Add(player1);
-                players.Add(player2);
             }
 
             // If 3 players were selected
-            else if(Player4Label.Visible == false)
+            else if (Player4Label.Visible == false)
             {
+                Player player3 = new Player(3);
+                players.Add(player3);
+
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                    player1 = new Player(1, "Player 1");
+                    player1.Name = "Player 1";
                 }
                 else
                 {
-                    player1 = new Player(1, Player1TextBox.Text);
+                    player1.Name = Player1TextBox.Text;
                 }
 
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2 = new Player(2, "Player 2");
+                    player2.Name = "Player 2";
                 }
                 else
                 {
-                    player2 = new Player(2, Player2Textbox.Text);
+                    player2.Name = Player2Textbox.Text;
                 }
 
                 // If no name for player 3 is given
                 if (string.IsNullOrWhiteSpace(Player3Textbox.Text.ToString()))
                 {
-                    player3 = new Player(3, "Player 3");
+                    player3.Name = "Player 3";
                 }
                 else
                 {
-                    player3 = new Player(3, Player3Textbox.Text);
+                    player3.Name = Player3Textbox.Text;
                 }
-                players.Add(player1);
-                players.Add(player2);
-                players.Add(player3);
             }
 
             // If 4 players were selected
             else
             {
+                Player player3 = new Player(3);
+                Player player4 = new Player(4);
+                players.Add(player3);
+                players.Add(player4);
+
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                    player1 = new Player(1, "Player 1");
+                    player1.Name = "Player 1";
                 }
                 else
                 {
-                    player1 = new Player(1, Player1TextBox.Text);
+                    player1.Name = Player1TextBox.Text;
                 }
 
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2 = new Player(2, "Player 2");
+                    player2.Name = "Player 2";
                 }
                 else
                 {
-                    player2 = new Player(2, Player2Textbox.Text);
+                    player2.Name = Player2Textbox.Text;
                 }
 
                 // If no name for player 3 is given
                 if (string.IsNullOrWhiteSpace(Player3Textbox.Text.ToString()))
                 {
-                    player3 = new Player(3, "Player 3");
+                    player3.Name = "Player 3";
                 }
                 else
                 {
-                    player3 = new Player(3, Player3Textbox.Text);
+                    player3.Name = Player3Textbox.Text;
                 }
 
                 // If no name for player 4 is given
                 if (string.IsNullOrWhiteSpace(Player4Textbox.Text.ToString()))
                 {
-                    player4 = new Player(4, "Player 4");
+                    player4.Name = "Player 4";
                 }
                 else
                 {
-                    player4 = new Player(4, Player4Textbox.Text);
+                    player4.Name = Player4Textbox.Text;
                 }
-                players.Add(player1);
-                players.Add(player2);
-                players.Add(player3);
-                players.Add(player4);
             }
 
-            this.Close();
-        }
-
-        public List<Player> GetPlayers()
-        {
-            return players;
-        }
-
-        private void Begin_Click(object sender, EventArgs e)
-        {
             this.Visible = false;
             //Open the player select form
-            Placement_Board board = new Placement_Board();
+            Placement_Board board = new Placement_Board(2);
             board.ShowDialog();
             this.Close();
         }
