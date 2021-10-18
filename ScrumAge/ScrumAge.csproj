@@ -107,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RulesForm.resx">
       <DependentUpon>RulesForm.cs</DependentUpon>
@@ -127,6 +128,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\BitcoinMarket.png" />
+    <Content Include="Images\BobTheDev.PNG" />
+    <Content Include="Images\bobthedev___copy.ico" />
+    <Content Include="Images\Bootcamp.png" />
+    <Content Include="Images\Dice.jpg" />
+    <Content Include="Images\gray.png" />
+    <Content Include="Images\green.png" />
+    <Content Include="Images\hr.png" />
+    <Content Include="Images\LandingPage.PNG" />
+    <Content Include="Images\red.png" />
+    <Content Include="Images\Whiteboard.png" />
+    <Content Include="Images\yellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

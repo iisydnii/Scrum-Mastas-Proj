@@ -58,7 +58,6 @@ C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj
 C:\Course Work\Computer Science Classes\CSCI 4250\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.SelectPlayersForm.resources
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.LandingPageForm.resources
 C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.RulesForm.resources
-C:\Users\ethan\OneDrive\Desktop\Sydni's Folder\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.csproj.AssemblyReference.cache
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.DiceForm.resources
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.LandingPageForm.resources
 C:\Users\austi\OneDrive\Documents\GitHub\Scrum-Mastas-Proj\ScrumAge\obj\Debug\ScrumAge.RulesForm.resources

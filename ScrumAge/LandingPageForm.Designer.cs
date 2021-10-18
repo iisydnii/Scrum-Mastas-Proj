@@ -44,7 +44,7 @@ namespace ScrumAge
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(134, 38);
             this.start.TabIndex = 0;
-            this.start.Text = "Strart";
+            this.start.Text = "Start";
             this.start.UseVisualStyleBackColor = false;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 

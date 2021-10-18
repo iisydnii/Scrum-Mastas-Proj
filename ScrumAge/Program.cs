@@ -52,6 +52,7 @@ namespace ScrumAge
             //Application.Run(new DiceForm());
 
             ////Testing Abstract class
+
             //TestLocations test = new TestLocations();
 
             //test.SetPlayerList(test.placeDevs( 1, 3));
@@ -66,15 +67,15 @@ namespace ScrumAge
             //Console.WriteLine(test.printTestResults());
 
             //Testing Garret's New Situation Card Class --Austin
-            ProjectDeck projectTileDeck = new ProjectDeck();
-            projectTileDeck.CreateDeck();
-            projectTileDeck.DisplayCard();
+            //ProjectDeck projectTileDeck = new ProjectDeck();
+            //projectTileDeck.CreateDeck();
+            //projectTileDeck.DisplayCard();
 
-            SituationDeck situationDeck = new SituationDeck();
-            situationDeck.DisplayCards();          
-            situationDeck.ShuffleDeck();
-            Console.WriteLine("\n \n NEW DECK \n");
-            situationDeck.DisplayCards();
+            //SituationDeck situationDeck = new SituationDeck();
+            //situationDeck.DisplayCards();          
+            //situationDeck.ShuffleDeck();
+            //Console.WriteLine("\n \n NEW DECK \n");
+            //situationDeck.DisplayCards();
 
 
         } // end of main
