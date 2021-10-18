@@ -38,22 +38,7 @@ namespace ScrumAge
 
             try
             {
-                //Supply your own images here
-                switch (id)
-                {
-                    case 1:
-                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\red.png");
-                        break;
-                    case 2:
-                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\yellow.png");
-                        break;
-                    case 3:
-                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\green.png");
-                        break;
-                    case 4:
-                        holdDevelopers.BackgroundImage = Image.FromFile(@"Images\gray.png");
-                        break;
-                }
+                setImage(id);
 
                 foreach (var box in boxes)
                 {
@@ -71,6 +56,27 @@ namespace ScrumAge
                 return;
             }
 
+        }
+
+        //SetPlayer Images
+        public void setImage(int id) 
+        {
+            //Supply your own images here
+            switch (id)
+            {
+                case 1:
+                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\red.png");
+                    break;
+                case 2:
+                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\yellow.png");
+                    break;
+                case 3:
+                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\green.png");
+                    break;
+                case 4:
+                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\gray.png");
+                    break;
+            }
         }
 
         /// <summary>
