@@ -38,11 +38,11 @@ namespace ScrumAge
             // start
             // 
             this.start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
-            this.start.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.start.Cursor = System.Windows.Forms.Cursors.Default;
             this.start.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start.Location = new System.Drawing.Point(654, 400);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(134, 38);
+            this.start.Size = new System.Drawing.Size(121, 38);
             this.start.TabIndex = 0;
             this.start.Text = "Start";
             this.start.UseVisualStyleBackColor = false;

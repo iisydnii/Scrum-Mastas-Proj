@@ -53,7 +53,7 @@ namespace ScrumAge
             this.start.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.start.Location = new System.Drawing.Point(662, 405);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(126, 33);
+            this.start.Size = new System.Drawing.Size(121, 38);
             this.start.TabIndex = 1;
             this.start.Text = "Strart";
             this.start.UseVisualStyleBackColor = false;
@@ -66,7 +66,7 @@ namespace ScrumAge
             this.goBack.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.goBack.Location = new System.Drawing.Point(12, 405);
             this.goBack.Name = "goBack";
-            this.goBack.Size = new System.Drawing.Size(114, 33);
+            this.goBack.Size = new System.Drawing.Size(121, 38);
             this.goBack.TabIndex = 2;
             this.goBack.Text = "Go Back";
             this.goBack.UseVisualStyleBackColor = false;
