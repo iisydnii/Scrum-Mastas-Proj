@@ -28,7 +28,10 @@ namespace ScrumAge
         [STAThread]
         static void Main()
         {
-            Game.Test();
+            //Game.Test();
+            Game.StartGame();
+
+
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);

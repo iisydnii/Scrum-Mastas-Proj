@@ -55,6 +55,7 @@
     <Compile Include="DiceForm.Designer.cs">
       <DependentUpon>DiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="IDeck.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="LandingPageForm.cs">
