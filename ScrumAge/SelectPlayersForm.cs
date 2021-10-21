@@ -18,9 +18,11 @@ Purpose: Add functionality to SelectPlayersForm
 -------------*/
     public partial class SelectPlayersForm : Form
     {
-        private List<Player> players = new List<Player>();
+        public List<Player> players { get; set; }
+
         public SelectPlayersForm()
         {
+            players = new List<Player>();
             InitializeComponent();
         }
 
@@ -184,9 +186,12 @@ Purpose: Add functionality to SelectPlayersForm
 
             this.Visible = false;
             //Open the player select form
-            Placement_Board board = new Placement_Board(1);
-            board.ShowDialog();
+            //Placement_Board board = new Placement_Board(1);
+            //board.ShowDialog();
+
+            Game.DisplayPlacementBoard();
             this.Close();
         }
+
     }
 }

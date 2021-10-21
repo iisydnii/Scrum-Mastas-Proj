@@ -21,6 +21,8 @@ public static class Game
     private static Placement_Board placement_Board;
     private static DiceForm diceForm;
 
+    private static List<Form> AllForms;
+
 
     // Starts the game by displaying the Title Screen
     public static void StartGame()
@@ -37,21 +39,22 @@ public static class Game
         selectPlayersForm = new SelectPlayersForm();
         selectPlayersForm.ShowDialog();
 
-        //Populate PlayerList with all of the players
-        PopulatePlayers();
     }
 
 
     public static void DisplayPlacementBoard()
     {
-        placement_Board = new Placement_Board();
+        //Populate PlayerList with all of the players
+        PopulatePlayers();
 
         foreach (var player in PlayerList)
         {
-            //placement_Board = new Placement_Board(player.ID);
-            //placement_Board.ShowDialog();
+            placement_Board = new Placement_Board(player.Id);
+            placement_Board.ShowDialog();
         }
-        
+
+        //placement_Board = new Placement_Board(1);
+        //placement_Board.ShowDialog();
     }
 
 
@@ -94,6 +97,7 @@ public static class Game
     {
         PlayerList = new List<Player>();
 
-        PlayerList = selectPlayersForm.GetPlayers();      
+        PlayerList = selectPlayersForm.players;
+
     }
 }
