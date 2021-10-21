@@ -38,6 +38,7 @@ namespace ScrumAge
             this.holdDevelopers = new System.Windows.Forms.PictureBox();
             this.Developers = new System.Windows.Forms.PictureBox();
             this.ProjectTiles = new System.Windows.Forms.GroupBox();
+            this.nextButton = new System.Windows.Forms.Button();
             this.HRBox = new System.Windows.Forms.PictureBox();
             this.BootCampBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,6 +72,7 @@ namespace ScrumAge
             this.StatusBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.holdDevelopers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Developers)).BeginInit();
+            this.ProjectTiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HRBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BootCampBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -171,12 +173,25 @@ namespace ScrumAge
             // 
             // ProjectTiles
             // 
-            this.ProjectTiles.Location = new System.Drawing.Point(401, 262);
+            this.ProjectTiles.Controls.Add(this.nextButton);
+            this.ProjectTiles.Location = new System.Drawing.Point(408, 262);
             this.ProjectTiles.Name = "ProjectTiles";
             this.ProjectTiles.Size = new System.Drawing.Size(376, 184);
             this.ProjectTiles.TabIndex = 5;
             this.ProjectTiles.TabStop = false;
             this.ProjectTiles.Text = "ProjectTiles";
+            // 
+            // nextButton
+            // 
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.nextButton.Font = new System.Drawing.Font("Stencil", 9.75F);
+            this.nextButton.Location = new System.Drawing.Point(263, 149);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(121, 40);
+            this.nextButton.TabIndex = 0;
+            this.nextButton.Text = "Next Player";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // HRBox
             // 
@@ -449,6 +464,7 @@ namespace ScrumAge
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProjectTiles);
             this.Controls.Add(this.BootCampBox8);
             this.Controls.Add(this.BitcoinMarketBox8);
             this.Controls.Add(this.BitcoinMarketBox7);
@@ -474,12 +490,11 @@ namespace ScrumAge
             this.Controls.Add(this.BootCampBox2);
             this.Controls.Add(this.BootCampBox1);
             this.Controls.Add(this.HRBox);
-            this.Controls.Add(this.ProjectTiles);
-            this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.StatusBox);
             this.Name = "Placement_Board";
             this.Text = "Placement_Board";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -489,6 +504,7 @@ namespace ScrumAge
             this.StatusBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.holdDevelopers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Developers)).EndInit();
+            this.ProjectTiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HRBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BootCampBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -555,5 +571,6 @@ namespace ScrumAge
         private System.Windows.Forms.PictureBox WhiteBoardBox8;
         private System.Windows.Forms.PictureBox BitcoinMarketBox8;
         private System.Windows.Forms.PictureBox BootCampBox8;
+        private System.Windows.Forms.Button nextButton;
     }
 }

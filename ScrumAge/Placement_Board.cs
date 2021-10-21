@@ -27,11 +27,39 @@ namespace ScrumAge
         PictureBox[] boxes;
         PictureBox[] bootcamp;
         PictureBox selected;
+        int playerId = 0;
+        int AvailableDevs = 0;
 
         public Placement_Board(Player player)
         {
             InitializeComponent();
+            playerId = player.Id;
+            getAvailableDevs(player);
+            createDragAndDrop(player.Id);
 
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Controlling Changes 
+        void getAvailableDevs(Player player)
+        {
+            int hold = 0;
+            hold = player.Inventory.Developers;
+            //Check each location if they have devs placed there
+
+            // hold += location.getDevs();
+
+            AvailableDevs = hold;
+
+        }
+
+        // SECTION DRAG AND DROP FUNCTIONS
+        void createDragAndDrop(int id) 
+        {
             boxes = new PictureBox[] { HRBox, BootCampBox1, BootCampBox2, BootCampBox3, BootCampBox4, BootCampBox5,
                 BootCampBox6, BootCampBox7, BootCampBox8, WhiteBoardBox2, WhiteBoardBox3, WhiteBoardBox4, WhiteBoardBox5,
                 WhiteBoardBox6, WhiteBoardBox7, WhiteBoardBox8, BitcoinMarketBox1, BitcoinMarketBox2, BitcoinMarketBox3,
@@ -71,14 +99,49 @@ namespace ScrumAge
                 MessageBox.Show("No images found", "No Images Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
         }
 
+<<<<<<< Updated upstream
+=======
+        //Set Player Images
+        public void setImage(int id) 
+        {
+            string filename = "";
+            //Supply your own images here
+            switch (id)
+            {
+                case 1:
+                    filename = @"Images\red.png";
+                    break;
+                case 2:
+                    filename = @"Images\yellow.png"; 
+                    break;
+                case 3:
+                    filename = @"Images\green.png";
+                    break;
+                case 4:
+                    filename = @"Images\gray.png";
+                    break;
+                case 5:
+                    filename = "";
+                    break;
+            }
+
+            if(filename != "")
+            {
+                holdDevelopers.BackgroundImage = Image.FromFile(filename);
+            }
+            else
+            {
+                holdDevelopers.BackgroundImage = null;
+            }
+            
+        }
+
+>>>>>>> Stashed changes
         /// <summary>
         /// Fires after dragging has completed on the target control
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             var target = (PictureBox)sender;
@@ -87,7 +150,6 @@ namespace ScrumAge
                 var source = (PictureBox)e.Data.GetData(typeof(PictureBox));
                 if (source != target)
                 {
-                    Console.WriteLine("Do DragDrop from " + source.Name + " to " + target.Name);
                     // You can swap the images out, replace the target image, etc.
                     SwapImages(source, target);
 
@@ -139,8 +201,6 @@ namespace ScrumAge
         /// <summary>
         /// Override paint so we can draw a border on a selected image
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             var pb = (PictureBox)sender;
@@ -158,7 +218,6 @@ namespace ScrumAge
         /// <summary>
         /// Set the selected image, and trigger repaint on all boxes.
         /// </summary>
-        /// <param name="pb"></param>
         private void SelectBox(PictureBox pb)
         {
             if (selected != pb)
@@ -191,13 +250,25 @@ namespace ScrumAge
             target.BackgroundImage = source.BackgroundImage;
             if (source.Name == "holdDevelopers" )
             {
+                //minus 1 dev for the available devs
+                AvailableDevs = AvailableDevs - 1;
                 //source.BackgroundImage = temp;
+                if(AvailableDevs == 0)
+                {
+                    setImage(5);
+                }
             }
             else if (target.Name == "holdDevelopers")
             {
                 source.BackgroundImage = null;
+                //add 1 dev for the available devs
+                AvailableDevs = AvailableDevs + 1;
+                if (AvailableDevs != 0)
+                {
+                    setImage(playerId);
+                }
             }
-            else
+            else // moving to another location
             {
                 
                 source.BackgroundImage = temp;
