@@ -39,13 +39,14 @@ public static class Game
         selectPlayersForm = new SelectPlayersForm();
         selectPlayersForm.ShowDialog();
 
-        //Populate PlayerList with all of the players
-        PopulatePlayers();
     }
 
 
     public static void DisplayPlacementBoard()
     {
+        //Populate PlayerList with all of the players
+        PopulatePlayers();
+
         foreach (var player in PlayerList)
         {
             placement_Board = new Placement_Board(player.Id);
