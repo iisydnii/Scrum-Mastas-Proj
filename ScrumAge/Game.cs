@@ -4,25 +4,32 @@ Date created: 10/13/21
 Last Updated: 10/15/21
 File name: Game.cs
 Purpose: Control Game Logic
--------------*/
+-------------
+________________________________________________________________________________
+Page Modified
+    Piper Floyd, 10/24/21, lines 3o,58, Added player property so that other classes
+                                        can access its values. Passed in player to 
+                                        placement board. Deleted dice form property and method.
 
+*/
 using System;
 using ScrumAge;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-public static class Game
+public class Game
 {
+
     public static List<Player> PlayerList { get; set; }
 
     // Forms
     private static LandingPageForm landingPageForm;
     private static SelectPlayersForm selectPlayersForm;
     private static Placement_Board placement_Board;
-    private static DiceForm diceForm;
+    
 
     private static List<Form> AllForms;
-
+    public Player player;
 
     // Starts the game by displaying the Title Screen
     public static void StartGame()
@@ -42,6 +49,7 @@ public static class Game
     }
 
 
+
     public static void DisplayPlacementBoard()
     {
         //Populate PlayerList with all of the players
@@ -49,7 +57,7 @@ public static class Game
 
         foreach (var player in PlayerList)
         {
-            placement_Board = new Placement_Board(player.Id);
+            placement_Board = new Placement_Board(player.Id, player);
             placement_Board.ShowDialog();
         }
 
@@ -58,13 +66,7 @@ public static class Game
     }
 
 
-    public static void DisplayDiceForm()
-    {
-        diceForm = new DiceForm();
 
-        diceForm.ShowDialog();
-    }
-    
     ///TODO
     //public static void DisplayActivationBoard()
     //{
@@ -89,7 +91,7 @@ public static class Game
         StartGame();
         DisplaySetPlayersForm();
         DisplayPlacementBoard();
-        DisplayDiceForm();
+        
     }
 
 

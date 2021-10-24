@@ -18,6 +18,7 @@ Purpose: Add functionality to SelectPlayersForm
 -------------*/
     public partial class SelectPlayersForm : Form
     {
+
         public List<Player> players { get; set; }
 
         public SelectPlayersForm()

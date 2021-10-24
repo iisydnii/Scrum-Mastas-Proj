@@ -19,7 +19,7 @@ Player Inventory
         public int TrainingPoints { get; set; }
         public int DevelopmentPoints { get; set; }
         public int DesignPoints { get; set; }
-        public static int Developers { get; set; }
+        public int Developers { get; set; }
         public Certifications Certifications { get; set; }
        
         public Inventory()

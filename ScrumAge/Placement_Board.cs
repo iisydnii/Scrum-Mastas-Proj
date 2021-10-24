@@ -6,7 +6,9 @@
      Purpose: Display Placement Phase
 ________________________________________________________________________________
 Page Modified
-    Name, date, line change, what is the change
+    Piper Floyd, 10/24/21, lines 31,223-233, 270-285 Added Player property and injected it into controller
+                                        so that its values can be accessed. Added method to display
+                                        player's resources. Added method to display dice roll.
 
 */
 using System;
@@ -27,9 +29,13 @@ namespace ScrumAge
         PictureBox[] boxes;
         PictureBox selected;
 
-        public Placement_Board(int id)
+        public Player Player { get; set; }
+
+        public Placement_Board(int id, Player player)
         {
             InitializeComponent();
+
+            Player = player;
 
             boxes = new PictureBox[] { HRBox, BootCampBox1, BootCampBox2, BootCampBox3, BootCampBox4, BootCampBox5,
                 BootCampBox6, BootCampBox7, BootCampBox8, WhiteBoardBox1, WhiteBoardBox2, WhiteBoardBox3, WhiteBoardBox4, WhiteBoardBox5,
@@ -207,6 +213,79 @@ namespace ScrumAge
 
                 source.BackgroundImage = temp;
             }
+
+        }
+
+        /// <summary>
+        /// Dsiplays the players name and current inventory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StatusBox_Enter(object sender, EventArgs e)
+        {
+            label6.Text = Player.Name;
+            label2.Text = Player.Inventory.TrainingPoints.ToString();
+            label10.Text = Player.Inventory.DesignPoints.ToString();
+            label12.Text = Player.Inventory.Bitcoin.ToString();
+            label3.Text = Player.Inventory.DevelopmentPoints.ToString();
+            label7.Text = Player.Inventory.Developers.ToString();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProjectTiles_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// Displays the value of the dice roll
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dice dice = new Dice();
+            label18.Text = dice.Total.ToString();
+
+            int count = 0;
+            count++;
+
+            //Ensures that the dice can only be rolled once
+            if (count == 1)
+            {
+                button1.Enabled = false;
+
+            }
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
 
         }
     }
