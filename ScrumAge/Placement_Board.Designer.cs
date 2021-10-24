@@ -473,6 +473,7 @@ namespace ScrumAge
             this.BootCampBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BootCampBox3.TabIndex = 10;
             this.BootCampBox3.TabStop = false;
+            this.BootCampBox3.Click += new System.EventHandler(this.BootCampBox3_Click);
             // 
             // BootCampBox4
             // 

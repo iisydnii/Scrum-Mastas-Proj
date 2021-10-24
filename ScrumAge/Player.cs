@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*-------------
+Name: Macen Busic
+Date created: 09/22/21
+File name: Player.cs
+Purpose: Create a player
+_____________________________________________________________________________
+Page Modified
+    Piper Floyd, 10/24/21, lines 46 - 55, Added payment method
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +18,7 @@ namespace ScrumAge
 {
     public class Player
     {
-/*-------------
-Name: Macen Busic
-Date created: 09/22/21
-File name: Player.cs
-Purpose: Create a player
--------------*/
+
         public int Id { get; set; }
         public string Name { get; set; }
         public Inventory Inventory { get; set; }
@@ -31,5 +36,20 @@ Purpose: Create a player
             this.Name = "";
             this.Inventory = new Inventory();
         }
+
+        /// <summary>
+        /// Player pays and inventory reflects the update
+        /// </summary>
+        /// <param name="toPay"></param>
+        public void Pay(int toPay)
+        {
+            if (Inventory.Bitcoin > 0)
+            {
+                Inventory.Bitcoin -= toPay;
+            }
+           
+        }
+
+
     }
 }
