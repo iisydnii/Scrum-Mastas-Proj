@@ -49,12 +49,6 @@
     <Compile Include="Card.cs" />
     <Compile Include="Certifications.cs" />
     <Compile Include="Dice.cs" />
-    <Compile Include="DiceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DiceForm.Designer.cs">
-      <DependentUpon>DiceForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="IDeck.cs" />
     <Compile Include="Inventory.cs" />
@@ -91,9 +85,6 @@
     <Compile Include="SituationCard.cs" />
     <Compile Include="SituationDeck.cs" />
     <Compile Include="TestLocations.cs" />
-    <EmbeddedResource Include="DiceForm.resx">
-      <DependentUpon>DiceForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LandingPageForm.resx">
       <DependentUpon>LandingPageForm.cs</DependentUpon>
     </EmbeddedResource>
