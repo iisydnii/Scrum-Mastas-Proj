@@ -230,6 +230,11 @@ namespace ScrumAge
             label3.Text = Player.Inventory.DevelopmentPoints.ToString();
             label7.Text = Player.Inventory.Developers.ToString();
 
+
+            //Test updated player resources
+            //Player.Pay(1);
+            //MessageBox.Show(Player.Inventory.Bitcoin.ToString());
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -285,6 +290,11 @@ namespace ScrumAge
         }
 
         private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BootCampBox3_Click(object sender, EventArgs e)
         {
 
         }

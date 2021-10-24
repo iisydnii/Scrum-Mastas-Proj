@@ -21,6 +21,7 @@ public class Game
 {
 
     public static List<Player> PlayerList { get; set; }
+    
 
     // Forms
     private static LandingPageForm landingPageForm;
@@ -65,7 +66,7 @@ public class Game
         //placement_Board.ShowDialog();
     }
 
-
+   
 
     ///TODO
     //public static void DisplayActivationBoard()
@@ -91,7 +92,9 @@ public class Game
         StartGame();
         DisplaySetPlayersForm();
         DisplayPlacementBoard();
-        
+
+       
+
     }
 
 
@@ -102,4 +105,8 @@ public class Game
         PlayerList = selectPlayersForm.players;
 
     }
+
+
+
+
 }
