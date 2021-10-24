@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -136,7 +136,6 @@
     </Content>
     <Content Include="Images\hr.png" />
     <Content Include="Images\LandingPage.PNG" />
-<<<<<<< Updated upstream
     <Content Include="Images\Market.png" />
     <Content Include="Images\PlacementBoard.png" />
     <Content Include="Images\PlacementBoardM.png" />
@@ -144,11 +143,10 @@
     <Content Include="Images\Webp.net-resizeimage %281%29.png" />
     <Content Include="Images\Webp.net-resizeimage %282%29.png" />
     <Content Include="Images\Webp.net-resizeimage.png" />
-=======
+
     <Content Include="Images\red.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
->>>>>>> Stashed changes
     <Content Include="Images\Whiteboard.png" />
     <Content Include="Images\yellow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

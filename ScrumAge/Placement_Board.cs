@@ -101,8 +101,6 @@ namespace ScrumAge
             }
         }
 
-<<<<<<< Updated upstream
-=======
         //Set Player Images
         public void setImage(int id) 
         {
@@ -138,7 +136,6 @@ namespace ScrumAge
             
         }
 
->>>>>>> Stashed changes
         /// <summary>
         /// Fires after dragging has completed on the target control
         /// </summary>
