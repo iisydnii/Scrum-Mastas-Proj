@@ -129,7 +129,6 @@ namespace ScrumAge
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -243,7 +242,6 @@ namespace ScrumAge
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // button1
             // 
@@ -345,7 +343,6 @@ namespace ScrumAge
             this.label5.Size = new System.Drawing.Size(84, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Sprint";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -356,7 +353,6 @@ namespace ScrumAge
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "Developers";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -387,7 +383,6 @@ namespace ScrumAge
             this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Player";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // holdDevelopers
             // 
@@ -418,7 +413,6 @@ namespace ScrumAge
             this.ProjectTiles.TabIndex = 5;
             this.ProjectTiles.TabStop = false;
             this.ProjectTiles.Text = "ProjectTiles";
-            this.ProjectTiles.Enter += new System.EventHandler(this.ProjectTiles_Enter);
             // 
             // HRBox
             // 
@@ -473,7 +467,6 @@ namespace ScrumAge
             this.BootCampBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BootCampBox3.TabIndex = 10;
             this.BootCampBox3.TabStop = false;
-            this.BootCampBox3.Click += new System.EventHandler(this.BootCampBox3_Click);
             // 
             // BootCampBox4
             // 
@@ -714,7 +707,6 @@ namespace ScrumAge
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(0, 23);
             this.label18.TabIndex = 21;
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // Placement_Board
             // 
