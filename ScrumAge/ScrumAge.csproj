@@ -129,13 +129,21 @@
     <Content Include="Images\bobthedev___copy.ico" />
     <Content Include="Images\Bootcamp.png" />
     <Content Include="Images\Dice.jpg" />
-    <Content Include="Images\gray.png" />
-    <Content Include="Images\green.png" />
+    <Content Include="Images\gray.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\hr.png" />
     <Content Include="Images\LandingPage.PNG" />
-    <Content Include="Images\red.png" />
+    <Content Include="Images\red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Whiteboard.png" />
-    <Content Include="Images\yellow.png" />
+    <Content Include="Images\yellow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

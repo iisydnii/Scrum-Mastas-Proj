@@ -58,7 +58,7 @@ public class Game
 
         foreach (var player in PlayerList)
         {
-            placement_Board = new Placement_Board(player.Id, player);
+            placement_Board = new Placement_Board(player);
             placement_Board.ShowDialog();
         }
 
