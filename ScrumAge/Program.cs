@@ -39,7 +39,7 @@ namespace ScrumAge
 
             // Test
             // Application.Run(new Placement_Board());
-            
+
             // Test of Situation Deck --Austin
             //SituationDeck situationDeck = new SituationDeck();
             //situationDeck.displayCards();
@@ -66,7 +66,7 @@ namespace ScrumAge
             //Console.WriteLine(test.printTestResults());
 
             //test.returnPlayers("Test", 1);
-            
+
             //Console.WriteLine(test.printTestResults());
 
             //Testing Garret's New Situation Card Class --Austin
@@ -80,7 +80,14 @@ namespace ScrumAge
             //Console.WriteLine("\n \n NEW DECK \n");
             //situationDeck.DisplayCards();
 
+            HRLocation hRLocation = new HRLocation();
+            Player player1 = new Player(1, "Bob");
+            player1.Inventory.Bitcoin += 100;
+            hRLocation.player1 = player1;
+            hRLocation.placeDevs(1, 3); //saying that the player has all three of their devs off the board/ not at a location 
+            hRLocation.AddDevs(1); //buy 1 dev which should take 50 bitcoin and add a dev to the players total dev count
 
+            Console.WriteLine(hRLocation.printTestResults());
         } // end of main
     }//end of class
 }//end of ScrumAge
