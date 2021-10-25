@@ -20,8 +20,7 @@ namespace ScrumAge
     {
        
         private int[,] BootcampPlayerList = new int[2, 4];
-        public Player player1 = new Player(1,"jef");
-        //remove = new player(1,"jef") after testing. the player obj's will be passed when we can test
+        public Player player1;
         public Player player2;
         public Player player3;
         public Player player4;
