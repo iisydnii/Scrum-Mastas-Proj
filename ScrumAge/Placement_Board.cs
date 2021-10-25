@@ -32,16 +32,42 @@ namespace ScrumAge
     {
         PictureBox[] boxes;
         PictureBox selected;
+        int playerId = 0;
+        int AvailableDevs = 0;
 
         public Player Player { get; set; }
-        
 
-        public Placement_Board(int id, Player player)
+
+        public Placement_Board(Player player)
         {
             InitializeComponent();
+            this.Player = player;
+            getAvailableDevs();
+            createDragAndDrop();
 
-            Player = player;
+        }
 
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Controlling Changes 
+        void getAvailableDevs()
+        {
+            int hold = 0;
+            hold = Player.Inventory.Developers;
+            //Check each location if they have devs placed there
+
+            // hold += location.getDevs();
+
+            AvailableDevs = hold;
+
+        }
+
+        // SECTION DRAG AND DROP FUNCTIONS
+        void createDragAndDrop()
+        {
             boxes = new PictureBox[] { HRBox, BootCampBox1, BootCampBox2, BootCampBox3, BootCampBox4, BootCampBox5,
                 BootCampBox6, BootCampBox7, BootCampBox8, WhiteBoardBox1, WhiteBoardBox2, WhiteBoardBox3, WhiteBoardBox4, WhiteBoardBox5,
                 WhiteBoardBox6, WhiteBoardBox7, WhiteBoardBox8, BitcoinMarketBox1, BitcoinMarketBox2, BitcoinMarketBox3,
@@ -49,7 +75,8 @@ namespace ScrumAge
 
             try
             {
-                setImage(id);
+                //Supply your own images here
+                setImage(Player.Id);
 
                 foreach (var box in boxes)
                 {
@@ -66,35 +93,45 @@ namespace ScrumAge
                 MessageBox.Show("No images found", "No Images Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
         }
 
-        //SetPlayer Images
+        //Set Player Images
         public void setImage(int id) 
         {
+            string filename = "";
             //Supply your own images here
             switch (id)
             {
                 case 1:
-                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\red.png");
+                    filename = @"Images\red.png";
                     break;
                 case 2:
-                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\yellow.png");
+                    filename = @"Images\yellow.png";
                     break;
                 case 3:
-                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\green.png");
+                    filename = @"Images\green.png";
                     break;
                 case 4:
-                    holdDevelopers.BackgroundImage = Image.FromFile(@"Images\gray.png");
+                    filename = @"Images\gray.png";
                     break;
+                case 5:
+                    filename = "";
+                    break;
+            }
+
+            if (filename != "")
+            {
+                holdDevelopers.BackgroundImage = Image.FromFile(filename);
+            }
+            else
+            {
+                holdDevelopers.BackgroundImage = null;
             }
         }
 
         /// <summary>
         /// Fires after dragging has completed on the target control
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_DragDrop(object sender, DragEventArgs e)
         {
             var target = (PictureBox)sender;
@@ -103,7 +140,6 @@ namespace ScrumAge
                 var source = (PictureBox)e.Data.GetData(typeof(PictureBox));
                 if (source != target)
                 {
-                    Console.WriteLine("Do DragDrop from " + source.Name + " to " + target.Name);
                     // You can swap the images out, replace the target image, etc.
                     SwapImages(source, target);
 
@@ -118,8 +154,6 @@ namespace ScrumAge
         /// <summary>
         /// Set the target's accepted DragDropEffect. Should match the source.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
@@ -128,8 +162,6 @@ namespace ScrumAge
         /// <summary>
         /// Handle mouse click on picture box
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_MouseClick(object sender, MouseEventArgs e)
         {
             SelectBox((PictureBox)sender);
@@ -138,8 +170,6 @@ namespace ScrumAge
         /// <summary>
         /// Only start DragDrop if the mouse moves. Allows MouseClick to trigger
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -155,8 +185,6 @@ namespace ScrumAge
         /// <summary>
         /// Override paint so we can draw a border on a selected image
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             var pb = (PictureBox)sender;
@@ -174,13 +202,11 @@ namespace ScrumAge
         /// <summary>
         /// Set the selected image, and trigger repaint on all boxes.
         /// </summary>
-        /// <param name="pb"></param>
         private void SelectBox(PictureBox pb)
         {
             if (selected != pb)
             {
                 selected = pb;
-                Console.WriteLine("selectbox");
             }
             else
             {
@@ -194,8 +220,6 @@ namespace ScrumAge
         /// <summary>
         /// Swap images between two PictureBoxes
         /// </summary>
-        /// <param name="source"></param>
-        /// <param name="target"></param>
         private void SwapImages(PictureBox source, PictureBox target)
         {
             if (source.BackgroundImage == null && target.BackgroundImage == null)
@@ -207,13 +231,25 @@ namespace ScrumAge
             target.BackgroundImage = source.BackgroundImage;
             if (source.Name == "holdDevelopers")
             {
+                //minus 1 dev for the available devs
+                AvailableDevs = AvailableDevs - 1;
                 //source.BackgroundImage = temp;
+                if (AvailableDevs == 0)
+                {
+                    setImage(5);
+                }
             }
             else if (target.Name == "holdDevelopers")
             {
                 source.BackgroundImage = null;
+                //add 1 dev for the available devs
+                AvailableDevs = AvailableDevs + 1;
+                if (AvailableDevs != 0)
+                {
+                    setImage(Player.Id);
+                }
             }
-            else
+            else // moving to another location
             {
 
                 source.BackgroundImage = temp;
@@ -221,34 +257,31 @@ namespace ScrumAge
 
         }
 
+        //STATUS CONTROLS
       
-            /// <summary>
-            /// Dsiplays the players name and current inventory
-            /// </summary>
-            /// <param name="sender"></param>
-            /// <param name="e"></param>
-            private void StatusBox_Enter(object sender, EventArgs e)
-            {
-            label6.Text = Player.Name;
-            label2.Text = Player.Inventory.TrainingPoints.ToString();
-            label10.Text = Player.Inventory.DesignPoints.ToString();
-            label12.Text = Player.Inventory.Bitcoin.ToString();
-            label3.Text = Player.Inventory.DevelopmentPoints.ToString();
-            label7.Text = Player.Inventory.Developers.ToString();
+        /// <summary>
+        /// Dsiplays the players name and current inventory
+        /// </summary>
+        private void StatusBox_Enter(object sender, EventArgs e)
+        {
+        label6.Text = Player.Name;
+        label2.Text = Player.Inventory.TrainingPoints.ToString();
+        label10.Text = Player.Inventory.DesignPoints.ToString();
+        label12.Text = Player.Inventory.Bitcoin.ToString();
+        label3.Text = Player.Inventory.DevelopmentPoints.ToString();
+        label7.Text = Player.Inventory.Developers.ToString();
 
 
-            //Test updated player resources
-            //Player.Pay(1);
-            //MessageBox.Show(Player.Inventory.Bitcoin.ToString());
+        //Test updated player resources
+        //Player.Pay(1);
+        //MessageBox.Show(Player.Inventory.Bitcoin.ToString());
 
-            }
+        }
 
 
         /// <summary>
         /// Displays the value of the dice roll
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Dice dice = new Dice();
@@ -264,6 +297,8 @@ namespace ScrumAge
 
             }
         }
+
+        //Location Controls
 
         private void BootCampPlacement()
         {
