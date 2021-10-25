@@ -9,7 +9,8 @@ Page Modified
     Piper Floyd, 10/24/21, lines 31,223-233, 270-285 Added Player property and injected it into controller
                                         so that its values can be accessed. Added method to display
                                         player's resources. Added method to display dice roll.
-
+    Garrett Dyer, 10/24/21,  lines 304-374, added the bootcamp placement method. 
+                                        Checks the picture boxes for developers and sends the data to the bootcamp class.
 */
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace ScrumAge
         PictureBox selected;
 
         public Player Player { get; set; }
+        
 
         public Placement_Board(int id, Player player)
         {
@@ -216,13 +218,14 @@ namespace ScrumAge
 
         }
 
-        /// <summary>
-        /// Dsiplays the players name and current inventory
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void StatusBox_Enter(object sender, EventArgs e)
-        {
+      
+            /// <summary>
+            /// Dsiplays the players name and current inventory
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void StatusBox_Enter(object sender, EventArgs e)
+            {
             label6.Text = Player.Name;
             label2.Text = Player.Inventory.TrainingPoints.ToString();
             label10.Text = Player.Inventory.DesignPoints.ToString();
@@ -235,7 +238,7 @@ namespace ScrumAge
             //Player.Pay(1);
             //MessageBox.Show(Player.Inventory.Bitcoin.ToString());
 
-        }
+            }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -297,6 +300,78 @@ namespace ScrumAge
         private void BootCampBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BootCampPlacement()
+        {
+            Bootcamp bootCamp = new Bootcamp();
+            List<PictureBox> bootCampBoxes = new List<PictureBox>();
+            Game game = new Game();
+            bootCampBoxes.Add(BootCampBox1);
+            bootCampBoxes.Add(BootCampBox2);
+            bootCampBoxes.Add(BootCampBox3);
+            bootCampBoxes.Add(BootCampBox4);
+            bootCampBoxes.Add(BootCampBox5);
+            bootCampBoxes.Add(BootCampBox6);
+            bootCampBoxes.Add(BootCampBox7);
+            bootCampBoxes.Add(BootCampBox8);
+            var p1Red = Image.FromFile(@"Images\red.png");
+            var p2Yellow = Image.FromFile(@"Images\yellow.png");
+            var p3Green = Image.FromFile(@"Images\green.png");
+            var p4Gray = Image.FromFile(@"Images\gray.png");
+            int counter1 = 0;
+            int counter2 = 0;
+            int counter3 = 0;
+            int counter4 = 0;
+
+            if (Player.Id == 1)
+            {
+                foreach (var pBox in bootCampBoxes) // cycle through the players bootcamp placement boxes
+                {
+                    if (pBox.BackgroundImage == p1Red) //see if the background of the box is the same as the dev image
+                    {
+                        counter1++; // if the background image is the same as the dev image than there is a dev there
+                    }
+                }
+                bootCamp.player1 = Player;
+                bootCamp.trainingPointCalc(Player.Id, counter1);
+            }
+            if (Player.Id == 2)
+            {
+                foreach (var pBox in bootCampBoxes)
+                {
+                    if (pBox.BackgroundImage == p2Yellow)
+                    {
+                        counter2++;
+                    }
+                }
+                bootCamp.player2 = Player;
+                bootCamp.trainingPointCalc(Player.Id, counter2);
+            }
+            if (Player.Id == 3)
+            {
+                foreach (var pBox in bootCampBoxes)
+                {
+                    if (pBox.BackgroundImage == p3Green)
+                    {
+                        counter3++;
+                    }
+                }
+                bootCamp.player3 = Player;
+                bootCamp.trainingPointCalc(Player.Id, counter3);
+            }
+            else
+            {
+                foreach (var pBox in bootCampBoxes)
+                {
+                    if (pBox.BackgroundImage == p4Gray)
+                    {
+                        counter4++;
+                    }
+                }
+                bootCamp.player4 = Player;
+                bootCamp.trainingPointCalc(Player.Id, counter4);
+            }
         }
     }
 }
