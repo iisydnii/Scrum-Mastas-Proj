@@ -35,11 +35,12 @@ namespace ScrumAge
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.StatusBox = new System.Windows.Forms.GroupBox();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,13 +84,11 @@ namespace ScrumAge
             this.WhiteBoardBox8 = new System.Windows.Forms.PictureBox();
             this.BitcoinMarketBox8 = new System.Windows.Forms.PictureBox();
             this.BootCampBox8 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.StatusBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.holdDevelopers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Developers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HRBox)).BeginInit();
@@ -162,12 +161,12 @@ namespace ScrumAge
             // 
             // StatusBox
             // 
+            this.StatusBox.Controls.Add(this.nextButton);
             this.StatusBox.Controls.Add(this.label18);
             this.StatusBox.Controls.Add(this.label17);
             this.StatusBox.Controls.Add(this.label16);
             this.StatusBox.Controls.Add(this.label15);
             this.StatusBox.Controls.Add(this.label14);
-            this.StatusBox.Controls.Add(this.pictureBox5);
             this.StatusBox.Controls.Add(this.button1);
             this.StatusBox.Controls.Add(this.label13);
             this.StatusBox.Controls.Add(this.label12);
@@ -190,6 +189,27 @@ namespace ScrumAge
             this.StatusBox.TabStop = false;
             this.StatusBox.Text = "StatusBox";
             this.StatusBox.Enter += new System.EventHandler(this.StatusBox_Enter);
+            // 
+            // nextButton
+            // 
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.nextButton.Font = new System.Drawing.Font("Stencil", 7.75F, System.Drawing.FontStyle.Bold);
+            this.nextButton.Location = new System.Drawing.Point(282, 149);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(100, 29);
+            this.nextButton.TabIndex = 36;
+            this.nextButton.Text = "Next Player";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12.75F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(204, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 23);
+            this.label18.TabIndex = 21;
             // 
             // label17
             // 
@@ -231,27 +251,16 @@ namespace ScrumAge
             this.label14.TabIndex = 17;
             this.label14.Text = "Development";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(306, 114);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(82, 49);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(306, 156);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.button1.Font = new System.Drawing.Font("Stencil", 7.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(159, 149);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 29);
+            this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 14;
             this.button1.Text = "Roll";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label13
@@ -699,15 +708,6 @@ namespace ScrumAge
             this.BootCampBox8.TabIndex = 35;
             this.BootCampBox8.TabStop = false;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(337, 130);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 23);
-            this.label18.TabIndex = 21;
-            // 
             // Placement_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -754,7 +754,6 @@ namespace ScrumAge
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.StatusBox.ResumeLayout(false);
             this.StatusBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.holdDevelopers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Developers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HRBox)).EndInit();
@@ -840,8 +839,8 @@ namespace ScrumAge
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button nextButton;
     }
 }
