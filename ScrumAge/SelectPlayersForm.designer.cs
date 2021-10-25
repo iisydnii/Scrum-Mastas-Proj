@@ -54,9 +54,9 @@ namespace ScrumAge
             this.Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.Begin.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.Begin.Location = new System.Drawing.Point(337, 348);
-            this.Begin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Begin.Margin = new System.Windows.Forms.Padding(2);
             this.Begin.Name = "Begin";
-            this.Begin.Size = new System.Drawing.Size(101, 32);
+            this.Begin.Size = new System.Drawing.Size(121, 38);
             this.Begin.TabIndex = 0;
             this.Begin.Text = "Begin";
             this.Begin.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@ namespace ScrumAge
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Begin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectPlayersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Players";
