@@ -86,6 +86,7 @@
     <Compile Include="SituationCard.cs" />
     <Compile Include="SituationDeck.cs" />
     <Compile Include="TestLocations.cs" />
+    <Compile Include="Whiteboard.cs" />
     <EmbeddedResource Include="LandingPageForm.resx">
       <DependentUpon>LandingPageForm.cs</DependentUpon>
     </EmbeddedResource>

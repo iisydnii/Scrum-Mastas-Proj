@@ -11,6 +11,9 @@ Page Modified
                                         player's resources. Added method to display dice roll.
     Garrett Dyer, 10/24/21,  lines 304-374, added the bootcamp placement method. 
                                         Checks the picture boxes for developers and sends the data to the bootcamp class.
+    Nataliya Chibizova, 10/25/21,  lines 341-391, added the WhiteBoardPlacement method. 
+                                        Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
+
 */
 using System;
 using System.Collections.Generic;
@@ -331,6 +334,59 @@ namespace ScrumAge
                 }
                 bootCamp.player4 = Player;
                 bootCamp.trainingPointCalc(Player.Id, counter4);
+            }
+        }
+
+
+        private void WhiteBoardPlacement()
+        {
+            Whiteboard whiteBoard = new Whiteboard();
+            List<PictureBox> whiteBoardBoxes = new List<PictureBox>();
+            Game game = new Game();
+            whiteBoardBoxes.Add(WhiteBoardBox1);
+            whiteBoardBoxes.Add(WhiteBoardBox2);
+            whiteBoardBoxes.Add(WhiteBoardBox3);
+            whiteBoardBoxes.Add(WhiteBoardBox4);
+            whiteBoardBoxes.Add(WhiteBoardBox5);
+            whiteBoardBoxes.Add(WhiteBoardBox6);
+            whiteBoardBoxes.Add(WhiteBoardBox7);
+            whiteBoardBoxes.Add(WhiteBoardBox8);
+
+            var p1Red = Image.FromFile(@"Images\red.png");
+            var p2Yellow = Image.FromFile(@"Images\yellow.png");
+            var p3Green = Image.FromFile(@"Images\green.png");
+            var p4Gray = Image.FromFile(@"Images\gray.png");
+
+            var counter1 = 0;
+            var counter2 = 0;
+            var counter3 = 0;
+            var counter4 = 0;
+
+            if (Player.Id == 1)
+            {
+                counter1 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
+                whiteBoard.player1 = Player;
+                whiteBoard.DesignPointsCalc(Player.Id, counter1);
+            }
+
+            if (Player.Id == 2)
+            {
+                counter2 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
+                whiteBoard.player2 = Player;
+                whiteBoard.DesignPointsCalc(Player.Id, counter2);
+            }
+
+            if (Player.Id == 3)
+            {
+                counter3 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
+                whiteBoard.player3 = Player;
+                whiteBoard.DesignPointsCalc(Player.Id, counter3);
+            }
+            else
+            {
+                counter4 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
+                whiteBoard.player4 = Player;
+                whiteBoard.DesignPointsCalc(Player.Id, counter4);
             }
         }
     }
