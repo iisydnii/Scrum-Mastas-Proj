@@ -191,6 +191,27 @@ namespace ScrumAge
             this.StatusBox.Text = "StatusBox";
             this.StatusBox.Enter += new System.EventHandler(this.StatusBox_Enter);
             // 
+            // nextButton
+            // 
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.nextButton.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.nextButton.Location = new System.Drawing.Point(282, 149);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(100, 29);
+            this.nextButton.TabIndex = 36;
+            this.nextButton.Text = "Next Player";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12.75F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(204, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 23);
+            this.label18.TabIndex = 21;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -247,12 +268,17 @@ namespace ScrumAge
             // 
             this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(306, 156);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.button1.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.button1.Location = new System.Drawing.Point(159, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 29);
             this.button1.TabIndex = 14;
             this.button1.Text = "Roll";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.roll_Click);
             // 
             // label13
             // 
@@ -699,6 +725,7 @@ namespace ScrumAge
             this.BootCampBox8.TabIndex = 35;
             this.BootCampBox8.TabStop = false;
             // 
+<<<<<<< Updated upstream
             // label18
             // 
             this.label18.AutoSize = true;
@@ -707,6 +734,17 @@ namespace ScrumAge
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(0, 23);
             this.label18.TabIndex = 21;
+            // UnlockButton
+            // 
+            this.UnlockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.UnlockButton.Font = new System.Drawing.Font("Stencil", 6.75F);
+            this.UnlockButton.Location = new System.Drawing.Point(3, 2);
+            this.UnlockButton.Name = "UnlockButton";
+            this.UnlockButton.Size = new System.Drawing.Size(100, 29);
+            this.UnlockButton.TabIndex = 36;
+            this.UnlockButton.Text = "Swap Locations";
+            this.UnlockButton.UseVisualStyleBackColor = false;
+            this.UnlockButton.Click += new System.EventHandler(this.UnlockButton_Click);
             // 
             // Placement_Board
             // 
@@ -715,6 +753,7 @@ namespace ScrumAge
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UnlockButton);
             this.Controls.Add(this.BootCampBox8);
             this.Controls.Add(this.BootCampBox7);
             this.Controls.Add(this.BootCampBox5);
@@ -747,6 +786,7 @@ namespace ScrumAge
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Placement_Board";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Placement_Board";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -843,5 +883,7 @@ namespace ScrumAge
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button UnlockButton;
     }
 }

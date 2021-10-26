@@ -32,8 +32,8 @@ namespace ScrumAge
     {
         PictureBox[] boxes;
         PictureBox selected;
-        int playerId = 0;
         int AvailableDevs = 0;
+        int devs = 0; // once set it never changes
 
         public Player Player { get; set; }
 
@@ -62,6 +62,7 @@ namespace ScrumAge
             // hold += location.getDevs();
 
             AvailableDevs = hold;
+            devs = AvailableDevs;
 
         }
 
@@ -238,6 +239,15 @@ namespace ScrumAge
                 {
                     setImage(5);
                 }
+
+                if (devs == AvailableDevs)
+                {
+                    UnlockBoxes();
+                }
+                else
+                {
+                    LockBoxes();
+                }
             }
             else if (target.Name == "holdDevelopers")
             {
@@ -248,11 +258,141 @@ namespace ScrumAge
                 {
                     setImage(Player.Id);
                 }
+
+                if (devs == AvailableDevs)
+                {
+                    UnlockBoxes();
+                }
+                else
+                {
+                    LockBoxes();
+                }
             }
             else // moving to another location
             {
-
+                
                 source.BackgroundImage = temp;
+            }
+        }
+
+        private void UnlockButton_Click(object sender, EventArgs e)
+        {
+            foreach (var box in boxes)
+            {
+                if (box.Name != "holdDevelopers")
+                {
+                    box.BackgroundImage = null;
+                }
+            }
+            AvailableDevs = devs;
+            setImage(Player.Id);
+            UnlockBoxes();
+        }
+
+        //UNLOCK PICTUREBOXES
+        private void UnlockBoxes()
+        {
+            foreach (var box in boxes)
+            {
+                    box.Enabled = true;
+                    box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            }
+        }
+
+        //LOCK PICTUREBOXES
+        private void LockBoxes() 
+        { 
+            if (HRBox.BackgroundImage != null)
+            {
+                foreach (var box in boxes)
+                {
+                    if (box.Name != HRBox.Name )
+                    {
+                        box.Enabled = false;
+                        box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(168)))), ((int)(((byte)(163)))));
+                        HRBox.Enabled = true;
+                        holdDevelopers.Enabled = true;
+                    }
+                }
+            }
+            else if (BootCampBox1.BackgroundImage != null || BootCampBox2.BackgroundImage != null ||
+                BootCampBox3.BackgroundImage != null || BootCampBox4.BackgroundImage != null ||
+                BootCampBox5.BackgroundImage != null || BootCampBox6.BackgroundImage != null ||
+                BootCampBox7.BackgroundImage != null || BootCampBox8.BackgroundImage != null) 
+            {
+                foreach (var box in boxes)
+                {
+                    if (box.Name != BootCampBox1.Name || box.Name != BootCampBox2.Name || box.Name != BootCampBox3.Name ||
+                    box.Name != BootCampBox4.Name || box.Name != BootCampBox5.Name || box.Name != BootCampBox6.Name ||
+                    box.Name != BootCampBox7.Name || box.Name != BootCampBox8.Name )
+                    {
+                        box.Enabled = false;
+                        box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(168)))), ((int)(((byte)(163)))));
+                        BootCampBox1.Enabled = true;
+                        BootCampBox2.Enabled = true;
+                        BootCampBox3.Enabled = true;
+                        BootCampBox4.Enabled = true;
+                        BootCampBox5.Enabled = true;
+                        BootCampBox6.Enabled = true;
+                        BootCampBox7.Enabled = true;
+                        BootCampBox8.Enabled = true;
+                        holdDevelopers.Enabled = true;
+                    }
+                }
+            }
+            else if (WhiteBoardBox1.BackgroundImage != null || WhiteBoardBox2.BackgroundImage != null ||
+                WhiteBoardBox3.BackgroundImage != null || WhiteBoardBox4.BackgroundImage != null ||
+                WhiteBoardBox5.BackgroundImage != null || WhiteBoardBox6.BackgroundImage != null ||
+                WhiteBoardBox7.BackgroundImage != null || WhiteBoardBox8.BackgroundImage != null)
+            {
+                foreach (var box in boxes)
+                {
+                    if (box.Name != WhiteBoardBox1.Name || box.Name != WhiteBoardBox2.Name || box.Name != WhiteBoardBox3.Name ||
+                    box.Name != WhiteBoardBox4.Name || box.Name != WhiteBoardBox5.Name || box.Name != WhiteBoardBox6.Name ||
+                    box.Name != WhiteBoardBox7.Name || box.Name != WhiteBoardBox8.Name && box.Name != holdDevelopers.Name)
+                    {
+                        box.Enabled = false;
+                        box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(168)))), ((int)(((byte)(163)))));
+                        WhiteBoardBox1.Enabled = true;
+                        WhiteBoardBox2.Enabled = true;
+                        WhiteBoardBox3.Enabled = true;
+                        WhiteBoardBox4.Enabled = true;
+                        WhiteBoardBox5.Enabled = true;
+                        WhiteBoardBox6.Enabled = true;
+                        WhiteBoardBox7.Enabled = true;
+                        WhiteBoardBox8.Enabled = true;
+                        holdDevelopers.Enabled = true;
+                    }
+                }
+            }
+            else if (BitcoinMarketBox1.BackgroundImage != null || BitcoinMarketBox2.BackgroundImage != null ||
+                BitcoinMarketBox3.BackgroundImage != null || BitcoinMarketBox4.BackgroundImage != null ||
+                BitcoinMarketBox5.BackgroundImage != null || BitcoinMarketBox6.BackgroundImage != null ||
+                BitcoinMarketBox7.BackgroundImage != null || BitcoinMarketBox8.BackgroundImage != null)
+            {
+                foreach (var box in boxes)
+                {
+                    if (box.Name != BitcoinMarketBox1.Name || box.Name != BitcoinMarketBox2.Name || box.Name != BitcoinMarketBox3.Name ||
+                    box.Name != BitcoinMarketBox4.Name || box.Name != BitcoinMarketBox5.Name || box.Name != BitcoinMarketBox6.Name ||
+                    box.Name != BitcoinMarketBox7.Name || box.Name != BitcoinMarketBox8.Name && box.Name != holdDevelopers.Name)
+                    {
+                        box.Enabled = false;
+                        box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(168)))), ((int)(((byte)(163)))));
+                        BitcoinMarketBox1.Enabled = true;
+                        BitcoinMarketBox2.Enabled = true;
+                        BitcoinMarketBox3.Enabled = true;
+                        BitcoinMarketBox4.Enabled = true;
+                        BitcoinMarketBox5.Enabled = true;
+                        BitcoinMarketBox6.Enabled = true;
+                        BitcoinMarketBox7.Enabled = true;
+                        BitcoinMarketBox8.Enabled = true;
+                        holdDevelopers.Enabled = true;
+                    }
+                }
+            }
+            else
+            {
+                // Do Nothing
             }
 
         }
@@ -282,7 +422,7 @@ namespace ScrumAge
         /// <summary>
         /// Displays the value of the dice roll
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void roll_Click(object sender, EventArgs e)
         {
             Dice dice = new Dice();
             label18.Text = dice.Total.ToString();
