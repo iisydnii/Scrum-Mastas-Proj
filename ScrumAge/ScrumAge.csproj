@@ -51,6 +51,7 @@
     <Compile Include="Certifications.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="HRLocation.cs" />
     <Compile Include="IDeck.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="LandingPageForm.cs">
