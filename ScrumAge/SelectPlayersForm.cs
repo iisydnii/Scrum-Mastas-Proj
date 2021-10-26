@@ -81,7 +81,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                    player1.Name = "Player 1";
+                    player1.Name = "1";
                 }
                 else
                 {
@@ -91,7 +91,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2.Name = "Player 2";
+                    player2.Name = "2";
                 }
                 else
                 {
@@ -108,7 +108,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                    player1.Name = "Player 1";
+                    player1.Name = "1";
                 }
                 else
                 {
@@ -118,7 +118,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2.Name = "Player 2";
+                    player2.Name = "2";
                 }
                 else
                 {
@@ -128,7 +128,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 3 is given
                 if (string.IsNullOrWhiteSpace(Player3Textbox.Text.ToString()))
                 {
-                    player3.Name = "Player 3";
+                    player3.Name = "3";
                 }
                 else
                 {
@@ -147,7 +147,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 1 is given
                 if (string.IsNullOrWhiteSpace(Player1TextBox.Text.ToString()))
                 {
-                    player1.Name = "Player 1";
+                    player1.Name = "1";
                 }
                 else
                 {
@@ -157,7 +157,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 2 is given
                 if (string.IsNullOrWhiteSpace(Player2Textbox.Text.ToString()))
                 {
-                    player2.Name = "Player 2";
+                    player2.Name = "2";
                 }
                 else
                 {
@@ -167,7 +167,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 3 is given
                 if (string.IsNullOrWhiteSpace(Player3Textbox.Text.ToString()))
                 {
-                    player3.Name = "Player 3";
+                    player3.Name = "3";
                 }
                 else
                 {
@@ -177,7 +177,7 @@ Purpose: Add functionality to SelectPlayersForm
                 // If no name for player 4 is given
                 if (string.IsNullOrWhiteSpace(Player4Textbox.Text.ToString()))
                 {
-                    player4.Name = "Player 4";
+                    player4.Name = "4";
                 }
                 else
                 {
