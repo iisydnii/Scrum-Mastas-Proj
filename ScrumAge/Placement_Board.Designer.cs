@@ -276,8 +276,6 @@ namespace ScrumAge
             this.button1.Size = new System.Drawing.Size(82, 29);
             this.button1.TabIndex = 14;
             this.button1.Text = "Roll";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.roll_Click);
             // 
@@ -726,7 +724,6 @@ namespace ScrumAge
             this.BootCampBox8.TabIndex = 35;
             this.BootCampBox8.TabStop = false;
             // 
-<<<<<<< Updated upstream
             // label18
             // 
             this.label18.AutoSize = true;
