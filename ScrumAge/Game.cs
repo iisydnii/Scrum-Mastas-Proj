@@ -24,7 +24,7 @@ public class Game
 
 
     // Forms
-    private static LandingPageForm landingPageForm;
+    private static LandingPageForm landingPageForm = new LandingPageForm();
     private static SelectPlayersForm SelectPlayersForm;
     private static Placement_Board placement_Board;
     private static RulesForm rulesForm;
@@ -33,28 +33,30 @@ public class Game
     private static List<Form> AllForms;
     public Player player;
 
+
     // Starts the game by displaying the Title Screen
     public static void StartGame()
     {
-        landingPageForm = new LandingPageForm();
+
+        //landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
-
-
-        
-
 
     }
 
 
     public static void DisplayRulesForm()
     {
+
         rulesForm = new RulesForm();
         rulesForm.Show();
+
     }
+
 
     public static void DisplaySetPlayersForm()
     {
         //Application.Run(new SelectPlayersForm());
+        landingPageForm.Hide();
 
         SelectPlayersForm = new SelectPlayersForm();
         SelectPlayersForm.ShowDialog();

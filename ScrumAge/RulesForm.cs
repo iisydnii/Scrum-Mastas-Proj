@@ -43,11 +43,13 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void start_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            //Open the player select form
-            SelectPlayersForm playersForm = new SelectPlayersForm();
-            playersForm.ShowDialog();
+            //this.Visible = false;
             this.Close();
+            //Open the player select form
+            //SelectPlayersForm playersForm = new SelectPlayersForm(); --Austin I commented this out to make rules work
+            //playersForm.ShowDialog();
+            Game.DisplaySetPlayersForm();
+            //this.Close();
         }
         /// <summary>
         /// this button redirects player back to the LandingPageForm
@@ -56,7 +58,7 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void goBack_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            //this.Hide(); --- Commented this out because rules-close
             this.Close();
             //LandingPageForm ld = new LandingPageForm();
             //ld.Show();

@@ -46,7 +46,7 @@ namespace ScrumAge
         {
             this.Visible = false;
             ////Open the player select form
-            //SelectPlayersForm playersForm = new SelectPlayersForm();
+            //SelectPlayersForm playersForm = new SelectPlayersForm(); -- Austin -- Converted to game class
             //playersForm.ShowDialog();
             Game.DisplaySetPlayersForm();
             this.Close();
