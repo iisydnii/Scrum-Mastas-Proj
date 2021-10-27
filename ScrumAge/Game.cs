@@ -67,6 +67,7 @@ public class Game
 
     public static void DisplayPlacementBoard()
     {
+
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
