@@ -56,9 +56,10 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void goBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LandingPageForm ld = new LandingPageForm();
-            ld.Show();
+            //this.Hide();
+            this.Close();
+            //LandingPageForm ld = new LandingPageForm();
+            //ld.Show();
         }
     }// end of RulesForm
 }

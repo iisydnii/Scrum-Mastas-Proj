@@ -45,7 +45,7 @@ namespace ScrumAge
         private void start_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            //Open the player select form
+            ////Open the player select form
             //SelectPlayersForm playersForm = new SelectPlayersForm();
             //playersForm.ShowDialog();
             Game.DisplaySetPlayersForm();
@@ -59,9 +59,10 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void rules_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RulesForm rules = new RulesForm();
-            rules.Show();
+            //this.Hide();
+            //RulesForm rules = new RulesForm();
+            //rules.Show();
+            Game.DisplayRulesForm();
         }
 
     }// end of LandingPageForm

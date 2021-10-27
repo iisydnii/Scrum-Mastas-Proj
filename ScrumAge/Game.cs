@@ -21,13 +21,14 @@ public class Game
 {
 
     public static List<Player> PlayerList { get; set; }
-    
+
 
     // Forms
     private static LandingPageForm landingPageForm;
-    private static SelectPlayersForm selectPlayersForm;
+    private static SelectPlayersForm SelectPlayersForm;
     private static Placement_Board placement_Board;
-    
+    private static RulesForm rulesForm;
+
 
     private static List<Form> AllForms;
     public Player player;
@@ -37,15 +38,26 @@ public class Game
     {
         landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
+
+
+        
+
+
     }
 
+
+    public static void DisplayRulesForm()
+    {
+        rulesForm = new RulesForm();
+        rulesForm.Show();
+    }
 
     public static void DisplaySetPlayersForm()
     {
         //Application.Run(new SelectPlayersForm());
 
-        selectPlayersForm = new SelectPlayersForm();
-        selectPlayersForm.ShowDialog();
+        SelectPlayersForm = new SelectPlayersForm();
+        SelectPlayersForm.ShowDialog();
 
     }
 
@@ -102,7 +114,7 @@ public class Game
     {
         PlayerList = new List<Player>();
 
-        PlayerList = selectPlayersForm.players;
+        PlayerList = SelectPlayersForm.players;
 
     }
 
