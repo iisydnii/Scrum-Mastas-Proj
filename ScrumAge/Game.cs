@@ -77,8 +77,6 @@ public class Game
             placement_Board.ShowDialog();
         }
 
-        //placement_Board = new Placement_Board(1);
-        //placement_Board.ShowDialog();
     }
 
    
