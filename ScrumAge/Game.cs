@@ -21,31 +21,45 @@ public class Game
 {
 
     public static List<Player> PlayerList { get; set; }
-    
+
 
     // Forms
-    private static LandingPageForm landingPageForm;
-    private static SelectPlayersForm selectPlayersForm;
+    private static LandingPageForm landingPageForm = new LandingPageForm();
+    private static SelectPlayersForm SelectPlayersForm;
     private static Placement_Board placement_Board;
-    
+    private static RulesForm rulesForm;
+
 
     private static List<Form> AllForms;
     public Player player;
 
+
     // Starts the game by displaying the Title Screen
     public static void StartGame()
     {
-        landingPageForm = new LandingPageForm();
+
+        //landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
+
+    }
+
+
+    public static void DisplayRulesForm()
+    {
+
+        rulesForm = new RulesForm();
+        rulesForm.Show();
+
     }
 
 
     public static void DisplaySetPlayersForm()
     {
         //Application.Run(new SelectPlayersForm());
+        landingPageForm.Hide();
 
-        selectPlayersForm = new SelectPlayersForm();
-        selectPlayersForm.ShowDialog();
+        SelectPlayersForm = new SelectPlayersForm();
+        SelectPlayersForm.ShowDialog();
 
     }
 
@@ -53,6 +67,7 @@ public class Game
 
     public static void DisplayPlacementBoard()
     {
+
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
@@ -62,8 +77,6 @@ public class Game
             placement_Board.ShowDialog();
         }
 
-        //placement_Board = new Placement_Board(1);
-        //placement_Board.ShowDialog();
     }
 
    
@@ -102,7 +115,7 @@ public class Game
     {
         PlayerList = new List<Player>();
 
-        PlayerList = selectPlayersForm.players;
+        PlayerList = SelectPlayersForm.players;
 
     }
 
