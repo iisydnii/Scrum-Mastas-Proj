@@ -20,6 +20,6 @@ namespace ScrumAge
     {
         void CreateDeck();
         void ShuffleDeck();
-        void DrawCard();
+        object DrawCard();
     }
 }
