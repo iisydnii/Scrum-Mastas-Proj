@@ -49,6 +49,7 @@
     <Compile Include="Bootcamp.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Certifications.cs" />
+    <Compile Include="DeckFactory.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="HRLocation.cs" />
