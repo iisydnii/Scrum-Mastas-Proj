@@ -79,7 +79,6 @@ public class Game
 
     }
 
-   
 
     ///TODO
     //public static void DisplayActivationBoard()

@@ -13,6 +13,7 @@ Page Modified
                                         Checks the picture boxes for developers and sends the data to the bootcamp class.
     Nataliya Chibizova, 10/25/21,  lines 341-391, added the WhiteBoardPlacement method. 
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
+    Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
 
 */
 using System;
@@ -28,6 +29,7 @@ using System.Windows.Forms;
 
 namespace ScrumAge
 {
+
     public partial class Placement_Board : Form
     {
         PictureBox[] boxes;
@@ -563,6 +565,37 @@ namespace ScrumAge
                 whiteBoard.player4 = Player;
                 whiteBoard.DesignPointsCalc(Player.Id, counter4);
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitGame_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage = this;
+
+            QuitGame quitGame = new QuitGame();
+            quitGame.StartPosition = FormStartPosition.CenterParent;
+            quitGame.ShowDialog();
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProjectTiles_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Placement_Board_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
