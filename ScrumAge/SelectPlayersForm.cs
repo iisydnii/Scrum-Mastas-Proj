@@ -195,4 +195,9 @@ Purpose: Add functionality to SelectPlayersForm
         }
 
     }
+
+    public static class FormState
+    {
+        public static Form PreviousPage;
+    }
 }

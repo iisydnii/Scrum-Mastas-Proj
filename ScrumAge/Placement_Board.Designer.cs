@@ -84,8 +84,8 @@ namespace ScrumAge
             this.WhiteBoardBox8 = new System.Windows.Forms.PictureBox();
             this.BitcoinMarketBox8 = new System.Windows.Forms.PictureBox();
             this.BootCampBox8 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.UnlockButton = new System.Windows.Forms.Button();
+            this.exitGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -208,7 +208,7 @@ namespace ScrumAge
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(204, 120);
+            this.label18.Location = new System.Drawing.Point(337, 130);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(0, 23);
             this.label18.TabIndex = 21;
@@ -255,8 +255,6 @@ namespace ScrumAge
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(306, 156);
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.button1.Font = new System.Drawing.Font("Stencil", 7.75F);
             this.button1.Location = new System.Drawing.Point(159, 149);
@@ -712,19 +710,11 @@ namespace ScrumAge
             this.BootCampBox8.TabIndex = 35;
             this.BootCampBox8.TabStop = false;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(337, 130);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 23);
-            this.label18.TabIndex = 21;
             // UnlockButton
             // 
             this.UnlockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.UnlockButton.Font = new System.Drawing.Font("Stencil", 6.75F);
-            this.UnlockButton.Location = new System.Drawing.Point(3, 2);
+            this.UnlockButton.Location = new System.Drawing.Point(7, 452);
             this.UnlockButton.Name = "UnlockButton";
             this.UnlockButton.Size = new System.Drawing.Size(100, 29);
             this.UnlockButton.TabIndex = 36;
@@ -732,13 +722,27 @@ namespace ScrumAge
             this.UnlockButton.UseVisualStyleBackColor = false;
             this.UnlockButton.Click += new System.EventHandler(this.UnlockButton_Click);
             // 
+            // exitGame
+            // 
+            this.exitGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
+            this.exitGame.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.exitGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.exitGame.Location = new System.Drawing.Point(677, 452);
+            this.exitGame.Name = "exitGame";
+            this.exitGame.Size = new System.Drawing.Size(100, 29);
+            this.exitGame.TabIndex = 37;
+            this.exitGame.Text = "Quit Game";
+            this.exitGame.UseVisualStyleBackColor = false;
+            this.exitGame.Click += new System.EventHandler(this.exitGame_Click);
+            // 
             // Placement_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(788, 485);
+            this.Controls.Add(this.exitGame);
             this.Controls.Add(this.UnlockButton);
             this.Controls.Add(this.BootCampBox8);
             this.Controls.Add(this.BootCampBox7);
@@ -869,5 +873,6 @@ namespace ScrumAge
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button UnlockButton;
+        private System.Windows.Forms.Button exitGame;
     }
 }

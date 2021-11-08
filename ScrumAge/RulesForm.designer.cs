@@ -81,6 +81,7 @@ namespace ScrumAge
             this.myRules.Size = new System.Drawing.Size(408, 374);
             this.myRules.TabIndex = 3;
             this.myRules.Text = "Rules Will Be Displayed Here";
+            this.myRules.TextChanged += new System.EventHandler(this.myRules_TextChanged);
             // 
             // RulesForm
             // 

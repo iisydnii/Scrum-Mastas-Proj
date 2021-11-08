@@ -65,5 +65,12 @@ namespace ScrumAge
             Game.DisplayRulesForm();
         }
 
+        private void LandingPageForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
     }// end of LandingPageForm
 }

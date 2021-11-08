@@ -85,6 +85,7 @@ namespace ScrumAge
             this.Name = "LandingPageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LandingPage";
+            this.Load += new System.EventHandler(this.LandingPageForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

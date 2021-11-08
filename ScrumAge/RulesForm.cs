@@ -63,5 +63,10 @@ namespace ScrumAge
             //LandingPageForm ld = new LandingPageForm();
             //ld.Show();
         }
+
+        private void myRules_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }// end of RulesForm
 }
