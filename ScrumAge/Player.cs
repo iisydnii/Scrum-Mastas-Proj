@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ScrumAge
 {
@@ -22,12 +24,14 @@ namespace ScrumAge
         public int Id { get; set; }
         public string Name { get; set; }
         public Inventory Inventory { get; set; }
+        public string pictureFile { get; set; }
 
         public Player(int id, string name)
         {
             this.Id = id;
             this.Name = name;
             this.Inventory = new Inventory();
+            pictureFile = setImage(id);
         }
 
         public Player(int id)
@@ -35,6 +39,7 @@ namespace ScrumAge
             this.Id = id;
             this.Name = "";
             this.Inventory = new Inventory();
+            setImage(id);
         }
 
         /// <summary>
@@ -50,6 +55,28 @@ namespace ScrumAge
            
         }
 
+        //Set Player Images
+        public string setImage(int id)
+        {
+            string filename = "";
+            //Supply your own images here
+            switch (id)
+            {
+                case 1:
+                    filename = @"Images\red.png";
+                    break;
+                case 2:
+                    filename = @"Images\yellow.png";
+                    break;
+                case 3:
+                    filename = @"Images\green.png";
+                    break;
+                case 4:
+                    filename = @"Images\gray.png";
+                    break;
+            }
 
+            return filename;
+        }
     }
 }
