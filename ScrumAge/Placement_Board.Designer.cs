@@ -364,7 +364,6 @@ namespace ScrumAge
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "Developers";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -395,7 +394,6 @@ namespace ScrumAge
             this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Player";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // holdDevelopers
             // 
@@ -426,7 +424,6 @@ namespace ScrumAge
             this.ProjectTiles.TabIndex = 5;
             this.ProjectTiles.TabStop = false;
             this.ProjectTiles.Text = "ProjectTiles";
-            this.ProjectTiles.Enter += new System.EventHandler(this.ProjectTiles_Enter);
             // 
             // HRBox
             // 
@@ -717,7 +714,7 @@ namespace ScrumAge
             // 
             this.UnlockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.UnlockButton.Font = new System.Drawing.Font("Stencil", 6.75F);
-            this.UnlockButton.Location = new System.Drawing.Point(3, 2);
+            this.UnlockButton.Location = new System.Drawing.Point(7, 452);
             this.UnlockButton.Name = "UnlockButton";
             this.UnlockButton.Size = new System.Drawing.Size(100, 29);
             this.UnlockButton.TabIndex = 36;
@@ -727,10 +724,10 @@ namespace ScrumAge
             // 
             // exitGame
             // 
-            this.exitGame.BackColor = System.Drawing.Color.DimGray;
+            this.exitGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
             this.exitGame.Font = new System.Drawing.Font("Stencil", 7.75F);
             this.exitGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exitGame.Location = new System.Drawing.Point(764, 452);
+            this.exitGame.Location = new System.Drawing.Point(677, 452);
             this.exitGame.Name = "exitGame";
             this.exitGame.Size = new System.Drawing.Size(100, 29);
             this.exitGame.TabIndex = 37;
@@ -744,7 +741,7 @@ namespace ScrumAge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(876, 493);
+            this.ClientSize = new System.Drawing.Size(788, 485);
             this.Controls.Add(this.exitGame);
             this.Controls.Add(this.UnlockButton);
             this.Controls.Add(this.BootCampBox8);
@@ -781,7 +778,6 @@ namespace ScrumAge
             this.Name = "Placement_Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Placement_Board";
-            this.Load += new System.EventHandler(this.Placement_Board_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

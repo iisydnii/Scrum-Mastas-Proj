@@ -567,11 +567,6 @@ namespace ScrumAge
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void exitGame_Click(object sender, EventArgs e)
         {
             FormState.PreviousPage = this;
@@ -580,21 +575,6 @@ namespace ScrumAge
             quitGame.StartPosition = FormStartPosition.CenterParent;
             quitGame.ShowDialog();
 
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProjectTiles_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Placement_Board_Load(object sender, EventArgs e)
-        {
 
         }
     }
