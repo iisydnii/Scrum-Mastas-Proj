@@ -14,6 +14,7 @@ Page Modified
     Nataliya Chibizova, 10/25/21,  lines 341-391, added the WhiteBoardPlacement method. 
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
+    Piper Floyd, 11/10/21,              Added project tile methods  
 
 */
 using System;
@@ -40,10 +41,15 @@ namespace ScrumAge
         Random rand = new Random();
 
         public static string Description = "";
-        public static string Reward = "";
-        public static Dictionary<int, string> RewardD;
-        public static Dictionary<int, string> Cost;
+        public static string RewardType = "";
+        public static string RewardValue = "";
+        public static string CostType = "";
+        public static string CostValue = "";
 
+        private bool picBox5WasClicked = false;
+        private bool picBox6WasClicked = false;
+        private bool picBox7WasClicked = false;
+        private bool picBox8WasClicked = false;
 
         public Player Player { get; set; }
         ProjectDeck deck = new ProjectDeck();
@@ -485,11 +491,14 @@ namespace ScrumAge
 
         }
 
-        private bool picBox5WasClicked = false;
-        private bool picBox6WasClicked = false;
-        private bool picBox7WasClicked = false;
-        private bool picBox8WasClicked = false;
+  
 
+
+        /// <summary>
+        /// Displays first project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -498,12 +507,20 @@ namespace ScrumAge
 
 
             Description = projectTile.Description;
-            RewardD = projectTile.reward;
-            //Reward = RewardD.;
-            Cost = projectTile.cost;
 
-        
-            //MessageBox.Show(projectTile);
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
+
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
+
 
 
 
@@ -519,9 +536,7 @@ namespace ScrumAge
                 projectTileForm.Show();
             }
 
-            
-            //if(tile != )
-            //tiles.Remove(tile);
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -549,15 +564,28 @@ namespace ScrumAge
 
         }
 
+        /// <summary>
+        /// Displays second project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
 
-      
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
 
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
 
 
             if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
@@ -573,17 +601,32 @@ namespace ScrumAge
             }
         }
 
+        /// <summary>
+        /// Displays third project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
 
 
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
+
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
 
 
-          
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
+
+
 
             if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
             {
@@ -599,17 +642,32 @@ namespace ScrumAge
             }
         }
 
+
+        /// <summary>
+        /// Displays fourht project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
 
 
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
+
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
 
 
-     
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
 
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)

@@ -7,6 +7,7 @@ Purpose: Creates the prject deck, adds cards to the deck, shuffles the deck.
 ________________________________________________________________________________
 Page Modified
         Garrett Dyer, 11/5/21, Moved deck creation to a factory.
+        Piper Floyd, 11/10/21, Modified DrawCard() to pull a random card from the hash set 
 -------------*/
 using System;
 using System.Collections.Generic;
@@ -87,7 +88,8 @@ namespace ScrumAge
 
         public ProjectTile DrawCard()
         {
-            ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(0);
+            Random random = new Random();
+            ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(random.Next(projectDeck.Count()));
             projectDeck.Remove(projectDeck.ElementAt(0));
             DisplayCard();
             Console.WriteLine($"There are {projectDeck.Count()} Cards left in the deck");
