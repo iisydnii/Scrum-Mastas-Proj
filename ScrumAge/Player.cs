@@ -30,7 +30,7 @@ namespace ScrumAge
             this.Id = id;
             this.Name = name;
             this.Inventory = new Inventory();
-            pictureFile = setImage(id);
+            this.pictureFile = setImage(id);
         }
 
         public Player(int id)
@@ -38,7 +38,7 @@ namespace ScrumAge
             this.Id = id;
             this.Name = "";
             this.Inventory = new Inventory();
-            setImage(id);
+            this.pictureFile = setImage(id);
         }
 
         /// <summary>

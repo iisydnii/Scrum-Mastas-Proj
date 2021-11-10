@@ -53,7 +53,6 @@ namespace ScrumAge
         public static Dictionary<int, string> Cost;
 
 
-        public Player Player { get; set; }
         ProjectDeck deck = new ProjectDeck();
         //deck.CreateDeck();
 
@@ -119,9 +118,7 @@ namespace ScrumAge
             {
                 getAvailableDevs(i);
                 if (AvailableDevs == 0)
-                {
-
-                }
+                {}
                 else
                 {
                     trueDev += 1;
@@ -187,7 +184,7 @@ namespace ScrumAge
         void getAvailableDevs()
         {
             int hold = 0;
-            hold = Player.Inventory.Developers;
+            hold = currentPlayer.Inventory.Developers;
             //Check each location if they have devs placed there
 
             // hold += location.getDevs();
@@ -536,12 +533,12 @@ namespace ScrumAge
         /// </summary>
         private void StatusBox_Enter(object sender, EventArgs e)
         {
-        label6.Text = Player.Name;
-        label2.Text = Player.Inventory.TrainingPoints.ToString();
-        label10.Text = Player.Inventory.DesignPoints.ToString();
-        label12.Text = Player.Inventory.Bitcoin.ToString();
-        label3.Text = Player.Inventory.DevelopmentPoints.ToString();
-        label7.Text = Player.Inventory.Developers.ToString();
+        label6.Text = currentPlayer.Name;
+        label2.Text = currentPlayer.Inventory.TrainingPoints.ToString();
+        label10.Text = currentPlayer.Inventory.DesignPoints.ToString();
+        label12.Text = currentPlayer.Inventory.Bitcoin.ToString();
+        label3.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
+        label7.Text = currentPlayer.Inventory.Developers.ToString();
 
 
         //Test updated player resources
@@ -570,16 +567,6 @@ namespace ScrumAge
             }
         }
 
-        //Location Controls
-
-
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void exitGame_Click(object sender, EventArgs e)
         {
             FormState.PreviousPage = this;
@@ -590,7 +577,6 @@ namespace ScrumAge
 
 
         }
-
 
         private bool picBox5WasClicked = false;
         private bool picBox6WasClicked = false;
@@ -717,7 +703,7 @@ namespace ScrumAge
             int counter3 = 0;
             int counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 foreach (var pBox in bootCampBoxes) // cycle through the players bootcamp placement boxes
                 {
@@ -726,10 +712,10 @@ namespace ScrumAge
                         counter1++; // if the background image is the same as the dev image than there is a dev there
                     }
                 }
-                bootCamp.player1 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter1);
+                bootCamp.player1 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter1);
             }
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 foreach (var pBox in bootCampBoxes)
                 {
@@ -738,10 +724,10 @@ namespace ScrumAge
                         counter2++;
                     }
                 }
-                bootCamp.player2 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter2);
+                bootCamp.player2 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter2);
             }
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 foreach (var pBox in bootCampBoxes)
                 {
@@ -750,8 +736,8 @@ namespace ScrumAge
                         counter3++;
                     }
                 }
-                bootCamp.player3 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter3);
+                bootCamp.player3 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter3);
             }
             else
             {
@@ -762,8 +748,8 @@ namespace ScrumAge
                         counter4++;
                     }
                 }
-                bootCamp.player4 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter4);
+                bootCamp.player4 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter4);
             }
         }
 
@@ -790,31 +776,31 @@ namespace ScrumAge
             var counter3 = 0;
             var counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 counter1 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
-                whiteBoard.player1 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter1);
+                whiteBoard.player1 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter1);
             }
 
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 counter2 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
-                whiteBoard.player2 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter2);
+                whiteBoard.player2 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter2);
             }
 
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 counter3 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
-                whiteBoard.player3 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter3);
+                whiteBoard.player3 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter3);
             }
             else
             {
                 counter4 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
-                whiteBoard.player4 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter4);
+                whiteBoard.player4 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter4);
             }
         }
 
@@ -847,31 +833,31 @@ namespace ScrumAge
             var counter3 = 0;
             var counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 counter1 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
-                cyrptoMarket.player1 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter1);
+                cyrptoMarket.player1 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter1);
             }
 
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 counter2 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
-                cyrptoMarket.player2 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter2);
+                cyrptoMarket.player2 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter2);
             }
 
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 counter3 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
-                cyrptoMarket.player3 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter3);
+                cyrptoMarket.player3 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter3);
             }
             else
             {
                 counter4 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
-                cyrptoMarket.player4 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter4);
+                cyrptoMarket.player4 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter4);
             }
         }
 
