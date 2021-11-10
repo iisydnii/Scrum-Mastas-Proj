@@ -502,8 +502,7 @@ namespace ScrumAge
             //Reward = RewardD.;
             Cost = projectTile.cost;
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+        
             //MessageBox.Show(projectTile);
 
 
@@ -514,8 +513,10 @@ namespace ScrumAge
             }
             else 
             {
-
+                pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
             }
 
             
@@ -555,8 +556,7 @@ namespace ScrumAge
             Reward = projectTile.reward.ToString();
             Cost = projectTile.cost;
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+      
 
 
 
@@ -566,7 +566,10 @@ namespace ScrumAge
             }
             else
             {
+                pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
             }
         }
 
@@ -580,14 +583,19 @@ namespace ScrumAge
             Cost = projectTile.cost;
 
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
-
-            picBox8WasClicked = true;
+          
 
             if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
             {
                 pictureBox8.Enabled = false;
+            }
+            else
+            {
+                pictureBox8.Enabled = true;
+                picBox8WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
+
             }
         }
 
@@ -601,9 +609,6 @@ namespace ScrumAge
             Cost = projectTile.cost;
 
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
-
      
 
 
@@ -613,7 +618,11 @@ namespace ScrumAge
             }
             else
             {
+                pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
+
             }
         }
 
