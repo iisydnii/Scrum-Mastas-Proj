@@ -77,12 +77,15 @@ namespace ScrumAge
 
         }
 
+
+
+
         public void ShuffleDeck()
         {
             throw new NotImplementedException();
         }
 
-        public object DrawCard()
+        public ProjectTile DrawCard()
         {
             ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(0);
             projectDeck.Remove(projectDeck.ElementAt(0));
