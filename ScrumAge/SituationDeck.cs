@@ -69,7 +69,7 @@ namespace ScrumAge
             situationDeck = tempDeck;
         }
 
-        public object DrawCard()
+        public SituationCard DrawCard()
         { 
             SituationCard tempCard = (SituationCard)situationDeck.ElementAt(0);
             situationDeck.Remove(situationDeck.ElementAt(0));

@@ -1,9 +1,9 @@
 ﻿/*
  Page Created 
-     File Name: Winners_Losers.cs
+     File Name: ProjectTileForm.cs
      Creator Name: Piper Floyd
      Created Date: 11/07/21
-     Purpose: Scoreboard of winners and losers
+     Purpose: Displays the drawn project tile
 ________________________________________________________________________________
 Page Modified
     Name, date, line change, what is the change
@@ -23,11 +23,18 @@ using System.Windows.Forms;
 
 namespace ScrumAge
 {
-    public partial class Winners_Losers : Form
+    public partial class ProjectTileForm : Form
     {
-        public Winners_Losers()
+        public ProjectTileForm()
         {
             InitializeComponent();
+        }
+
+        private void ProjectTileForm_Load(object sender, EventArgs e)
+        {
+            label1.Text = Placement_Board.Description;
+            label5.Text = Placement_Board.Reward;
+            //label6.Text = Placement_Board.Cost;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,22 +42,7 @@ namespace ScrumAge
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Winners_Losers_Load(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
