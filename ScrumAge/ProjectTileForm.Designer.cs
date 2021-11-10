@@ -108,14 +108,14 @@ namespace ScrumAge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ClientSize = new System.Drawing.Size(184, 236);
+            this.ClientSize = new System.Drawing.Size(184, 311);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(200, 275);
+            this.MaximumSize = new System.Drawing.Size(200, 400);
             this.Name = "ProjectTileForm";
             this.Text = "ProjectTileForm";
             this.Load += new System.EventHandler(this.ProjectTileForm_Load);
