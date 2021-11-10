@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoMarket.cs" />
     <Compile Include="Bootcamp.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Certifications.cs" />
@@ -72,6 +73,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="ProjectDeck.cs" />
     <Compile Include="ProjectTile.cs" />
+    <Compile Include="ProjectTileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectTileForm.Designer.cs">
+      <DependentUpon>ProjectTileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuitGame.cs">
       <SubType>Form</SubType>
@@ -106,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Placement_Board.resx">
       <DependentUpon>Placement_Board.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectTileForm.resx">
+      <DependentUpon>ProjectTileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

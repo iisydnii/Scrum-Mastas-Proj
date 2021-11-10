@@ -40,6 +40,11 @@ namespace ScrumAge
             Console.WriteLine("\n\n");
             pd.DisplayCards();
 
+
+            //Test crypto market location 
+            CryptoMarket crypto = new CryptoMarket();
+            crypto.CalcGold(1, 3);
+
         } // end of main
     }//end of class
 }

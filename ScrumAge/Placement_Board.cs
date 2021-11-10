@@ -36,9 +36,18 @@ namespace ScrumAge
         PictureBox selected;
         int AvailableDevs = 0;
         int devs = 0; // once set it never changes
+     
+        Random rand = new Random();
+
+        public static string Description = "";
+        public static string Reward = "";
+        public static Dictionary<int, string> RewardD;
+        public static Dictionary<int, string> Cost;
+
 
         public Player Player { get; set; }
-
+        ProjectDeck deck = new ProjectDeck();
+        //deck.CreateDeck();
 
         public Placement_Board(Player player)
         {
@@ -442,6 +451,175 @@ namespace ScrumAge
 
         //Location Controls
 
+
+
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitGame_Click(object sender, EventArgs e)
+        {
+            FormState.PreviousPage = this;
+
+            QuitGame quitGame = new QuitGame();
+            quitGame.StartPosition = FormStartPosition.CenterParent;
+            quitGame.ShowDialog();
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProjectTiles_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Placement_Board_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool picBox5WasClicked = false;
+        private bool picBox6WasClicked = false;
+        private bool picBox7WasClicked = false;
+        private bool picBox8WasClicked = false;
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+
+            ProjectTile projectTile = deck.DrawCard();
+
+
+            Description = projectTile.Description;
+            RewardD = projectTile.reward;
+            //Reward = RewardD.;
+            Cost = projectTile.cost;
+
+            ProjectTileForm projectTileForm = new ProjectTileForm();
+            projectTileForm.Show();
+            //MessageBox.Show(projectTile);
+
+
+
+            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
+            {
+                pictureBox5.Enabled = false;
+            }
+            else 
+            {
+
+                picBox5WasClicked = true;
+            }
+
+            
+            //if(tile != )
+            //tiles.Remove(tile);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BootCampBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WhiteBoardBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BitcoinMarketBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            ProjectTile projectTile = deck.DrawCard();
+            Description = projectTile.Description;
+            Reward = projectTile.reward.ToString();
+            Cost = projectTile.cost;
+
+            ProjectTileForm projectTileForm = new ProjectTileForm();
+            projectTileForm.Show();
+
+
+
+            if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
+            {
+                pictureBox6.Enabled = false;
+            }
+            else
+            {
+                picBox6WasClicked = true;
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            ProjectTile projectTile = deck.DrawCard();
+
+
+            Description = projectTile.Description;
+            Reward = projectTile.reward.ToString();
+            Cost = projectTile.cost;
+
+
+            ProjectTileForm projectTileForm = new ProjectTileForm();
+            projectTileForm.Show();
+
+            picBox8WasClicked = true;
+
+            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
+            {
+                pictureBox8.Enabled = false;
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            ProjectTile projectTile = deck.DrawCard();
+
+
+            Description = projectTile.Description;
+            Reward = projectTile.reward.ToString();
+            Cost = projectTile.cost;
+
+
+            ProjectTileForm projectTileForm = new ProjectTileForm();
+            projectTileForm.Show();
+
+     
+
+
+            if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
+            {
+                pictureBox7.Enabled = false;
+            }
+            else
+            {
+                picBox7WasClicked = true;
+            }
+        }
+
+
+
+
         private void BootCampPlacement()
         {
             Bootcamp bootCamp = new Bootcamp();
@@ -567,15 +745,71 @@ namespace ScrumAge
             }
         }
 
+<<<<<<< Updated upstream
         private void exitGame_Click(object sender, EventArgs e)
+=======
+
+        /// <summary>
+        /// Bitcoin location
+        /// 
+        /// ** Later, change CalcGold(playerid, numOfDevs, betstock, boughtstock) ** 
+        /// </summary>
+        private void CryptoMarkerPlacement()
+>>>>>>> Stashed changes
         {
-            FormState.PreviousPage = this;
+            CryptoMarket cyrptoMarket = new CryptoMarket();
+            List<PictureBox> cyrptoMarketBoxes = new List<PictureBox>();
+            Game game = new Game();
+            cyrptoMarketBoxes.Add(BitcoinMarketBox1);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox2);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox3);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox4);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox5);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox6);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox7);
+            cyrptoMarketBoxes.Add(BitcoinMarketBox8);
 
-            QuitGame quitGame = new QuitGame();
-            quitGame.StartPosition = FormStartPosition.CenterParent;
-            quitGame.ShowDialog();
-
-
+<<<<<<< Updated upstream
         }
+=======
+            var p1Red = Image.FromFile(@"Images\red.png");
+            var p2Yellow = Image.FromFile(@"Images\yellow.png");
+            var p3Green = Image.FromFile(@"Images\green.png");
+            var p4Gray = Image.FromFile(@"Images\gray.png");
+
+            var counter1 = 0;
+            var counter2 = 0;
+            var counter3 = 0;
+            var counter4 = 0;
+
+            if (Player.Id == 1)
+            {
+                counter1 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
+                cyrptoMarket.player1 = Player;
+                cyrptoMarket.CalcGold(Player.Id, counter1);
+            }
+
+            if (Player.Id == 2)
+            {
+                counter2 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
+                cyrptoMarket.player2 = Player;
+                cyrptoMarket.CalcGold(Player.Id, counter2);
+            }
+
+            if (Player.Id == 3)
+            {
+                counter3 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
+                cyrptoMarket.player3 = Player;
+                cyrptoMarket.CalcGold(Player.Id, counter3);
+            }
+            else
+            {
+                counter4 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
+                cyrptoMarket.player4 = Player;
+                cyrptoMarket.CalcGold(Player.Id, counter4);
+            }
+        }
+
+>>>>>>> Stashed changes
     }
 }

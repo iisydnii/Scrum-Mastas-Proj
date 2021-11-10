@@ -1,6 +1,6 @@
 ﻿/*
  Page Created 
-     File Name: Dice.cs
+     File Name: Winners_Losers.cs
      Creator Name: Piper Floyd
      Created Date: 11/07/21
      Purpose: Scoreboard of winners and losers
