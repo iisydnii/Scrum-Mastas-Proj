@@ -29,8 +29,6 @@ public class Game
     private static Placement_Board placement_Board;
     private static RulesForm rulesForm;
 
-
-    private static List<Form> AllForms;
     public Player player;
 
 
@@ -71,20 +69,18 @@ public class Game
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
-        foreach (var player in PlayerList)
-        {
-            placement_Board = new Placement_Board(player);
-            placement_Board.ShowDialog();
-        }
+        placement_Board = new Placement_Board(PlayerList);
+        placement_Board.ShowDialog();
+        DisplayActivationBoard();
 
     }
 
 
     ///TODO
-    //public static void DisplayActivationBoard()
-    //{
+    public static void DisplayActivationBoard()
+    {
 
-    //}
+    }
 
     ///TODO
     //public static void DisplayRetrospective()

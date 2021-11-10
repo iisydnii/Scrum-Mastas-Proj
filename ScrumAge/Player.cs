@@ -6,6 +6,7 @@ Purpose: Create a player
 _____________________________________________________________________________
 Page Modified
     Piper Floyd, 10/24/21, lines 46 - 55, Added payment method
+    Sydni Ward, 11/09/2021 - Add Picture Path
 
 */
 using System;
