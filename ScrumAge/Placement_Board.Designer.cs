@@ -150,7 +150,6 @@ namespace ScrumAge
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-
             // 
             // pictureBox3
             // 
@@ -841,6 +840,7 @@ namespace ScrumAge
             this.Name = "Placement_Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Placement_Board";
+            this.Load += new System.EventHandler(this.Placement_Board_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

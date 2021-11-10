@@ -745,17 +745,12 @@ namespace ScrumAge
             }
         }
 
-<<<<<<< Updated upstream
-        private void exitGame_Click(object sender, EventArgs e)
-=======
-
-        /// <summary>
         /// Bitcoin location
         /// 
         /// ** Later, change CalcGold(playerid, numOfDevs, betstock, boughtstock) ** 
         /// </summary>
         private void CryptoMarkerPlacement()
->>>>>>> Stashed changes
+
         {
             CryptoMarket cyrptoMarket = new CryptoMarket();
             List<PictureBox> cyrptoMarketBoxes = new List<PictureBox>();
@@ -769,9 +764,7 @@ namespace ScrumAge
             cyrptoMarketBoxes.Add(BitcoinMarketBox7);
             cyrptoMarketBoxes.Add(BitcoinMarketBox8);
 
-<<<<<<< Updated upstream
-        }
-=======
+
             var p1Red = Image.FromFile(@"Images\red.png");
             var p2Yellow = Image.FromFile(@"Images\yellow.png");
             var p3Green = Image.FromFile(@"Images\green.png");
@@ -810,6 +803,9 @@ namespace ScrumAge
             }
         }
 
->>>>>>> Stashed changes
+        private void Placement_Board_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
