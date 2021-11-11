@@ -33,7 +33,11 @@ namespace ScrumAge
         private void ProjectTileForm_Load(object sender, EventArgs e)
         {
             label1.Text = Placement_Board.Description;
-            label5.Text = Placement_Board.Reward;
+            label5.Text = Placement_Board.RewardType;
+            label7.Text = Placement_Board.RewardValue;
+
+            label6.Text = Placement_Board.CostType;
+            label8.Text = Placement_Board.CostValue;
             //label6.Text = Placement_Board.Cost;
         }
 
@@ -43,6 +47,28 @@ namespace ScrumAge
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
