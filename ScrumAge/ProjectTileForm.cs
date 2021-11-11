@@ -38,7 +38,6 @@ namespace ScrumAge
 
             label6.Text = Placement_Board.CostType;
             label8.Text = Placement_Board.CostValue;
-            //label6.Text = Placement_Board.Cost;
         }
 
         private void label1_Click(object sender, EventArgs e)

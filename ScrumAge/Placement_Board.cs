@@ -559,18 +559,21 @@ namespace ScrumAge
         /// </summary>
         private void roll_Click(object sender, EventArgs e)
         {
-            Dice dice = new Dice();
-            label18.Text = dice.Total.ToString();
+            //Dice dice = new Dice();
+            //label18.Text = dice.Total.ToString();
 
-            int count = 0;
-            count++;
+            //int count = 0;
+            //count++;
 
-            //Ensures that the dice can only be rolled once
-            if (count == 1)
-            {
-                button1.Enabled = false;
+            ////Ensures that the dice can only be rolled once
+            //if (count == 1)
+            //{
+            //    button1.Enabled = false;
 
-            }
+            //}
+
+            DiceForm diceForm = new DiceForm();
+            diceForm.Show();
         }
 
         private void exitGame_Click(object sender, EventArgs e)
@@ -1038,6 +1041,12 @@ namespace ScrumAge
                 hr.player4 = currentPlayer;
                 hr.AddDevs(currentPlayer.Id, counter4);
             }
+        }
+
+
+        private void ProjectTiles_Enter_1(object sender, EventArgs e)
+        {
+
         }
 
     }
