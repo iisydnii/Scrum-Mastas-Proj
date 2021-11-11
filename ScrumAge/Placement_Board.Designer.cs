@@ -160,7 +160,7 @@ namespace ScrumAge
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            
             // 
             // pictureBox4
             // 
@@ -170,7 +170,7 @@ namespace ScrumAge
             this.pictureBox4.Size = new System.Drawing.Size(111, 172);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            
             // 
             // StatusBox
             // 
@@ -538,7 +538,7 @@ namespace ScrumAge
             this.BootCampBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BootCampBox3.TabIndex = 10;
             this.BootCampBox3.TabStop = false;
-            this.BootCampBox3.Click += new System.EventHandler(this.BootCampBox3_Click);
+            
             // 
             // BootCampBox4
             // 
@@ -605,7 +605,7 @@ namespace ScrumAge
             this.WhiteBoardBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.WhiteBoardBox6.TabIndex = 22;
             this.WhiteBoardBox6.TabStop = false;
-            this.WhiteBoardBox6.Click += new System.EventHandler(this.WhiteBoardBox6_Click);
+            
             // 
             // WhiteBoardBox5
             // 
@@ -738,7 +738,7 @@ namespace ScrumAge
             this.BitcoinMarketBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BitcoinMarketBox1.TabIndex = 24;
             this.BitcoinMarketBox1.TabStop = false;
-            this.BitcoinMarketBox1.Click += new System.EventHandler(this.BitcoinMarketBox1_Click);
+           
             // 
             // WhiteBoardBox8
             // 
@@ -841,7 +841,6 @@ namespace ScrumAge
             this.Name = "Placement_Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Placement_Board";
-            this.Load += new System.EventHandler(this.Placement_Board_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
