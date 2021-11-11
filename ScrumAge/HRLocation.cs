@@ -20,7 +20,7 @@ namespace ScrumAge
             this.HRPlayerList = playerList;
         }
 
-        public int[,] GetPlayerList()
+        public int[,] getPlayerList()
         {
             return HRPlayerList;
         }
