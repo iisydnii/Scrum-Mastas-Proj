@@ -32,11 +32,19 @@ namespace ScrumAge
 
     public partial class Placement_Board : Form
     {
+        public List<Player> PlayerList { get; set; }
+        List<Box> trackBoxes;
         PictureBox[] boxes;
         PictureBox selected;
+        Player currentPlayer;
         int AvailableDevs = 0;
         int devs = 0; // once set it never changes
-     
+        int turn;
+        int[,] playerLocationList = new int[2, 4];
+        Bootcamp bootCamp = new Bootcamp();
+        Whiteboard whiteBoard = new Whiteboard();
+        HRLocation hr = new HRLocation();
+        CryptoMarket market = new CryptoMarket();
         Random rand = new Random();
 
         public static string Description = "";
@@ -45,29 +53,138 @@ namespace ScrumAge
         public static Dictionary<int, string> Cost;
 
 
-        public Player Player { get; set; }
         ProjectDeck deck = new ProjectDeck();
         //deck.CreateDeck();
 
-        public Placement_Board(Player player)
+        public Placement_Board(List<Player> PlayerList)
         {
             InitializeComponent();
-            this.Player = player;
-            getAvailableDevs();
+            this.PlayerList = PlayerList;
             createDragAndDrop();
-
+            createBoxTracker();
+            currentPlayer = PlayerList[0];
+            turn = 0;
+            setImage();
+            getAvailableDevs(0);
         }
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Save Devs
+            //HR
+            //HRPlacement();
+            //Bootcamp
+            //BootCampPlacement();
+            //Whiteboard
+            //WhiteBoardPlacement();
+            //Bitcoin Market
+
+            turn++;
+            if (turn == PlayerList.Count)
+            {
+                turn = 0;
+            }
+            setUpPlayerTurns();
         }
+
+        private void setUpPlayerTurns()
+        {
+            Boolean AvailableDevsBool = true;
+
+            AvailableDevsBool = checkPlayersDevs();
+            if (AvailableDevsBool == false)
+            {
+                this.Close();
+            }
+            else
+            {
+                getAvailableDevs(turn);
+                if (AvailableDevs != 0)
+                {
+                    currentPlayer = PlayerList[turn];
+                }
+                setImage();
+                //unlock all
+                UnlockBoxes();
+                //lock all boxes with images
+
+            }
+        }
+
+        private Boolean checkPlayersDevs()
+        {
+            int trueDev = 0;
+            for (int i = 0; i <= PlayerList.Count - 1; i++)
+            {
+                getAvailableDevs(i);
+                if (AvailableDevs == 0)
+                {}
+                else
+                {
+                    trueDev += 1;
+                }
+            }
+
+            if (trueDev == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        void getAvailableDevs(int id)
+        {
+            int hold = 0;
+            //get players total devs
+            hold = PlayerList[id].Inventory.Developers;
+            //Check each location if they have devs placed there
+            int i;
+            for (i = 0; i <= 3; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        playerLocationList = hr.getPlayerList();
+                        break;
+                    case 1:
+                        playerLocationList = bootCamp.getPlayerList();
+                        break;
+                    case 2:
+                        playerLocationList = whiteBoard.getPlayerList();
+                        break;
+                    case 3:
+                        playerLocationList = market.getPlayerList();
+                        break;
+                }
+
+                switch (id)
+                {
+                    case 0:
+                        hold -= playerLocationList[1, 0];
+                        break;
+                    case 1:
+                        hold -= playerLocationList[1, 1];
+                        break;
+                    case 2:
+                        hold -= playerLocationList[1, 2];
+                        break;
+                    case 3:
+                        hold -= playerLocationList[1, 3];
+                        break;
+                }
+            }
+
+            AvailableDevs = hold;
+            devs = AvailableDevs;
+        }
+
 
         //Controlling Changes 
         void getAvailableDevs()
         {
             int hold = 0;
-            hold = Player.Inventory.Developers;
+            hold = currentPlayer.Inventory.Developers;
             //Check each location if they have devs placed there
 
             // hold += location.getDevs();
@@ -87,8 +204,6 @@ namespace ScrumAge
 
             try
             {
-                //Supply your own images here
-                setImage(Player.Id);
 
                 foreach (var box in boxes)
                 {
@@ -106,39 +221,42 @@ namespace ScrumAge
                 return;
             }
         }
+        void createBoxTracker()
+        {
+            trackBoxes = new List<Box>()
+            {
+                new Box() { pictureBox = HRBox, used = false },
+                new Box() { pictureBox = BootCampBox1, used = false },
+                new Box() { pictureBox = BootCampBox2, used = false },
+                new Box() { pictureBox = BootCampBox3, used = false },
+                new Box() { pictureBox = BootCampBox4, used = false },
+                new Box() { pictureBox = BootCampBox5, used = false },
+                new Box() { pictureBox = BootCampBox6, used = false },
+                new Box() { pictureBox = BootCampBox7, used = false },
+                new Box() { pictureBox = BootCampBox8, used = false },
+                new Box() { pictureBox = WhiteBoardBox1, used = false },
+                new Box() { pictureBox = WhiteBoardBox2, used = false },
+                new Box() { pictureBox = WhiteBoardBox3, used = false },
+                new Box() { pictureBox = WhiteBoardBox4, used = false },
+                new Box() { pictureBox = WhiteBoardBox5, used = false },
+                new Box() { pictureBox = WhiteBoardBox6, used = false },
+                new Box() { pictureBox = WhiteBoardBox7, used = false },
+                new Box() { pictureBox = WhiteBoardBox8, used = false },
+                new Box() { pictureBox = BitcoinMarketBox1, used = false },
+                new Box() { pictureBox = BitcoinMarketBox2, used = false },
+                new Box() { pictureBox = BitcoinMarketBox3, used = false },
+                new Box() { pictureBox = BitcoinMarketBox4, used = false },
+                new Box() { pictureBox = BitcoinMarketBox5, used = false },
+                new Box() { pictureBox = BitcoinMarketBox6, used = false },
+                new Box() { pictureBox = BitcoinMarketBox7, used = false },
+                new Box() { pictureBox = BitcoinMarketBox8, used = false },
+            };
+        }
 
         //Set Player Images
-        public void setImage(int id) 
+        public void setImage()
         {
-            string filename = "";
-            //Supply your own images here
-            switch (id)
-            {
-                case 1:
-                    filename = @"Images\red.png";
-                    break;
-                case 2:
-                    filename = @"Images\yellow.png";
-                    break;
-                case 3:
-                    filename = @"Images\green.png";
-                    break;
-                case 4:
-                    filename = @"Images\gray.png";
-                    break;
-                case 5:
-                    filename = "";
-                    break;
-            }
-
-            if (filename != "")
-            {
-                holdDevelopers.BackgroundImage = Image.FromFile(filename);
-            }
-            else
-            {
-                holdDevelopers.BackgroundImage = null;
-            }
+            holdDevelopers.BackgroundImage = Image.FromFile(currentPlayer.pictureFile);
         }
 
         /// <summary>
@@ -248,7 +366,7 @@ namespace ScrumAge
                 //source.BackgroundImage = temp;
                 if (AvailableDevs == 0)
                 {
-                    setImage(5);
+                    holdDevelopers.BackgroundImage = null;
                 }
 
                 if (devs == AvailableDevs)
@@ -267,7 +385,7 @@ namespace ScrumAge
                 AvailableDevs = AvailableDevs + 1;
                 if (AvailableDevs != 0)
                 {
-                    setImage(Player.Id);
+                    setImage();
                 }
 
                 if (devs == AvailableDevs)
@@ -296,7 +414,7 @@ namespace ScrumAge
                 }
             }
             AvailableDevs = devs;
-            setImage(Player.Id);
+            setImage();
             UnlockBoxes();
         }
 
@@ -415,12 +533,12 @@ namespace ScrumAge
         /// </summary>
         private void StatusBox_Enter(object sender, EventArgs e)
         {
-        label6.Text = Player.Name;
-        label2.Text = Player.Inventory.TrainingPoints.ToString();
-        label10.Text = Player.Inventory.DesignPoints.ToString();
-        label12.Text = Player.Inventory.Bitcoin.ToString();
-        label3.Text = Player.Inventory.DevelopmentPoints.ToString();
-        label7.Text = Player.Inventory.Developers.ToString();
+        label6.Text = currentPlayer.Name;
+        label2.Text = currentPlayer.Inventory.TrainingPoints.ToString();
+        label10.Text = currentPlayer.Inventory.DesignPoints.ToString();
+        label12.Text = currentPlayer.Inventory.Bitcoin.ToString();
+        label3.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
+        label7.Text = currentPlayer.Inventory.Developers.ToString();
 
 
         //Test updated player resources
@@ -449,16 +567,6 @@ namespace ScrumAge
             }
         }
 
-        //Location Controls
-
-
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void exitGame_Click(object sender, EventArgs e)
         {
             FormState.PreviousPage = this;
@@ -467,21 +575,6 @@ namespace ScrumAge
             quitGame.StartPosition = FormStartPosition.CenterParent;
             quitGame.ShowDialog();
 
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProjectTiles_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Placement_Board_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -522,31 +615,6 @@ namespace ScrumAge
             
             //if(tile != )
             //tiles.Remove(tile);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BootCampBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WhiteBoardBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BitcoinMarketBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -609,8 +677,8 @@ namespace ScrumAge
             Cost = projectTile.cost;
 
 
-     
-
+            ProjectTileForm projectTileForm = new ProjectTileForm();
+            projectTileForm.Show();
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
             {
@@ -626,14 +694,10 @@ namespace ScrumAge
             }
         }
 
-
-
-
         private void BootCampPlacement()
         {
             Bootcamp bootCamp = new Bootcamp();
             List<PictureBox> bootCampBoxes = new List<PictureBox>();
-            Game game = new Game();
             bootCampBoxes.Add(BootCampBox1);
             bootCampBoxes.Add(BootCampBox2);
             bootCampBoxes.Add(BootCampBox3);
@@ -651,7 +715,7 @@ namespace ScrumAge
             int counter3 = 0;
             int counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 foreach (var pBox in bootCampBoxes) // cycle through the players bootcamp placement boxes
                 {
@@ -660,10 +724,10 @@ namespace ScrumAge
                         counter1++; // if the background image is the same as the dev image than there is a dev there
                     }
                 }
-                bootCamp.player1 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter1);
+                bootCamp.player1 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter1);
             }
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 foreach (var pBox in bootCampBoxes)
                 {
@@ -672,10 +736,10 @@ namespace ScrumAge
                         counter2++;
                     }
                 }
-                bootCamp.player2 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter2);
+                bootCamp.player2 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter2);
             }
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 foreach (var pBox in bootCampBoxes)
                 {
@@ -684,8 +748,8 @@ namespace ScrumAge
                         counter3++;
                     }
                 }
-                bootCamp.player3 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter3);
+                bootCamp.player3 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter3);
             }
             else
             {
@@ -696,17 +760,15 @@ namespace ScrumAge
                         counter4++;
                     }
                 }
-                bootCamp.player4 = Player;
-                bootCamp.trainingPointCalc(Player.Id, counter4);
+                bootCamp.player4 = currentPlayer;
+                bootCamp.trainingPointCalc(currentPlayer.Id, counter4);
             }
         }
-
 
         private void WhiteBoardPlacement()
         {
             Whiteboard whiteBoard = new Whiteboard();
             List<PictureBox> whiteBoardBoxes = new List<PictureBox>();
-            Game game = new Game();
             whiteBoardBoxes.Add(WhiteBoardBox1);
             whiteBoardBoxes.Add(WhiteBoardBox2);
             whiteBoardBoxes.Add(WhiteBoardBox3);
@@ -726,31 +788,31 @@ namespace ScrumAge
             var counter3 = 0;
             var counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 counter1 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
-                whiteBoard.player1 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter1);
+                whiteBoard.player1 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter1);
             }
 
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 counter2 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
-                whiteBoard.player2 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter2);
+                whiteBoard.player2 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter2);
             }
 
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 counter3 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
-                whiteBoard.player3 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter3);
+                whiteBoard.player3 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter3);
             }
             else
             {
                 counter4 += whiteBoardBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
-                whiteBoard.player4 = Player;
-                whiteBoard.DesignPointsCalc(Player.Id, counter4);
+                whiteBoard.player4 = currentPlayer;
+                whiteBoard.DesignPointsCalc(currentPlayer.Id, counter4);
             }
         }
 
@@ -763,7 +825,6 @@ namespace ScrumAge
         {
             CryptoMarket cyrptoMarket = new CryptoMarket();
             List<PictureBox> cyrptoMarketBoxes = new List<PictureBox>();
-            Game game = new Game();
             cyrptoMarketBoxes.Add(BitcoinMarketBox1);
             cyrptoMarketBoxes.Add(BitcoinMarketBox2);
             cyrptoMarketBoxes.Add(BitcoinMarketBox3);
@@ -784,37 +845,103 @@ namespace ScrumAge
             var counter3 = 0;
             var counter4 = 0;
 
-            if (Player.Id == 1)
+            if (currentPlayer.Id == 1)
             {
                 counter1 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p1Red);
-                cyrptoMarket.player1 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter1);
+                cyrptoMarket.player1 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter1);
             }
 
-            if (Player.Id == 2)
+            if (currentPlayer.Id == 2)
             {
                 counter2 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p2Yellow);
-                cyrptoMarket.player2 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter2);
+                cyrptoMarket.player2 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter2);
             }
 
-            if (Player.Id == 3)
+            if (currentPlayer.Id == 3)
             {
                 counter3 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p3Green);
-                cyrptoMarket.player3 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter3);
+                cyrptoMarket.player3 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter3);
             }
             else
             {
                 counter4 += cyrptoMarketBoxes.Count(pictureBox => pictureBox.BackgroundImage == p4Gray);
-                cyrptoMarket.player4 = Player;
-                cyrptoMarket.CalcGold(Player.Id, counter4);
+                cyrptoMarket.player4 = currentPlayer;
+                cyrptoMarket.CalcGold(currentPlayer.Id, counter4);
             }
         }
 
-        private void Placement_Board_Load_1(object sender, EventArgs e)
+        private void HRPlacement()
         {
+            HRLocation hr = new HRLocation();
+            List<PictureBox> hrBox = new List<PictureBox>();
+            hrBox.Add(HRBox);
 
+            var p1Red = Image.FromFile(@"Images\red.png");
+            var p2Yellow = Image.FromFile(@"Images\yellow.png");
+            var p3Green = Image.FromFile(@"Images\green.png");
+            var p4Gray = Image.FromFile(@"Images\gray.png");
+            int counter1 = 0;
+            int counter2 = 0;
+            int counter3 = 0;
+            int counter4 = 0;
+
+            if (currentPlayer.Id == 1)
+            {
+                foreach (var pBox in hrBox) // cycle through the players bootcamp placement boxes
+                {
+                    if (pBox.BackgroundImage == p1Red) //see if the background of the box is the same as the dev image
+                    {
+                        counter1++; // if the background image is the same as the dev image than there is a dev there
+                    }
+                }
+                hr.player1 = currentPlayer;
+                hr.placeDevs(currentPlayer.Id, counter1);
+            }
+            if (currentPlayer.Id == 2)
+            {
+                foreach (var pBox in hrBox)
+                {
+                    if (pBox.BackgroundImage == p2Yellow)
+                    {
+                        counter2++;
+                    }
+                }
+                hr.player2 = currentPlayer;
+                hr.placeDevs(currentPlayer.Id, counter2);
+            }
+            if (currentPlayer.Id == 3)
+            {
+                foreach (var pBox in hrBox)
+                {
+                    if (pBox.BackgroundImage == p3Green)
+                    {
+                        counter3++;
+                    }
+                }
+                hr.player3 = currentPlayer;
+                hr.AddDevs(currentPlayer.Id, counter3);
+            }
+            else
+            {
+                foreach (var pBox in hrBox)
+                {
+                    if (pBox.BackgroundImage == p4Gray)
+                    {
+                        counter4++;
+                    }
+                }
+                hr.player4 = currentPlayer;
+                hr.AddDevs(currentPlayer.Id, counter4);
+            }
         }
+
     }
+}
+public class Box
+{
+    public PictureBox pictureBox = null;
+    public bool used = false;
 }

@@ -33,7 +33,7 @@ namespace ScrumAge
         }
 
 
-        public int[,] GetPlayerList()
+        public int[,] getPlayerList()
         {
             return WhiteboardPlayerList;
         }
