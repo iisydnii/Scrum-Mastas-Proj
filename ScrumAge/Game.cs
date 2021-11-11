@@ -38,6 +38,7 @@ public class Game
     public static void StartGame()
     {
 
+
         //landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
 

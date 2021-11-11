@@ -24,6 +24,8 @@ namespace ScrumAge
         Random random = new Random();
 
         public int Total { get; set; }
+        public int DiceRoll_1 { get; set; }
+        public int DiceRoll_2 { get; set; }
         public bool SnakeEyes { get; set; }
 
 
@@ -36,11 +38,16 @@ namespace ScrumAge
             SnakeEyes = false;
 
 
-            for (int i = 0; i < 2; i++)
-            {
-                diceValue = random.Next(1, 6);
-                Total += diceValue;
-            }
+            DiceRoll_1 = random.Next(1, 6);
+            DiceRoll_2 = random.Next(1, 6);
+
+            Total = DiceRoll_1 + DiceRoll_2;
+
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    diceValue = random.Next(1, 6);
+            //    Total += diceValue;
+            //}
 
 
             //Discerns snake eyes
