@@ -599,10 +599,10 @@ namespace ScrumAge
         }
 
   
-        private bool picBox5WasClicked = false;
-        private bool picBox6WasClicked = false;
-        private bool picBox7WasClicked = false;
-        private bool picBox8WasClicked = false;
+        //private bool picBox5WasClicked = false;
+        //private bool picBox6WasClicked = false;
+        //private bool picBox7WasClicked = false;
+        //private bool picBox8WasClicked = false;
 
 
         /// <summary>
@@ -793,7 +793,7 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                //ProjectTileForm projectTileForm = new ProjectTileForm();
                 projectTileForm.Show();
 
             }
