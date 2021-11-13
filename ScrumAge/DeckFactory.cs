@@ -547,7 +547,7 @@ namespace ScrumAge
                         {
                             ProjectTile card8 = new ProjectTile();
                             card8.id = i;
-                            card8.Description = "You need to move the copmany email server to the cloud. Lose 7 Training points.";
+                            card8.Description = "You need to move the company email server to the cloud. Lose 7 Training points.";
                             card8.cost.Add(7, "Training");
                             card8.reward.Add(4, "Development");
                             card8.used = false;
@@ -558,7 +558,7 @@ namespace ScrumAge
                         {
                             ProjectTile card9 = new ProjectTile();
                             card9.id = i;
-                            card9.Description = "You need to move the copmany web server to the cloud. Lose 7 Design points.";
+                            card9.Description = "You need to move the company web server to the cloud. Lose 7 Design points.";
                             card9.cost.Add(7, "Design");
                             card9.reward.Add(4, "Development");
                             card9.used = false;
@@ -569,11 +569,121 @@ namespace ScrumAge
                         {
                             ProjectTile card10 = new ProjectTile();
                             card10.id = i;
-                            card10.Description = "You are tasked with tasked with completing 4 user stories this sprint. Lose 6 Training points. ";
+                            card10.Description = "You are tasked with completing 4 user stories this sprint. Lose 6 Training points.";
                             card10.cost.Add(6, "Training");
                             card10.reward.Add(4, "Development");
                             card10.used = false;
                             projectDeck.Add(card10);
+                            break;
+                        }
+                    case 11:
+                        {
+                            ProjectTile card11 = new ProjectTile();
+                            card11.id = i;
+                            card11.Description = "You are tasked with updating the companies web page. Lose 5 Bitcoin.";
+                            card11.cost.Add(5, "Bitcoin");
+                            card11.reward.Add(3, "Development");
+                            card11.used = false;
+                            projectDeck.Add(card11);
+                            break;
+                        }
+                    case 12:
+                        {
+                            ProjectTile card12 = new ProjectTile();
+                            card12.id = i;
+                            card12.Description = "You have to manage the companies database migration. Lose 8 Design points.";
+                            card12.cost.Add(8, "Design");
+                            card12.reward.Add(5, "Development");
+                            card12.used = false;
+                            projectDeck.Add(card12);
+                            break;
+                        }
+                    case 13:
+                        {
+                            ProjectTile card13 = new ProjectTile();
+                            card13.id = i;
+                            card13.Description = "You are tasked with updating all of the companies computers. Lose 5 Training points.";
+                            card13.cost.Add(5, "Training");
+                            card13.reward.Add(3, "Development");
+                            card13.used = false;
+                            projectDeck.Add(card13);
+                            break;
+                        }
+                    case 14:
+                        {
+                            ProjectTile card14 = new ProjectTile();
+                            card14.id = i;
+                            card14.Description = "You need to configure the companies Active Directory. Lose 5 Design points.";
+                            card14.cost.Add(5, "Design");
+                            card14.reward.Add(3, "Development");
+                            card14.used = false;
+                            projectDeck.Add(card14);
+                            break;
+                        }
+                    case 15:
+                        {
+                            ProjectTile card15 = new ProjectTile();
+                            card15.id = i;
+                            card15.Description = "You need to configure the companies Firewall. Lose 5 Bitcoin.";
+                            card15.cost.Add(5, "Bitcoin");
+                            card15.reward.Add(3, "Development");
+                            card15.used = false;
+                            projectDeck.Add(card15);
+                            break;
+                        }
+                    case 16:
+                        {
+                            ProjectTile card16 = new ProjectTile();
+                            card16.id = i;
+                            card16.Description = "You have to mentor a intern. Lose 5 Training points.";
+                            card16.cost.Add(5, "Training");
+                            card16.reward.Add(3, "Development");
+                            card16.used = false;
+                            projectDeck.Add(card16);
+                            break;
+                        }
+                    case 17:
+                        {
+                            ProjectTile card17 = new ProjectTile();
+                            card17.id = i;
+                            card17.Description = "You need to rewire a server. Lose 5 Design points.";
+                            card17.cost.Add(5, "Design");
+                            card17.reward.Add(3, "Development");
+                            card17.used = false;
+                            projectDeck.Add(card17);
+                            break;
+                        }
+                    case 18:
+                        {
+                            ProjectTile card18 = new ProjectTile();
+                            card18.id = i;
+                            card18.Description = "You are in charge of solving an outage. Lose 7 Design points.";
+                            card18.cost.Add(7, "Design");
+                            card18.reward.Add(4, "Development");
+                            card18.used = false;
+                            projectDeck.Add(card18);
+                            break;
+                        }
+                    case 19:
+                        {
+                            ProjectTile card19 = new ProjectTile();
+                            card19.id = i;
+                            card19.Description = "You are tasked with creating the documentation for the companies new software. Lose 7 Training points.";
+                            card19.cost.Add(7, "Training");
+                            card19.reward.Add(4, "Development");
+                            card19.used = false;
+                            projectDeck.Add(card19);
+                            break;
+                        }
+                    case 20:
+                        {
+                            ProjectTile card20 = new ProjectTile();
+                            card20.id = i;
+                            card20.Description = "You need to order new computes for the whole company. Lose 7 Bitcoin.";
+                            card20.cost.Add(7, "Bitcoin");
+                            card20.reward.Add(4, "Development");
+                            card20.used = false;
+                            projectDeck.Add(card20);
                             break;
                         }
                 }
