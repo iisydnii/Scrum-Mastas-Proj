@@ -28,6 +28,9 @@ public class Game
     private static SelectPlayersForm SelectPlayersForm;
     private static Placement_Board placement_Board;
     private static RulesForm rulesForm;
+    private static DiceForm diceForm;
+    private static QuitGame quitGame;
+    private static Winners_Losers winners_losers;
 
     public Player player;
 
@@ -83,15 +86,45 @@ public class Game
 
     }
 
+    
+    public static void DisplayQuitGame()
+    {
+        quitGame = new QuitGame();
+        quitGame.StartPosition = FormStartPosition.CenterParent;
+        quitGame.ShowDialog();
+    }
+
+
+    public static void DisplayDice()
+    {
+        diceForm = new DiceForm();
+        diceForm.Show();
+    }
+
+    public static void DisplayWinners_Losers()
+    {
+        winners_losers = new Winners_Losers();
+        winners_losers.StartPosition = FormStartPosition.CenterParent;
+        winners_losers.ShowDialog();
+    }
+
+
     ///TODO
     //public static void DisplayRetrospective()
     //{
 
     //}
 
+
     public static void CloseForm(Form form)
     {
         form.Close();
+    }
+
+
+    public static void QuitGame()
+    {
+        landingPageForm.Close();
     }
 
 

@@ -572,18 +572,14 @@ namespace ScrumAge
 
             //}
 
-            DiceForm diceForm = new DiceForm();
-            diceForm.Show();
+            Game.DisplayDice();
         }
 
         private void exitGame_Click(object sender, EventArgs e)
         {
             FormState.PreviousPage = this;
 
-            QuitGame quitGame = new QuitGame();
-            quitGame.StartPosition = FormStartPosition.CenterParent;
-            quitGame.ShowDialog();
-
+            Game.DisplayQuitGame();
 
         }
 
