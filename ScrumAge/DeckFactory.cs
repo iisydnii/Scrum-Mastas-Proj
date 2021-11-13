@@ -460,7 +460,7 @@ namespace ScrumAge
 
         public HashSet<object> CreateProjectDeck()
         {
-            int cardsToCreate = 10; //change to 28 later
+            int cardsToCreate = 20; 
 
             for (int i = 1; i <= cardsToCreate; i++)
             {
