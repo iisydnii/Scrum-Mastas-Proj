@@ -14,7 +14,9 @@ Page Modified
     Nataliya Chibizova, 10/25/21,  lines 341-391, added the WhiteBoardPlacement method. 
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
+    Sydni Ward   11/13/2021             Fixing errors
     Piper Floyd, 11/10/21,              Added project tile methods  
+
 
 */
 using System;
@@ -47,17 +49,17 @@ namespace ScrumAge
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
         Random rand = new Random();
+        ProjectTileForm projectTileForm = new ProjectTileForm();
+        private bool picBox5WasClicked = false;
+        private bool picBox6WasClicked = false;
+        private bool picBox7WasClicked = false;
+        private bool picBox8WasClicked = false;
 
         public static string Description = "";
         public static string RewardType = "";
         public static string RewardValue = "";
         public static string CostType = "";
         public static string CostValue = "";
-
-        private bool picBox5WasClicked = false;
-        private bool picBox6WasClicked = false;
-        private bool picBox7WasClicked = false;
-        private bool picBox8WasClicked = false;
 
         ProjectDeck deck = new ProjectDeck();
         //deck.CreateDeck();
@@ -586,30 +588,7 @@ namespace ScrumAge
 
 
         }
-
-
-        private void ProjectTiles_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Placement_Board_Load(object sender, EventArgs e)
-        {
-
-        }
-
-  
-        private bool picBox5WasClicked = false;
-        private bool picBox6WasClicked = false;
-        private bool picBox7WasClicked = false;
-        private bool picBox8WasClicked = false;
-
-
-        /// <summary>
-        /// Displays first project tile
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -793,9 +772,7 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
                 projectTileForm.Show();
-
             }
         }
 
