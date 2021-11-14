@@ -50,8 +50,6 @@ namespace ScrumAge
         Whiteboard whiteBoard = new Whiteboard();
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
-        Random rand = new Random();
-        ProjectTileForm projectTileForm = new ProjectTileForm();
         ProjectDeck deck = new ProjectDeck();
         Locations location = new Locations();
         private bool picBox5WasClicked = false;
@@ -60,13 +58,13 @@ namespace ScrumAge
         private bool picBox8WasClicked = false;
 
         public static string Description = "";
+        public static string RewardType = "";
+        public static string RewardValue = "";
+        public static string CostType = "";
+        public static string CostValue = "";
         public static string Reward = "";
         public static Dictionary<int, string> RewardD;
         public static Dictionary<int, string> Cost;
-        string p1Red = @"Images\red.png";
-        string p2Yellow = @"Images\yellow.png";
-        string p3Green = @"Images\green.png";
-        string p4Gray = @"Images\gray.png";
 
 
         public Placement_Board(List<Player> PlayerList)
@@ -86,7 +84,7 @@ namespace ScrumAge
         {
             //unlock all
             UnlockBoxes();
-            
+
             //Save Devs
             //HR
             HRPlacement();
@@ -112,7 +110,7 @@ namespace ScrumAge
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
             {
-                
+
             }
             else
             {
@@ -132,7 +130,7 @@ namespace ScrumAge
             {
                 getAvailableDevs(i);
                 if (AvailableDevs == 0)
-                {}
+                { }
                 else
                 {
                     trueDev += 1;
@@ -152,7 +150,7 @@ namespace ScrumAge
             int hold = 0;
             //get players total devs
             hold = PlayerList[id].Inventory.Developers;
-            
+
             switch (id)
             {
                 case 0:
@@ -180,7 +178,7 @@ namespace ScrumAge
                     hold -= locationList[3].playerList[1, 3];
                     break;
             }
-            
+
 
             AvailableDevs = hold;
             devs = AvailableDevs;
@@ -379,7 +377,7 @@ namespace ScrumAge
             var temp = target.BackgroundImage;
             target.BackgroundImage = source.BackgroundImage;
             usedBox(target.Name);
-            trackBoxes[index].playerId = currentPlayer.Id;
+            //trackBoxes[index].playerId = currentPlayer.Id;
             if (source.Name == "holdDevelopers")
             {
                 //minus 1 dev for the available devs
@@ -433,7 +431,7 @@ namespace ScrumAge
             UnlockBoxes();
         }
 
-      
+
         /// <summary>
         /// Dsiplays the players name and current inventory
         /// </summary>
@@ -482,7 +480,7 @@ namespace ScrumAge
             }
         }
 
-        private void lockOtherLocations(string boxName) 
+        private void lockOtherLocations(string boxName)
         {
             if (!boxName.Contains("HRBox"))
             {
@@ -499,7 +497,7 @@ namespace ScrumAge
                 BootCampBox7.Enabled = false;
                 BootCampBox8.Enabled = false;
             }
-            if (!boxName.Contains("WhiteBoardBox")) 
+            if (!boxName.Contains("WhiteBoardBox"))
             {
                 WhiteBoardBox1.Enabled = false;
                 WhiteBoardBox2.Enabled = false;
@@ -510,7 +508,7 @@ namespace ScrumAge
                 WhiteBoardBox7.Enabled = false;
                 WhiteBoardBox8.Enabled = false;
             }
-            if (!boxName.Contains("BitcoinMarketBox")) 
+            if (!boxName.Contains("BitcoinMarketBox"))
             {
                 BitcoinMarketBox1.Enabled = false;
                 BitcoinMarketBox2.Enabled = false;
@@ -523,13 +521,13 @@ namespace ScrumAge
             }
         }
 
-        private int usedBox(string boxName)
+        private void usedBox(string boxName)
         {
             int index = 0;
             if (boxName == "HRBox" && trackBoxes[0].playerId == 0)
             { trackBoxes[0].playerId = currentPlayer.Id; index = 0; }
 
-            if (boxName == "BootCampBox1" && trackBoxes[1].playerId == 0 )
+            if (boxName == "BootCampBox1" && trackBoxes[1].playerId == 0)
             { trackBoxes[1].playerId = currentPlayer.Id; index = 1; }
             else if (boxName == "BootCampBox2" && trackBoxes[2].playerId == 0)
             { trackBoxes[2].playerId = currentPlayer.Id; index = 2; }
@@ -546,62 +544,67 @@ namespace ScrumAge
             else if (boxName == "BootCampBox8" && trackBoxes[8].playerId == 0)
             { trackBoxes[8].playerId = currentPlayer.Id; index = 8; }
 
-            if (boxName == "WhiteBoardBox1")
+            if (boxName == "WhiteBoardBox1" && trackBoxes[9].playerId == 0)
             { trackBoxes[9].playerId = currentPlayer.Id; index = 9; }
-            else if (boxName == "WhiteBoardBox2")
+            else if (boxName == "WhiteBoardBox2" && trackBoxes[10].playerId == 0)
             { trackBoxes[10].playerId = currentPlayer.Id; index = 10; }
-            else if (boxName == "WhiteBoardBox3")
+            else if (boxName == "WhiteBoardBox3" && trackBoxes[11].playerId == 0)
             { trackBoxes[11].playerId = currentPlayer.Id; index = 11; }
-            else if (boxName == "WhiteBoardBox4")
+            else if (boxName == "WhiteBoardBox4" && trackBoxes[12].playerId == 0)
             { trackBoxes[12].playerId = currentPlayer.Id; index = 12; }
-            else if (boxName == "WhiteBoardBox5")
+            else if (boxName == "WhiteBoardBox5" && trackBoxes[13].playerId == 0)
             { trackBoxes[13].playerId = currentPlayer.Id; index = 13; }
-            else if (boxName == "WhiteBoardBox6")
+            else if (boxName == "WhiteBoardBox6" && trackBoxes[14].playerId == 0)
             { trackBoxes[14].playerId = currentPlayer.Id; index = 14; }
-            else if (boxName == "WhiteBoardBox7")
+            else if (boxName == "WhiteBoardBox7" && trackBoxes[15].playerId == 0)
             { trackBoxes[15].playerId = currentPlayer.Id; index = 15; }
-            else if (boxName == "WhiteBoardBox8")
+            else if (boxName == "WhiteBoardBox8" && trackBoxes[16].playerId == 0)
             { trackBoxes[16].playerId = currentPlayer.Id; index = 16; }
 
-            if (boxName == "BitcoinMarketBox1")
+            if (boxName == "BitcoinMarketBox1" && trackBoxes[17].playerId == 0)
             { trackBoxes[17].playerId = currentPlayer.Id; index = 17; }
-            else if (boxName == "BitcoinMarketBox2")
+            else if (boxName == "BitcoinMarketBox2" && trackBoxes[18].playerId == 0)
             { trackBoxes[18].playerId = currentPlayer.Id; index = 18; }
-            else if (boxName == "BitcoinMarketBox3")
+            else if (boxName == "BitcoinMarketBox3" && trackBoxes[19].playerId == 0)
             { trackBoxes[19].playerId = currentPlayer.Id; index = 19; }
-            else if (boxName == "BitcoinMarketBox4")
+            else if (boxName == "BitcoinMarketBox4" && trackBoxes[20].playerId == 0)
             { trackBoxes[20].playerId = currentPlayer.Id; index = 20; }
-            else if (boxName == "BitcoinMarketBox5")
+            else if (boxName == "BitcoinMarketBox5" && trackBoxes[21].playerId == 0)
             { trackBoxes[21].playerId = currentPlayer.Id; index = 21; }
-            else if (boxName == "BitcoinMarketBox6")
+            else if (boxName == "BitcoinMarketBox6" && trackBoxes[22].playerId == 0)
             { trackBoxes[22].playerId = currentPlayer.Id; index = 22; }
-            else if (boxName == "BitcoinMarketBox7")
+            else if (boxName == "BitcoinMarketBox7" && trackBoxes[23].playerId == 0)
             { trackBoxes[23].playerId = currentPlayer.Id; index = 23; }
-            else if (boxName == "BitcoinMarketBox8")
+            else if (boxName == "BitcoinMarketBox8" && trackBoxes[24].playerId == 0)
             { trackBoxes[24].playerId = currentPlayer.Id; index = 24; }
 
-            return index;
+        }
+
+        private void HRPlacement()
+        {
+            int counter = 0;
+
+            foreach (var box in trackBoxes)
+            {
+                if (box.playerId == currentPlayer.Id && box.pictureBox.Name.Contains("HRBox"))
+                {
+                    counter++;
+                    lockBox(box.pictureBox.Name);
+                }
+            }
+            locationList[0].playerList = hr.placeDevs(currentPlayer.Id, counter);
         }
 
         private void BootCampPlacement()
         {
             int counter = 0;
-            int index = 0;
 
-            // cycle through the players bootcamp placement boxes
-            foreach (var pBox in bootCampBoxes)
+            foreach (var box in trackBoxes)
             {
-                
-                if (pBox.BackgroundImage != null)
+                if (box.playerId == currentPlayer.Id && box.pictureBox.Name.Contains("BootCampBox"))
                 {
-                    index = usedBox(pBox.Name);
-                    //see if the background of the box is the same as the dev image
-                    if (trackBoxes[index].playerId == currentPlayer.Id)
-                    {
-                        // if the background image is the same as the dev image than there is a dev there
-                        counter++;
-                    }
-                    lockBox(pBox.Name);
+                    counter++;
+                    lockBox(box.pictureBox.Name);
                 }
             }
             locationList[1].playerList = bootCamp.placeDevs(currentPlayer.Id, counter);
@@ -611,27 +614,12 @@ namespace ScrumAge
         {
             int counter = 0;
 
-            foreach (var pBox in whiteBoardBoxes)
+            foreach (var box in trackBoxes)
             {
-                if (pBox.BackgroundImage != null)
+                if (box.playerId == currentPlayer.Id && box.pictureBox.Name.Contains("WhiteBoardBox"))
                 {
-                    if (pBox.ImageLocation == p1Red && currentPlayer.Id == 1)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p2Yellow && currentPlayer.Id == 2)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p3Green && currentPlayer.Id == 3)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p4Gray && currentPlayer.Id == 4)
-                    {
-                        counter++;
-                    }
-                    lockBox(pBox.Name);
+                    counter++;
+                    lockBox(box.pictureBox.Name);
                 }
             }
             locationList[2].playerList = whiteBoard.placeDevs(currentPlayer.Id, counter);
@@ -640,61 +628,15 @@ namespace ScrumAge
         private void CryptoMarkerPlacement()
         {
             int counter = 0;
-
-            foreach (var pBox in cyrptoMarketBoxes)
+            foreach (var box in trackBoxes)
             {
-                if (pBox.BackgroundImage != null)
+                if (box.playerId == currentPlayer.Id && box.pictureBox.Name.Contains("BitcoinMarketBox"))
                 {
-                    if (pBox.ImageLocation == p1Red && currentPlayer.Id == 1)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p2Yellow && currentPlayer.Id == 2)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p3Green && currentPlayer.Id == 3)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p4Gray && currentPlayer.Id == 4)
-                    {
-                        counter++;
-                    }
-                    lockBox(pBox.Name);
+                    counter++;
+                    lockBox(box.pictureBox.Name);
                 }
             }
             locationList[3].playerList = market.placeDevs(currentPlayer.Id, counter);
-        }
-
-        private void HRPlacement()
-        {
-            int counter = 0;
-            
-            foreach (var pBox in hrBox) 
-            {
-                if (pBox.BackgroundImage != null)
-                {
-                    if (pBox.ImageLocation == p1Red && currentPlayer.Id == 1)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p2Yellow && currentPlayer.Id == 2)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p3Green && currentPlayer.Id == 3)
-                    {
-                        counter++;
-                    }
-                    if (pBox.ImageLocation == p4Gray && currentPlayer.Id == 4)
-                    {
-                        counter++;
-                    }
-                    lockBox(pBox.Name);
-                }
-            }
-            locationList[0].playerList = hr.placeDevs(currentPlayer.Id, counter);
         }
 
         private void lockBox(string boxName)
@@ -764,13 +706,20 @@ namespace ScrumAge
 
 
             Description = projectTile.Description;
-            RewardD = projectTile.reward;
-            //Reward = RewardD.;
-            Cost = projectTile.cost;
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
-            //MessageBox.Show(projectTile);
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
+
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
+
 
 
 
@@ -780,25 +729,37 @@ namespace ScrumAge
             }
             else
             {
-
+                pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
             }
 
 
-            //if(tile != )
-            //tiles.Remove(tile);
         }
 
+        /// <summary>
+        /// Displays second project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
 
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
 
 
             if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
@@ -807,43 +768,84 @@ namespace ScrumAge
             }
             else
             {
+                pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
             }
         }
 
+        /// <summary>
+        /// Displays third project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
 
 
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
+
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
 
 
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
 
-            picBox8WasClicked = true;
+
 
             if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
             {
                 pictureBox8.Enabled = false;
             }
+            else
+            {
+                pictureBox8.Enabled = true;
+                picBox8WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm();
+                projectTileForm.Show();
+
+            }
         }
 
+
+        /// <summary>
+        /// Displays fourht project tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
 
 
             Description = projectTile.Description;
-            Reward = projectTile.reward.ToString();
-            Cost = projectTile.cost;
+
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
+
+
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
 
 
             ProjectTileForm projectTileForm = new ProjectTileForm();
             projectTileForm.Show();
+
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
             {
@@ -851,6 +853,7 @@ namespace ScrumAge
             }
             else
             {
+                pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
                 projectTileForm.Show();
             }
