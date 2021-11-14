@@ -14,6 +14,7 @@ Page Modified
     Nataliya Chibizova, 10/25/21,  lines 341-391, added the WhiteBoardPlacement method. 
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
+    Sydni Ward   11/13/2021             Fixing errors
 
 */
 using System;
@@ -46,6 +47,11 @@ namespace ScrumAge
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
         Random rand = new Random();
+        ProjectTileForm projectTileForm = new ProjectTileForm();
+        private bool picBox5WasClicked = false;
+        private bool picBox6WasClicked = false;
+        private bool picBox7WasClicked = false;
+        private bool picBox8WasClicked = false;
 
         public static string Description = "";
         public static string Reward = "";
@@ -578,11 +584,6 @@ namespace ScrumAge
 
         }
 
-        private bool picBox5WasClicked = false;
-        private bool picBox6WasClicked = false;
-        private bool picBox7WasClicked = false;
-        private bool picBox8WasClicked = false;
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -679,6 +680,7 @@ namespace ScrumAge
             else
             {
                 picBox7WasClicked = true;
+                projectTileForm.Show();
             }
         }
 
