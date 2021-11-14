@@ -466,7 +466,6 @@ namespace ScrumAge
             this.ProjectTiles.TabIndex = 5;
             this.ProjectTiles.TabStop = false;
             this.ProjectTiles.Text = "ProjectTiles";
-            this.ProjectTiles.Enter += new System.EventHandler(this.ProjectTiles_Enter_1);
             // 
             // pictureBox8
             // 
