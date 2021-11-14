@@ -52,6 +52,12 @@
     <Compile Include="Certifications.cs" />
     <Compile Include="DeckFactory.cs" />
     <Compile Include="Dice.cs" />
+    <Compile Include="DiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiceForm.Designer.cs">
+      <DependentUpon>DiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="HRLocation.cs" />
     <Compile Include="IDeck.cs" />
@@ -108,6 +114,9 @@
     <Compile Include="Winners_Losers.Designer.cs">
       <DependentUpon>Winners_Losers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DiceForm.resx">
+      <DependentUpon>DiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LandingPageForm.resx">
       <DependentUpon>LandingPageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +168,14 @@
     <Content Include="Images\bobthedev___copy.ico" />
     <Content Include="Images\Bootcamp.png" />
     <Content Include="Images\Dice.jpg" />
+    <None Include="Images\dice\dice1.png" />
+    <None Include="Images\dice\dice2.png" />
+    <None Include="Images\dice\dice3.png" />
+    <None Include="Images\dice\dice4.png" />
+    <None Include="Images\dice\dice5.png" />
+    <None Include="Images\dice\dice6.png" />
+    <None Include="Images\dice\diceRoll.gif" />
+    <None Include="Images\dice\diceRoll2.gif" />
     <Content Include="Images\gray.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -174,6 +191,8 @@
     <Content Include="Images\yellow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\dice1.jpg" />
+    <None Include="Resources\dice1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

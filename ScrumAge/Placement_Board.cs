@@ -1,4 +1,4 @@
-﻿/*
+/*
  Page Created 
      File Name: Placement_Board
      Creator Name: Sydni Ward
@@ -15,6 +15,8 @@ Page Modified
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
     Sydni Ward   11/13/2021             Fixing errors
+    Piper Floyd, 11/10/21,              Added project tile methods  
+
 
 */
 using System;
@@ -62,6 +64,7 @@ namespace ScrumAge
         public static string RewardValue = "";
         public static string CostType = "";
         public static string CostValue = "";
+
         public static string Reward = "";
         public static Dictionary<int, string> RewardD;
         public static Dictionary<int, string> Cost;
@@ -447,17 +450,21 @@ namespace ScrumAge
 
         private void roll_Click(object sender, EventArgs e)
         {
-            Dice dice = new Dice();
-            label18.Text = dice.Total.ToString();
+            //Dice dice = new Dice();
+            //label18.Text = dice.Total.ToString();
 
-            int count = 0;
-            count++;
+            //int count = 0;
+            //count++;
+            ////Ensures that the dice can only be rolled once
+            //if (count == 1)
+            //{
+            //    button1.Enabled = false;
 
-            //Ensures that the dice can only be rolled once
-            if (count == 1)
-            {
-                button1.Enabled = false;
-            }
+            //}
+
+            DiceForm diceForm = new DiceForm();
+            diceForm.Show();
+
         }
 
         private void exitGame_Click(object sender, EventArgs e)
@@ -638,7 +645,7 @@ namespace ScrumAge
             }
             locationList[3].playerList = market.placeDevs(currentPlayer.Id, counter);
         }
-
+        
         private void lockBox(string boxName)
         {
             if (boxName == "HRBox")
@@ -696,15 +703,11 @@ namespace ScrumAge
             { BitcoinMarketBox8.Enabled = false; }
         }
 
-
         // Project Tiles
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-
             ProjectTile projectTile = deck.DrawCard();
-
-
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -712,32 +715,24 @@ namespace ScrumAge
                 RewardValue = value.Key.ToString();
                 RewardType = value.Value;
             }
-
-
             foreach (KeyValuePair<int, string> value in projectTile.cost)
             {
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
 
-
-
-
             if (picBox6WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
             {
                 pictureBox5.Enabled = false;
             }
-            else
+            else 
             {
                 pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
                 ProjectTileForm projectTileForm = new ProjectTileForm();
                 projectTileForm.Show();
             }
-
-
         }
-
         /// <summary>
         /// Displays second project tile
         /// </summary>
@@ -753,15 +748,12 @@ namespace ScrumAge
                 RewardValue = value.Key.ToString();
                 RewardType = value.Value;
             }
-
-
             foreach (KeyValuePair<int, string> value in projectTile.cost)
             {
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
-
-
+            
             if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
             {
                 pictureBox6.Enabled = false;
@@ -783,8 +775,6 @@ namespace ScrumAge
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
-
-
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -792,16 +782,11 @@ namespace ScrumAge
                 RewardValue = value.Key.ToString();
                 RewardType = value.Value;
             }
-
-
             foreach (KeyValuePair<int, string> value in projectTile.cost)
             {
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
-
-
-
             if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
             {
                 pictureBox8.Enabled = false;
@@ -820,13 +805,9 @@ namespace ScrumAge
         /// <summary>
         /// Displays fourht project tile
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
-
-
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -834,18 +815,13 @@ namespace ScrumAge
                 RewardValue = value.Key.ToString();
                 RewardType = value.Value;
             }
-
-
             foreach (KeyValuePair<int, string> value in projectTile.cost)
             {
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
-
-
             ProjectTileForm projectTileForm = new ProjectTileForm();
             projectTileForm.Show();
-
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
             {

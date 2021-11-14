@@ -45,6 +45,8 @@ namespace ScrumAge
             CryptoMarket crypto = new CryptoMarket();
             crypto.CalcGold(1, 3);
 
+
+
         } // end of main
     }//end of class
 }
