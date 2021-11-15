@@ -15,11 +15,11 @@ namespace ScrumAge
         private Player CurrentPlayer;
 
 
-        public SituationCardForm(Player currentPlayer)
+        public SituationCardForm(Player CurrentPlayer)
         {
             InitializeComponent();
 
-            CurrentPlayer = currentPlayer;
+            this.CurrentPlayer = CurrentPlayer;
 
 
             
@@ -33,11 +33,11 @@ namespace ScrumAge
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Austin's Test");
-            SD.DisplayCards();
+            //SD.DisplayCards();
             
 
 
-            SD.DrawCard();
+            //SD.DrawCard();
 
             this.Close();
         }
