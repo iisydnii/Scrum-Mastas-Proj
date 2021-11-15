@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class Card
+    public class Card
     {
         /* Creating properties for the situtation cards adn project tiles*/
         public int id { get; set; }

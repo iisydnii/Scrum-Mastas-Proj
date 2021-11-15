@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class ProjectDeck : IDeck
+    public class ProjectDeck : IDeck
     {
         public HashSet<object> projectDeck { get; set; }
 
@@ -89,11 +89,16 @@ namespace ScrumAge
         public ProjectTile DrawCard()
         {
             Random random = new Random();
-            ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(random.Next(projectDeck.Count()));
-            projectDeck.Remove(projectDeck.ElementAt(0));
+            ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(random.Next(projectDeck.Count));
+            //projectDeck.Remove(projectDeck.ElementAt(0));
             DisplayCard();
             Console.WriteLine($"There are {projectDeck.Count()} Cards left in the deck");
             return tempCard;
+        }
+
+        public void RemoveCard(ProjectTile pickedUpTile)
+        {
+            projectDeck.Remove(pickedUpTile);
         }
     }
 }
