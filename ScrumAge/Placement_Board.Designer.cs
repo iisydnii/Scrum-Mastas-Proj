@@ -35,10 +35,11 @@ namespace ScrumAge
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.StatusBox = new System.Windows.Forms.GroupBox();
+            this.Certificates = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dice = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@ namespace ScrumAge
             this.BootCampBox8 = new System.Windows.Forms.PictureBox();
             this.UnlockButton = new System.Windows.Forms.Button();
             this.exitGame = new System.Windows.Forms.Button();
-            this.Certificates = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -177,7 +177,7 @@ namespace ScrumAge
             this.StatusBox.Controls.Add(this.nextButton);
             this.StatusBox.Controls.Add(this.label18);
             this.StatusBox.Controls.Add(this.label14);
-            this.StatusBox.Controls.Add(this.button1);
+            this.StatusBox.Controls.Add(this.dice);
             this.StatusBox.Controls.Add(this.label13);
             this.StatusBox.Controls.Add(this.label12);
             this.StatusBox.Controls.Add(this.label11);
@@ -200,6 +200,18 @@ namespace ScrumAge
             this.StatusBox.TabStop = false;
             this.StatusBox.Text = "StatusBox";
             this.StatusBox.Enter += new System.EventHandler(this.StatusBox_Enter);
+            // 
+            // Certificates
+            // 
+            this.Certificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.Certificates.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.Certificates.Location = new System.Drawing.Point(27, 189);
+            this.Certificates.Name = "Certificates";
+            this.Certificates.Size = new System.Drawing.Size(150, 45);
+            this.Certificates.TabIndex = 37;
+            this.Certificates.Text = "Certificates";
+            this.Certificates.UseVisualStyleBackColor = false;
+            this.Certificates.Click += new System.EventHandler(this.Certificates_Click);
             // 
             // nextButton
             // 
@@ -235,18 +247,19 @@ namespace ScrumAge
             this.label14.TabIndex = 17;
             this.label14.Text = "Development";
             // 
-            // button1
+            // dice
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
-            this.button1.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.button1.Location = new System.Drawing.Point(219, 189);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 45);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Roll";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.roll_Click);
+            this.dice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.dice.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.dice.Location = new System.Drawing.Point(219, 189);
+            this.dice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dice.Name = "dice";
+            this.dice.Size = new System.Drawing.Size(150, 45);
+            this.dice.TabIndex = 14;
+            this.dice.Text = "Roll";
+            this.dice.UseVisualStyleBackColor = false;
+            this.dice.Visible = false;
+            this.dice.Click += new System.EventHandler(this.roll_Click);
             // 
             // label13
             // 
@@ -802,18 +815,6 @@ namespace ScrumAge
             this.exitGame.UseVisualStyleBackColor = false;
             this.exitGame.Click += new System.EventHandler(this.exitGame_Click);
             // 
-            // Certificates
-            // 
-            this.Certificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
-            this.Certificates.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.Certificates.Location = new System.Drawing.Point(27, 189);
-            this.Certificates.Name = "Certificates";
-            this.Certificates.Size = new System.Drawing.Size(150, 45);
-            this.Certificates.TabIndex = 37;
-            this.Certificates.Text = "Certificates";
-            this.Certificates.UseVisualStyleBackColor = false;
-            this.Certificates.Click += new System.EventHandler(this.Certificates_Click);
-            // 
             // Placement_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -951,15 +952,15 @@ namespace ScrumAge
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button dice;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button UnlockButton;
         private System.Windows.Forms.Button exitGame;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button Certificates;
     }
 }

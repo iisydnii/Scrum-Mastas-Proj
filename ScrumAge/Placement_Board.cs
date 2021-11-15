@@ -75,6 +75,10 @@ namespace ScrumAge
         {
             InitializeComponent();
             this.PlayerList = PlayerList;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
             locationList = location.createList();
             createDragAndDrop();
             createBoxTracker();
@@ -849,9 +853,15 @@ namespace ScrumAge
         {
             //Deduct points from the players 
             //roll dice for any player on crytpo market
+            dice.Visible = true;
             //set holddevelopers to null
             holdDevelopers.BackgroundImage = null;
             //set project tiles to visible 
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = true;
+            pictureBox8.Visible = true;
+            UnlockButton.Visible = false;
             //set currentplayer to 1
             turn = 0;
             activationTurns();
@@ -859,7 +869,7 @@ namespace ScrumAge
 
         private void activationTurns()
         {
-            if (turn <= PlayerList.Count)
+            if (turn >= PlayerList.Count)
             {
                 //call retropective 
                 this.Close();
