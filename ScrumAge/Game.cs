@@ -82,7 +82,7 @@ public class Game
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
-        DisplaySituationCardForm();
+        //DisplaySituationCardForm();
 
         placement_Board = new Placement_Board(PlayerList);
         placement_Board.ShowDialog();

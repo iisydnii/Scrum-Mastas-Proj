@@ -40,7 +40,7 @@ namespace ScrumAge
             this.label1.Font = new System.Drawing.Font("Stencil", 16.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(36, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(550, 27);
+            this.label1.Size = new System.Drawing.Size(615, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Are you sure you want to quit the game?";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -51,7 +51,7 @@ namespace ScrumAge
             this.start.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
             this.start.Location = new System.Drawing.Point(41, 96);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(204, 38);
+            this.start.Size = new System.Drawing.Size(260, 38);
             this.start.TabIndex = 2;
             this.start.Text = "Yes, Quit Game";
             this.start.UseVisualStyleBackColor = false;
@@ -61,9 +61,9 @@ namespace ScrumAge
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(362, 96);
+            this.button1.Location = new System.Drawing.Point(326, 96);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 38);
+            this.button1.Size = new System.Drawing.Size(260, 38);
             this.button1.TabIndex = 3;
             this.button1.Text = "No, keep playing";
             this.button1.UseVisualStyleBackColor = false;
