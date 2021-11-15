@@ -67,9 +67,9 @@ public class Game
     }
 
 
-    public static void DisplaySituationCardForm()
+    public static void DisplaySituationCardForm(Player currentPlayer)
     {
-        situationCardForm = new SituationCardForm();
+        situationCardForm = new SituationCardForm(currentPlayer);
         situationCardForm.StartPosition = FormStartPosition.CenterParent;
         situationCardForm.ShowDialog();
         //placement_Board.Hide();

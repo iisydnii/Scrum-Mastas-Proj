@@ -58,7 +58,7 @@ namespace ScrumAge
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
         private bool picBox8WasClicked = false;
-        bool activate = false;
+        bool activate = true;
 
         public static string Description = "";
         public static string RewardType = "";
@@ -848,7 +848,14 @@ namespace ScrumAge
             }
         }
 
+        // -------------------------------------------------------------
         // Activation Phase 
+        // -------------------------------------------------------------
+
+        public SituationDeck sd = new SituationDeck();
+
+
+
         private void beginActivation()
         {
             //Deduct points from the players 
@@ -878,6 +885,7 @@ namespace ScrumAge
             {
                 currentPlayer = PlayerList[turn];
                 //Draw a situational card for player 
+                SituationCardForm situationCardForm = new SituationCardForm(currentPlayer);
             }
             turn++;
         }

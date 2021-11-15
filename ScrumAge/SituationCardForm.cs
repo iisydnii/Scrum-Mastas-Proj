@@ -12,15 +12,34 @@ namespace ScrumAge
 {
     public partial class SituationCardForm : Form
     {
-        public SituationCardForm()
+        private Player CurrentPlayer;
+
+
+        public SituationCardForm(Player currentPlayer)
         {
             InitializeComponent();
+
+            CurrentPlayer = currentPlayer;
+
+
+            
         }
 
+        /// <summary>
+        /// Clicking the "Okay" Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Austin's Test");
+            SD.DisplayCards();
+            
 
-            this.Hide();
+
+            SD.DrawCard();
+
+            this.Close();
         }
     }
 }
