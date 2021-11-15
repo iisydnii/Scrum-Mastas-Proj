@@ -29,21 +29,21 @@ namespace ScrumAge
         static void Main()
         {
             Game.StartGame();
-            SituationDeck sd = new SituationDeck();
-            sd.CreateDeck();
-            sd.ShuffleDeck();
-            sd.DrawCard();
-            Console.WriteLine("\n\n");
-            ProjectDeck pd = new ProjectDeck();
-            pd.CreateDeck();
-            pd.DrawCard();
-            Console.WriteLine("\n\n");
-            pd.DisplayCards();
+            //SituationDeck sd = new SituationDeck();
+            //sd.CreateDeck();
+            //sd.ShuffleDeck();
+            //sd.DrawCard();
+            //Console.WriteLine("\n\n");
+            //ProjectDeck pd = new ProjectDeck();
+            //pd.CreateDeck();
+            //pd.DrawCard();
+            //Console.WriteLine("\n\n");
+            //pd.DisplayCards();
 
 
-            //Test crypto market location 
-            CryptoMarket crypto = new CryptoMarket();
-            crypto.CalcGold(1, 3);
+            ////Test crypto market location 
+            //CryptoMarket crypto = new CryptoMarket();
+            //crypto.CalcGold(1, 3);
 
 
 

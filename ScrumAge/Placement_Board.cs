@@ -58,6 +58,7 @@ namespace ScrumAge
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
         private bool picBox8WasClicked = false;
+        bool activate = false;
 
         public static string Description = "";
         public static string RewardType = "";
@@ -85,25 +86,32 @@ namespace ScrumAge
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            //unlock all
-            UnlockBoxes();
-
-            //Save Devs
-            //HR
-            HRPlacement();
-            //Bootcamp
-            BootCampPlacement();
-            //Whiteboard
-            WhiteBoardPlacement();
-            //Bitcoin Market
-            CryptoMarkerPlacement();
-
-            turn++;
-            if (turn == PlayerList.Count)
+            if (activate == false)
             {
-                turn = 0;
+                //unlock all
+                UnlockBoxes();
+
+                //Save Devs
+                //HR
+                HRPlacement();
+                //Bootcamp
+                BootCampPlacement();
+                //Whiteboard
+                WhiteBoardPlacement();
+                //Bitcoin Market
+                CryptoMarkerPlacement();
+
+                turn++;
+                if (turn == PlayerList.Count)
+                {
+                    turn = 0;
+                }
+                setUpPlayerTurns();
             }
-            setUpPlayerTurns();
+            else
+            {
+                activationTurns();
+            }
         }
 
         private void setUpPlayerTurns()
@@ -113,7 +121,8 @@ namespace ScrumAge
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
             {
-
+                activate = true;
+                beginActivation();
             }
             else
             {
@@ -833,6 +842,39 @@ namespace ScrumAge
                 picBox7WasClicked = true;
                 projectTileForm.Show();
             }
+        }
+
+        // Activation Phase 
+        private void beginActivation()
+        {
+            //Deduct points from the players 
+            //roll dice for any player on crytpo market
+            //set holddevelopers to null
+            holdDevelopers.BackgroundImage = null;
+            //set project tiles to visible 
+            //set currentplayer to 1
+            turn = 0;
+            activationTurns();
+        }
+
+        private void activationTurns()
+        {
+            if (turn <= PlayerList.Count)
+            {
+                //call retropective 
+                this.Close();
+            }
+            else
+            {
+                currentPlayer = PlayerList[turn];
+                //Draw a situational card for player 
+            }
+            turn++;
+        }
+
+        private void Certificates_Click(object sender, EventArgs e)
+        {
+            //Call form to show all of the player's certificates
         }
     }
 }
