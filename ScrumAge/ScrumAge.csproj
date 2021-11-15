@@ -105,6 +105,12 @@
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SituationCard.cs" />
+    <Compile Include="SituationCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SituationCardForm.Designer.cs">
+      <DependentUpon>SituationCardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SituationDeck.cs" />
     <Compile Include="TestLocations.cs" />
     <Compile Include="Whiteboard.cs" />
@@ -145,6 +151,9 @@
     <EmbeddedResource Include="SelectPlayersForm.resx">
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SituationCardForm.resx">
+      <DependentUpon>SituationCardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Winners_Losers.resx">
       <DependentUpon>Winners_Losers.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +193,7 @@
     </Content>
     <Content Include="Images\hr.png" />
     <Content Include="Images\LandingPage.PNG" />
+    <None Include="Images\Project Cards\PlaceHolder_OR_Template.png" />
     <Content Include="Images\red.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

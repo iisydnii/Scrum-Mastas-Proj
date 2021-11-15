@@ -16,6 +16,9 @@ Page Modified
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
     Piper Floyd, 11/10/21,              Added project tile methods  
 
+    Austin Trivette, 11/13/21, Lines 67 Added Situation Deck
+                               Line 101 Added method to display situational card for current player
+
 */
 using System;
 using System.Collections.Generic;
@@ -62,6 +65,8 @@ namespace ScrumAge
         ProjectDeck deck = new ProjectDeck();
         //deck.CreateDeck();
 
+        SituationDeck sd = new SituationDeck();
+
         public Placement_Board(List<Player> PlayerList)
         {
             InitializeComponent();
@@ -91,6 +96,9 @@ namespace ScrumAge
                 turn = 0;
             }
             setUpPlayerTurns();
+
+            //Display SituationalCardForm for next player
+            Game.DisplaySituationCardForm();
         }
 
         private void setUpPlayerTurns()

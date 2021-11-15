@@ -31,6 +31,7 @@ public class Game
     private static DiceForm diceForm;
     private static QuitGame quitGame;
     private static Winners_Losers winners_losers;
+    private static SituationCardForm situationCardForm;
 
     public Player player;
 
@@ -66,6 +67,14 @@ public class Game
     }
 
 
+    public static void DisplaySituationCardForm()
+    {
+        situationCardForm = new SituationCardForm();
+        situationCardForm.StartPosition = FormStartPosition.CenterParent;
+        situationCardForm.ShowDialog();
+        //placement_Board.Hide();
+    }
+
 
     public static void DisplayPlacementBoard()
     {
@@ -73,9 +82,15 @@ public class Game
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
+        DisplaySituationCardForm();
+
         placement_Board = new Placement_Board(PlayerList);
         placement_Board.ShowDialog();
         DisplayActivationBoard();
+
+        //Show Situational Card For Player
+        
+        
 
     }
 
