@@ -167,6 +167,7 @@
     <Content Include="Images\BobTheDev.PNG" />
     <Content Include="Images\bobthedev___copy.ico" />
     <Content Include="Images\Bootcamp.png" />
+    <Content Include="Images\Card Design 2.jpg" />
     <Content Include="Images\Dice.jpg" />
     <None Include="Images\dice\dice1.png" />
     <None Include="Images\dice\dice2.png" />
@@ -184,9 +185,11 @@
     </Content>
     <Content Include="Images\hr.png" />
     <Content Include="Images\LandingPage.PNG" />
+    <Content Include="Images\project tile.png" />
     <Content Include="Images\red.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\situation card.jpg" />
     <Content Include="Images\Whiteboard.png" />
     <Content Include="Images\yellow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
