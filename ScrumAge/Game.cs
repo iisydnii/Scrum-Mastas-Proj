@@ -10,6 +10,7 @@ Page Modified
     Piper Floyd, 10/24/21, lines 3o,58, Added player property so that other classes
                                         can access its values. Passed in player to 
                                         placement board. Deleted dice form property and method.
+    Nataliya Chibizova 11/15/21 lines 129-134, added DisplayRetrospective.
 
 */
 using System;
@@ -31,6 +32,7 @@ using System.Collections.Generic;
     private static QuitGame quitGame;
     private static Winners_Losers winners_losers;
     private static SituationCardForm situationCardForm;
+    private static Retrospective retrospective;
 
     public Player player;
 
@@ -124,10 +126,12 @@ using System.Collections.Generic;
 
 
     ///TODO
-    //public static void DisplayRetrospective()
-    //{
-
-    //}
+    public static void DisplayRetrospective()
+    {
+        retrospective = new Retrospective();
+        retrospective.StartPosition = FormStartPosition.CenterParent;
+        retrospective.ShowDialog();
+    }
 
 
     public static void CloseForm(Form form)
