@@ -184,6 +184,7 @@ namespace ScrumAge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImage = global::ScrumAge.Properties.Resources.PlaceHolder_OR_Template;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
