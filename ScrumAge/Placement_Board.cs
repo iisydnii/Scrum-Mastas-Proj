@@ -36,7 +36,7 @@ namespace ScrumAge
 
     public partial class Placement_Board : Form
     {
-        List<Player> PlayerList { get; set; }
+        public List<Player> PlayerList;
         List<Locations> locationList;
         List<Box> trackBoxes;
         List<PictureBox> hrBox = new List<PictureBox>();

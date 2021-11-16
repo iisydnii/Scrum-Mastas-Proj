@@ -20,7 +20,7 @@ using System.Collections.Generic;
  class Game
 {
 
-    public List<Player> PlayerList { get; set; }
+    public List<Player> PlayerList = SelectPlayersForm.players;
     public int stockprice = 1;
 
     // Forms
@@ -82,29 +82,10 @@ using System.Collections.Generic;
 
     public void DisplayPlacementBoard()
     {
-
-        //Populate PlayerList with all of the players
-        PopulatePlayers();
-
-        //DisplaySituationCardForm();
-
         placement_Board = new Placement_Board(PlayerList, stockprice);
         placement_Board.ShowDialog();
-        DisplayActivationBoard();
-
-        //Show Situational Card For Player
-        
-        
 
     }
-
-
-    ///TODO
-    public static void DisplayActivationBoard()
-    {
-
-    }
-
     
     public static void DisplayQuitGame()
     {
@@ -158,16 +139,6 @@ using System.Collections.Generic;
        
 
     }
-
-
-    private static void PopulatePlayers()
-    {
-        PlayerList = new List<Player>();
-
-        PlayerList = SelectPlayersForm.players;
-
-    }
-
 
 
 
