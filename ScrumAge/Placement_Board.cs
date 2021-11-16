@@ -15,7 +15,8 @@ Page Modified
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
     Sydni Ward   11/13/2021             Fixing errors
-    Piper Floyd, 11/10/21,              Added project tile methods  
+    Piper Floyd, 11/10/21,              Added project tile methods
+    Austin Trivette, 11/15/21,          Added Situation Card Form To Open in activation and situation deck (Lines 856-897)
 
 
 */
