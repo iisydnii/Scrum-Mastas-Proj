@@ -136,15 +136,15 @@
   <data name="dice3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\dice\dice3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Template" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="Template" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Situation Cards\Template.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="diceRoll2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\dice\diceRoll2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlaceHolder_OR_Template" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="PlaceHolder_OR_Template" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Project Cards\PlaceHolder_OR_Template.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

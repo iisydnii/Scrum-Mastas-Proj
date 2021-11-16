@@ -17,7 +17,7 @@ Page Modified
     Sydni Ward   11/13/2021             Fixing errors
     Piper Floyd, 11/10/21,              Added project tile methods
     Austin Trivette, 11/15/21,          Added Situation Card Form To Open in activation and situation deck (Lines 856-897)
-
+    Sydni Ward 11/16/2021               Payment
 
 */
 using System;
@@ -49,12 +49,16 @@ namespace ScrumAge
         int AvailableDevs = 0;
         int devs = 0; // once set it never changes
         int turn;
+        int roll = 0;
+        public int stockPrice;
+        Game game;
         Bootcamp bootCamp = new Bootcamp();
         Whiteboard whiteBoard = new Whiteboard();
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
         ProjectDeck deck = new ProjectDeck();
         Locations location = new Locations();
+        Dice dice = new Dice();
         private bool picBox5WasClicked = false;
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
@@ -71,11 +75,11 @@ namespace ScrumAge
         public static Dictionary<int, string> RewardD;
         public static Dictionary<int, string> Cost;
 
-
-        public Placement_Board(List<Player> PlayerList)
+        public Placement_Board(List<Player> PlayerList, int stockPrice)
         {
             InitializeComponent();
             this.PlayerList = PlayerList;
+            this.stockPrice = stockPrice;
             pictureBox5.Visible = false;
             pictureBox6.Visible = false;
             pictureBox7.Visible = false;
@@ -84,6 +88,7 @@ namespace ScrumAge
             createDragAndDrop();
             createBoxTracker();
             currentPlayer = PlayerList[0];
+            setStatus();
             turn = 0;
             setImage();
             getAvailableDevs(0);
@@ -106,11 +111,6 @@ namespace ScrumAge
                 //Bitcoin Market
                 CryptoMarkerPlacement();
 
-                turn++;
-                if (turn == PlayerList.Count)
-                {
-                    turn = 0;
-                }
                 setUpPlayerTurns();
             }
             else
@@ -122,6 +122,11 @@ namespace ScrumAge
         private void setUpPlayerTurns()
         {
             Boolean AvailableDevsBool = true;
+            turn++;
+            if (turn == PlayerList.Count)
+            {
+                turn = 0;
+            }
 
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
@@ -135,7 +140,12 @@ namespace ScrumAge
                 if (AvailableDevs != 0)
                 {
                     currentPlayer = PlayerList[turn];
+                    setStatus();
                     setImage();
+                }
+                else
+                {
+                    setUpPlayerTurns();
                 }
             }
         }
@@ -452,7 +462,7 @@ namespace ScrumAge
         /// <summary>
         /// Dsiplays the players name and current inventory
         /// </summary>
-        private void StatusBox_Enter(object sender, EventArgs e)
+        private void setStatus()
         {
             label6.Text = currentPlayer.Name;
             label2.Text = currentPlayer.Inventory.TrainingPoints.ToString();
@@ -460,25 +470,6 @@ namespace ScrumAge
             label12.Text = currentPlayer.Inventory.Bitcoin.ToString();
             label3.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
             label7.Text = currentPlayer.Inventory.Developers.ToString();
-        }
-
-        private void roll_Click(object sender, EventArgs e)
-        {
-            //Dice dice = new Dice();
-            //label18.Text = dice.Total.ToString();
-
-            //int count = 0;
-            //count++;
-            ////Ensures that the dice can only be rolled once
-            //if (count == 1)
-            //{
-            //    button1.Enabled = false;
-
-            //}
-
-            DiceForm diceForm = new DiceForm();
-            diceForm.Show();
-
         }
 
         private void exitGame_Click(object sender, EventArgs e)
@@ -751,8 +742,6 @@ namespace ScrumAge
         /// <summary>
         /// Displays second project tile
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = deck.DrawCard();
@@ -782,41 +771,6 @@ namespace ScrumAge
                 deck = projectTileForm.Deck;
             }
         }
-
-        /// <summary>
-        /// Displays third project tile
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            ProjectTile projectTile = deck.DrawCard();
-            Description = projectTile.Description;
-
-            foreach (KeyValuePair<int, string> value in projectTile.reward)
-            {
-                RewardValue = value.Key.ToString();
-                RewardType = value.Value;
-            }
-            foreach (KeyValuePair<int, string> value in projectTile.cost)
-            {
-                CostValue = value.Key.ToString();
-                CostType = value.Value;
-            }
-            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
-            {
-                pictureBox8.Enabled = false;
-            }
-            else
-            {
-                pictureBox8.Enabled = true;
-                picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
-                projectTileForm.Show();
-                deck = projectTileForm.Deck;
-            }
-        }
-
 
         /// <summary>
         /// Displays fourht project tile
@@ -853,6 +807,39 @@ namespace ScrumAge
             }
         }
 
+        /// <summary>
+        /// Displays third project tile
+        /// </summary>
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            ProjectTile projectTile = deck.DrawCard();
+            Description = projectTile.Description;
+
+            foreach (KeyValuePair<int, string> value in projectTile.reward)
+            {
+                RewardValue = value.Key.ToString();
+                RewardType = value.Value;
+            }
+            foreach (KeyValuePair<int, string> value in projectTile.cost)
+            {
+                CostValue = value.Key.ToString();
+                CostType = value.Value;
+            }
+            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
+            {
+                pictureBox8.Enabled = false;
+            }
+            else
+            {
+                pictureBox8.Enabled = true;
+                picBox8WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
+                projectTileForm.Show();
+                deck = projectTileForm.Deck;
+            }
+        }
+
+
         // -------------------------------------------------------------
         // Activation Phase 
         // -------------------------------------------------------------
@@ -862,9 +849,6 @@ namespace ScrumAge
 
         private void beginActivation()
         {
-            //Deduct points from the players 
-            //roll dice for any player on crytpo market
-            dice.Visible = true;
             //set holddevelopers to null
             holdDevelopers.BackgroundImage = null;
             //set project tiles to visible 
@@ -883,20 +867,52 @@ namespace ScrumAge
             if (turn >= PlayerList.Count)
             {
                 //call retropective 
+                game.stockprice = stockPrice;
+                game.PlayerList = PlayerList;
                 this.Close();
             }
             else
             {
                 currentPlayer = PlayerList[turn];
-
+                //Deduct points from the players 
+                chargeAndAdd();
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
 
                 // Open Situational Card Form and Pass sc to it
                 Game.DisplaySituationCardForm(currentPlayer, sc);
-                
             }
             turn++;
+        }
+
+        private void chargeAndAdd()
+        {
+            //HR
+            if (trackBoxes[0].playerId == currentPlayer.Id)
+            {
+                currentPlayer.Inventory.Bitcoin -= hr.chargePlayerSalary();
+                addDev();
+            }
+
+            //Bootcamp
+            roll = dice.rollDice();
+            currentPlayer.Inventory.Bitcoin = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
+
+            //Whiteboard
+            roll = dice.rollDice();
+            currentPlayer.Inventory.DesignPoints = whiteBoard.DesignPointsCalc(currentPlayer, locationList[2].playerList[1, turn], roll);
+
+            //CryptoMarket 
+            roll = dice.rollDice();
+            int roll_2 = dice.rollDice();
+            currentPlayer.Inventory.Bitcoin = market.CalcGold(currentPlayer, locationList[3].playerList[1, turn], roll, roll_2, stockPrice);
+            stockPrice = currentPlayer.Inventory.Bitcoin;
+            setStatus();
+        }
+
+        private void addDev()
+        {
+            currentPlayer.Inventory.Developers++;
         }
 
         private void Certificates_Click(object sender, EventArgs e)

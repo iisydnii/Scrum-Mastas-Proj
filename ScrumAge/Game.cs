@@ -20,8 +20,8 @@ using System.Collections.Generic;
  class Game
 {
 
-    public static List<Player> PlayerList { get; set; }
-
+    public List<Player> PlayerList { get; set; }
+    public int stockprice = 1;
 
     // Forms
     private static LandingPageForm landingPageForm = new LandingPageForm();
@@ -33,9 +33,12 @@ using System.Collections.Generic;
     private static Winners_Losers winners_losers;
     private static SituationCardForm situationCardForm;
     private static Retrospective retrospective;
+    
 
-    public Player player;
-
+    public Game()
+    {
+        //do nothing 
+    }
 
     // Starts the game by displaying the Title Screen
     public static void StartGame()
@@ -77,7 +80,7 @@ using System.Collections.Generic;
     }
 
 
-    public static void DisplayPlacementBoard()
+    public void DisplayPlacementBoard()
     {
 
         //Populate PlayerList with all of the players
@@ -85,7 +88,7 @@ using System.Collections.Generic;
 
         //DisplaySituationCardForm();
 
-        placement_Board = new Placement_Board(PlayerList);
+        placement_Board = new Placement_Board(PlayerList, stockprice);
         placement_Board.ShowDialog();
         DisplayActivationBoard();
 
@@ -151,7 +154,6 @@ using System.Collections.Generic;
     {
         StartGame();
         DisplaySetPlayersForm();
-        DisplayPlacementBoard();
 
        
 
