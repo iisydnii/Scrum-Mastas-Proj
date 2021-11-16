@@ -33,9 +33,11 @@ namespace ScrumAge
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.start = new System.Windows.Forms.Button();
             this.goBack = new System.Windows.Forms.Button();
-            this.myRules = new System.Windows.Forms.RichTextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.myRules = new System.Windows.Forms.RichTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -81,8 +83,18 @@ namespace ScrumAge
             this.myRules.Name = "myRules";
             this.myRules.Size = new System.Drawing.Size(408, 374);
             this.myRules.TabIndex = 3;
-            this.myRules.Text = "Rules Will Be Displayed Here";
+            this.myRules.Text = "Rules Will Be Displayed Here\n";
             this.myRules.TextChanged += new System.EventHandler(this.myRules_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(447, 293);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(116, 106);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // RulesForm
             // 
@@ -90,6 +102,7 @@ namespace ScrumAge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.myRules);
             this.Controls.Add(this.goBack);
             this.Controls.Add(this.start);
@@ -99,6 +112,7 @@ namespace ScrumAge
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rules";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,7 +122,8 @@ namespace ScrumAge
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Button goBack;
-        private System.Windows.Forms.RichTextBox myRules;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.RichTextBox myRules;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
