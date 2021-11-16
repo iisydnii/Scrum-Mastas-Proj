@@ -48,8 +48,9 @@ namespace ScrumAge
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(164, 104);
-            this.label1.MaximumSize = new System.Drawing.Size(180, 250);
+            this.label1.Location = new System.Drawing.Point(193, 178);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(270, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 29);
             this.label1.TabIndex = 0;
@@ -60,7 +61,8 @@ namespace ScrumAge
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Stencil", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(104, 70);
+            this.label2.Location = new System.Drawing.Point(207, 134);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 31);
             this.label2.TabIndex = 1;
@@ -71,7 +73,8 @@ namespace ScrumAge
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Stencil", 13F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(135, 157);
+            this.label3.Location = new System.Drawing.Point(240, 323);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 31);
             this.label3.TabIndex = 2;
@@ -82,7 +85,8 @@ namespace ScrumAge
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Stencil", 13F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(155, 279);
+            this.label4.Location = new System.Drawing.Point(261, 442);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 31);
             this.label4.TabIndex = 3;
@@ -93,8 +97,9 @@ namespace ScrumAge
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(163, 189);
-            this.label5.MaximumSize = new System.Drawing.Size(180, 250);
+            this.label5.Location = new System.Drawing.Point(243, 370);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.MaximumSize = new System.Drawing.Size(270, 385);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 29);
             this.label5.TabIndex = 4;
@@ -105,8 +110,9 @@ namespace ScrumAge
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(163, 351);
-            this.label6.MaximumSize = new System.Drawing.Size(180, 250);
+            this.label6.Location = new System.Drawing.Point(245, 481);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.MaximumSize = new System.Drawing.Size(270, 385);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 29);
             this.label6.TabIndex = 5;
@@ -116,9 +122,10 @@ namespace ScrumAge
             // 
             this.AcceptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.AcceptButton.Font = new System.Drawing.Font("Stencil", 13F);
-            this.AcceptButton.Location = new System.Drawing.Point(121, 410);
+            this.AcceptButton.Location = new System.Drawing.Point(182, 631);
+            this.AcceptButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AcceptButton.Name = "AcceptButton";
-            this.AcceptButton.Size = new System.Drawing.Size(162, 39);
+            this.AcceptButton.Size = new System.Drawing.Size(243, 60);
             this.AcceptButton.TabIndex = 38;
             this.AcceptButton.Text = "Accept";
             this.AcceptButton.UseVisualStyleBackColor = false;
@@ -129,9 +136,10 @@ namespace ScrumAge
             this.DeclineButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
             this.DeclineButton.Font = new System.Drawing.Font("Stencil", 13F);
             this.DeclineButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DeclineButton.Location = new System.Drawing.Point(121, 455);
+            this.DeclineButton.Location = new System.Drawing.Point(182, 700);
+            this.DeclineButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeclineButton.Name = "DeclineButton";
-            this.DeclineButton.Size = new System.Drawing.Size(162, 39);
+            this.DeclineButton.Size = new System.Drawing.Size(243, 60);
             this.DeclineButton.TabIndex = 39;
             this.DeclineButton.Text = "Decline";
             this.DeclineButton.UseVisualStyleBackColor = false;
@@ -142,8 +150,9 @@ namespace ScrumAge
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(163, 216);
-            this.label7.MaximumSize = new System.Drawing.Size(180, 250);
+            this.label7.Location = new System.Drawing.Point(291, 405);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.MaximumSize = new System.Drawing.Size(270, 385);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 29);
             this.label7.TabIndex = 40;
@@ -154,8 +163,9 @@ namespace ScrumAge
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(163, 312);
-            this.label8.MaximumSize = new System.Drawing.Size(180, 250);
+            this.label8.Location = new System.Drawing.Point(295, 510);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.MaximumSize = new System.Drawing.Size(270, 385);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 29);
             this.label8.TabIndex = 41;
@@ -166,7 +176,8 @@ namespace ScrumAge
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Stencil", 13F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(105, 14);
+            this.label9.Location = new System.Drawing.Point(200, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(197, 31);
             this.label9.TabIndex = 42;
@@ -180,7 +191,7 @@ namespace ScrumAge
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(393, 517);
+            this.ClientSize = new System.Drawing.Size(590, 795);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -193,7 +204,8 @@ namespace ScrumAge
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1489, 1508);
             this.Name = "ProjectTileForm";
             this.Text = "ProjectTileForm";
             this.Load += new System.EventHandler(this.ProjectTileForm_Load);
