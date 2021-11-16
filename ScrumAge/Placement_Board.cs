@@ -127,12 +127,6 @@ namespace ScrumAge
                 turn = 0;
             }
 
-            turn++;
-            if (turn == PlayerList.Count)
-            {
-                turn = 0;
-            }
-
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
             {

@@ -39,7 +39,7 @@ namespace ScrumAge
             DiceRoll_2 = random.Next(1, 6);
 
 
-            diceValue = DiceRoll_1 + DiceRoll_2;
+            int diceValue = DiceRoll_1 + DiceRoll_2;
 
             //Discerns snake eyes
             if (diceValue == 2)
@@ -47,7 +47,6 @@ namespace ScrumAge
                 SnakeEyes = true;
             }
 
-            return diceValue;
         }
     }
 }
