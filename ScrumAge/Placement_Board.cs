@@ -860,7 +860,7 @@ namespace ScrumAge
             turn = 0;
             activationTurns();
         }
-
+        //turns
         private void activationTurns()
         {
             if (turn >= PlayerList.Count)
