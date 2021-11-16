@@ -33,8 +33,13 @@ namespace ScrumAge
             this.costLabel = new System.Windows.Forms.Label();
             this.SituationLabel = new System.Windows.Forms.TextBox();
             this.rewardsLabel = new System.Windows.Forms.Label();
-            this.CertificateDescLabel = new System.Windows.Forms.TextBox();
-            this.CostDescLabel = new System.Windows.Forms.Label();
+            this.CostTypeLabel = new System.Windows.Forms.Label();
+            this.CostAmountLabel = new System.Windows.Forms.Label();
+            this.RewardTypeLabel1 = new System.Windows.Forms.Label();
+            this.RewardTypeLabel2 = new System.Windows.Forms.Label();
+            this.RewardValueLabel1 = new System.Windows.Forms.Label();
+            this.RewardValueLabel2 = new System.Windows.Forms.Label();
+            this.CertificateLabel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -54,7 +59,7 @@ namespace ScrumAge
             this.costLabel.AutoSize = true;
             this.costLabel.BackColor = System.Drawing.Color.Transparent;
             this.costLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costLabel.Location = new System.Drawing.Point(55, 289);
+            this.costLabel.Location = new System.Drawing.Point(46, 289);
             this.costLabel.Name = "costLabel";
             this.costLabel.Size = new System.Drawing.Size(61, 25);
             this.costLabel.TabIndex = 1;
@@ -79,36 +84,90 @@ namespace ScrumAge
             this.rewardsLabel.AutoSize = true;
             this.rewardsLabel.BackColor = System.Drawing.Color.Transparent;
             this.rewardsLabel.Font = new System.Drawing.Font("Stencil", 13.74545F);
-            this.rewardsLabel.Location = new System.Drawing.Point(224, 289);
+            this.rewardsLabel.Location = new System.Drawing.Point(236, 289);
             this.rewardsLabel.Name = "rewardsLabel";
             this.rewardsLabel.Size = new System.Drawing.Size(110, 25);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "Rewards";
             // 
-            // CertificateDescLabel
+            // CostTypeLabel
             // 
-            this.CertificateDescLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
-            this.CertificateDescLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CertificateDescLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CertificateDescLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CertificateDescLabel.Location = new System.Drawing.Point(179, 317);
-            this.CertificateDescLabel.Multiline = true;
-            this.CertificateDescLabel.Name = "CertificateDescLabel";
-            this.CertificateDescLabel.Size = new System.Drawing.Size(202, 81);
-            this.CertificateDescLabel.TabIndex = 5;
-            this.CertificateDescLabel.Text = "None\r\nNone\r\nNone\r\n\r\n";
-            this.CertificateDescLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CostTypeLabel.AutoSize = true;
+            this.CostTypeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CostTypeLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostTypeLabel.Location = new System.Drawing.Point(1, 317);
+            this.CostTypeLabel.Name = "CostTypeLabel";
+            this.CostTypeLabel.Size = new System.Drawing.Size(47, 25);
+            this.CostTypeLabel.TabIndex = 6;
+            this.CostTypeLabel.Text = "CTL";
             // 
-            // CostDescLabel
+            // CostAmountLabel
             // 
-            this.CostDescLabel.AutoSize = true;
-            this.CostDescLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CostDescLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostDescLabel.Location = new System.Drawing.Point(55, 335);
-            this.CostDescLabel.Name = "CostDescLabel";
-            this.CostDescLabel.Size = new System.Drawing.Size(61, 25);
-            this.CostDescLabel.TabIndex = 6;
-            this.CostDescLabel.Text = "Cost";
+            this.CostAmountLabel.AutoSize = true;
+            this.CostAmountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CostAmountLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostAmountLabel.Location = new System.Drawing.Point(108, 317);
+            this.CostAmountLabel.Name = "CostAmountLabel";
+            this.CostAmountLabel.Size = new System.Drawing.Size(48, 25);
+            this.CostAmountLabel.TabIndex = 7;
+            this.CostAmountLabel.Text = "CAL";
+            // 
+            // RewardTypeLabel1
+            // 
+            this.RewardTypeLabel1.AutoSize = true;
+            this.RewardTypeLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.RewardTypeLabel1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardTypeLabel1.Location = new System.Drawing.Point(214, 317);
+            this.RewardTypeLabel1.Name = "RewardTypeLabel1";
+            this.RewardTypeLabel1.Size = new System.Drawing.Size(48, 25);
+            this.RewardTypeLabel1.TabIndex = 8;
+            this.RewardTypeLabel1.Text = "CAL";
+            // 
+            // RewardTypeLabel2
+            // 
+            this.RewardTypeLabel2.AutoSize = true;
+            this.RewardTypeLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.RewardTypeLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RewardTypeLabel2.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardTypeLabel2.Location = new System.Drawing.Point(214, 364);
+            this.RewardTypeLabel2.Name = "RewardTypeLabel2";
+            this.RewardTypeLabel2.Size = new System.Drawing.Size(0, 25);
+            this.RewardTypeLabel2.TabIndex = 9;
+            // 
+            // RewardValueLabel1
+            // 
+            this.RewardValueLabel1.AutoSize = true;
+            this.RewardValueLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.RewardValueLabel1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardValueLabel1.Location = new System.Drawing.Point(318, 317);
+            this.RewardValueLabel1.Name = "RewardValueLabel1";
+            this.RewardValueLabel1.Size = new System.Drawing.Size(48, 25);
+            this.RewardValueLabel1.TabIndex = 10;
+            this.RewardValueLabel1.Text = "CAL";
+            // 
+            // RewardValueLabel2
+            // 
+            this.RewardValueLabel2.AutoSize = true;
+            this.RewardValueLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.RewardValueLabel2.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardValueLabel2.Location = new System.Drawing.Point(318, 364);
+            this.RewardValueLabel2.Name = "RewardValueLabel2";
+            this.RewardValueLabel2.Size = new System.Drawing.Size(0, 25);
+            this.RewardValueLabel2.TabIndex = 11;
+            // 
+            // CertificateLabel
+            // 
+            this.CertificateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.CertificateLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CertificateLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CertificateLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CertificateLabel.Location = new System.Drawing.Point(60, 409);
+            this.CertificateLabel.Multiline = true;
+            this.CertificateLabel.Name = "CertificateLabel";
+            this.CertificateLabel.Size = new System.Drawing.Size(274, 53);
+            this.CertificateLabel.TabIndex = 13;
+            this.CertificateLabel.Text = "None";
+            this.CertificateLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SituationCardForm
             // 
@@ -118,8 +177,13 @@ namespace ScrumAge
             this.BackgroundImage = global::ScrumAge.Properties.Resources.PlaceHolder_OR_Template;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(393, 517);
-            this.Controls.Add(this.CostDescLabel);
-            this.Controls.Add(this.CertificateDescLabel);
+            this.Controls.Add(this.CertificateLabel);
+            this.Controls.Add(this.RewardValueLabel2);
+            this.Controls.Add(this.RewardValueLabel1);
+            this.Controls.Add(this.RewardTypeLabel2);
+            this.Controls.Add(this.RewardTypeLabel1);
+            this.Controls.Add(this.CostAmountLabel);
+            this.Controls.Add(this.CostTypeLabel);
             this.Controls.Add(this.rewardsLabel);
             this.Controls.Add(this.SituationLabel);
             this.Controls.Add(this.costLabel);
@@ -138,7 +202,12 @@ namespace ScrumAge
         private System.Windows.Forms.Label costLabel;
         private System.Windows.Forms.TextBox SituationLabel;
         private System.Windows.Forms.Label rewardsLabel;
-        private System.Windows.Forms.TextBox CertificateDescLabel;
-        private System.Windows.Forms.Label CostDescLabel;
+        private System.Windows.Forms.Label CostTypeLabel;
+        private System.Windows.Forms.Label CostAmountLabel;
+        private System.Windows.Forms.Label RewardTypeLabel1;
+        private System.Windows.Forms.Label RewardTypeLabel2;
+        private System.Windows.Forms.Label RewardValueLabel1;
+        private System.Windows.Forms.Label RewardValueLabel2;
+        private System.Windows.Forms.TextBox CertificateLabel;
     }
 }

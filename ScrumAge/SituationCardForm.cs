@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ Page Created 
+     File Name: SituationCardForm.cs
+     Creator Name: Austin Trivette
+     Created Date: 11/15/2021
+     Purpose: Display Situational Card
+________________________________________________________________________________
+Page Modified
+
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +24,6 @@ namespace ScrumAge
     {
         private Player CurrentPlayer;
         private SituationCard SC;
-        private 
 
 
         public SituationCardForm(Player CurrentPlayer, SituationCard SC)
@@ -26,12 +35,8 @@ namespace ScrumAge
 
             SetLabels();
 
-            //Set Reward
-            //foreach (KeyValuePair<int, string> value in SC.reward)
-            //{
-            //    RewardValue = value.Key.ToString();
-            //    RewardType = value.Value;
-            //}
+            //TODO
+            //Actually add rewards and subtract costs
 
         }
 
@@ -41,8 +46,49 @@ namespace ScrumAge
         /// </summary>
         private void SetLabels()
         {
-            //Set Situation's Description
+            // Set Situation and Description Labels
             SituationLabel.Text = SC.situation;
+            CertificateLabel.Text = SC.certifications;
+
+            // Get values For cost and rewards
+            string rewardValue = "";
+            string rewardType = "";
+            string costValue = "";
+            string costType = "";
+            string rewardString = "";
+
+            
+            int counter = 0;
+            foreach (KeyValuePair<int, string> value in SC.reward)
+            {
+                if(counter == 0)
+                {
+                    rewardValue = value.Key.ToString();
+                    rewardType = value.Value;
+                    rewardString += "";          
+                    RewardTypeLabel1.Text = rewardType;
+                    RewardValueLabel1.Text = rewardValue;
+                }
+                else // If there's more than one reward, max is two
+                {
+                    rewardValue = value.Key.ToString();
+                    rewardType = value.Value;
+                    rewardString += "";
+                    RewardTypeLabel2.Text = rewardType;
+                    RewardValueLabel2.Text = rewardValue;
+                }
+                counter++;
+            }
+
+            foreach (KeyValuePair<int, string> value in SC.cost)
+            {
+                costValue = value.Key.ToString();
+                costType = value.Value;
+            }
+
+            CostTypeLabel.Text = costType;
+            CostAmountLabel.Text = costValue;
+
 
         }
 
@@ -54,9 +100,6 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Austin's Test");
-            
-
             this.Close();
         }
     }

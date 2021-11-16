@@ -58,7 +58,7 @@ namespace ScrumAge
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
         private bool picBox8WasClicked = false;
-        bool activate = true;
+        bool activate = false;
 
         public static string Description = "";
         public static string RewardType = "";
@@ -853,9 +853,6 @@ namespace ScrumAge
         // -------------------------------------------------------------
 
         private SituationDeck sdDeck = new SituationDeck();
-
-
-
         
 
         private void beginActivation()
@@ -890,7 +887,7 @@ namespace ScrumAge
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
 
-                // Open Situational Card Form
+                // Open Situational Card Form and Pass sc to it
                 Game.DisplaySituationCardForm(currentPlayer, sc);
                 
             }
