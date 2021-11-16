@@ -199,6 +199,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\situation card.jpg" />
+    <None Include="Images\Situation Cards\Template.png" />
     <Content Include="Images\Whiteboard.png" />
     <Content Include="Images\yellow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
