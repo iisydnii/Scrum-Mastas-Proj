@@ -46,6 +46,9 @@ namespace ScrumAge
         /// </summary>
         private void SetLabels()
         {
+            // Set Player Label
+            PlayerLabel.Text = CurrentPlayer.Name;
+
             // Set Situation and Description Labels
             SituationLabel.Text = SC.situation;
             CertificateLabel.Text = SC.certifications;
@@ -88,7 +91,6 @@ namespace ScrumAge
 
             CostTypeLabel.Text = costType;
             CostAmountLabel.Text = costValue;
-
 
         }
 
