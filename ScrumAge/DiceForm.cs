@@ -31,17 +31,18 @@ namespace ScrumAge
         Dice dice = new Dice();
         int roll_1 = 0;
         int roll_2 = 0;
-
+        int totalRoll = 0;
 
         public DiceForm()
         {
             InitializeComponent();
         }
 
-        public void showForm()
+        public int showForm()
         {
             Show();
             roll();
+            return totalRoll;
         }
 
         private void roll()
@@ -128,8 +129,9 @@ namespace ScrumAge
                 pictureBox1.Enabled = false;
                 pictureBox2.Enabled = false;
             }
-            int totalRoll = roll_1 + roll_2;
-            
+
+            totalRoll = roll_1 + roll_2;
+
         }
 
     }

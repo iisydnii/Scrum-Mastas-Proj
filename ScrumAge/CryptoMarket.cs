@@ -34,7 +34,12 @@ namespace ScrumAge
         /// </summary>
         public int CalcGold(Player player, int numOfDevs, int betStock, int boughtStock, int stockPrice)
         {
+            if (stockPrice == 0)
+            {
+                stockPrice = 1;
+            }
             int calculation_1 = boughtStock * stockPrice;
+
             stockPrice = calculation_1 / stockPrice;
             int bitcoin_1 = stockPrice * numOfDevs;
 

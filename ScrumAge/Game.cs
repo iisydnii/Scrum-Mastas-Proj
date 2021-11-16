@@ -19,9 +19,9 @@ using System.Windows.Forms;
 using System.Collections.Generic;
  class Game
 {
-
     public List<Player> PlayerList = SelectPlayersForm.players;
-    public int stockprice = 1;
+    public int stockprice;
+
 
     // Forms
     private static LandingPageForm landingPageForm = new LandingPageForm();
@@ -69,7 +69,6 @@ using System.Collections.Generic;
         SelectPlayersForm.ShowDialog();
 
     }
-
 
     public static void DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
     {

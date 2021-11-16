@@ -51,14 +51,13 @@ namespace ScrumAge
         int turn;
         int roll = 0;
         public int stockPrice;
-        Game game;
         Bootcamp bootCamp = new Bootcamp();
         Whiteboard whiteBoard = new Whiteboard();
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
         ProjectDeck deck = new ProjectDeck();
         Locations location = new Locations();
-        Dice dice = new Dice();
+        DiceForm DiceForm = new DiceForm();
         private bool picBox5WasClicked = false;
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
@@ -867,8 +866,11 @@ namespace ScrumAge
             if (turn >= PlayerList.Count)
             {
                 //call retropective 
+                
+                Game game = new Game();
                 game.stockprice = stockPrice;
                 game.PlayerList = PlayerList;
+
                 this.Close();
             }
             else
@@ -895,16 +897,22 @@ namespace ScrumAge
             }
 
             //Bootcamp
-            roll = dice.rollDice();
-            currentPlayer.Inventory.Bitcoin = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
+            roll = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
+            currentPlayer.Inventory.TrainingPoints = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
 
             //Whiteboard
-            roll = dice.rollDice();
+            //roll = dice.rollDice();
             currentPlayer.Inventory.DesignPoints = whiteBoard.DesignPointsCalc(currentPlayer, locationList[2].playerList[1, turn], roll);
 
             //CryptoMarket 
-            roll = dice.rollDice();
-            int roll_2 = dice.rollDice();
+            roll = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
+            int roll_2 = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
             currentPlayer.Inventory.Bitcoin = market.CalcGold(currentPlayer, locationList[3].playerList[1, turn], roll, roll_2, stockPrice);
             stockPrice = currentPlayer.Inventory.Bitcoin;
             setStatus();
