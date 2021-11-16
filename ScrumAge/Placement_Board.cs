@@ -743,8 +743,9 @@ namespace ScrumAge
             {
                 pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
         /// <summary>
@@ -776,8 +777,9 @@ namespace ScrumAge
             {
                 pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
 
@@ -809,9 +811,9 @@ namespace ScrumAge
             {
                 pictureBox8.Enabled = true;
                 picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
-
+                deck = projectTileForm.Deck;
             }
         }
 
@@ -834,8 +836,8 @@ namespace ScrumAge
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+            //ProjectTileForm projectTileForm = new ProjectTileForm();
+            //projectTileForm.Show();
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
             {
@@ -845,7 +847,9 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
 

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class ProjectTile : Card
+    public class ProjectTile : Card
     {
         public string Description { get; set; }
 

@@ -25,11 +25,19 @@ namespace ScrumAge
 {
     public partial class ProjectTileForm : Form
     {
+        public ProjectTile Tile { get; set; }
+        public ProjectDeck Deck { get; set; }
         public ProjectTileForm()
         {
             InitializeComponent();
         }
 
+        public ProjectTileForm(ProjectTile tile, ProjectDeck deck)
+        {
+            InitializeComponent();
+            Tile = tile;
+            Deck = deck;
+        }
         private void ProjectTileForm_Load(object sender, EventArgs e)
         {
             label1.Text = Placement_Board.Description;
@@ -40,36 +48,16 @@ namespace ScrumAge
             label8.Text = Placement_Board.CostValue;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void AcceptButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nextButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+            Deck.RemoveCard(Tile);
+            //do the payment and rewards for the tile
             this.Close();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void DeclineButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
