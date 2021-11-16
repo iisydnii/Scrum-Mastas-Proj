@@ -39,7 +39,6 @@ namespace ScrumAge
             this.nextButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dice = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -177,7 +176,6 @@ namespace ScrumAge
             this.StatusBox.Controls.Add(this.nextButton);
             this.StatusBox.Controls.Add(this.label18);
             this.StatusBox.Controls.Add(this.label14);
-            this.StatusBox.Controls.Add(this.dice);
             this.StatusBox.Controls.Add(this.label13);
             this.StatusBox.Controls.Add(this.label12);
             this.StatusBox.Controls.Add(this.label11);
@@ -199,13 +197,12 @@ namespace ScrumAge
             this.StatusBox.TabIndex = 4;
             this.StatusBox.TabStop = false;
             this.StatusBox.Text = "StatusBox";
-            this.StatusBox.Enter += new System.EventHandler(this.StatusBox_Enter);
             // 
             // Certificates
             // 
             this.Certificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.Certificates.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.Certificates.Location = new System.Drawing.Point(27, 189);
+            this.Certificates.Location = new System.Drawing.Point(221, 189);
             this.Certificates.Name = "Certificates";
             this.Certificates.Size = new System.Drawing.Size(150, 45);
             this.Certificates.TabIndex = 37;
@@ -217,7 +214,7 @@ namespace ScrumAge
             // 
             this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.nextButton.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.nextButton.Location = new System.Drawing.Point(406, 189);
+            this.nextButton.Location = new System.Drawing.Point(404, 189);
             this.nextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(150, 45);
@@ -246,20 +243,6 @@ namespace ScrumAge
             this.label14.Size = new System.Drawing.Size(136, 27);
             this.label14.TabIndex = 17;
             this.label14.Text = "Development";
-            // 
-            // dice
-            // 
-            this.dice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
-            this.dice.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.dice.Location = new System.Drawing.Point(219, 189);
-            this.dice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dice.Name = "dice";
-            this.dice.Size = new System.Drawing.Size(150, 45);
-            this.dice.TabIndex = 14;
-            this.dice.Text = "Roll";
-            this.dice.UseVisualStyleBackColor = false;
-            this.dice.Visible = false;
-            this.dice.Click += new System.EventHandler(this.roll_Click);
             // 
             // label13
             // 
@@ -952,7 +935,6 @@ namespace ScrumAge
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button dice;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button UnlockButton;

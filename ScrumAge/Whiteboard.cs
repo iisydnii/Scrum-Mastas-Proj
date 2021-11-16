@@ -19,9 +19,8 @@ namespace ScrumAge
     class Whiteboard : Locations
     {
         private int[,] WhiteboardPlayerList = new int[2, 4];
-        
-        public Player player1 = new Player(1, "Jane");
-        //TODO: remove = new player(1,"Jane") after testing.
+
+        public Player player1;
         public Player player2;
         public Player player3;
         public Player player4;
@@ -40,29 +39,14 @@ namespace ScrumAge
 
 
         //calculates design points by rolling the dice and multiply by the number by the number of developers on the location
-        public void DesignPointsCalc(int playerId, int numOfDevs)
+        public int DesignPointsCalc(Player player, int numOfDevs, int roll)
         {
-            var tempRoll = 3; // TODO: change it to the Dice later
-            var calculation = numOfDevs * tempRoll;
+            int DesignPoints = player.Inventory.DesignPoints;
+            int calculation = numOfDevs * roll;
 
-            if (playerId == 1)
-            {
-                player1.Inventory.DesignPoints += calculation;
-            }
-            if (playerId == 2)
-            {
-                player2.Inventory.DesignPoints += calculation;
-            }
-            if (playerId == 3)
-            {
-                player3.Inventory.DesignPoints += calculation;
-            }
-            if (playerId == 4)
-            {
-                player4.Inventory.DesignPoints += calculation;
-            }
-            
-            placeDevs(playerId, numOfDevs);
+            DesignPoints += calculation;
+
+            return DesignPoints;
         }
     }
 }

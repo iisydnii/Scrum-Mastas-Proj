@@ -189,8 +189,8 @@ Purpose: Add functionality to SelectPlayersForm
             //Open the player select form
             //Placement_Board board = new Placement_Board(1);
             //board.ShowDialog();
-
-            Game.DisplayPlacementBoard();
+            Game game = new Game();
+            game.DisplayPlacementBoard();
             this.Close();
         }
 

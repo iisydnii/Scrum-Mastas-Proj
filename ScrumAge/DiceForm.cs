@@ -28,47 +28,27 @@ namespace ScrumAge
     public partial class DiceForm : Form
     {
         private bool picBox2WasClicked = false;
-<<<<<<< Updated upstream
-=======
         Dice dice = new Dice();
         int roll_1 = 0;
         int roll_2 = 0;
         int totalRoll = 0;
 
->>>>>>> Stashed changes
-
-        Dice dice = new Dice();
-   
         public DiceForm()
         {
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-=======
         public int showForm()
         {
             Show();
             roll();
             return totalRoll;
         }
->>>>>>> Stashed changes
 
+        private void roll()
+        {
 
-            //Remove Labels after testing
-            label1.Text = dice.DiceRoll_1.ToString();
-            label2.Text = dice.DiceRoll_2.ToString();
-            label3.Text = dice.Total.ToString();
-
-
-
-            int roll_1 = dice.DiceRoll_1;
-
-
-            int counter = 0;
-
+            roll_1 = dice.DiceRoll_1;
             var random = new Random();
             var num = random.Next(1, 6);
 
@@ -94,9 +74,6 @@ namespace ScrumAge
                 index++;
             }
 
- 
-
-
             switch (roll_1)
             {
                 case 1:
@@ -119,7 +96,7 @@ namespace ScrumAge
                     break;
             }
 
-            int roll_2 = dice.DiceRoll_2;
+            roll_2 = dice.DiceRoll_2;
 
             switch (roll_2)
             {
@@ -143,10 +120,6 @@ namespace ScrumAge
                     break;
             }
 
-
-        
-
-
             int count = 0;
             count++;
 
@@ -156,32 +129,10 @@ namespace ScrumAge
                 pictureBox1.Enabled = false;
                 pictureBox2.Enabled = false;
             }
-<<<<<<< Updated upstream
-=======
+
             totalRoll = roll_1 + roll_2;
->>>>>>> Stashed changes
-        }
-
-
-
-        private void DiceForm_Load(object sender, EventArgs e)
-        {
-        
-        }
-
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            picBox2WasClicked = true;
-            if (picBox2WasClicked == true)
-            {
-                pictureBox1_Click(sender, e);
-                pictureBox2.Enabled = false;
-            }
-
-      
-                pictureBox2.Enabled = false;
 
         }
+
     }
 }
