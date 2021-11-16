@@ -13,6 +13,7 @@ namespace ScrumAge
     public partial class SituationCardForm : Form
     {
         private Player CurrentPlayer;
+        private SituationDeck SD;
 
 
         public SituationCardForm(Player CurrentPlayer)
@@ -21,8 +22,15 @@ namespace ScrumAge
 
             this.CurrentPlayer = CurrentPlayer;
 
+           
+
 
             
+        }
+
+        private void PopulateSituationDeck()
+        {
+            SD = Placement_Board.
         }
 
         /// <summary>

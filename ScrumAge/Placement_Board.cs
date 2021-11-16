@@ -854,7 +854,7 @@ namespace ScrumAge
 
         public SituationDeck sd = new SituationDeck();
 
-
+        
 
         private void beginActivation()
         {
@@ -884,8 +884,10 @@ namespace ScrumAge
             else
             {
                 currentPlayer = PlayerList[turn];
-                //Draw a situational card for player 
+                //Draw a situational card for player
+                // Open Situational Card Form
                 SituationCardForm situationCardForm = new SituationCardForm(currentPlayer);
+                
             }
             turn++;
         }
