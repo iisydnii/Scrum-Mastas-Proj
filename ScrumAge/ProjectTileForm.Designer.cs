@@ -36,8 +36,8 @@ namespace ScrumAge
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AcceptButton = new System.Windows.Forms.Button();
+            this.DeclineButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@ namespace ScrumAge
             this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -74,7 +73,6 @@ namespace ScrumAge
             this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Reward";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -96,7 +94,6 @@ namespace ScrumAge
             this.label5.Size = new System.Drawing.Size(45, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -109,30 +106,30 @@ namespace ScrumAge
             this.label6.TabIndex = 5;
             this.label6.Text = "label6";
             // 
-            // button1
+            // AcceptButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
-            this.button1.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.button1.Location = new System.Drawing.Point(37, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Accept";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AcceptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
+            this.AcceptButton.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.AcceptButton.Location = new System.Drawing.Point(37, 255);
+            this.AcceptButton.Name = "AcceptButton";
+            this.AcceptButton.Size = new System.Drawing.Size(100, 29);
+            this.AcceptButton.TabIndex = 38;
+            this.AcceptButton.Text = "Accept";
+            this.AcceptButton.UseVisualStyleBackColor = false;
+            this.AcceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
-            // button2
+            // DeclineButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
-            this.button2.Font = new System.Drawing.Font("Stencil", 7.75F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(37, 290);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 29);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Decline";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.DeclineButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
+            this.DeclineButton.Font = new System.Drawing.Font("Stencil", 7.75F);
+            this.DeclineButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DeclineButton.Location = new System.Drawing.Point(37, 290);
+            this.DeclineButton.Name = "DeclineButton";
+            this.DeclineButton.Size = new System.Drawing.Size(100, 29);
+            this.DeclineButton.TabIndex = 39;
+            this.DeclineButton.Text = "Decline";
+            this.DeclineButton.UseVisualStyleBackColor = false;
+            this.DeclineButton.Click += new System.EventHandler(this.DeclineButton_Click);
             // 
             // label7
             // 
@@ -178,8 +175,8 @@ namespace ScrumAge
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DeclineButton);
+            this.Controls.Add(this.AcceptButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -204,8 +201,8 @@ namespace ScrumAge
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AcceptButton;
+        private System.Windows.Forms.Button DeclineButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

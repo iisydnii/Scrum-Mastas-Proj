@@ -16,8 +16,7 @@ using System;
 using ScrumAge;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
-public class Game
+ class Game
 {
 
     public static List<Player> PlayerList { get; set; }
@@ -28,6 +27,10 @@ public class Game
     private static SelectPlayersForm SelectPlayersForm;
     private static Placement_Board placement_Board;
     private static RulesForm rulesForm;
+    private static DiceForm diceForm;
+    private static QuitGame quitGame;
+    private static Winners_Losers winners_losers;
+    private static SituationCardForm situationCardForm;
 
     public Player player;
 
@@ -63,6 +66,14 @@ public class Game
     }
 
 
+    public static void DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
+    {
+        situationCardForm = new SituationCardForm(currentPlayer, sc);
+        situationCardForm.StartPosition = FormStartPosition.CenterParent;
+        situationCardForm.ShowDialog();
+        //placement_Board.Hide();
+    }
+
 
     public static void DisplayPlacementBoard()
     {
@@ -70,9 +81,15 @@ public class Game
         //Populate PlayerList with all of the players
         PopulatePlayers();
 
+        //DisplaySituationCardForm();
+
         placement_Board = new Placement_Board(PlayerList);
         placement_Board.ShowDialog();
         DisplayActivationBoard();
+
+        //Show Situational Card For Player
+        
+        
 
     }
 
@@ -83,15 +100,45 @@ public class Game
 
     }
 
+    
+    public static void DisplayQuitGame()
+    {
+        quitGame = new QuitGame();
+        quitGame.StartPosition = FormStartPosition.CenterParent;
+        quitGame.ShowDialog();
+    }
+
+
+    public static void DisplayDice()
+    {
+        diceForm = new DiceForm();
+        diceForm.Show();
+    }
+
+    public static void DisplayWinners_Losers()
+    {
+        winners_losers = new Winners_Losers();
+        winners_losers.StartPosition = FormStartPosition.CenterParent;
+        winners_losers.ShowDialog();
+    }
+
+
     ///TODO
     //public static void DisplayRetrospective()
     //{
 
     //}
 
+
     public static void CloseForm(Form form)
     {
         form.Close();
+    }
+
+
+    public static void QuitGame()
+    {
+        landingPageForm.Close();
     }
 
 

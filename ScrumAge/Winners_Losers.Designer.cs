@@ -37,6 +37,7 @@ namespace ScrumAge
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +46,7 @@ namespace ScrumAge
             this.label1.Font = new System.Drawing.Font("Stencil", 20F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(42, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 32);
+            this.label1.Size = new System.Drawing.Size(224, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Scoreboard";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -56,7 +57,7 @@ namespace ScrumAge
             this.label2.Font = new System.Drawing.Font("Stencil", 20F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(106, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 32);
+            this.label2.Size = new System.Drawing.Size(0, 37);
             this.label2.TabIndex = 2;
             // 
             // label3
@@ -65,7 +66,7 @@ namespace ScrumAge
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(44, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 24);
+            this.label3.Size = new System.Drawing.Size(68, 27);
             this.label3.TabIndex = 3;
             this.label3.Text = "Player";
             // 
@@ -75,7 +76,7 @@ namespace ScrumAge
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(44, 103);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 24);
+            this.label4.Size = new System.Drawing.Size(198, 27);
             this.label4.TabIndex = 4;
             this.label4.Text = "Development Points";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -86,7 +87,7 @@ namespace ScrumAge
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(112, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 24);
+            this.label7.Size = new System.Drawing.Size(67, 27);
             this.label7.TabIndex = 7;
             this.label7.Text = "Name";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -97,7 +98,7 @@ namespace ScrumAge
             this.label8.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(233, 103);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 24);
+            this.label8.Size = new System.Drawing.Size(69, 27);
             this.label8.TabIndex = 8;
             this.label8.Text = "Points";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -108,7 +109,7 @@ namespace ScrumAge
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(214, 300);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 24);
+            this.label10.Size = new System.Drawing.Size(0, 27);
             this.label10.TabIndex = 10;
             // 
             // label5
@@ -117,9 +118,21 @@ namespace ScrumAge
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(4, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 24);
+            this.label5.Size = new System.Drawing.Size(27, 27);
             this.label5.TabIndex = 11;
             this.label5.Text = "1.";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
+            this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(117, 472);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Quit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Winners_Losers
             // 
@@ -127,6 +140,7 @@ namespace ScrumAge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(324, 522);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -153,5 +167,6 @@ namespace ScrumAge
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

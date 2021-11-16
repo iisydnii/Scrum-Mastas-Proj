@@ -105,6 +105,12 @@
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SituationCard.cs" />
+    <Compile Include="SituationCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SituationCardForm.Designer.cs">
+      <DependentUpon>SituationCardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SituationDeck.cs" />
     <Compile Include="TestLocations.cs" />
     <Compile Include="Whiteboard.cs" />
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectPlayersForm.resx">
       <DependentUpon>SelectPlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SituationCardForm.resx">
+      <DependentUpon>SituationCardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Winners_Losers.resx">
       <DependentUpon>Winners_Losers.cs</DependentUpon>

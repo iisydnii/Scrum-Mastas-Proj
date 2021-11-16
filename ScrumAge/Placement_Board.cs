@@ -15,7 +15,8 @@ Page Modified
                                         Checks the picture boxes for developers and sends the data to the Whiteboard.cs 
     Piper Floyd, 11/7/21, lines 574-584 Added quit game buton and expanded the form
     Sydni Ward   11/13/2021             Fixing errors
-    Piper Floyd, 11/10/21,              Added project tile methods  
+    Piper Floyd, 11/10/21,              Added project tile methods
+    Austin Trivette, 11/15/21,          Added Situation Card Form To Open in activation and situation deck (Lines 856-897)
 
 
 */
@@ -742,8 +743,9 @@ namespace ScrumAge
             {
                 pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
         /// <summary>
@@ -775,8 +777,9 @@ namespace ScrumAge
             {
                 pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
 
@@ -808,9 +811,9 @@ namespace ScrumAge
             {
                 pictureBox8.Enabled = true;
                 picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm();
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
-
+                deck = projectTileForm.Deck;
             }
         }
 
@@ -833,8 +836,8 @@ namespace ScrumAge
                 CostValue = value.Key.ToString();
                 CostType = value.Value;
             }
-            ProjectTileForm projectTileForm = new ProjectTileForm();
-            projectTileForm.Show();
+            //ProjectTileForm projectTileForm = new ProjectTileForm();
+            //projectTileForm.Show();
 
             if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
             {
@@ -844,11 +847,19 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
                 projectTileForm.Show();
+                deck = projectTileForm.Deck;
             }
         }
 
+        // -------------------------------------------------------------
         // Activation Phase 
+        // -------------------------------------------------------------
+
+        private SituationDeck sdDeck = new SituationDeck();
+        
+
         private void beginActivation()
         {
             //Deduct points from the players 
@@ -877,7 +888,13 @@ namespace ScrumAge
             else
             {
                 currentPlayer = PlayerList[turn];
-                //Draw a situational card for player 
+
+                //Draw a situational card for player
+                SituationCard sc = sdDeck.DrawCard();
+
+                // Open Situational Card Form and Pass sc to it
+                Game.DisplaySituationCardForm(currentPlayer, sc);
+                
             }
             turn++;
         }

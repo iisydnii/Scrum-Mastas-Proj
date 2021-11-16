@@ -53,12 +53,12 @@ namespace ScrumAge
         //Yes, Quit Game
         private void start_Click(object sender, EventArgs e)
         {
-    
-            var quitGame = new Winners_Losers();
-            quitGame.StartPosition = FormStartPosition.CenterParent;
-            quitGame.ShowDialog();
+
+            Game.DisplayWinners_Losers();
+
 
             this.Visible = false;
+            //this.Close();
         
         }
     }
