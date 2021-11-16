@@ -68,7 +68,7 @@ namespace ScrumAge
             // 
             // SituationLabel
             // 
-            this.SituationLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.SituationLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(157)))), ((int)(((byte)(69)))));
             this.SituationLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SituationLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.SituationLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,7 +158,7 @@ namespace ScrumAge
             // 
             // CertificateLabel
             // 
-            this.CertificateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.CertificateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(157)))), ((int)(((byte)(69)))));
             this.CertificateLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CertificateLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.CertificateLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +187,7 @@ namespace ScrumAge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.BackgroundImage = global::ScrumAge.Properties.Resources.PlaceHolder_OR_Template;
+            this.BackgroundImage = global::ScrumAge.Properties.Resources.situation_card;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(393, 517);
             this.Controls.Add(this.PlayerLabel);
