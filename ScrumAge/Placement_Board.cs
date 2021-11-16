@@ -106,11 +106,7 @@ namespace ScrumAge
                 //Bitcoin Market
                 CryptoMarkerPlacement();
 
-                turn++;
-                if (turn == PlayerList.Count)
-                {
-                    turn = 0;
-                }
+                
                 setUpPlayerTurns();
             }
             else
@@ -122,6 +118,12 @@ namespace ScrumAge
         private void setUpPlayerTurns()
         {
             Boolean AvailableDevsBool = true;
+
+            turn++;
+            if (turn == PlayerList.Count)
+            {
+                turn = 0;
+            }
 
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
@@ -136,6 +138,10 @@ namespace ScrumAge
                 {
                     currentPlayer = PlayerList[turn];
                     setImage();
+                }
+                else
+                {
+                    setUpPlayerTurns();
                 }
             }
         }
