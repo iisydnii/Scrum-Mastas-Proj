@@ -207,6 +207,7 @@ namespace ScrumAge
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximumSize = new System.Drawing.Size(1489, 1508);
             this.Name = "ProjectTileForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectTileForm";
             this.Load += new System.EventHandler(this.ProjectTileForm_Load);
             this.ResumeLayout(false);
