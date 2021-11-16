@@ -20,8 +20,13 @@ using System.Collections.Generic;
  class Game
 {
 
+<<<<<<< Updated upstream
     public static List<Player> PlayerList { get; set; }
 
+=======
+    public List<Player> PlayerList = SelectPlayersForm.players;
+    public int stockprice;
+>>>>>>> Stashed changes
 
     // Forms
     private static LandingPageForm landingPageForm = new LandingPageForm();
@@ -67,7 +72,6 @@ using System.Collections.Generic;
 
     }
 
-
     public static void DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
     {
         situationCardForm = new SituationCardForm(currentPlayer, sc);
@@ -76,8 +80,12 @@ using System.Collections.Generic;
         //placement_Board.Hide();
     }
 
+<<<<<<< Updated upstream
 
     public static void DisplayPlacementBoard()
+=======
+    public void DisplayPlacementBoard()
+>>>>>>> Stashed changes
     {
 
         //Populate PlayerList with all of the players

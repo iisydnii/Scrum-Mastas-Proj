@@ -49,12 +49,22 @@ namespace ScrumAge
         int AvailableDevs = 0;
         int devs = 0; // once set it never changes
         int turn;
+<<<<<<< Updated upstream
+=======
+        int roll = 0;
+        public int stockPrice;
+>>>>>>> Stashed changes
         Bootcamp bootCamp = new Bootcamp();
         Whiteboard whiteBoard = new Whiteboard();
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
         ProjectDeck deck = new ProjectDeck();
         Locations location = new Locations();
+<<<<<<< Updated upstream
+=======
+        //Dice dice = new Dice();
+        DiceForm DiceForm = new DiceForm();
+>>>>>>> Stashed changes
         private bool picBox5WasClicked = false;
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
@@ -889,6 +899,12 @@ namespace ScrumAge
             if (turn >= PlayerList.Count)
             {
                 //call retropective 
+<<<<<<< Updated upstream
+=======
+                Game game = new Game();
+                game.stockprice = stockPrice;
+                game.PlayerList = PlayerList;
+>>>>>>> Stashed changes
                 this.Close();
             }
             else
@@ -905,6 +921,46 @@ namespace ScrumAge
             turn++;
         }
 
+<<<<<<< Updated upstream
+=======
+        private void chargeAndAdd()
+        {
+            //HR
+            if (trackBoxes[0].playerId == currentPlayer.Id)
+            {
+                currentPlayer.Inventory.Bitcoin -= hr.chargePlayerSalary();
+                addDev();
+            }
+
+            //Bootcamp
+            //roll = dice.rollDice();
+            roll = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
+            currentPlayer.Inventory.TrainingPoints = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
+
+            //Whiteboard
+            //roll = dice.rollDice();
+            currentPlayer.Inventory.DesignPoints = whiteBoard.DesignPointsCalc(currentPlayer, locationList[2].playerList[1, turn], roll);
+
+            //CryptoMarket 
+            roll = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
+            int roll_2 = DiceForm.showForm();
+            System.Threading.Thread.Sleep(3000);
+            DiceForm.Hide();
+            currentPlayer.Inventory.Bitcoin = market.CalcGold(currentPlayer, locationList[3].playerList[1, turn], roll, roll_2, stockPrice);
+            stockPrice = currentPlayer.Inventory.Bitcoin;
+            setStatus();
+        }
+
+        private void addDev()
+        {
+            currentPlayer.Inventory.Developers++;
+        }
+
+>>>>>>> Stashed changes
         private void Certificates_Click(object sender, EventArgs e)
         {
             //Call form to show all of the player's certificates

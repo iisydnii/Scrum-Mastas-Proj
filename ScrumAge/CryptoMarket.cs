@@ -54,6 +54,7 @@ namespace ScrumAge
 
         public void CalcGold(int playerId, int numOfDevs) 
         {
+<<<<<<< Updated upstream
             //Change to first dice roll
             int betStock = 3;
 
@@ -62,6 +63,13 @@ namespace ScrumAge
             var stockPrice = 1;
 
             var calculation_1 = boughtStock * stockPrice;
+=======
+            if (stockPrice == 0)
+            {
+                stockPrice = 1;
+            }
+            int calculation_1 = boughtStock * stockPrice;
+>>>>>>> Stashed changes
             stockPrice = calculation_1 / stockPrice;
             var bitcoin_1 = stockPrice * numOfDevs;
 

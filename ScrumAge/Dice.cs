@@ -28,20 +28,24 @@ namespace ScrumAge
         public int DiceRoll_2 { get; set; }
         public bool SnakeEyes { get; set; }
 
+        public int Total = 0;
 
         /// <summary>
         /// This constructor rolls a dice and adds the values of the dice together. 
         /// </summary>
         public Dice()
         {
+<<<<<<< Updated upstream
             var diceValue = 0;
+=======
+>>>>>>> Stashed changes
             SnakeEyes = false;
-
 
             DiceRoll_1 = random.Next(1, 6);
             DiceRoll_2 = random.Next(1, 6);
 
             Total = DiceRoll_1 + DiceRoll_2;
+<<<<<<< Updated upstream
 
             //for (int i = 0; i < 2; i++)
             //{
@@ -49,6 +53,8 @@ namespace ScrumAge
             //    Total += diceValue;
             //}
 
+=======
+>>>>>>> Stashed changes
 
             //Discerns snake eyes
             if (Total == 2)

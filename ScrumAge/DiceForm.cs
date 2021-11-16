@@ -28,6 +28,14 @@ namespace ScrumAge
     public partial class DiceForm : Form
     {
         private bool picBox2WasClicked = false;
+<<<<<<< Updated upstream
+=======
+        Dice dice = new Dice();
+        int roll_1 = 0;
+        int roll_2 = 0;
+        int totalRoll = 0;
+
+>>>>>>> Stashed changes
 
         Dice dice = new Dice();
    
@@ -36,8 +44,17 @@ namespace ScrumAge
             InitializeComponent();
         }
 
+<<<<<<< Updated upstream
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+=======
+        public int showForm()
+        {
+            Show();
+            roll();
+            return totalRoll;
+        }
+>>>>>>> Stashed changes
 
 
             //Remove Labels after testing
@@ -139,6 +156,10 @@ namespace ScrumAge
                 pictureBox1.Enabled = false;
                 pictureBox2.Enabled = false;
             }
+<<<<<<< Updated upstream
+=======
+            totalRoll = roll_1 + roll_2;
+>>>>>>> Stashed changes
         }
 
 
