@@ -8,6 +8,7 @@ ________________________________________________________________________________
 Page Modified
         Garrett Dyer, 10/16/21, Added 22 Situation Cards to the deck, and updated counters.
         Garrett Dyer, 11/5/21, Moved deck creation to a factory.
+        Austin Trivette, 11/15/21, Made Class Public for Situational Card Form
 -------------*/
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace ScrumAge
 {
     class SituationDeck : IDeck
     {
-        public HashSet<object> situationDeck { get; set; }
+        private HashSet<object> situationDeck { get; set; }
 
         /* Creating constructor for situation deck */
         public SituationDeck()

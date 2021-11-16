@@ -16,8 +16,7 @@ using System;
 using ScrumAge;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
-public class Game
+ class Game
 {
 
     public static List<Player> PlayerList { get; set; }
@@ -67,9 +66,9 @@ public class Game
     }
 
 
-    public static void DisplaySituationCardForm(Player currentPlayer)
+    public static void DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
     {
-        situationCardForm = new SituationCardForm(currentPlayer);
+        situationCardForm = new SituationCardForm(currentPlayer, sc);
         situationCardForm.StartPosition = FormStartPosition.CenterParent;
         situationCardForm.ShowDialog();
         //placement_Board.Hide();

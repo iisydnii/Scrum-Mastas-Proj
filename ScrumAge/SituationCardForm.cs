@@ -10,28 +10,25 @@ using System.Windows.Forms;
 
 namespace ScrumAge
 {
-    public partial class SituationCardForm : Form
+    partial class SituationCardForm : Form
     {
         private Player CurrentPlayer;
-        private SituationDeck SD;
+        private SituationCard SC;
 
 
-        public SituationCardForm(Player CurrentPlayer)
+        public SituationCardForm(Player CurrentPlayer, SituationCard SC)
         {
             InitializeComponent();
 
             this.CurrentPlayer = CurrentPlayer;
+            this.SC = SC;
 
-           
-
+            //Set Labels
+            SituationLabel.Text = SC.situation;
 
             
         }
 
-        private void PopulateSituationDeck()
-        {
-            SD = Placement_Board.
-        }
 
         /// <summary>
         /// Clicking the "Okay" Button
@@ -41,11 +38,7 @@ namespace ScrumAge
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Austin's Test");
-            //SD.DisplayCards();
             
-
-
-            //SD.DrawCard();
 
             this.Close();
         }

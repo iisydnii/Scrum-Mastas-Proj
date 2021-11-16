@@ -30,8 +30,9 @@ namespace ScrumAge
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.situationLabel = new System.Windows.Forms.Label();
+            this.costLabel = new System.Windows.Forms.Label();
+            this.SituationLabel = new System.Windows.Forms.TextBox();
+            this.rewardsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -46,27 +47,40 @@ namespace ScrumAge
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // costLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(170, 227);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cost";
+            this.costLabel.AutoSize = true;
+            this.costLabel.BackColor = System.Drawing.Color.Transparent;
+            this.costLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costLabel.Location = new System.Drawing.Point(55, 289);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(61, 25);
+            this.costLabel.TabIndex = 1;
+            this.costLabel.Text = "Cost";
             // 
-            // situationLabel
+            // SituationLabel
             // 
-            this.situationLabel.AutoSize = true;
-            this.situationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.situationLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.situationLabel.Location = new System.Drawing.Point(156, 170);
-            this.situationLabel.Name = "situationLabel";
-            this.situationLabel.Size = new System.Drawing.Size(85, 25);
-            this.situationLabel.TabIndex = 2;
-            this.situationLabel.Text = "label2";
+            this.SituationLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.SituationLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SituationLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.SituationLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SituationLabel.Location = new System.Drawing.Point(60, 142);
+            this.SituationLabel.Multiline = true;
+            this.SituationLabel.Name = "SituationLabel";
+            this.SituationLabel.Size = new System.Drawing.Size(274, 100);
+            this.SituationLabel.TabIndex = 2;
+            this.SituationLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // rewardsLabel
+            // 
+            this.rewardsLabel.AutoSize = true;
+            this.rewardsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rewardsLabel.Font = new System.Drawing.Font("Stencil", 13.74545F);
+            this.rewardsLabel.Location = new System.Drawing.Point(249, 289);
+            this.rewardsLabel.Name = "rewardsLabel";
+            this.rewardsLabel.Size = new System.Drawing.Size(110, 25);
+            this.rewardsLabel.TabIndex = 3;
+            this.rewardsLabel.Text = "Rewards";
             // 
             // SituationCardForm
             // 
@@ -76,8 +90,9 @@ namespace ScrumAge
             this.BackgroundImage = global::ScrumAge.Properties.Resources.PlaceHolder_OR_Template;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(393, 517);
-            this.Controls.Add(this.situationLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rewardsLabel);
+            this.Controls.Add(this.SituationLabel);
+            this.Controls.Add(this.costLabel);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Name = "SituationCardForm";
@@ -90,7 +105,8 @@ namespace ScrumAge
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label situationLabel;
+        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.TextBox SituationLabel;
+        private System.Windows.Forms.Label rewardsLabel;
     }
 }

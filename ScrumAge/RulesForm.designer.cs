@@ -34,6 +34,7 @@ namespace ScrumAge
             this.start = new System.Windows.Forms.Button();
             this.goBack = new System.Windows.Forms.Button();
             this.myRules = new System.Windows.Forms.RichTextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,5 +109,6 @@ namespace ScrumAge
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Button goBack;
         private System.Windows.Forms.RichTextBox myRules;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

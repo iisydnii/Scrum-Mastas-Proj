@@ -852,7 +852,9 @@ namespace ScrumAge
         // Activation Phase 
         // -------------------------------------------------------------
 
-        public SituationDeck sd = new SituationDeck();
+        private SituationDeck sdDeck = new SituationDeck();
+
+
 
         
 
@@ -884,9 +886,12 @@ namespace ScrumAge
             else
             {
                 currentPlayer = PlayerList[turn];
+
                 //Draw a situational card for player
+                SituationCard sc = sdDeck.DrawCard();
+
                 // Open Situational Card Form
-                SituationCardForm situationCardForm = new SituationCardForm(currentPlayer);
+                Game.DisplaySituationCardForm(currentPlayer, sc);
                 
             }
             turn++;
