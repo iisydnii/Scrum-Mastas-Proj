@@ -33,6 +33,8 @@ namespace ScrumAge
             this.costLabel = new System.Windows.Forms.Label();
             this.SituationLabel = new System.Windows.Forms.TextBox();
             this.rewardsLabel = new System.Windows.Forms.Label();
+            this.CertificateDescLabel = new System.Windows.Forms.TextBox();
+            this.CostDescLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -69,6 +71,7 @@ namespace ScrumAge
             this.SituationLabel.Name = "SituationLabel";
             this.SituationLabel.Size = new System.Drawing.Size(274, 100);
             this.SituationLabel.TabIndex = 2;
+            this.SituationLabel.Text = "None\r\nNone\r\nNone\r\nNone";
             this.SituationLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // rewardsLabel
@@ -76,11 +79,36 @@ namespace ScrumAge
             this.rewardsLabel.AutoSize = true;
             this.rewardsLabel.BackColor = System.Drawing.Color.Transparent;
             this.rewardsLabel.Font = new System.Drawing.Font("Stencil", 13.74545F);
-            this.rewardsLabel.Location = new System.Drawing.Point(249, 289);
+            this.rewardsLabel.Location = new System.Drawing.Point(224, 289);
             this.rewardsLabel.Name = "rewardsLabel";
             this.rewardsLabel.Size = new System.Drawing.Size(110, 25);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "Rewards";
+            // 
+            // CertificateDescLabel
+            // 
+            this.CertificateDescLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
+            this.CertificateDescLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CertificateDescLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CertificateDescLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CertificateDescLabel.Location = new System.Drawing.Point(179, 317);
+            this.CertificateDescLabel.Multiline = true;
+            this.CertificateDescLabel.Name = "CertificateDescLabel";
+            this.CertificateDescLabel.Size = new System.Drawing.Size(202, 81);
+            this.CertificateDescLabel.TabIndex = 5;
+            this.CertificateDescLabel.Text = "None\r\nNone\r\nNone\r\n\r\n";
+            this.CertificateDescLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CostDescLabel
+            // 
+            this.CostDescLabel.AutoSize = true;
+            this.CostDescLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CostDescLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostDescLabel.Location = new System.Drawing.Point(55, 335);
+            this.CostDescLabel.Name = "CostDescLabel";
+            this.CostDescLabel.Size = new System.Drawing.Size(61, 25);
+            this.CostDescLabel.TabIndex = 6;
+            this.CostDescLabel.Text = "Cost";
             // 
             // SituationCardForm
             // 
@@ -90,6 +118,8 @@ namespace ScrumAge
             this.BackgroundImage = global::ScrumAge.Properties.Resources.PlaceHolder_OR_Template;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(393, 517);
+            this.Controls.Add(this.CostDescLabel);
+            this.Controls.Add(this.CertificateDescLabel);
             this.Controls.Add(this.rewardsLabel);
             this.Controls.Add(this.SituationLabel);
             this.Controls.Add(this.costLabel);
@@ -108,5 +138,7 @@ namespace ScrumAge
         private System.Windows.Forms.Label costLabel;
         private System.Windows.Forms.TextBox SituationLabel;
         private System.Windows.Forms.Label rewardsLabel;
+        private System.Windows.Forms.TextBox CertificateDescLabel;
+        private System.Windows.Forms.Label CostDescLabel;
     }
 }

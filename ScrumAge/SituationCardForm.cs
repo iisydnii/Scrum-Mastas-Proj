@@ -14,6 +14,7 @@ namespace ScrumAge
     {
         private Player CurrentPlayer;
         private SituationCard SC;
+        private 
 
 
         public SituationCardForm(Player CurrentPlayer, SituationCard SC)
@@ -23,10 +24,26 @@ namespace ScrumAge
             this.CurrentPlayer = CurrentPlayer;
             this.SC = SC;
 
-            //Set Labels
+            SetLabels();
+
+            //Set Reward
+            //foreach (KeyValuePair<int, string> value in SC.reward)
+            //{
+            //    RewardValue = value.Key.ToString();
+            //    RewardType = value.Value;
+            //}
+
+        }
+
+
+        /// <summary>
+        /// Sets Form's Labels
+        /// </summary>
+        private void SetLabels()
+        {
+            //Set Situation's Description
             SituationLabel.Text = SC.situation;
 
-            
         }
 
 
