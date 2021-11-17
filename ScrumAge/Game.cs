@@ -112,7 +112,6 @@ using System.Collections.Generic;
     public static void DisplayRetrospective()
     {
         retrospective = new Retrospective();
-        retrospective.StartPosition = FormStartPosition.CenterParent;
         retrospective.ShowDialog();
     }
 

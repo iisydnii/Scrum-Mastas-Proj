@@ -57,7 +57,8 @@ namespace ScrumAge
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Game.QuitGame();
+            //Game.QuitGame();
+            this.Close();
         }
     }
 }
