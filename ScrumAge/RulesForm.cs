@@ -66,7 +66,10 @@ namespace ScrumAge
 
         private void myRules_TextChanged(object sender, EventArgs e)
         {
-
+            myRules.Text = "Rules \n My Rules\n";
+            string firstLine = myRules.Lines[0];
+            myRules.Select(myRules.GetFirstCharIndexFromLine(0), firstLine.Length);
+            myRules.SelectionFont = new System.Drawing.Font("Tahoma", 10, FontStyle.Bold);
         }
     }// end of RulesForm
 }

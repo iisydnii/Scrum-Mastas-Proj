@@ -5402,6 +5402,48 @@
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="myRules.Text" xml:space="preserve">
+    <value>Welcome to the Scrum Age!
+1) To start the game, please click on the “Start” button.
+2) Select the number of players from 2 to 4. Notice, if you do not provide a name for each player, it will automatically create player 1, and player 2 ext. Press the “Begin” button to go to the placement board. 
+3) The placement board will display all of the inventory of the player in the Status Box.	
+          StarUp Inventory of the Player:
+                    Training Poins: 12
+                    Design Points: 0
+                    Bitcoin: 0
+                    Development Points: 0
+                    Developers: 3
+          Locations: 
+                   Human Resources(HR) (1 spot)
+                   Boot Camp (8 spots)
+                   White Board (8 spots)
+                   Crypto Market (8 spots)
+          Situational card:
+                   Randomly given to the Player in the end of the turn
+                   Just like in the real life, situation can be good or bad
+                   Situational Card can have different cost and rewards
+Each Player can earn more points, get more bitcoins, or hire hew developers by placing the developer on the location. Using “drag and drop” feature, place the developer to the one of the following locations.
+        To get more developers – place one Developer on the HR location. 
+                  Cost of the location – 50 bitcoins
+       To get more Design points – place one ore more Developers on White Board location. 
+                  Design Points += Total of the Dice Roll * number of the developers on location.
+      To get more Training points – place one ore more Developers on the Boot Camp location. 
+                 Training points += Total of the Dice Roll * number of the developers on location.
+      To get more Bitcoin – place one more Developers on the Crypto Market locations. 
+      To get more Development Points – complete the Project Tile.
+      Project Tiles:
+               Used to earn more Development Points
+               Have cost associated with it
+4) After placing all Developer on the desired location, press “Next Player”. This will activate an action phase of the game, automatically calculate all points, and give you a Situational Card. After you receive a Situation card, you can pick a Project tile – based on the cost of the card Player can Accept or Drop the card. Press “Next Player” for the next player to calculate the points, receive a Situational Card, and pick a Project time. 
+Note: after choosing a Project Tile, you can not look at all other Tiles, but you may change your mind about a card that you chose. 
+5) Press “Next player” to see the Retrospective of the game – the Good (points gained), the Bad (points lost), and the Ugly (checks if player lost the game). 
+6) Press “Nest” button to start another round. 
+7) Game can go up to 8 rounds. Once there is no more Situation Cards or Project tiles, winner will be determined.
+8) The number of the Development point will determine the winner of the game. If there is a tie, the bitcoin and other points will be compared to determine a winner. 
+Best of Luck!
+
+</value>
+  </data>
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAqoAAALpCAYAAAB7SQSoAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
