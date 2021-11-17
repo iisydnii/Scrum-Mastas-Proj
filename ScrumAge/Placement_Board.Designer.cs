@@ -84,7 +84,6 @@ namespace ScrumAge
             this.WhiteBoardBox8 = new System.Windows.Forms.PictureBox();
             this.BitcoinMarketBox8 = new System.Windows.Forms.PictureBox();
             this.BootCampBox8 = new System.Windows.Forms.PictureBox();
-            this.UnlockButton = new System.Windows.Forms.Button();
             this.exitGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -771,19 +770,6 @@ namespace ScrumAge
             this.BootCampBox8.TabIndex = 35;
             this.BootCampBox8.TabStop = false;
             // 
-            // UnlockButton
-            // 
-            this.UnlockButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
-            this.UnlockButton.Font = new System.Drawing.Font("Stencil", 6.75F);
-            this.UnlockButton.Location = new System.Drawing.Point(10, 695);
-            this.UnlockButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.UnlockButton.Name = "UnlockButton";
-            this.UnlockButton.Size = new System.Drawing.Size(150, 45);
-            this.UnlockButton.TabIndex = 36;
-            this.UnlockButton.Text = "Swap Locations";
-            this.UnlockButton.UseVisualStyleBackColor = false;
-            this.UnlockButton.Click += new System.EventHandler(this.UnlockButton_Click);
-            // 
             // exitGame
             // 
             this.exitGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
@@ -807,7 +793,6 @@ namespace ScrumAge
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 746);
             this.Controls.Add(this.exitGame);
-            this.Controls.Add(this.UnlockButton);
             this.Controls.Add(this.BootCampBox8);
             this.Controls.Add(this.BootCampBox7);
             this.Controls.Add(this.BootCampBox5);
@@ -937,7 +922,6 @@ namespace ScrumAge
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.Button UnlockButton;
         private System.Windows.Forms.Button exitGame;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;

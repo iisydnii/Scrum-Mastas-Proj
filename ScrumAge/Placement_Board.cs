@@ -99,6 +99,8 @@ namespace ScrumAge
             {
                 //unlock all
                 UnlockBoxes();
+                //lock boxes that are not null
+                lockUsedBoxes();
 
                 //Save Devs
                 //HR
@@ -110,6 +112,11 @@ namespace ScrumAge
                 //Bitcoin Market
                 CryptoMarkerPlacement();
 
+                turn++;
+                if (turn == PlayerList.Count)
+                {
+                    turn = 0;
+                }
                 setUpPlayerTurns();
             }
             else
@@ -121,11 +128,7 @@ namespace ScrumAge
         private void setUpPlayerTurns()
         {
             Boolean AvailableDevsBool = true;
-            turn++;
-            if (turn == PlayerList.Count)
-            {
-                turn = 0;
-            }
+            
 
             AvailableDevsBool = checkPlayersDevs();
             if (AvailableDevsBool == false)
@@ -144,6 +147,11 @@ namespace ScrumAge
                 }
                 else
                 {
+                    turn++;
+                    if (turn == PlayerList.Count)
+                    {
+                        turn = 0;
+                    }
                     setUpPlayerTurns();
                 }
             }
@@ -204,7 +212,6 @@ namespace ScrumAge
                     hold -= locationList[3].playerList[1, 3];
                     break;
             }
-
 
             AvailableDevs = hold;
             devs = AvailableDevs;
@@ -402,10 +409,10 @@ namespace ScrumAge
 
             var temp = target.BackgroundImage;
             target.BackgroundImage = source.BackgroundImage;
-            usedBox(target.Name);
-            //trackBoxes[index].playerId = currentPlayer.Id;
+            
             if (source.Name == "holdDevelopers")
             {
+                usedBox(target.Name);
                 //minus 1 dev for the available devs
                 AvailableDevs = AvailableDevs - 1;
                 if (AvailableDevs == 0)
@@ -415,46 +422,34 @@ namespace ScrumAge
                 if (devs == AvailableDevs)
                 {
                     UnlockBoxes();
+                    //lock boxes that are not null
+                    lockUsedBoxes();
                 }
                 else
-                {
-                    lockOtherLocations(target.Name);
+                { 
+                       lockOtherLocations(target.Name);
                 }
             }
             else if (target.Name == "holdDevelopers")
             {
+                setBoxEmpty(source.Name);
                 source.BackgroundImage = null;
+                source = null;
                 //add 1 dev for the available devs
                 AvailableDevs = AvailableDevs + 1;
-                if (AvailableDevs != 0)
-                {
-                    setImage();
-                }
                 if (devs == AvailableDevs)
                 {
                     UnlockBoxes();
+                    //lock boxes that are not null
+                    lockUsedBoxes();
                 }
             }
             else // moving to another location
-            {
+            { 
                 source.BackgroundImage = temp;
-                usedBox(source.Name);
-                trackBoxes[index].playerId = currentPlayer.Id;
+                usedBox(target.Name);
+                setBoxEmpty(source.Name);
             }
-        }
-
-        private void UnlockButton_Click(object sender, EventArgs e)
-        {
-            foreach (var box in boxes)
-            {
-                if (box.Name != "holdDevelopers")
-                {
-                    box.BackgroundImage = null;
-                }
-            }
-            AvailableDevs = devs;
-            setImage();
-            UnlockBoxes();
         }
 
 
@@ -532,62 +527,132 @@ namespace ScrumAge
             }
         }
 
+        private void lockUsedBoxes()
+        {
+            foreach (var box in boxes)
+            {
+                if( box.BackgroundImage != null && box.Name != "holdDevelopers")
+                {
+                    box.Enabled = false;
+                }
+            }
+        }
+
         private void usedBox(string boxName)
         {
-            int index = 0;
+            
             if (boxName == "HRBox" && trackBoxes[0].playerId == 0)
-            { trackBoxes[0].playerId = currentPlayer.Id; index = 0; }
+            { trackBoxes[0].playerId = currentPlayer.Id; }
 
             if (boxName == "BootCampBox1" && trackBoxes[1].playerId == 0)
-            { trackBoxes[1].playerId = currentPlayer.Id; index = 1; }
+            { trackBoxes[1].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox2" && trackBoxes[2].playerId == 0)
-            { trackBoxes[2].playerId = currentPlayer.Id; index = 2; }
+            { trackBoxes[2].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox3" && trackBoxes[3].playerId == 0)
-            { trackBoxes[3].playerId = currentPlayer.Id; index = 3; }
+            { trackBoxes[3].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox4" && trackBoxes[4].playerId == 0)
-            { trackBoxes[4].playerId = currentPlayer.Id; index = 4; }
+            { trackBoxes[4].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox5" && trackBoxes[5].playerId == 0)
-            { trackBoxes[5].playerId = currentPlayer.Id; index = 5; }
+            { trackBoxes[5].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox6" && trackBoxes[6].playerId == 0)
-            { trackBoxes[6].playerId = currentPlayer.Id; index = 6; }
+            { trackBoxes[6].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox7" && trackBoxes[7].playerId == 0)
-            { trackBoxes[7].playerId = currentPlayer.Id; index = 7; }
+            { trackBoxes[7].playerId = currentPlayer.Id; }
             else if (boxName == "BootCampBox8" && trackBoxes[8].playerId == 0)
-            { trackBoxes[8].playerId = currentPlayer.Id; index = 8; }
+            { trackBoxes[8].playerId = currentPlayer.Id; }
 
             if (boxName == "WhiteBoardBox1" && trackBoxes[9].playerId == 0)
-            { trackBoxes[9].playerId = currentPlayer.Id; index = 9; }
+            { trackBoxes[9].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox2" && trackBoxes[10].playerId == 0)
-            { trackBoxes[10].playerId = currentPlayer.Id; index = 10; }
+            { trackBoxes[10].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox3" && trackBoxes[11].playerId == 0)
-            { trackBoxes[11].playerId = currentPlayer.Id; index = 11; }
+            { trackBoxes[11].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox4" && trackBoxes[12].playerId == 0)
-            { trackBoxes[12].playerId = currentPlayer.Id; index = 12; }
+            { trackBoxes[12].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox5" && trackBoxes[13].playerId == 0)
-            { trackBoxes[13].playerId = currentPlayer.Id; index = 13; }
+            { trackBoxes[13].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox6" && trackBoxes[14].playerId == 0)
-            { trackBoxes[14].playerId = currentPlayer.Id; index = 14; }
+            { trackBoxes[14].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox7" && trackBoxes[15].playerId == 0)
-            { trackBoxes[15].playerId = currentPlayer.Id; index = 15; }
+            { trackBoxes[15].playerId = currentPlayer.Id; }
             else if (boxName == "WhiteBoardBox8" && trackBoxes[16].playerId == 0)
-            { trackBoxes[16].playerId = currentPlayer.Id; index = 16; }
+            { trackBoxes[16].playerId = currentPlayer.Id; }
 
             if (boxName == "BitcoinMarketBox1" && trackBoxes[17].playerId == 0)
-            { trackBoxes[17].playerId = currentPlayer.Id; index = 17; }
+            { trackBoxes[17].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox2" && trackBoxes[18].playerId == 0)
-            { trackBoxes[18].playerId = currentPlayer.Id; index = 18; }
+            { trackBoxes[18].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox3" && trackBoxes[19].playerId == 0)
-            { trackBoxes[19].playerId = currentPlayer.Id; index = 19; }
+            { trackBoxes[19].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox4" && trackBoxes[20].playerId == 0)
-            { trackBoxes[20].playerId = currentPlayer.Id; index = 20; }
+            { trackBoxes[20].playerId = currentPlayer.Id;}
             else if (boxName == "BitcoinMarketBox5" && trackBoxes[21].playerId == 0)
-            { trackBoxes[21].playerId = currentPlayer.Id; index = 21; }
+            { trackBoxes[21].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox6" && trackBoxes[22].playerId == 0)
-            { trackBoxes[22].playerId = currentPlayer.Id; index = 22; }
+            { trackBoxes[22].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox7" && trackBoxes[23].playerId == 0)
-            { trackBoxes[23].playerId = currentPlayer.Id; index = 23; }
+            { trackBoxes[23].playerId = currentPlayer.Id; }
             else if (boxName == "BitcoinMarketBox8" && trackBoxes[24].playerId == 0)
-            { trackBoxes[24].playerId = currentPlayer.Id; index = 24; }
+            { trackBoxes[24].playerId = currentPlayer.Id; }
+
+        }
+
+        private void setBoxEmpty(string boxName)
+        {
+
+            if (boxName == "HRBox" && trackBoxes[0].playerId != 0)
+            { trackBoxes[0].playerId = 0; }
+
+            if (boxName == "BootCampBox1" && trackBoxes[1].playerId != 0)
+            { trackBoxes[1].playerId = 0; }
+            else if (boxName == "BootCampBox2" && trackBoxes[2].playerId != 0)
+            { trackBoxes[2].playerId = 0; }
+            else if (boxName == "BootCampBox3" && trackBoxes[3].playerId != 0)
+            { trackBoxes[3].playerId = 0; }
+            else if (boxName == "BootCampBox4" && trackBoxes[4].playerId != 0)
+            { trackBoxes[4].playerId = 0; }
+            else if (boxName == "BootCampBox5" && trackBoxes[5].playerId != 0)
+            { trackBoxes[5].playerId = 0; }
+            else if (boxName == "BootCampBox6" && trackBoxes[6].playerId != 0)
+            { trackBoxes[6].playerId = 0; }
+            else if (boxName == "BootCampBox7" && trackBoxes[7].playerId != 0)
+            { trackBoxes[7].playerId = 0; }
+            else if (boxName == "BootCampBox8" && trackBoxes[8].playerId != 0)
+            { trackBoxes[8].playerId = currentPlayer.Id; }
+
+            if (boxName == "WhiteBoardBox1" && trackBoxes[9].playerId != 0)
+            { trackBoxes[9].playerId = 0; }
+            else if (boxName == "WhiteBoardBox2" && trackBoxes[10].playerId != 0)
+            { trackBoxes[10].playerId = 0; }
+            else if (boxName == "WhiteBoardBox3" && trackBoxes[11].playerId != 0)
+            { trackBoxes[11].playerId = 0; }
+            else if (boxName == "WhiteBoardBox4" && trackBoxes[12].playerId != 0)
+            { trackBoxes[12].playerId = 0; }
+            else if (boxName == "WhiteBoardBox5" && trackBoxes[13].playerId != 0)
+            { trackBoxes[13].playerId = 0; }
+            else if (boxName == "WhiteBoardBox6" && trackBoxes[14].playerId != 0)
+            { trackBoxes[14].playerId = 0; }
+            else if (boxName == "WhiteBoardBox7" && trackBoxes[15].playerId != 0)
+            { trackBoxes[15].playerId = 0; }
+            else if (boxName == "WhiteBoardBox8" && trackBoxes[16].playerId != 0)
+            { trackBoxes[16].playerId = currentPlayer.Id; }
+
+            if (boxName == "BitcoinMarketBox1" && trackBoxes[17].playerId != 0)
+            { trackBoxes[17].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox2" && trackBoxes[18].playerId != 0)
+            { trackBoxes[18].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox3" && trackBoxes[19].playerId != 0)
+            { trackBoxes[19].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox4" && trackBoxes[20].playerId != 0)
+            { trackBoxes[20].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox5" && trackBoxes[21].playerId != 0)
+            { trackBoxes[21].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox6" && trackBoxes[22].playerId != 0)
+            { trackBoxes[22].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox7" && trackBoxes[23].playerId != 0)
+            { trackBoxes[23].playerId = 0; }
+            else if (boxName == "BitcoinMarketBox8" && trackBoxes[24].playerId != 0)
+            { trackBoxes[24].playerId = 0; }
 
         }
 
@@ -855,7 +920,6 @@ namespace ScrumAge
             pictureBox6.Visible = true;
             pictureBox7.Visible = true;
             pictureBox8.Visible = true;
-            UnlockButton.Visible = false;
             //set currentplayer to 1
             turn = 0;
             activationTurns();
