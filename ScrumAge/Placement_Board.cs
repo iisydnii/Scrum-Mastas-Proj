@@ -39,10 +39,6 @@ namespace ScrumAge
         public List<Player> PlayerList;
         List<Locations> locationList;
         List<Box> trackBoxes;
-        List<PictureBox> hrBox = new List<PictureBox>();
-        List<PictureBox> bootCampBoxes = new List<PictureBox>();
-        List<PictureBox> whiteBoardBoxes = new List<PictureBox>();
-        List<PictureBox> cyrptoMarketBoxes = new List<PictureBox>();
         PictureBox[] boxes;
         PictureBox selected;
         Player currentPlayer;
@@ -112,6 +108,7 @@ namespace ScrumAge
                 //Bitcoin Market
                 CryptoMarkerPlacement();
 
+                unlockEmptyBoxes();
                 turn++;
                 if (turn == PlayerList.Count)
                 {
@@ -274,32 +271,6 @@ namespace ScrumAge
                 new Box() { pictureBox = BitcoinMarketBox7, used = false },
                 new Box() { pictureBox = BitcoinMarketBox8, used = false },
             };
-
-            cyrptoMarketBoxes.Add(BitcoinMarketBox1);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox2);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox3);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox4);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox5);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox6);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox7);
-            cyrptoMarketBoxes.Add(BitcoinMarketBox8);
-            bootCampBoxes.Add(BootCampBox1);
-            bootCampBoxes.Add(BootCampBox2);
-            bootCampBoxes.Add(BootCampBox3);
-            bootCampBoxes.Add(BootCampBox4);
-            bootCampBoxes.Add(BootCampBox5);
-            bootCampBoxes.Add(BootCampBox6);
-            bootCampBoxes.Add(BootCampBox7);
-            bootCampBoxes.Add(BootCampBox8);
-            whiteBoardBoxes.Add(WhiteBoardBox1);
-            whiteBoardBoxes.Add(WhiteBoardBox2);
-            whiteBoardBoxes.Add(WhiteBoardBox3);
-            whiteBoardBoxes.Add(WhiteBoardBox4);
-            whiteBoardBoxes.Add(WhiteBoardBox5);
-            whiteBoardBoxes.Add(WhiteBoardBox6);
-            whiteBoardBoxes.Add(WhiteBoardBox7);
-            whiteBoardBoxes.Add(WhiteBoardBox8);
-            hrBox.Add(HRBox);
         }
 
         //Set Player Images
@@ -406,7 +377,10 @@ namespace ScrumAge
             {
                 return;
             }
-
+            if (target.BackgroundImage != null && target.Name != "holdDevelopers")
+            {
+                return;
+            }
             var temp = target.BackgroundImage;
             target.BackgroundImage = source.BackgroundImage;
             
@@ -537,6 +511,16 @@ namespace ScrumAge
                 }
             }
         }
+        private void unlockEmptyBoxes()
+        {
+            foreach (var box in boxes)
+            {
+                if (box.BackgroundImage == null && box.Name != "holdDevelopers")
+                {
+                    box.Enabled = true;
+                }
+            }
+        }
 
         private void usedBox(string boxName)
         {
@@ -656,6 +640,63 @@ namespace ScrumAge
 
         }
 
+        private void lockBox(string boxName)
+        {
+            if (boxName == "HRBox")
+            { HRBox.Enabled = false; }
+
+            if (boxName == "BootCampBox1")
+            { BootCampBox1.Enabled = false; }
+            else if (boxName == "BootCampBox2")
+            { BootCampBox2.Enabled = false; }
+            else if (boxName == "BootCampBox3")
+            { BootCampBox3.Enabled = false; }
+            else if (boxName == "BootCampBox4")
+            { BootCampBox4.Enabled = false; }
+            else if (boxName == "BootCampBox5")
+            { BootCampBox5.Enabled = false; }
+            else if (boxName == "BootCampBox6")
+            { BootCampBox6.Enabled = false; }
+            else if (boxName == "BootCampBox7")
+            { BootCampBox7.Enabled = false; }
+            else if (boxName == "BootCampBox8")
+            { BootCampBox8.Enabled = false; }
+
+            if (boxName == "WhiteBoardBox1")
+            { WhiteBoardBox1.Enabled = false; }
+            else if (boxName == "WhiteBoardBox2")
+            { WhiteBoardBox2.Enabled = false; }
+            else if (boxName == "WhiteBoardBox3")
+            { WhiteBoardBox3.Enabled = false; }
+            else if (boxName == "WhiteBoardBox4")
+            { WhiteBoardBox4.Enabled = false; }
+            else if (boxName == "WhiteBoardBox5")
+            { WhiteBoardBox5.Enabled = false; }
+            else if (boxName == "WhiteBoardBox6")
+            { WhiteBoardBox6.Enabled = false; }
+            else if (boxName == "WhiteBoardBox7")
+            { WhiteBoardBox7.Enabled = false; }
+            else if (boxName == "WhiteBoardBox8")
+            { WhiteBoardBox8.Enabled = false; }
+
+            if (boxName == "BitcoinMarketBox1")
+            { BitcoinMarketBox1.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox2")
+            { BitcoinMarketBox2.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox3")
+            { BitcoinMarketBox3.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox4")
+            { BitcoinMarketBox4.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox5")
+            { BitcoinMarketBox5.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox6")
+            { BitcoinMarketBox6.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox7")
+            { BitcoinMarketBox7.Enabled = false; }
+            else if (boxName == "BitcoinMarketBox8")
+            { BitcoinMarketBox8.Enabled = false; }
+        }
+
         private void HRPlacement()
         {
             int counter = 0;
@@ -715,62 +756,6 @@ namespace ScrumAge
             locationList[3].playerList = market.placeDevs(currentPlayer.Id, counter);
         }
         
-        private void lockBox(string boxName)
-        {
-            if (boxName == "HRBox")
-            { HRBox.Enabled = false; }
-
-            if (boxName == "BootCampBox1")
-            { BootCampBox1.Enabled = false; }
-            else if (boxName == "BootCampBox2")
-            { BootCampBox2.Enabled = false; }
-            else if (boxName == "BootCampBox3")
-            { BootCampBox3.Enabled = false; }
-            else if (boxName == "BootCampBox4")
-            { BootCampBox4.Enabled = false; }
-            else if (boxName == "BootCampBox5")
-            { BootCampBox5.Enabled = false; }
-            else if (boxName == "BootCampBox6")
-            { BootCampBox6.Enabled = false; }
-            else if (boxName == "BootCampBox7")
-            { BootCampBox7.Enabled = false; }
-            else if (boxName == "BootCampBox8")
-            { BootCampBox8.Enabled = false; }
-
-            if (boxName == "WhiteBoardBox1")
-            { WhiteBoardBox1.Enabled = false; }
-            else if (boxName == "WhiteBoardBox2")
-            { WhiteBoardBox2.Enabled = false; }
-            else if (boxName == "WhiteBoardBox3")
-            { WhiteBoardBox3.Enabled = false; }
-            else if (boxName == "WhiteBoardBox4")
-            { WhiteBoardBox4.Enabled = false; }
-            else if (boxName == "WhiteBoardBox5")
-            { WhiteBoardBox5.Enabled = false; }
-            else if (boxName == "WhiteBoardBox6")
-            { WhiteBoardBox6.Enabled = false; }
-            else if (boxName == "WhiteBoardBox7")
-            { WhiteBoardBox7.Enabled = false; }
-            else if (boxName == "WhiteBoardBox8")
-            { WhiteBoardBox8.Enabled = false; }
-
-            if (boxName == "BitcoinMarketBox1")
-            { BitcoinMarketBox1.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox2")
-            { BitcoinMarketBox2.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox3")
-            { BitcoinMarketBox3.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox4")
-            { BitcoinMarketBox4.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox5")
-            { BitcoinMarketBox5.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox6")
-            { BitcoinMarketBox6.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox7")
-            { BitcoinMarketBox7.Enabled = false; }
-            else if (boxName == "BitcoinMarketBox8")
-            { BitcoinMarketBox8.Enabled = false; }
-        }
 
         // Project Tiles
         private void pictureBox5_Click(object sender, EventArgs e)
