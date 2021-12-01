@@ -133,7 +133,7 @@ namespace ScrumAge
             // Player1TextBox
             // 
             this.Player1TextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Player1TextBox.Location = new System.Drawing.Point(383, 186);
+            this.Player1TextBox.Location = new System.Drawing.Point(387, 188);
             this.Player1TextBox.Name = "Player1TextBox";
             this.Player1TextBox.Size = new System.Drawing.Size(134, 20);
             this.Player1TextBox.TabIndex = 8;
@@ -141,7 +141,7 @@ namespace ScrumAge
             // Player2Textbox
             // 
             this.Player2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Player2Textbox.Location = new System.Drawing.Point(383, 227);
+            this.Player2Textbox.Location = new System.Drawing.Point(387, 231);
             this.Player2Textbox.Name = "Player2Textbox";
             this.Player2Textbox.Size = new System.Drawing.Size(134, 20);
             this.Player2Textbox.TabIndex = 9;
@@ -149,7 +149,7 @@ namespace ScrumAge
             // Player3Textbox
             // 
             this.Player3Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Player3Textbox.Location = new System.Drawing.Point(383, 268);
+            this.Player3Textbox.Location = new System.Drawing.Point(387, 270);
             this.Player3Textbox.Name = "Player3Textbox";
             this.Player3Textbox.Size = new System.Drawing.Size(134, 20);
             this.Player3Textbox.TabIndex = 10;
@@ -157,7 +157,7 @@ namespace ScrumAge
             // Player4Textbox
             // 
             this.Player4Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Player4Textbox.Location = new System.Drawing.Point(383, 309);
+            this.Player4Textbox.Location = new System.Drawing.Point(387, 312);
             this.Player4Textbox.Name = "Player4Textbox";
             this.Player4Textbox.Size = new System.Drawing.Size(134, 20);
             this.Player4Textbox.TabIndex = 11;

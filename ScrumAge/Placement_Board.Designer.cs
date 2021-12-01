@@ -229,7 +229,7 @@ namespace ScrumAge
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(57, 81);
+            this.label14.Location = new System.Drawing.Point(50, 81);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 21);
             this.label14.TabIndex = 17;
@@ -249,7 +249,7 @@ namespace ScrumAge
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.label12.Location = new System.Drawing.Point(309, 57);
+            this.label12.Location = new System.Drawing.Point(311, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 20);
             this.label12.TabIndex = 12;
@@ -269,7 +269,7 @@ namespace ScrumAge
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.label10.Location = new System.Drawing.Point(198, 57);
+            this.label10.Location = new System.Drawing.Point(200, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 10;
@@ -299,7 +299,7 @@ namespace ScrumAge
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.label7.Location = new System.Drawing.Point(279, 81);
+            this.label7.Location = new System.Drawing.Point(288, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 20);
             this.label7.TabIndex = 7;
@@ -329,7 +329,7 @@ namespace ScrumAge
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.label3.Location = new System.Drawing.Point(147, 81);
+            this.label3.Location = new System.Drawing.Point(151, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 3;
@@ -339,7 +339,7 @@ namespace ScrumAge
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 57);
+            this.label2.Location = new System.Drawing.Point(90, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 2;
