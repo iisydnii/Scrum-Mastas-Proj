@@ -201,7 +201,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon1.ico" />
     <Content Include="Images\BitcoinMarket.png" />
     <Content Include="Images\BobTheDev.PNG" />
     <Content Include="Images\bobthedev___copy.ico" />
