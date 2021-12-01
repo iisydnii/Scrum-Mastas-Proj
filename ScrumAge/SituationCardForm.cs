@@ -102,6 +102,38 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            string costType = SC.cost.Values.ElementAt(0);
+            var cost = SC.cost.Keys.ElementAt(0);
+
+            string rewardType = SC.reward.Values.ElementAt(0);
+            var rewardAmount = SC.reward.Keys.ElementAt(0);
+
+            if (costType == "Bitcoin")
+            {
+                CurrentPlayer.Inventory.Bitcoin -= cost;
+            }
+            else if (costType == "Training")
+            {
+                CurrentPlayer.Inventory.TrainingPoints -= cost;
+            }
+            else if (costType == "Design")
+            {
+                CurrentPlayer.Inventory.DesignPoints -= cost;
+            }
+
+            if (rewardType == "Bitcoin")
+            {
+                CurrentPlayer.Inventory.Bitcoin += rewardAmount;
+            }
+            else if (rewardType == "Training")
+            {
+                CurrentPlayer.Inventory.TrainingPoints += rewardAmount;
+            }
+            else if (rewardType == "Design")
+            {
+                CurrentPlayer.Inventory.DesignPoints += rewardAmount;
+            }
+
             this.Close();
         }
     }
