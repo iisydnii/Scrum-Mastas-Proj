@@ -29,6 +29,7 @@ namespace ScrumAge
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuitGame));
             this.label1 = new System.Windows.Forms.Label();
             this.start = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@ namespace ScrumAge
             this.Controls.Add(this.button1);
             this.Controls.Add(this.start);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuitGame";
             this.Text = "QuitGame";
             this.Load += new System.EventHandler(this.QuitGame_Load);

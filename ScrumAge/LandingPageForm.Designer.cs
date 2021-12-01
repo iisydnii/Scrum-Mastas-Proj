@@ -65,9 +65,9 @@ namespace ScrumAge
             this.welcome.AutoSize = true;
             this.welcome.BackColor = System.Drawing.Color.Transparent;
             this.welcome.Font = new System.Drawing.Font("Stencil", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.Location = new System.Drawing.Point(39, 9);
+            this.welcome.Location = new System.Drawing.Point(0, 9);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(700, 56);
+            this.welcome.Size = new System.Drawing.Size(801, 64);
             this.welcome.TabIndex = 3;
             this.welcome.Text = "Welcome to the Scrum Age";
             // 
@@ -82,6 +82,7 @@ namespace ScrumAge
             this.Controls.Add(this.rules);
             this.Controls.Add(this.start);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LandingPageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LandingPage";

@@ -34,6 +34,7 @@ namespace ScrumAge
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectPlayersForm));
             this.Begin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@ namespace ScrumAge
             this.Player1Label.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Bold);
             this.Player1Label.Location = new System.Drawing.Point(263, 183);
             this.Player1Label.Name = "Player1Label";
-            this.Player1Label.Size = new System.Drawing.Size(121, 24);
+            this.Player1Label.Size = new System.Drawing.Size(138, 27);
             this.Player1Label.TabIndex = 3;
             this.Player1Label.Text = "Player 1: ";
             // 
@@ -103,7 +104,7 @@ namespace ScrumAge
             this.Player2Label.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Bold);
             this.Player2Label.Location = new System.Drawing.Point(263, 227);
             this.Player2Label.Name = "Player2Label";
-            this.Player2Label.Size = new System.Drawing.Size(115, 24);
+            this.Player2Label.Size = new System.Drawing.Size(131, 27);
             this.Player2Label.TabIndex = 4;
             this.Player2Label.Text = "Player 2:";
             // 
@@ -114,7 +115,7 @@ namespace ScrumAge
             this.Player3Label.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Bold);
             this.Player3Label.Location = new System.Drawing.Point(263, 265);
             this.Player3Label.Name = "Player3Label";
-            this.Player3Label.Size = new System.Drawing.Size(115, 24);
+            this.Player3Label.Size = new System.Drawing.Size(131, 27);
             this.Player3Label.TabIndex = 5;
             this.Player3Label.Text = "Player 3:";
             // 
@@ -125,7 +126,7 @@ namespace ScrumAge
             this.Player4Label.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Bold);
             this.Player4Label.Location = new System.Drawing.Point(263, 307);
             this.Player4Label.Name = "Player4Label";
-            this.Player4Label.Size = new System.Drawing.Size(115, 24);
+            this.Player4Label.Size = new System.Drawing.Size(131, 27);
             this.Player4Label.TabIndex = 6;
             this.Player4Label.Text = "Player 4:";
             // 
@@ -190,6 +191,7 @@ namespace ScrumAge
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Begin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectPlayersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
