@@ -70,12 +70,14 @@ using System.Collections.Generic;
 
     }
 
-    public static void DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
+    public static Player DisplaySituationCardForm(Player currentPlayer, SituationCard sc)
     {
         situationCardForm = new SituationCardForm(currentPlayer, sc);
         situationCardForm.StartPosition = FormStartPosition.CenterParent;
         situationCardForm.ShowDialog();
-        //placement_Board.Hide();
+        currentPlayer = situationCardForm.transferFunds(currentPlayer, sc);
+
+        return currentPlayer;
     }
 
 

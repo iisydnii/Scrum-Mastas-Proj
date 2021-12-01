@@ -41,7 +41,7 @@ namespace ScrumAge
         List<Box> trackBoxes;
         PictureBox[] boxes;
         PictureBox selected;
-        Player currentPlayer;
+        public Player currentPlayer;
         int AvailableDevs = 0;
         int devs = 0; // once set it never changes
         int turn;
@@ -925,14 +925,17 @@ namespace ScrumAge
             }
             else
             {
-                currentPlayer = PlayerList[turn];
+                this.currentPlayer = PlayerList[turn];
                 //Deduct points from the players 
+                setStatus();
                 chargeAndAdd();
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
 
                 // Open Situational Card Form and Pass sc to it
-                Game.DisplaySituationCardForm(currentPlayer, sc);
+                this.currentPlayer = Game.DisplaySituationCardForm(currentPlayer, sc);
+                PlayerList[turn] = this.currentPlayer;
+                setStatus();
             }
             turn++;
         }

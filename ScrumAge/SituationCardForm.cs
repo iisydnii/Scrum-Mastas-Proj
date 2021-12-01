@@ -34,10 +34,6 @@ namespace ScrumAge
             this.SC = SC;
 
             SetLabels();
-
-            //TODO
-            //Actually add rewards and subtract costs
-
         }
 
 
@@ -102,6 +98,11 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        public Player transferFunds(Player CurrentPlayer, SituationCard SC)
+        {
             string costType = SC.cost.Values.ElementAt(0);
             var cost = SC.cost.Keys.ElementAt(0);
 
@@ -134,7 +135,7 @@ namespace ScrumAge
                 CurrentPlayer.Inventory.DesignPoints += rewardAmount;
             }
 
-            this.Close();
+            return CurrentPlayer;
         }
     }
 }
