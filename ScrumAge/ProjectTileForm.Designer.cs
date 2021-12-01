@@ -197,7 +197,7 @@ namespace ScrumAge
             this.MaximumSize = new System.Drawing.Size(999, 996);
             this.Name = "ProjectTileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProjectTileForm";
+            this.Text = "Project Tile";
             this.Load += new System.EventHandler(this.ProjectTileForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

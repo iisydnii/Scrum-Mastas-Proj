@@ -85,7 +85,7 @@ namespace ScrumAge
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LandingPageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LandingPage";
+            this.Text = "ScrumAge";
             this.Load += new System.EventHandler(this.LandingPageForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -329,7 +329,7 @@ namespace ScrumAge
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.label3.Location = new System.Drawing.Point(154, 91);
+            this.label3.Location = new System.Drawing.Point(153, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 3;
@@ -774,7 +774,7 @@ namespace ScrumAge
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Placement_Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Placement_Board";
+            this.Text = "ScrumAge";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

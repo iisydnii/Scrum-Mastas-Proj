@@ -74,7 +74,7 @@ namespace ScrumAge
             this.SituationLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SituationLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.SituationLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SituationLabel.Location = new System.Drawing.Point(60, 142);
+            this.SituationLabel.Location = new System.Drawing.Point(60, 163);
             this.SituationLabel.Multiline = true;
             this.SituationLabel.Name = "SituationLabel";
             this.SituationLabel.Size = new System.Drawing.Size(274, 100);
@@ -177,7 +177,7 @@ namespace ScrumAge
             this.PlayerLabel.AutoSize = true;
             this.PlayerLabel.BackColor = System.Drawing.Color.Transparent;
             this.PlayerLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerLabel.Location = new System.Drawing.Point(219, 32);
+            this.PlayerLabel.Location = new System.Drawing.Point(168, 121);
             this.PlayerLabel.Name = "PlayerLabel";
             this.PlayerLabel.Size = new System.Drawing.Size(150, 25);
             this.PlayerLabel.TabIndex = 14;
@@ -188,7 +188,7 @@ namespace ScrumAge
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Stencil", 13.74545F);
-            this.label1.Location = new System.Drawing.Point(137, 32);
+            this.label1.Location = new System.Drawing.Point(77, 121);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 25);
@@ -220,7 +220,7 @@ namespace ScrumAge
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SituationCardForm";
-            this.Text = "SituationCardForm";
+            this.Text = "Situation Card";
             this.ResumeLayout(false);
             this.PerformLayout();
 

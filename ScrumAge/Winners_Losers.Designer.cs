@@ -152,7 +152,7 @@ namespace ScrumAge
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Winners_Losers";
-            this.Text = "Winners_Losers";
+            this.Text = "ScrumAge";
             this.Load += new System.EventHandler(this.Winners_Losers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

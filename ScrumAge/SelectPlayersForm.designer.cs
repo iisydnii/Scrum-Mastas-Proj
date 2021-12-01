@@ -195,7 +195,7 @@ namespace ScrumAge
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SelectPlayersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Select Players";
+            this.Text = "ScrumAge";
             this.Load += new System.EventHandler(this.SelectPlayersForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

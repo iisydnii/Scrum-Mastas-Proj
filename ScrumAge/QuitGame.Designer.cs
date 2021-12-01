@@ -81,7 +81,7 @@ namespace ScrumAge
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuitGame";
-            this.Text = "QuitGame";
+            this.Text = "Quit ScrumAge";
             this.Load += new System.EventHandler(this.QuitGame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
