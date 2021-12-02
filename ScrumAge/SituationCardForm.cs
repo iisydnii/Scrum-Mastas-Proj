@@ -104,5 +104,10 @@ namespace ScrumAge
         {
             this.Close();
         }
+
+        private void rewardsLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

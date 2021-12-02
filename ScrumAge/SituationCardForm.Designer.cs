@@ -49,7 +49,7 @@ namespace ScrumAge
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(199)))), ((int)(((byte)(209)))));
             this.button1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(141, 468);
+            this.button1.Location = new System.Drawing.Point(139, 468);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 37);
             this.button1.TabIndex = 0;
@@ -62,7 +62,7 @@ namespace ScrumAge
             this.costLabel.AutoSize = true;
             this.costLabel.BackColor = System.Drawing.Color.Transparent;
             this.costLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costLabel.Location = new System.Drawing.Point(46, 289);
+            this.costLabel.Location = new System.Drawing.Point(22, 289);
             this.costLabel.Name = "costLabel";
             this.costLabel.Size = new System.Drawing.Size(61, 25);
             this.costLabel.TabIndex = 1;
@@ -87,18 +87,19 @@ namespace ScrumAge
             this.rewardsLabel.AutoSize = true;
             this.rewardsLabel.BackColor = System.Drawing.Color.Transparent;
             this.rewardsLabel.Font = new System.Drawing.Font("Stencil", 13.74545F);
-            this.rewardsLabel.Location = new System.Drawing.Point(236, 289);
+            this.rewardsLabel.Location = new System.Drawing.Point(227, 289);
             this.rewardsLabel.Name = "rewardsLabel";
             this.rewardsLabel.Size = new System.Drawing.Size(110, 25);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "Rewards";
+            this.rewardsLabel.Click += new System.EventHandler(this.rewardsLabel_Click);
             // 
             // CostTypeLabel
             // 
             this.CostTypeLabel.AutoSize = true;
             this.CostTypeLabel.BackColor = System.Drawing.Color.Transparent;
             this.CostTypeLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostTypeLabel.Location = new System.Drawing.Point(17, 317);
+            this.CostTypeLabel.Location = new System.Drawing.Point(22, 317);
             this.CostTypeLabel.Name = "CostTypeLabel";
             this.CostTypeLabel.Size = new System.Drawing.Size(47, 25);
             this.CostTypeLabel.TabIndex = 6;
@@ -109,7 +110,7 @@ namespace ScrumAge
             this.CostAmountLabel.AutoSize = true;
             this.CostAmountLabel.BackColor = System.Drawing.Color.Transparent;
             this.CostAmountLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostAmountLabel.Location = new System.Drawing.Point(108, 317);
+            this.CostAmountLabel.Location = new System.Drawing.Point(133, 317);
             this.CostAmountLabel.Name = "CostAmountLabel";
             this.CostAmountLabel.Size = new System.Drawing.Size(48, 25);
             this.CostAmountLabel.TabIndex = 7;
@@ -120,7 +121,7 @@ namespace ScrumAge
             this.RewardTypeLabel1.AutoSize = true;
             this.RewardTypeLabel1.BackColor = System.Drawing.Color.Transparent;
             this.RewardTypeLabel1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardTypeLabel1.Location = new System.Drawing.Point(219, 317);
+            this.RewardTypeLabel1.Location = new System.Drawing.Point(227, 317);
             this.RewardTypeLabel1.Name = "RewardTypeLabel1";
             this.RewardTypeLabel1.Size = new System.Drawing.Size(50, 25);
             this.RewardTypeLabel1.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace ScrumAge
             this.RewardValueLabel1.AutoSize = true;
             this.RewardValueLabel1.BackColor = System.Drawing.Color.Transparent;
             this.RewardValueLabel1.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardValueLabel1.Location = new System.Drawing.Point(318, 317);
+            this.RewardValueLabel1.Location = new System.Drawing.Point(338, 317);
             this.RewardValueLabel1.Name = "RewardValueLabel1";
             this.RewardValueLabel1.Size = new System.Drawing.Size(51, 25);
             this.RewardValueLabel1.TabIndex = 10;
@@ -177,7 +178,7 @@ namespace ScrumAge
             this.PlayerLabel.AutoSize = true;
             this.PlayerLabel.BackColor = System.Drawing.Color.Transparent;
             this.PlayerLabel.Font = new System.Drawing.Font("Stencil", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerLabel.Location = new System.Drawing.Point(168, 121);
+            this.PlayerLabel.Location = new System.Drawing.Point(102, 64);
             this.PlayerLabel.Name = "PlayerLabel";
             this.PlayerLabel.Size = new System.Drawing.Size(150, 25);
             this.PlayerLabel.TabIndex = 14;
@@ -188,7 +189,7 @@ namespace ScrumAge
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Stencil", 13.74545F);
-            this.label1.Location = new System.Drawing.Point(77, 121);
+            this.label1.Location = new System.Drawing.Point(11, 64);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 25);
