@@ -947,24 +947,37 @@ namespace ScrumAge
             }
 
             //Bootcamp
-            roll = DiceForm.showForm();
-            System.Threading.Thread.Sleep(3000);
-            DiceForm.Hide();
-            currentPlayer.Inventory.TrainingPoints = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
-
+            if (locationList[1].playerList[1, turn] != 0)
+            {
+                DiceForm.set_labels(currentPlayer.Name, "Boot Camp");
+                roll = DiceForm.showForm();
+                System.Threading.Thread.Sleep(1500);
+                DiceForm.Hide();
+                currentPlayer.Inventory.TrainingPoints = bootCamp.trainingPointCalc(currentPlayer, locationList[1].playerList[1, turn], roll);
+            }
             //Whiteboard
-            //roll = dice.rollDice();
-            currentPlayer.Inventory.DesignPoints = whiteBoard.DesignPointsCalc(currentPlayer, locationList[2].playerList[1, turn], roll);
-
+            if (locationList[2].playerList[1, turn] != 0)
+            {
+                DiceForm.set_labels(currentPlayer.Name, "Whiteboard");
+                roll = DiceForm.showForm();
+                System.Threading.Thread.Sleep(1500);
+                DiceForm.Hide();
+                currentPlayer.Inventory.DesignPoints = whiteBoard.DesignPointsCalc(currentPlayer, locationList[2].playerList[1, turn], roll);
+            }
             //CryptoMarket 
-            roll = DiceForm.showForm();
-            System.Threading.Thread.Sleep(3000);
-            DiceForm.Hide();
-            int roll_2 = DiceForm.showForm();
-            System.Threading.Thread.Sleep(3000);
-            DiceForm.Hide();
-            currentPlayer.Inventory.Bitcoin = market.CalcGold(currentPlayer, locationList[3].playerList[1, turn], roll, roll_2, stockPrice);
-            stockPrice = currentPlayer.Inventory.Bitcoin;
+            if (locationList[3].playerList[1, turn] != 0)
+            {
+                DiceForm.set_labels(currentPlayer.Name, "Crypto Market: Bet Stock");
+                roll = DiceForm.showForm();
+                System.Threading.Thread.Sleep(1500);
+                DiceForm.Hide();
+                DiceForm.set_labels(currentPlayer.Name, "Crypto Market: Bought Stock");
+                int roll_2 = DiceForm.showForm();
+                System.Threading.Thread.Sleep(1500);
+                DiceForm.Hide();
+                currentPlayer.Inventory.Bitcoin = market.CalcGold(currentPlayer, locationList[3].playerList[1, turn], roll, roll_2, stockPrice);
+                stockPrice = currentPlayer.Inventory.Bitcoin;
+            }
             setStatus();
         }
 

@@ -37,10 +37,15 @@ namespace ScrumAge
         {
             InitializeComponent();
         }
-
+        public void set_labels(string playerName, string location)
+        {
+            this.PlayerLabel.Text = "Player " + playerName;
+            this.LocationLabel.Text = location;
+        }
         public int showForm()
         {
             Show();
+            Refresh();
             roll();
             return totalRoll;
         }
