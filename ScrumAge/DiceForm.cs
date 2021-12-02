@@ -139,5 +139,11 @@ namespace ScrumAge
 
         }
 
+        private void DiceForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
