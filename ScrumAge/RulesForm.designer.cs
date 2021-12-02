@@ -58,7 +58,7 @@ namespace ScrumAge
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(121, 38);
             this.start.TabIndex = 1;
-            this.start.Text = "Strart";
+            this.start.Text = "Start";
             this.start.UseVisualStyleBackColor = false;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 
@@ -78,12 +78,12 @@ namespace ScrumAge
             // myRules
             // 
             this.myRules.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.myRules.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myRules.Location = new System.Drawing.Point(22, 25);
+            this.myRules.Font = new System.Drawing.Font("Palatino Linotype", 12F);
+            this.myRules.Location = new System.Drawing.Point(33, 25);
             this.myRules.Name = "myRules";
             this.myRules.Size = new System.Drawing.Size(408, 374);
             this.myRules.TabIndex = 3;
-            this.myRules.Text = "Rules Will Be Displayed Here\n";
+            this.myRules.Text = resources.GetString("myRules.Text");
             this.myRules.TextChanged += new System.EventHandler(this.myRules_TextChanged);
             // 
             // pictureBox2
@@ -108,6 +108,7 @@ namespace ScrumAge
             this.Controls.Add(this.start);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RulesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rules";
