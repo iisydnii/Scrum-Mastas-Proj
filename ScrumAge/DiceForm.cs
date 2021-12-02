@@ -37,10 +37,15 @@ namespace ScrumAge
         {
             InitializeComponent();
         }
-
+        public void set_labels(string playerName, string location)
+        {
+            this.PlayerLabel.Text = "Player " + playerName;
+            this.LocationLabel.Text = location;
+        }
         public int showForm()
         {
             Show();
+            Refresh();
             roll();
             return totalRoll;
         }
@@ -133,6 +138,12 @@ namespace ScrumAge
             totalRoll = roll_1 + roll_2;
 
         }
+
+        private void DiceForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

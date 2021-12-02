@@ -284,6 +284,7 @@ namespace ScrumAge
             this.label9.Size = new System.Drawing.Size(73, 21);
             this.label9.TabIndex = 9;
             this.label9.Text = "Training";
+
             // 
             // label8
             // 
