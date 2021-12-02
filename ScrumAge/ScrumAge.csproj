@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>scrumagelogo_icon.ico</ApplicationIcon>
+    <ApplicationIcon>TaskBar_ScrumAgeLogo_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -206,7 +206,7 @@
     <Content Include="Images\bobthedev___copy.ico" />
     <Content Include="Images\Bootcamp.png" />
     <Content Include="Images\Dice.jpg" />
-    <Content Include="scrumagelogo_icon.ico" />
+    <Content Include="TaskBar_ScrumAgeLogo_icon.ico" />
     <None Include="Resources\scrumagelogo_icon.ico" />
     <None Include="Images\dice\dice1.png" />
     <None Include="Images\dice\dice2.png" />
