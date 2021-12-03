@@ -19,10 +19,12 @@ using System.Windows.Forms;
 using System.Collections.Generic;
  class Game
 {
+    public ProjectDeck projectDeck = new ProjectDeck();
+    public SituationDeck sdDeck = new SituationDeck();
 
     public List<Player> PlayerList = SelectPlayersForm.players;
     public int stockprice;
-
+    public bool endOfGame = false;
 
     // Forms
     private static LandingPageForm landingPageForm = new LandingPageForm();
@@ -45,8 +47,6 @@ using System.Collections.Generic;
         //landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
     }
-
-
     public static void DisplayRulesForm()
     {
 
@@ -77,10 +77,23 @@ using System.Collections.Generic;
 
     public void DisplayPlacementBoard()
     {
-        placement_Board = new Placement_Board(PlayerList, stockprice);
+        placement_Board = new Placement_Board(PlayerList, stockprice, projectDeck, sdDeck);
         placement_Board.ShowDialog();
 
     }
+
+    public void DisplayPlacementBoardNextRound()
+    {
+        if (endOfGame == false)
+        {
+            DisplayPlacementBoard();
+        }
+        else
+        {
+            //display winner losers
+        }
+    }
+
 
     public void Tilefunds(Player player, ProjectDeck deck)
     {

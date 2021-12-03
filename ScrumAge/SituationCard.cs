@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class SituationCard : Card
+    public class SituationCard : Card
     {
         /* Creating properties for the situtation cards*/
         public string situation { get; set; }

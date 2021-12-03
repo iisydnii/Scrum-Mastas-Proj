@@ -59,6 +59,7 @@ namespace ScrumAge
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             Deck.RemoveCard(Tile);
+            game.projectDeck = Deck;
             transferFunds();
             game.Tilefunds(this.currentPlayer, this.Deck);
             closeTile();

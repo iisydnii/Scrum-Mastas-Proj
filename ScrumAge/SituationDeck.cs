@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace ScrumAge
 {
-    class SituationDeck : IDeck
+    public class SituationDeck : IDeck
     {
         private HashSet<object> situationDeck { get; set; }
 
@@ -100,88 +100,13 @@ namespace ScrumAge
             Console.WriteLine(cardText);
             return "";
         }
-
-        public void DisplayCards() //displays cards for testing purposes
+        
+        public void UpdateDeck(SituationCard card)
         {
-            for (int i = 0; i < situationDeck.Count; i++)
-            {
-                SituationCard tempCard = (SituationCard)situationDeck.ElementAt(i);
-                string cardText = "";
-                cardText += $"-------------------";
-                cardText += $"\n\nSituation: {tempCard.situation}";
-                foreach (var k in tempCard.cost)
-                {
-                    cardText += $"\n\nCost: This costs {k.Key} {k.Value} ";
-                }
-                foreach (var j in tempCard.reward)
-                {
-                    cardText += $"\n\nReward: This costs {j.Key} {j.Value} ";
-                }
-                cardText += $"\n\nCertification: {tempCard.certifications}";
-                cardText += $"\n\nDiffculty: {tempCard.diffculty.ToString()}";
-                cardText += $"\n\n-------------------\n\n";
-                Console.WriteLine(cardText);
-            }
-
+            //remove card from deck
+            situationDeck.Remove(card);
         }
 
-        public void test() //displays cards for testing purposes
-        {
-            int total = 0;
-            int total2 = 0;
-
-            for (int i = 0; i < 1000; i++)
-            {
-                SituationDeck deckTest = new SituationDeck();
-                deckTest.CreateDeck();
-                deckTest.ShuffleDeck();
-                SituationCard card0 = (SituationCard)situationDeck.ElementAt(0);
-                SituationCard card1 = (SituationCard)situationDeck.ElementAt(1);
-                SituationCard card2 = (SituationCard)situationDeck.ElementAt(2);
-                SituationCard card3 = (SituationCard)situationDeck.ElementAt(3);
-
-                if (card0.diffculty == 1)
-                {
-                    total++;
-                }
-                if (card1.diffculty == 1)
-                {
-                    total++;
-                }
-                if (card2.diffculty == 1)
-                {
-                    total++;
-                }
-                if (card3.diffculty == 1)
-                {
-                    total++;
-                }
-                if (situationDeck.Count == 32)
-                {
-                    total2++;
-                }
-
-            }
-
-            if (total == 4000)
-            {
-                Console.WriteLine("First 4 cards are easy: Test Passed");
-            }
-            else if (total != 4000)
-            {
-                Console.WriteLine("First 4 cards are easy: Test Failed");
-            }
-
-            if (total2 == 1000)
-            {
-                Console.WriteLine("Each deck has 32 cards: Test Passed");
-            }
-            else if (total != 1000)
-            {
-                Console.WriteLine("Each deck has 32 cards: Test Failed");
-            }
-
-        }
 
     }
 }

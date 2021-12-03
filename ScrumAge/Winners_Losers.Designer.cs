@@ -50,7 +50,6 @@ namespace ScrumAge
             this.label1.Size = new System.Drawing.Size(224, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Scoreboard";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -80,7 +79,6 @@ namespace ScrumAge
             this.label4.Size = new System.Drawing.Size(198, 27);
             this.label4.TabIndex = 4;
             this.label4.Text = "Development Points";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label7
             // 
@@ -91,7 +89,6 @@ namespace ScrumAge
             this.label7.Size = new System.Drawing.Size(67, 27);
             this.label7.TabIndex = 7;
             this.label7.Text = "Name";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -102,7 +99,6 @@ namespace ScrumAge
             this.label8.Size = new System.Drawing.Size(69, 27);
             this.label8.TabIndex = 8;
             this.label8.Text = "Points";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label10
             // 
@@ -153,7 +149,6 @@ namespace ScrumAge
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Winners_Losers";
             this.Text = "ScrumAge";
-            this.Load += new System.EventHandler(this.Winners_Losers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
