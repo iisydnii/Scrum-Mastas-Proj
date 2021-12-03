@@ -31,11 +31,11 @@ namespace ScrumAge
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiceForm));
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LocationLabel = new System.Windows.Forms.Label();
             this.PlayerLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,33 +44,17 @@ namespace ScrumAge
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(49, 178);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(82, 83);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(49, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 83);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.WaitOnLoad = true;
-            // 
             // LocationLabel
             // 
             this.LocationLabel.AutoSize = true;
-            this.LocationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.LocationLabel.BackColor = System.Drawing.Color.Black;
+            this.LocationLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.LocationLabel.Font = new System.Drawing.Font("Palatino Linotype", 8F, System.Drawing.FontStyle.Bold);
-            this.LocationLabel.ForeColor = System.Drawing.Color.Black;
+            this.LocationLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.LocationLabel.Location = new System.Drawing.Point(11, 39);
             this.LocationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(51, 16);
+            this.LocationLabel.Size = new System.Drawing.Size(53, 18);
             this.LocationLabel.TabIndex = 3;
             this.LocationLabel.Text = "Location";
             this.LocationLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -78,13 +62,14 @@ namespace ScrumAge
             // PlayerLabel
             // 
             this.PlayerLabel.AutoSize = true;
-            this.PlayerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerLabel.BackColor = System.Drawing.Color.Black;
+            this.PlayerLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PlayerLabel.Font = new System.Drawing.Font("Palatino Linotype", 8F, System.Drawing.FontStyle.Bold);
-            this.PlayerLabel.ForeColor = System.Drawing.Color.Black;
+            this.PlayerLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.PlayerLabel.Location = new System.Drawing.Point(11, 9);
             this.PlayerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PlayerLabel.Name = "PlayerLabel";
-            this.PlayerLabel.Size = new System.Drawing.Size(40, 16);
+            this.PlayerLabel.Size = new System.Drawing.Size(42, 18);
             this.PlayerLabel.TabIndex = 4;
             this.PlayerLabel.Text = "Player";
             // 
@@ -98,22 +83,44 @@ namespace ScrumAge
             this.label1.Size = new System.Drawing.Size(192, 2);
             this.label1.TabIndex = 5;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(49, 178);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(82, 83);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(49, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 83);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // DiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackgroundImage = global::ScrumAge.Properties.Resources.diceForm;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(176, 273);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PlayerLabel);
             this.Controls.Add(this.LocationLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
             this.Name = "DiceForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

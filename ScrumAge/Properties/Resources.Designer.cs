@@ -63,6 +63,26 @@ namespace ScrumAge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cert {
+            get {
+                object obj = ResourceManager.GetObject("cert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cert1 {
+            get {
+                object obj = ResourceManager.GetObject("cert1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dice1 {
             get {
                 object obj = ResourceManager.GetObject("dice1", resourceCulture);
@@ -116,6 +136,16 @@ namespace ScrumAge.Properties {
         internal static System.Drawing.Bitmap dice6 {
             get {
                 object obj = ResourceManager.GetObject("dice6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diceForm {
+            get {
+                object obj = ResourceManager.GetObject("diceForm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

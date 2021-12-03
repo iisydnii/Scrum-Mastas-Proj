@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CertificationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CertificationsForm.Designer.cs">
+      <DependentUpon>CertificationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoMarket.cs" />
     <Compile Include="Bootcamp.cs" />
     <Compile Include="Card.cs" />
@@ -151,6 +157,9 @@
     <Compile Include="Winners_Losers.Designer.cs">
       <DependentUpon>Winners_Losers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CertificationsForm.resx">
+      <DependentUpon>CertificationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiceForm.resx">
       <DependentUpon>DiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,7 +214,9 @@
     <Content Include="Images\BobTheDev.PNG" />
     <Content Include="Images\bobthedev___copy.ico" />
     <Content Include="Images\Bootcamp.png" />
+    <None Include="Images\cert.png" />
     <Content Include="Images\Dice.jpg" />
+    <None Include="Images\diceForm.png" />
     <Content Include="TaskBar_ScrumAgeLogo_icon.ico" />
     <None Include="Resources\scrumagelogo_icon.ico" />
     <None Include="Images\dice\dice1.png" />

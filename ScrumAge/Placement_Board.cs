@@ -1042,7 +1042,11 @@ namespace ScrumAge
 
         private void Certificates_Click(object sender, EventArgs e)
         {
-            //Call form to show all of the player's certificates
+
+            FormState.PreviousPage = this;
+            CertificationsForm certificationsForm = new CertificationsForm(currentPlayer);
+            certificationsForm.Show();
+            
             
         }
 
