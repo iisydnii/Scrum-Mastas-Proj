@@ -908,6 +908,7 @@ namespace ScrumAge
 
         private void beginActivation()
         {
+            this.Text = "ScrumAge - Activation Phase";
             //set holddevelopers to null
             holdDevelopers.BackgroundImage = null;
             //set project tiles to visible 
