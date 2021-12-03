@@ -980,9 +980,8 @@ namespace ScrumAge
                 chargeAndAdd();
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
-                transferFunds(currentPlayer, sc);
-
-
+                this.currentPlayer = transferFunds(currentPlayer, sc);
+                PlayerList[turn] = currentPlayer;
                 // Open Situational Card Form and Pass sc to it
                 Game.DisplaySituationCardForm(currentPlayer, sc);
                 setStatus();
