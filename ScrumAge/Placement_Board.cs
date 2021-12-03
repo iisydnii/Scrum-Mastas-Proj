@@ -55,7 +55,6 @@ namespace ScrumAge
         ProjectDeck deck = new ProjectDeck();
         Locations location = new Locations();
         DiceForm DiceForm = new DiceForm();
-        Retrospective Retrospective = new Retrospective();
         private bool picBox5WasClicked = false;
         private bool picBox6WasClicked = false;
         private bool picBox7WasClicked = false;
@@ -967,9 +966,9 @@ namespace ScrumAge
             if (turn >= PlayerList.Count)
             {
                 //call retropective 
-                Retrospective.showRetrospective();
-
-                Retrospective.calcRetrospective(game.PlayerList, PlayerList, turn);
+                Retrospective retrospective = new Retrospective(game.PlayerList, PlayerList, 0);
+                retrospective.ShowDialog();
+                retrospective.calcRetrospective();
                 
 
                 game.stockprice = stockPrice;

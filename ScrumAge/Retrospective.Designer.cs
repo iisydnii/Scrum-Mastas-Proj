@@ -35,12 +35,9 @@ namespace ScrumAge
             this.theBad = new System.Windows.Forms.Label();
             this.theUgly = new System.Windows.Forms.Label();
             this.groupTheGood = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupTheBad = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupTheUgly = new System.Windows.Forms.GroupBox();
-            this.theUglyMessage = new System.Windows.Forms.TextBox();
             this.player = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,9 +52,6 @@ namespace ScrumAge
             this.labelTraining = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelCertifications = new System.Windows.Forms.Label();
-            this.groupTheGood.SuspendLayout();
-            this.groupTheBad.SuspendLayout();
-            this.groupTheUgly.SuspendLayout();
             this.SuspendLayout();
             // 
             // next_button
@@ -77,7 +71,7 @@ namespace ScrumAge
             this.theGood.AutoSize = true;
             this.theGood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(124)))), ((int)(((byte)(116)))));
             this.theGood.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.theGood.Location = new System.Drawing.Point(139, 104);
+            this.theGood.Location = new System.Drawing.Point(156, 104);
             this.theGood.Name = "theGood";
             this.theGood.Size = new System.Drawing.Size(118, 25);
             this.theGood.TabIndex = 1;
@@ -88,7 +82,7 @@ namespace ScrumAge
             this.theBad.AutoSize = true;
             this.theBad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(158)))), ((int)(((byte)(70)))));
             this.theBad.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.theBad.Location = new System.Drawing.Point(331, 104);
+            this.theBad.Location = new System.Drawing.Point(347, 104);
             this.theBad.Name = "theBad";
             this.theBad.Size = new System.Drawing.Size(105, 25);
             this.theBad.TabIndex = 2;
@@ -99,7 +93,7 @@ namespace ScrumAge
             this.theUgly.AutoSize = true;
             this.theUgly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(56)))), ((int)(((byte)(54)))));
             this.theUgly.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold);
-            this.theUgly.Location = new System.Drawing.Point(507, 104);
+            this.theUgly.Location = new System.Drawing.Point(522, 104);
             this.theUgly.Name = "theUgly";
             this.theUgly.Size = new System.Drawing.Size(116, 25);
             this.theUgly.TabIndex = 3;
@@ -108,62 +102,36 @@ namespace ScrumAge
             // groupTheGood
             // 
             this.groupTheGood.BackColor = System.Drawing.Color.Transparent;
-            this.groupTheGood.Controls.Add(this.textBox1);
             this.groupTheGood.Location = new System.Drawing.Point(143, 132);
             this.groupTheGood.Name = "groupTheGood";
             this.groupTheGood.Size = new System.Drawing.Size(147, 197);
             this.groupTheGood.TabIndex = 4;
             this.groupTheGood.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(2, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            // 
             // groupTheBad
             // 
             this.groupTheBad.BackColor = System.Drawing.Color.Transparent;
-            this.groupTheBad.Controls.Add(this.textBox2);
             this.groupTheBad.Location = new System.Drawing.Point(325, 132);
             this.groupTheBad.Name = "groupTheBad";
             this.groupTheBad.Size = new System.Drawing.Size(147, 197);
             this.groupTheBad.TabIndex = 5;
             this.groupTheBad.TabStop = false;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(0, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 0;
-            // 
             // groupTheUgly
             // 
             this.groupTheUgly.BackColor = System.Drawing.Color.Transparent;
-            this.groupTheUgly.Controls.Add(this.theUglyMessage);
             this.groupTheUgly.Location = new System.Drawing.Point(507, 132);
             this.groupTheUgly.Name = "groupTheUgly";
             this.groupTheUgly.Size = new System.Drawing.Size(147, 197);
             this.groupTheUgly.TabIndex = 6;
             this.groupTheUgly.TabStop = false;
             // 
-            // theUglyMessage
-            // 
-            this.theUglyMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(180)))));
-            this.theUglyMessage.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.theUglyMessage.Location = new System.Drawing.Point(17, 20);
-            this.theUglyMessage.Name = "theUglyMessage";
-            this.theUglyMessage.Size = new System.Drawing.Size(100, 25);
-            this.theUglyMessage.TabIndex = 0;
-            // 
             // player
             // 
             this.player.AutoSize = true;
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.player.Location = new System.Drawing.Point(55, 19);
+            this.player.Location = new System.Drawing.Point(81, 23);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(56, 22);
             this.player.TabIndex = 7;
@@ -174,7 +142,7 @@ namespace ScrumAge
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F);
-            this.label1.Location = new System.Drawing.Point(118, 19);
+            this.label1.Location = new System.Drawing.Point(137, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 22);
             this.label1.TabIndex = 8;
@@ -183,6 +151,7 @@ namespace ScrumAge
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(201, 48);
             this.label11.Name = "label11";
@@ -193,6 +162,7 @@ namespace ScrumAge
             // labelDesign
             // 
             this.labelDesign.AutoSize = true;
+            this.labelDesign.BackColor = System.Drawing.Color.Transparent;
             this.labelDesign.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
             this.labelDesign.Location = new System.Drawing.Point(271, 48);
             this.labelDesign.Name = "labelDesign";
@@ -203,6 +173,7 @@ namespace ScrumAge
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(69, 71);
             this.label13.Name = "label13";
@@ -213,6 +184,7 @@ namespace ScrumAge
             // labelBitcoin
             // 
             this.labelBitcoin.AutoSize = true;
+            this.labelBitcoin.BackColor = System.Drawing.Color.Transparent;
             this.labelBitcoin.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
             this.labelBitcoin.Location = new System.Drawing.Point(139, 71);
             this.labelBitcoin.Name = "labelBitcoin";
@@ -223,6 +195,7 @@ namespace ScrumAge
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(201, 71);
             this.label14.Name = "label14";
@@ -266,6 +239,7 @@ namespace ScrumAge
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(65, 48);
             this.label9.Name = "label9";
@@ -276,6 +250,7 @@ namespace ScrumAge
             // labelTraining
             // 
             this.labelTraining.AutoSize = true;
+            this.labelTraining.BackColor = System.Drawing.Color.Transparent;
             this.labelTraining.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTraining.Location = new System.Drawing.Point(139, 48);
             this.labelTraining.Name = "labelTraining";
@@ -286,6 +261,7 @@ namespace ScrumAge
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(359, 71);
             this.label3.Name = "label3";
@@ -337,12 +313,6 @@ namespace ScrumAge
             this.Name = "Retrospective";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retrospective";
-            this.groupTheGood.ResumeLayout(false);
-            this.groupTheGood.PerformLayout();
-            this.groupTheBad.ResumeLayout(false);
-            this.groupTheBad.PerformLayout();
-            this.groupTheUgly.ResumeLayout(false);
-            this.groupTheUgly.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,9 +330,6 @@ namespace ScrumAge
         private System.Windows.Forms.GroupBox groupTheUgly;
         private System.Windows.Forms.Label player;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox theUglyMessage;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelDesign;
         private System.Windows.Forms.Label label13;

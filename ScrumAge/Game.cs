@@ -94,14 +94,6 @@ using System.Collections.Generic;
         winners_losers.ShowDialog();
     }
 
-
-    public static void DisplayRetrospective()
-    {
-        retrospective = new Retrospective();
-        retrospective.ShowDialog();
-    }
-
-
     public static void CloseForm(Form form)
     {
         form.Close();

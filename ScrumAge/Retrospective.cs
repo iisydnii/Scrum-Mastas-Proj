@@ -23,15 +23,16 @@ namespace ScrumAge
     public partial class Retrospective : Form
     {
         Player currentPlayer;
-        List<Player> defaltList;
+        List<Player> defaultList;
         List<Player> manipulatedList; 
         int turn = 0;
         //Player currentPlayer, List<Player> PlayerList
-        public Retrospective()
+        public Retrospective(List<Player> defaultList, List<Player> manipulatedList, int turn)
         {
             InitializeComponent();
-            //this.currentPlayer = currentPlayer;
-           //this.PlayerList = PlayerList;
+            this.defaultList = defaultList;
+            this.manipulatedList = manipulatedList;
+            this.turn = turn;
         }
         public void setLabels()
         {
@@ -43,16 +44,11 @@ namespace ScrumAge
             this.labelDevelopment.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
             //this.labelCertifications.Text = currentPlayer.Inventory.Certifications.Certification.Count().ToString();
         }
-        public void showRetrospective()
-        {
-            Show();
-        }
        
-        public void calcRetrospective(List<Player> defaltList, List<Player> manipulatedList, int turn)
+        public void calcRetrospective()
         {
-           
             // check if player got more training, design, or development points 
-            foreach(var player in defaltList)
+            foreach(var player in defaultList)
             {
                 if(player.Id == turn -1)
                 {
@@ -77,9 +73,9 @@ namespace ScrumAge
         private void next_button_Click(object sender, EventArgs e)
         {
             turn++;
-            if (turn >= manipulatedList.Count)
+            if (turn >= this.manipulatedList.Count)
             {
-                calcRetrospective(defaltList, manipulatedList, turn);
+                calcRetrospective();
             }
             else
             {
