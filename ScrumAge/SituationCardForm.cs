@@ -125,14 +125,17 @@ namespace ScrumAge
             if (rewardType == "Bitcoin")
             {
                 CurrentPlayer.Inventory.Bitcoin += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
             }
             else if (rewardType == "Training")
             {
                 CurrentPlayer.Inventory.TrainingPoints += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
             }
             else if (rewardType == "Design")
             {
                 CurrentPlayer.Inventory.DesignPoints += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
             }
 
             return CurrentPlayer;

@@ -29,7 +29,7 @@ Player Inventory
             this.DevelopmentPoints = 0;
             this.DesignPoints = 0;
             Developers = 3;
-            Certifications = null;
+            Certifications = new Certifications();
         }
 
 
