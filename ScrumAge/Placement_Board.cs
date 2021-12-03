@@ -909,6 +909,47 @@ namespace ScrumAge
             turn = 0;
             activationTurns();
         }
+
+        private Player transferFunds(Player CurrentPlayer, SituationCard SC)
+        {
+            string costType = SC.cost.Values.ElementAt(0);
+            var cost = SC.cost.Keys.ElementAt(0);
+
+            string rewardType = SC.reward.Values.ElementAt(0);
+            var rewardAmount = SC.reward.Keys.ElementAt(0);
+
+            if (costType == "Bitcoin")
+            {
+                CurrentPlayer.Inventory.Bitcoin -= cost;
+            }
+            else if (costType == "Training")
+            {
+                CurrentPlayer.Inventory.TrainingPoints -= cost;
+            }
+            else if (costType == "Design")
+            {
+                CurrentPlayer.Inventory.DesignPoints -= cost;
+            }
+
+            if (rewardType == "Bitcoin")
+            {
+                CurrentPlayer.Inventory.Bitcoin += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
+            }
+            else if (rewardType == "Training")
+            {
+                CurrentPlayer.Inventory.TrainingPoints += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
+            }
+            else if (rewardType == "Design")
+            {
+                CurrentPlayer.Inventory.DesignPoints += rewardAmount;
+                CurrentPlayer.Inventory.Certifications.AddCertification(SC.certifications);
+            }
+
+            return CurrentPlayer;
+        }
+
         //turns
         private void activationTurns()
         {
@@ -930,12 +971,17 @@ namespace ScrumAge
                 chargeAndAdd();
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
+                transferFunds(currentPlayer, sc);
+
 
                 // Open Situational Card Form and Pass sc to it
                 Game.DisplaySituationCardForm(currentPlayer, sc);
+                setStatus();
             }
             turn++;
         }
+
+       
 
         private void chargeAndAdd()
         {
@@ -989,6 +1035,7 @@ namespace ScrumAge
         private void Certificates_Click(object sender, EventArgs e)
         {
             //Call form to show all of the player's certificates
+            
         }
 
         

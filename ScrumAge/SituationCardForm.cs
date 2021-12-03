@@ -37,7 +37,6 @@ namespace ScrumAge
 
             //TODO
             //Actually add rewards and subtract costs
-
         }
 
 
@@ -95,6 +94,11 @@ namespace ScrumAge
         }
 
 
+        private void rewardsLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// Clicking the "Okay" Button
         /// </summary>
@@ -102,12 +106,8 @@ namespace ScrumAge
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Close();
-        }
-
-        private void rewardsLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
