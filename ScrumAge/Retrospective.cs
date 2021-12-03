@@ -23,40 +23,67 @@ namespace ScrumAge
     public partial class Retrospective : Form
     {
         Player currentPlayer;
+        List<Player> defaltList;
+        List<Player> manipulatedList; 
+        int turn = 0;
+        //Player currentPlayer, List<Player> PlayerList
         public Retrospective()
         {
             InitializeComponent();
+            //this.currentPlayer = currentPlayer;
+           //this.PlayerList = PlayerList;
         }
-
-        private void playerName_Click(object sender, EventArgs e)
+        public void setLabels()
         {
-            label1.Text = currentPlayer.Name;
+            this.label1.Text =  currentPlayer.Name;
+            this.labelTraining.Text = currentPlayer.Inventory.TrainingPoints.ToString();
+            this.labelDesign.Text = currentPlayer.Inventory.DesignPoints.ToString();
+            this.labelDevelopers.Text = currentPlayer.Inventory.Developers.ToString();
+            this.labelBitcoin.Text = currentPlayer.Inventory.Bitcoin.ToString();
+            this.labelDevelopment.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
+            //this.labelCertifications.Text = currentPlayer.Inventory.Certifications.Certification.Count().ToString();
         }
-
-        private void groupTheGood_Enter(object sender, EventArgs e)
+        public void showRetrospective()
         {
+            Show();
+        }
+       
+        public void calcRetrospective(List<Player> defaltList, List<Player> manipulatedList, int turn)
+        {
+           
             // check if player got more training, design, or development points 
-            // or got more bitcoin, or developers
-
-        }
-
-        private void groupTheBad_Enter(object sender, EventArgs e)
-        {
-            // check if player lost  training, design, or development points 
-            // or lost bitcoin, or developers
-        }
-
-        private void groupTheUgly_Enter(object sender, EventArgs e)
-        {
-            // check if the player lost the game
-            // otherwise, display "Good luck in the next sprint"
-            if (currentPlayer.Inventory.Bitcoin <=0)
+            foreach(var player in defaltList)
             {
-                theUglyMessage.Text = "Sorry, looks like you losing the game. Check your strategy!";
+                if(player.Id == turn -1)
+                {
+                    // set current player
+                    this.currentPlayer = player;
+
+                    //math
+
+                    setLabels();
+
+                    // check for the same ID for the player
+                    // look at the inventoty
+
+                }
+                
+            }
+          
+
+        }
+
+      
+        private void next_button_Click(object sender, EventArgs e)
+        {
+            turn++;
+            if (turn >= manipulatedList.Count)
+            {
+                calcRetrospective(defaltList, manipulatedList, turn);
             }
             else
             {
-                theUglyMessage.Text = "Good luck in the next sprint";
+                this.Close();
             }
 
         }
