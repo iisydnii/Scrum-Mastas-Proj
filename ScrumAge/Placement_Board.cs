@@ -36,6 +36,7 @@ namespace ScrumAge
 
     public partial class Placement_Board : Form
     {
+        Game game = new Game();
         public List<Player> PlayerList;
         List<Locations> locationList;
         List<Box> trackBoxes;
@@ -90,6 +91,10 @@ namespace ScrumAge
         }
 
         private void nextButton_Click(object sender, EventArgs e)
+        {
+            nextPlayer();
+        }
+        private void nextPlayer()
         {
             if (activate == false)
             {
@@ -755,7 +760,10 @@ namespace ScrumAge
             }
             locationList[3].playerList = market.placeDevs(currentPlayer.Id, counter);
         }
-        
+
+        // -------------------------------------------------------------
+        // Activation Phase 
+        // -------------------------------------------------------------
 
         // Project Tiles
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -783,11 +791,12 @@ namespace ScrumAge
             {
                 pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
                 projectTileForm.Show();
-                deck = projectTileForm.Deck;
+                
             }
         }
+
         /// <summary>
         /// Displays second project tile
         /// </summary>
@@ -815,9 +824,8 @@ namespace ScrumAge
             {
                 pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
                 projectTileForm.Show();
-                deck = projectTileForm.Deck;
             }
         }
 
@@ -850,9 +858,8 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
                 projectTileForm.Show();
-                deck = projectTileForm.Deck;
             }
         }
 
@@ -882,16 +889,19 @@ namespace ScrumAge
             {
                 pictureBox8.Enabled = true;
                 picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
                 projectTileForm.Show();
-                deck = projectTileForm.Deck;
+
             }
         }
 
-
-        // -------------------------------------------------------------
-        // Activation Phase 
-        // -------------------------------------------------------------
+        public void setUpAfterTile(Player player, ProjectDeck deck)
+        {
+            this.deck = deck;
+            this.currentPlayer = player;
+            setStatus();
+            nextPlayer();
+        }
 
         private SituationDeck sdDeck = new SituationDeck();
         
@@ -914,7 +924,6 @@ namespace ScrumAge
         {
             if (turn >= PlayerList.Count)
             {
-                Game game = new Game();
                 //call retropective 
                 //retropective(game.PlayerList ,PlayerList )
                 

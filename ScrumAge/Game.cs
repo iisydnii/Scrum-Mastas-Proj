@@ -42,11 +42,8 @@ using System.Collections.Generic;
     // Starts the game by displaying the Title Screen
     public static void StartGame()
     {
-
-
         //landingPageForm = new LandingPageForm();
         landingPageForm.ShowDialog();
-
     }
 
 
@@ -84,7 +81,11 @@ using System.Collections.Generic;
         placement_Board.ShowDialog();
 
     }
-    
+
+    public void Tilefunds(Player player, ProjectDeck deck)
+    {
+        placement_Board.setUpAfterTile(player, deck);
+    }
 
     public static void DisplayWinners_Losers()
     {
