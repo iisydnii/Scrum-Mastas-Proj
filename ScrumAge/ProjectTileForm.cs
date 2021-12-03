@@ -20,23 +20,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ScrumAge
 {
     public partial class ProjectTileForm : Form
     {
+        Game game = new Game();
         public ProjectTile Tile { get; set; }
         public ProjectDeck Deck { get; set; }
+        public Player currentPlayer { get; set; }
+        ManualResetEvent oSignalEvent = new ManualResetEvent(false);
+
         public ProjectTileForm()
         {
             InitializeComponent();
         }
 
-        public ProjectTileForm(ProjectTile tile, ProjectDeck deck)
+        public ProjectTileForm(ProjectTile tile, ProjectDeck deck, Player currentPlayer)
         {
             InitializeComponent();
             Tile = tile;
             Deck = deck;
+            this.currentPlayer = currentPlayer;
+            
+            
         }
         private void ProjectTileForm_Load(object sender, EventArgs e)
         {
@@ -51,11 +59,48 @@ namespace ScrumAge
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             Deck.RemoveCard(Tile);
-            //do the payment and rewards for the tile
-            this.Close();
+            transferFunds();
+            game.Tilefunds(this.currentPlayer, this.Deck);
+            closeTile();
         }
 
         private void DeclineButton_Click(object sender, EventArgs e)
+        {
+            closeTile();
+        }
+
+        public Player transferFunds()
+        {
+            string costType = Tile.cost.Values.ElementAt(0);
+            var cost = Tile.cost.Keys.ElementAt(0);
+
+            string rewardType = Tile.reward.Values.ElementAt(0);
+            var rewardAmount = Tile.reward.Keys.ElementAt(0);
+
+            if (costType == "Bitcoin")
+            {
+                currentPlayer.Inventory.Bitcoin -= cost;
+            }
+            else if (costType == "Training")
+            {
+                currentPlayer.Inventory.TrainingPoints -= cost;
+            }
+            else if (costType == "Design")
+            {
+                currentPlayer.Inventory.DesignPoints -= cost;
+            }
+
+            if (rewardType == "Development")
+            {
+                currentPlayer.Inventory.DevelopmentPoints += rewardAmount;
+            }
+            
+
+            
+            return (currentPlayer);
+        }
+
+        private void closeTile()
         {
             this.Close();
         }
