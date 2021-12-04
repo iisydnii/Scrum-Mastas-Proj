@@ -773,30 +773,41 @@ namespace ScrumAge
         {
             Random random = new Random();
             ProjectTile projectTile = projectDeck.DrawCard();
-            Description = projectTile.Description;
+            if (projectTile != null)
+            {
 
-            foreach (KeyValuePair<int, string> value in projectTile.reward)
-            {
-                RewardValue = value.Key.ToString();
-                RewardType = value.Value;
-            }
-            foreach (KeyValuePair<int, string> value in projectTile.cost)
-            {
-                CostValue = value.Key.ToString();
-                CostType = value.Value;
-            }
+                Description = projectTile.Description;
 
-            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
-            {
-                pictureBox5.Enabled = false;
+                foreach (KeyValuePair<int, string> value in projectTile.reward)
+                {
+                    RewardValue = value.Key.ToString();
+                    RewardType = value.Value;
+                }
+                foreach (KeyValuePair<int, string> value in projectTile.cost)
+                {
+                    CostValue = value.Key.ToString();
+                    CostType = value.Value;
+                }
+
+                if (picBox6WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
+                {
+                    pictureBox5.Enabled = false;
+                }
+                else
+                {
+                    pictureBox5.Enabled = true;
+                    picBox5WasClicked = true;
+                    ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
+                    projectTileForm.Show();
+
+                }
             }
-            else 
+            else
             {
-                pictureBox5.Enabled = true;
-                picBox5WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
-                projectTileForm.Show();
-                
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
+                pictureBox8.Visible = false;
             }
         }
 
@@ -806,29 +817,39 @@ namespace ScrumAge
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = projectDeck.DrawCard();
-            Description = projectTile.Description;
+            if (projectTile != null)
+            {
+                Description = projectTile.Description;
 
-            foreach (KeyValuePair<int, string> value in projectTile.reward)
-            {
-                RewardValue = value.Key.ToString();
-                RewardType = value.Value;
-            }
-            foreach (KeyValuePair<int, string> value in projectTile.cost)
-            {
-                CostValue = value.Key.ToString();
-                CostType = value.Value;
-            }
+                foreach (KeyValuePair<int, string> value in projectTile.reward)
+                {
+                    RewardValue = value.Key.ToString();
+                    RewardType = value.Value;
+                }
+                foreach (KeyValuePair<int, string> value in projectTile.cost)
+                {
+                    CostValue = value.Key.ToString();
+                    CostType = value.Value;
+                }
             
-            if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
-            {
-                pictureBox6.Enabled = false;
+                if (picBox5WasClicked == true || picBox7WasClicked == true || picBox8WasClicked == true)
+                {
+                    pictureBox6.Enabled = false;
+                }
+                else
+                {
+                    pictureBox6.Enabled = false;
+                    picBox6WasClicked = true;
+                    ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
+                    projectTileForm.Show();
+                }
             }
             else
             {
-                pictureBox6.Enabled = false;
-                picBox6WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
-                projectTileForm.Show();
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
+                pictureBox8.Visible = false;
             }
         }
 
@@ -838,31 +859,41 @@ namespace ScrumAge
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = projectDeck.DrawCard();
-            Description = projectTile.Description;
+            if (projectTile != null)
+            { 
+                Description = projectTile.Description;
 
-            foreach (KeyValuePair<int, string> value in projectTile.reward)
-            {
-                RewardValue = value.Key.ToString();
-                RewardType = value.Value;
-            }
-            foreach (KeyValuePair<int, string> value in projectTile.cost)
-            {
-                CostValue = value.Key.ToString();
-                CostType = value.Value;
-            }
-            //ProjectTileForm projectTileForm = new ProjectTileForm();
-            //projectTileForm.Show();
+                foreach (KeyValuePair<int, string> value in projectTile.reward)
+                {
+                    RewardValue = value.Key.ToString();
+                    RewardType = value.Value;
+                }
+                foreach (KeyValuePair<int, string> value in projectTile.cost)
+                {
+                    CostValue = value.Key.ToString();
+                    CostType = value.Value;
+                }
+                //ProjectTileForm projectTileForm = new ProjectTileForm();
+                //projectTileForm.Show();
 
-            if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
-            {
-                pictureBox7.Enabled = false;
+                if (picBox6WasClicked == true || picBox5WasClicked == true || picBox8WasClicked == true)
+                {
+                    pictureBox7.Enabled = false;
+                }
+                else
+                {
+                    pictureBox7.Enabled = true;
+                    picBox7WasClicked = true;
+                    ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
+                    projectTileForm.Show();
+                }
             }
             else
             {
-                pictureBox7.Enabled = true;
-                picBox7WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
-                projectTileForm.Show();
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
+                pictureBox8.Visible = false;
             }
         }
 
@@ -872,29 +903,39 @@ namespace ScrumAge
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             ProjectTile projectTile = projectDeck.DrawCard();
-            Description = projectTile.Description;
+            if (projectTile != null)
+            {
+                Description = projectTile.Description;
 
-            foreach (KeyValuePair<int, string> value in projectTile.reward)
-            {
-                RewardValue = value.Key.ToString();
-                RewardType = value.Value;
-            }
-            foreach (KeyValuePair<int, string> value in projectTile.cost)
-            {
-                CostValue = value.Key.ToString();
-                CostType = value.Value;
-            }
-            if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
-            {
-                pictureBox8.Enabled = false;
+                foreach (KeyValuePair<int, string> value in projectTile.reward)
+                {
+                    RewardValue = value.Key.ToString();
+                    RewardType = value.Value;
+                }
+                foreach (KeyValuePair<int, string> value in projectTile.cost)
+                {
+                    CostValue = value.Key.ToString();
+                    CostType = value.Value;
+                }
+                if (picBox6WasClicked == true || picBox7WasClicked == true || picBox5WasClicked == true)
+                {
+                    pictureBox8.Enabled = false;
+                }
+                else
+                {
+                    pictureBox8.Enabled = true;
+                    picBox8WasClicked = true;
+                    ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
+                    projectTileForm.Show();
+
+                }
             }
             else
             {
-                pictureBox8.Enabled = true;
-                picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
-                projectTileForm.Show();
-
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
+                pictureBox8.Visible = false;
             }
         }
 

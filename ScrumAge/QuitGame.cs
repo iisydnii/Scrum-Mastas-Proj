@@ -31,17 +31,6 @@ namespace ScrumAge
             InitializeComponent();
         }
 
-        private void QuitGame_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         //No, continue playing
         private void button1_Click(object sender, EventArgs e)
         {
@@ -53,8 +42,8 @@ namespace ScrumAge
         //Yes, Quit Game
         private void start_Click(object sender, EventArgs e)
         {
-
-            Game.DisplayWinners_Losers();
+            Game game = new Game();
+            game.DisplayWinners_Losers();
 
 
             this.Visible = false;
