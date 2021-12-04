@@ -41,6 +41,14 @@ namespace ScrumAge
             this.pictureFile = setImage(id);
         }
 
+        public Player(int id, string name, Inventory inventory)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Inventory = inventory;
+            this.pictureFile = setImage(id);
+        }
+
         /// <summary>
         /// Player pays and inventory reflects the update
         /// </summary>
