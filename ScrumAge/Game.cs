@@ -90,7 +90,7 @@ using System.Collections.Generic;
         }
         else
         {
-            //display winner losers
+            DisplayWinners_Losers();
         }
     }
 
@@ -100,9 +100,9 @@ using System.Collections.Generic;
         placement_Board.setUpAfterTile(player, deck);
     }
 
-    public static void DisplayWinners_Losers()
+    public void DisplayWinners_Losers()
     {
-        winners_losers = new Winners_Losers();
+        winners_losers = new Winners_Losers(PlayerList);
         winners_losers.StartPosition = FormStartPosition.CenterParent;
         winners_losers.ShowDialog();
     }

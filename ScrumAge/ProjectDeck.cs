@@ -89,11 +89,19 @@ namespace ScrumAge
         public ProjectTile DrawCard()
         {
             Random random = new Random();
-            ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(random.Next(projectDeck.Count));
-            //projectDeck.Remove(projectDeck.ElementAt(0));
-            DisplayCard();
-            Console.WriteLine($"There are {projectDeck.Count()} Cards left in the deck");
-            return tempCard;
+            if (projectDeck.Count != 0)
+            {
+                ProjectTile tempCard = (ProjectTile)projectDeck.ElementAt(random.Next(projectDeck.Count));
+                //projectDeck.Remove(projectDeck.ElementAt(0));
+                DisplayCard();
+
+                Console.WriteLine($"There are {projectDeck.Count()} Cards left in the deck");
+                return tempCard;
+            }
+            else
+            {
+               return null;
+            }
         }
 
         public void RemoveCard(ProjectTile pickedUpTile)
