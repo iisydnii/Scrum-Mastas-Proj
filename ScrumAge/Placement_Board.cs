@@ -1007,8 +1007,8 @@ namespace ScrumAge
         {
             if (turn >= PlayerList.Count)
             {
-                //call retropective 
-                //retropective(game.PlayerList ,PlayerList )
+
+                Retrospective retrospective = new Retrospective(game.PlayerList, PlayerList, 0);
                 
                 game.stockprice = stockPrice;
                 game.PlayerList = PlayerList;

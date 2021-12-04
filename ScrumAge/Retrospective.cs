@@ -23,40 +23,117 @@ namespace ScrumAge
     public partial class Retrospective : Form
     {
         Player currentPlayer;
-        public Retrospective()
+        List<Player> defaultList;
+        List<Player> manipulatedList;
+        int turn;
+        public Retrospective(List<Player> defaultList, List<Player> manipulatedList, int turn)
         {
             InitializeComponent();
+
+            this.defaultList = defaultList;
+            this.manipulatedList = manipulatedList;
+            this.turn = turn;
+            this.currentPlayer = manipulatedList[turn];
+            setLabels();
+            calcRetrospective();
+            Show();
         }
 
-        private void playerName_Click(object sender, EventArgs e)
-        {
-            label1.Text = currentPlayer.Name;
+        private void setLabels() 
+        { 
+            this.label1.Text =  currentPlayer.Name;
+            this.labelTraining.Text = defaultList[currentPlayer.Id].Inventory.TrainingPoints.ToString();
+            this.labelDesign.Text = defaultList[currentPlayer.Id].Inventory.DesignPoints.ToString();
+            this.labelDevelopers.Text = defaultList[currentPlayer.Id].Inventory.Developers.ToString();
+            this.labelBitcoin.Text = defaultList[currentPlayer.Id].Inventory.Bitcoin.ToString();
+            this.labelDevelopment.Text = defaultList[currentPlayer.Id].Inventory.DevelopmentPoints.ToString();
         }
-
-        private void groupTheGood_Enter(object sender, EventArgs e)
+       
+        public void calcRetrospective()
         {
-            // check if player got more training, design, or development points 
-            // or got more bitcoin, or developers
+
+            // set current player
+            Player Mplayer = manipulatedList[turn];
+            Player Dplayer = defaultList[turn];
+
+                //Math
+
+            //Devs
+            int hold = 0;
+                hold = Dplayer.Inventory.Developers - Mplayer.Inventory.Developers;
+                //loss
+                if (Dplayer.Inventory.Developers < Mplayer.Inventory.Developers)
+                {
+                    this.good.Text += "Gain " + hold + " Developers!\n";
+                }
+
+                //Training
+                hold = Dplayer.Inventory.TrainingPoints - Mplayer.Inventory.TrainingPoints;
+                //loss
+                if (Dplayer.Inventory.TrainingPoints > Mplayer.Inventory.TrainingPoints)
+                {
+                    this.bad.Text += "Lost " + Math.Abs(hold) + "Training Points\n";
+                }
+                //gain
+                else if (Dplayer.Inventory.TrainingPoints < Mplayer.Inventory.TrainingPoints)
+                {
+                    this.good.Text += "Gain " + hold + " Training Points!\n";
+                }
+
+                //Design
+                hold = Dplayer.Inventory.DesignPoints - Mplayer.Inventory.DesignPoints;
+                //loss
+                if (Dplayer.Inventory.DesignPoints > Mplayer.Inventory.DesignPoints)
+                {
+                    this.bad.Text += "Lost " + Math.Abs(hold) + " Design Points\n";
+                }
+                //gain
+                else if (Dplayer.Inventory.DesignPoints < Mplayer.Inventory.DesignPoints)
+                {
+                    this.good.Text += "Gain " + hold + " Design Points!\n";
+                }
+
+                //Bitcoin
+                hold = Dplayer.Inventory.Bitcoin - Mplayer.Inventory.Bitcoin;
+                //loss
+                if (Dplayer.Inventory.Bitcoin > Mplayer.Inventory.Bitcoin)
+                {
+                    this.bad.Text += "Lost " + Math.Abs(hold) + " Bitcoin\n";
+                }
+                //gain
+                else if (Dplayer.Inventory.Bitcoin < Mplayer.Inventory.Bitcoin)
+                {
+                    this.good.Text += "Gain " + hold + " Bitcoin!\n";
+                }
+                //Development
+                //Bitcoin
+                hold = Dplayer.Inventory.DevelopmentPoints - Mplayer.Inventory.DevelopmentPoints;
+                //loss
+                if (Dplayer.Inventory.DevelopmentPoints > Mplayer.Inventory.DevelopmentPoints)
+                {
+                    this.bad.Text += "Lost " + Math.Abs(hold) + " Development Points\n";
+                }
+                //gain
+                else if (Dplayer.Inventory.DevelopmentPoints < Mplayer.Inventory.DevelopmentPoints)
+                {
+                    this.good.Text += "Gain " + hold + " Development Points!\n";
+                }
+          
 
         }
-
-        private void groupTheBad_Enter(object sender, EventArgs e)
+        private void next_button_Click(object sender, EventArgs e)
         {
-            // check if player lost  training, design, or development points 
-            // or lost bitcoin, or developers
-        }
-
-        private void groupTheUgly_Enter(object sender, EventArgs e)
-        {
-            // check if the player lost the game
-            // otherwise, display "Good luck in the next sprint"
-            if (currentPlayer.Inventory.Bitcoin <=0)
+            turn++;
+            if (turn >= this.manipulatedList.Count)
             {
-                theUglyMessage.Text = "Sorry, looks like you losing the game. Check your strategy!";
+                this.currentPlayer = manipulatedList[turn];
+                calcRetrospective();
+                Show();
             }
             else
             {
-                theUglyMessage.Text = "Good luck in the next sprint";
+                this.Hide();
+                this.Close();
             }
 
         }

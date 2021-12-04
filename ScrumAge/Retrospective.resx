@@ -124,7 +124,11 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAwMAAAIeCAYAAADnHdPSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+<<<<<<< Updated upstream
         wgAADsIBFShKgAAA/GZJREFUeF7svQd8HdW57v3d+7v3u/cLxSTnHEpyUs4JxXQIpAFp9JIYU2xsegmd
+=======
+        vAAADrwBlbxySQAA/GZJREFUeF7svQd8HdW57v3d+7v3u/cLxSTnHEpyUs4JxXQIpAFp9JIYU2xsegmd
+>>>>>>> Stashed changes
         EAgQSgA3TDG40Ew1vXdsXCX3JkuWe1Hv3ba6bLW9n+9915qRtqQlWbK0tbe0n0n+zOw1a2bW7CI/z7zv
         Wuv/+QMAQgghhBBCSOxBM0AIIYQQQkiMQjNACCGEEEJIjEIzQAghhBBCSIxCM0AIIYQQQkiMQjNACCGE
         EEJIjNIrM3BlAHi2IYB/NAWc+/fGU/UBjG8IOvftjccag3hSjr0k6N6/N3pz/Ghz30Hc17RvbX9W7vtR

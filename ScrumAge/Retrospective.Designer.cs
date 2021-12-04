@@ -35,9 +35,12 @@ namespace ScrumAge
             this.theBad = new System.Windows.Forms.Label();
             this.theUgly = new System.Windows.Forms.Label();
             this.groupTheGood = new System.Windows.Forms.GroupBox();
+            this.good = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupTheBad = new System.Windows.Forms.GroupBox();
+            this.bad = new System.Windows.Forms.Label();
             this.groupTheUgly = new System.Windows.Forms.GroupBox();
+            this.ugly = new System.Windows.Forms.Label();
             this.player = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,8 +53,9 @@ namespace ScrumAge
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelTraining = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelCertifications = new System.Windows.Forms.Label();
+            this.groupTheGood.SuspendLayout();
+            this.groupTheBad.SuspendLayout();
+            this.groupTheUgly.SuspendLayout();
             this.SuspendLayout();
             // 
             // next_button
@@ -102,29 +106,59 @@ namespace ScrumAge
             // groupTheGood
             // 
             this.groupTheGood.BackColor = System.Drawing.Color.Transparent;
+            this.groupTheGood.Controls.Add(this.good);
             this.groupTheGood.Location = new System.Drawing.Point(143, 132);
             this.groupTheGood.Name = "groupTheGood";
             this.groupTheGood.Size = new System.Drawing.Size(147, 197);
             this.groupTheGood.TabIndex = 4;
             this.groupTheGood.TabStop = false;
             // 
+            // good
+            // 
+            this.good.AutoSize = true;
+            this.good.Location = new System.Drawing.Point(18, 20);
+            this.good.Name = "good";
+            this.good.Size = new System.Drawing.Size(31, 13);
+            this.good.TabIndex = 0;
+            this.good.Text = "good";
+            // 
             // groupTheBad
             // 
             this.groupTheBad.BackColor = System.Drawing.Color.Transparent;
+            this.groupTheBad.Controls.Add(this.bad);
             this.groupTheBad.Location = new System.Drawing.Point(325, 132);
             this.groupTheBad.Name = "groupTheBad";
             this.groupTheBad.Size = new System.Drawing.Size(147, 197);
             this.groupTheBad.TabIndex = 5;
             this.groupTheBad.TabStop = false;
             // 
+            // bad
+            // 
+            this.bad.AutoSize = true;
+            this.bad.Location = new System.Drawing.Point(27, 19);
+            this.bad.Name = "bad";
+            this.bad.Size = new System.Drawing.Size(25, 13);
+            this.bad.TabIndex = 0;
+            this.bad.Text = "bad";
+            // 
             // groupTheUgly
             // 
             this.groupTheUgly.BackColor = System.Drawing.Color.Transparent;
+            this.groupTheUgly.Controls.Add(this.ugly);
             this.groupTheUgly.Location = new System.Drawing.Point(507, 132);
             this.groupTheUgly.Name = "groupTheUgly";
             this.groupTheUgly.Size = new System.Drawing.Size(147, 197);
             this.groupTheUgly.TabIndex = 6;
             this.groupTheUgly.TabStop = false;
+            // 
+            // ugly
+            // 
+            this.ugly.AutoSize = true;
+            this.ugly.Location = new System.Drawing.Point(17, 20);
+            this.ugly.Name = "ugly";
+            this.ugly.Size = new System.Drawing.Size(26, 13);
+            this.ugly.TabIndex = 1;
+            this.ugly.Text = "ugly";
             // 
             // player
             // 
@@ -258,29 +292,6 @@ namespace ScrumAge
             this.labelTraining.TabIndex = 22;
             this.labelTraining.Text = "label2";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(359, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Certifications";
-            // 
-            // labelCertifications
-            // 
-            this.labelCertifications.AutoSize = true;
-            this.labelCertifications.BackColor = System.Drawing.Color.Transparent;
-            this.labelCertifications.Font = new System.Drawing.Font("Palatino Linotype", 9.75F);
-            this.labelCertifications.Location = new System.Drawing.Point(472, 71);
-            this.labelCertifications.Name = "labelCertifications";
-            this.labelCertifications.Size = new System.Drawing.Size(44, 18);
-            this.labelCertifications.TabIndex = 25;
-            this.labelCertifications.Text = "label5";
-            this.labelCertifications.Click += new System.EventHandler(this.labelCertifications_Click);
-            // 
             // Retrospective
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,8 +299,6 @@ namespace ScrumAge
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelCertifications);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labelTraining);
             this.Controls.Add(this.labelDevelopers);
@@ -314,7 +323,12 @@ namespace ScrumAge
             this.Name = "Retrospective";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retrospective";
-            this.Load += new System.EventHandler(this.Retrospective_Load);
+            this.groupTheGood.ResumeLayout(false);
+            this.groupTheGood.PerformLayout();
+            this.groupTheBad.ResumeLayout(false);
+            this.groupTheBad.PerformLayout();
+            this.groupTheUgly.ResumeLayout(false);
+            this.groupTheUgly.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,7 +356,8 @@ namespace ScrumAge
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelTraining;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelCertifications;
+        private System.Windows.Forms.Label good;
+        private System.Windows.Forms.Label bad;
+        private System.Windows.Forms.Label ugly;
     }
 }
