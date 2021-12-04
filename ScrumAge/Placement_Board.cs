@@ -974,11 +974,9 @@ namespace ScrumAge
                 game.sdDeck = sdDeck;
                 Winners_Losers winners_Losers = new Winners_Losers();
                 winners_Losers.checkForEndOFGame(sdDeck, projectDeck);
-                game.DisplayPlacementBoardNextRound();
-                this.Close();
-                
-
-
+                this.Hide(); // <----- This because closing it won't work here. Threading Issue I believe --Austin
+                this.Dispose(); // <--- Supposed to remove from memory. But I don't think it is because of thread again.
+                game.DisplayPlacementBoardNextRound();                                            
             }
             else
             {

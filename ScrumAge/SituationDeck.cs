@@ -74,32 +74,32 @@ namespace ScrumAge
         { 
             SituationCard tempCard = (SituationCard)situationDeck.ElementAt(0);
             situationDeck.Remove(situationDeck.ElementAt(0));
-            DisplayCard();
+            //DisplayCard();
             Console.WriteLine($"There are {situationDeck.Count()} Cards left in the deck");
             return tempCard;
         }
 
 
-        public string DisplayCard() //testing purposes
-        {
-            SituationCard tempCard = (SituationCard)situationDeck.ElementAt(0);
-            string cardText = "";
-            cardText += $"-------------------";
-            cardText += $"\n\nSituation: {tempCard.situation}";
-            foreach (var k in tempCard.cost)
-            {
-                cardText += $"\n\nCost: This costs {k.Key} {k.Value} ";
-            }
-            foreach (var j in tempCard.reward)
-            {
-                cardText += $"\n\nReward: This gives you {j.Key} {j.Value} ";
-            }
-            cardText += $"\n\nCertification: {tempCard.certifications}";
-            cardText += $"\n\nDiffculty: {tempCard.diffculty.ToString()}";
-            cardText += $"\n\n-------------------\n\n";
-            Console.WriteLine(cardText);
-            return "";
-        }
+        //public string DisplayCard() //testing purposes
+        //{
+        //    SituationCard tempCard = (SituationCard)situationDeck.ElementAt(0);
+        //    string cardText = "";
+        //    cardText += $"-------------------";
+        //    cardText += $"\n\nSituation: {tempCard.situation}";
+        //    foreach (var k in tempCard.cost)
+        //    {
+        //        cardText += $"\n\nCost: This costs {k.Key} {k.Value} ";
+        //    }
+        //    foreach (var j in tempCard.reward)
+        //    {
+        //        cardText += $"\n\nReward: This gives you {j.Key} {j.Value} ";
+        //    }
+        //    cardText += $"\n\nCertification: {tempCard.certifications}";
+        //    cardText += $"\n\nDiffculty: {tempCard.diffculty.ToString()}";
+        //    cardText += $"\n\n-------------------\n\n";
+        //    Console.WriteLine(cardText);
+        //    return "";
+        //}
         
         public void UpdateDeck(SituationCard card)
         {
