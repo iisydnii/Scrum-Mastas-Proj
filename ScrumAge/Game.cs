@@ -21,7 +21,6 @@ using System.Collections.Generic;
 {
     public ProjectDeck projectDeck = new ProjectDeck();
     public SituationDeck sdDeck = new SituationDeck();
-
     public List<Player> PlayerList = SelectPlayersForm.players;
     public int stockprice;
     public bool endOfGame = false;
@@ -33,9 +32,8 @@ using System.Collections.Generic;
     private static RulesForm rulesForm;
     private static Winners_Losers winners_losers;
     private static SituationCardForm situationCardForm;
-    private static Retrospective retrospective;
     
-
+    
     public Game()
     {
         //do nothing 
@@ -60,7 +58,6 @@ using System.Collections.Generic;
     {
         //Application.Run(new SelectPlayersForm());
         landingPageForm.Hide();
-
         SelectPlayersForm = new SelectPlayersForm();
         SelectPlayersForm.ShowDialog();
 
@@ -71,15 +68,12 @@ using System.Collections.Generic;
         situationCardForm = new SituationCardForm(currentPlayer, sc);
         situationCardForm.StartPosition = FormStartPosition.CenterParent;
         situationCardForm.ShowDialog();
-        //placement_Board.Hide();
     }
-
 
     public void DisplayPlacementBoard()
     {
         placement_Board = new Placement_Board(PlayerList, stockprice, projectDeck, sdDeck);
         placement_Board.ShowDialog();
-
     }
 
     public void DisplayPlacementBoardNextRound()
@@ -105,28 +99,6 @@ using System.Collections.Generic;
         winners_losers = new Winners_Losers(PlayerList);
         winners_losers.StartPosition = FormStartPosition.CenterParent;
         winners_losers.ShowDialog();
-    }
-
-
-    public static void DisplayRetrospective()
-    {
-        retrospective = new Retrospective();
-        retrospective.ShowDialog();
-    }
-
-
-    public static void CloseForm(Form form)
-    {
-        form.Close();
-    }
-
-
-    // For Testing
-    public static void Test()
-    {
-        StartGame();
-        DisplaySetPlayersForm();
-
     }
 
 }

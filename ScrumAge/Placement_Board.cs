@@ -36,15 +36,16 @@ namespace ScrumAge
 
     public partial class Placement_Board : Form
     {
-        Game game = new Game();
+        
         public List<Player> PlayerList;
+        List<Player> copiedList;
         List<Locations> locationList;
         List<Box> trackBoxes;
         PictureBox[] boxes;
         PictureBox selected;
         Player currentPlayer;
         int AvailableDevs = 0;
-        int devs = 0; // once set it never changes
+        int devs = 0; 
         int turn;
         int roll = 0;
         public int stockPrice;
@@ -75,6 +76,7 @@ namespace ScrumAge
         public Placement_Board(List<Player> PlayerList, int stockPrice, ProjectDeck projectDeck, SituationDeck sdDeck)
         {
             InitializeComponent();
+            setcopiedlist(PlayerList);
             this.PlayerList = PlayerList;
             this.stockPrice = stockPrice;
             this.projectDeck = projectDeck;
@@ -93,6 +95,22 @@ namespace ScrumAge
             getAvailableDevs(0);
         }
 
+        private void setcopiedlist(List<Player> PlayerList)
+        {
+            copiedList = new List<Player>();
+            Inventory copiedInventory = new Inventory();
+            foreach (Player player in PlayerList)
+            {
+                copiedInventory.TrainingPoints = player.Inventory.TrainingPoints;
+                copiedInventory.Bitcoin = player.Inventory.Bitcoin;
+                copiedInventory.DevelopmentPoints = player.Inventory.DevelopmentPoints;
+                copiedInventory.Developers = player.Inventory.Developers;
+                copiedInventory.DesignPoints = player.Inventory.DesignPoints;
+                copiedInventory.Certifications.Certification = player.Inventory.Certifications.Certification;
+                copiedList.Add(new Player(player.Id, player.Name, copiedInventory));
+            }
+        }
+        
         private void nextButton_Click(object sender, EventArgs e)
         {
             nextPlayer();
@@ -1007,9 +1025,8 @@ namespace ScrumAge
         {
             if (turn >= PlayerList.Count)
             {
-
-                Retrospective retrospective = new Retrospective(game.PlayerList, PlayerList, 0);
-                
+                Retrospective retrospective = new Retrospective(copiedList, PlayerList, 0);
+                Game game = new Game();
                 game.stockprice = stockPrice;
                 game.PlayerList = PlayerList;
                 game.projectDeck = projectDeck;

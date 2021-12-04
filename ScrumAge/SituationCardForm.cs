@@ -93,12 +93,6 @@ namespace ScrumAge
 
         }
 
-
-        private void rewardsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Clicking the "Okay" Button
         /// </summary>

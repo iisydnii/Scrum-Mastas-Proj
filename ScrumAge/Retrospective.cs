@@ -22,6 +22,7 @@ namespace ScrumAge
 {
     public partial class Retrospective : Form
     {
+        Game game = new Game();
         Player currentPlayer;
         List<Player> defaultList;
         List<Player> manipulatedList;
@@ -29,31 +30,33 @@ namespace ScrumAge
         public Retrospective(List<Player> defaultList, List<Player> manipulatedList, int turn)
         {
             InitializeComponent();
-
-            this.defaultList = defaultList;
             this.manipulatedList = manipulatedList;
+            this.defaultList = defaultList;
             this.turn = turn;
             this.currentPlayer = manipulatedList[turn];
             setLabels();
             calcRetrospective();
-            Show();
+            show();
+
         }
 
         private void setLabels() 
         { 
             this.label1.Text =  currentPlayer.Name;
-            this.labelTraining.Text = defaultList[currentPlayer.Id].Inventory.TrainingPoints.ToString();
-            this.labelDesign.Text = defaultList[currentPlayer.Id].Inventory.DesignPoints.ToString();
-            this.labelDevelopers.Text = defaultList[currentPlayer.Id].Inventory.Developers.ToString();
-            this.labelBitcoin.Text = defaultList[currentPlayer.Id].Inventory.Bitcoin.ToString();
-            this.labelDevelopment.Text = defaultList[currentPlayer.Id].Inventory.DevelopmentPoints.ToString();
+            this.labelTraining.Text = currentPlayer.Inventory.TrainingPoints.ToString();
+            this.labelDesign.Text = currentPlayer.Inventory.DesignPoints.ToString();
+            this.labelDevelopers.Text = currentPlayer.Inventory.Developers.ToString();
+            this.labelBitcoin.Text = currentPlayer.Inventory.Bitcoin.ToString();
+            this.labelDevelopment.Text = currentPlayer.Inventory.DevelopmentPoints.ToString();
         }
        
         public void calcRetrospective()
         {
-
-            // set current player
-            Player Mplayer = manipulatedList[turn];
+            this.good.Text = null;
+            this.bad.Text = null;
+            this.ugly.Text = null;
+            //set current player
+            Player Mplayer = currentPlayer;
             Player Dplayer = defaultList[turn];
 
                 //Math
@@ -64,7 +67,7 @@ namespace ScrumAge
                 //loss
                 if (Dplayer.Inventory.Developers < Mplayer.Inventory.Developers)
                 {
-                    this.good.Text += "Gain " + hold + " Developers!\n";
+                    this.good.Text += "Gain " + Math.Abs(hold) + " Developers!\n";
                 }
 
                 //Training
@@ -72,12 +75,12 @@ namespace ScrumAge
                 //loss
                 if (Dplayer.Inventory.TrainingPoints > Mplayer.Inventory.TrainingPoints)
                 {
-                    this.bad.Text += "Lost " + Math.Abs(hold) + "Training Points\n";
+                    this.bad.Text += "Lost " + Math.Abs(hold) + " Training Points\n";
                 }
                 //gain
                 else if (Dplayer.Inventory.TrainingPoints < Mplayer.Inventory.TrainingPoints)
                 {
-                    this.good.Text += "Gain " + hold + " Training Points!\n";
+                    this.good.Text += "Gain " + Math.Abs(hold) + " Training Points!\n";
                 }
 
                 //Design
@@ -90,7 +93,7 @@ namespace ScrumAge
                 //gain
                 else if (Dplayer.Inventory.DesignPoints < Mplayer.Inventory.DesignPoints)
                 {
-                    this.good.Text += "Gain " + hold + " Design Points!\n";
+                    this.good.Text += "Gain " + Math.Abs(hold) + " Design Points!\n";
                 }
 
                 //Bitcoin
@@ -103,7 +106,7 @@ namespace ScrumAge
                 //gain
                 else if (Dplayer.Inventory.Bitcoin < Mplayer.Inventory.Bitcoin)
                 {
-                    this.good.Text += "Gain " + hold + " Bitcoin!\n";
+                    this.good.Text += "Gain " + Math.Abs(hold) + " Bitcoin!\n";
                 }
                 //Development
                 //Bitcoin
@@ -116,17 +119,22 @@ namespace ScrumAge
                 //gain
                 else if (Dplayer.Inventory.DevelopmentPoints < Mplayer.Inventory.DevelopmentPoints)
                 {
-                    this.good.Text += "Gain " + hold + " Development Points!\n";
+                    this.good.Text += "Gain " + Math.Abs(hold) + " Development Points!\n";
                 }
           
 
         }
+        public void show()
+        {
+            ShowDialog();
+        }
         private void next_button_Click(object sender, EventArgs e)
         {
             turn++;
-            if (turn >= this.manipulatedList.Count)
+            if (turn < this.manipulatedList.Count)
             {
                 this.currentPlayer = manipulatedList[turn];
+                setLabels();
                 calcRetrospective();
                 Show();
             }

@@ -92,7 +92,6 @@ namespace ScrumAge
             this.rewardsLabel.Size = new System.Drawing.Size(110, 25);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "Rewards";
-            this.rewardsLabel.Click += new System.EventHandler(this.rewardsLabel_Click);
             // 
             // CostTypeLabel
             // 
