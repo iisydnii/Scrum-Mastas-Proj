@@ -26,14 +26,73 @@ namespace ScrumAge
         public Retrospective()
         {
             InitializeComponent();
+<<<<<<< Updated upstream
+=======
+            this.defaultList = defaultList;
+            this.manipulatedList = manipulatedList;
+            this.turn = turn;
+
+
+
+            //Set first player's labels
+            this.label1.Text = defaultList[0].Name;
+            this.labelTraining.Text = defaultList[0].Inventory.TrainingPoints.ToString();
+            this.labelDesign.Text = defaultList[0].Inventory.DesignPoints.ToString();
+            this.labelDevelopers.Text = defaultList[0].Inventory.Developers.ToString();
+            this.labelBitcoin.Text = defaultList[0].Inventory.Bitcoin.ToString();
+            this.labelDevelopment.Text = defaultList[0].Inventory.DevelopmentPoints.ToString();
+            this.labelCertifications.Text = manipulatedList[0].Inventory.Certifications.CertificationsList.Count().ToString();
+            calcRetrospective();
+>>>>>>> Stashed changes
         }
 
         private void playerName_Click(object sender, EventArgs e)
         {
             label1.Text = currentPlayer.Name;
         }
+<<<<<<< Updated upstream
 
         private void groupTheGood_Enter(object sender, EventArgs e)
+=======
+       
+        public void calcRetrospective()
+        {
+            int bitcoin = 5, training;
+            // check if player got more training, design, or development points 
+            foreach(var player in defaultList)
+            {
+                foreach (var mPlayer in manipulatedList)
+                {
+                    if (player.Id == turn + 1)
+                    {
+                        // set current player
+                        this.currentPlayer = player;
+
+                        //math
+                        //bitcoin = mPlayer.Inventory.TrainingPoints - player.Inventory.TrainingPoints;
+                        training = mPlayer.Inventory.TrainingPoints - player.Inventory.TrainingPoints; 
+                        //setLabels();
+
+                        // check for the same ID for the player
+                        // look at the inventoty
+
+                    } 
+                }
+
+            }
+            if (bitcoin > 0)
+            {
+                this.labelGood.Text = $"Gain + {bitcoin} bitcon";
+                this.labelBad.Text = " ";
+                this.labelUgly.Text = " ";
+
+            }
+
+        }
+
+      
+        private void next_button_Click(object sender, EventArgs e)
+>>>>>>> Stashed changes
         {
             // check if player got more training, design, or development points 
             // or got more bitcoin, or developers

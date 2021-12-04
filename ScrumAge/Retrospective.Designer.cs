@@ -41,6 +41,26 @@ namespace ScrumAge
             this.theUglyMessage = new System.Windows.Forms.TextBox();
             this.player = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelDesign = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelBitcoin = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelDevelopment = new System.Windows.Forms.Label();
+            this.labelDevelopers = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelTraining = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelCertifications = new System.Windows.Forms.Label();
+            this.labelUgly = new System.Windows.Forms.Label();
+            this.labelBad = new System.Windows.Forms.Label();
+            this.labelGood = new System.Windows.Forms.Label();
+            this.groupTheGood.SuspendLayout();
+            this.groupTheBad.SuspendLayout();
+>>>>>>> Stashed changes
             this.groupTheUgly.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +111,7 @@ namespace ScrumAge
             // groupTheGood
             // 
             this.groupTheGood.BackColor = System.Drawing.Color.Transparent;
+            this.groupTheGood.Controls.Add(this.labelGood);
             this.groupTheGood.Location = new System.Drawing.Point(143, 132);
             this.groupTheGood.Name = "groupTheGood";
             this.groupTheGood.Size = new System.Drawing.Size(147, 197);
@@ -101,6 +122,7 @@ namespace ScrumAge
             // groupTheBad
             // 
             this.groupTheBad.BackColor = System.Drawing.Color.Transparent;
+            this.groupTheBad.Controls.Add(this.labelBad);
             this.groupTheBad.Location = new System.Drawing.Point(325, 132);
             this.groupTheBad.Name = "groupTheBad";
             this.groupTheBad.Size = new System.Drawing.Size(147, 197);
@@ -111,7 +133,11 @@ namespace ScrumAge
             // groupTheUgly
             // 
             this.groupTheUgly.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.groupTheUgly.Controls.Add(this.theUglyMessage);
+=======
+            this.groupTheUgly.Controls.Add(this.labelUgly);
+>>>>>>> Stashed changes
             this.groupTheUgly.Location = new System.Drawing.Point(507, 132);
             this.groupTheUgly.Name = "groupTheUgly";
             this.groupTheUgly.Size = new System.Drawing.Size(147, 197);
@@ -150,6 +176,33 @@ namespace ScrumAge
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.playerName_Click);
             // 
+            // labelUgly
+            // 
+            this.labelUgly.AutoSize = true;
+            this.labelUgly.Location = new System.Drawing.Point(20, 20);
+            this.labelUgly.Name = "labelUgly";
+            this.labelUgly.Size = new System.Drawing.Size(35, 13);
+            this.labelUgly.TabIndex = 0;
+            this.labelUgly.Text = "label2";
+            // 
+            // labelBad
+            // 
+            this.labelBad.AutoSize = true;
+            this.labelBad.Location = new System.Drawing.Point(7, 20);
+            this.labelBad.Name = "labelBad";
+            this.labelBad.Size = new System.Drawing.Size(35, 13);
+            this.labelBad.TabIndex = 0;
+            this.labelBad.Text = "label5";
+            // 
+            // labelGood
+            // 
+            this.labelGood.AutoSize = true;
+            this.labelGood.Location = new System.Drawing.Point(8, 19);
+            this.labelGood.Name = "labelGood";
+            this.labelGood.Size = new System.Drawing.Size(35, 13);
+            this.labelGood.TabIndex = 0;
+            this.labelGood.Text = "label6";
+            // 
             // Retrospective
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +224,14 @@ namespace ScrumAge
             this.Name = "Retrospective";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retrospective";
+<<<<<<< Updated upstream
+=======
+            this.Load += new System.EventHandler(this.Retrospective_Load);
+            this.groupTheGood.ResumeLayout(false);
+            this.groupTheGood.PerformLayout();
+            this.groupTheBad.ResumeLayout(false);
+            this.groupTheBad.PerformLayout();
+>>>>>>> Stashed changes
             this.groupTheUgly.ResumeLayout(false);
             this.groupTheUgly.PerformLayout();
             this.ResumeLayout(false);
@@ -190,6 +251,24 @@ namespace ScrumAge
         private System.Windows.Forms.GroupBox groupTheUgly;
         private System.Windows.Forms.Label player;
         private System.Windows.Forms.Label label1;
+<<<<<<< Updated upstream
         private System.Windows.Forms.TextBox theUglyMessage;
+=======
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelDesign;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelBitcoin;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelDevelopment;
+        private System.Windows.Forms.Label labelDevelopers;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelTraining;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCertifications;
+        private System.Windows.Forms.Label labelGood;
+        private System.Windows.Forms.Label labelBad;
+        private System.Windows.Forms.Label labelUgly;
+>>>>>>> Stashed changes
     }
 }
