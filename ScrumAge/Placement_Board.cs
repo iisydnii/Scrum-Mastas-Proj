@@ -52,7 +52,8 @@ namespace ScrumAge
         Whiteboard whiteBoard = new Whiteboard();
         HRLocation hr = new HRLocation();
         CryptoMarket market = new CryptoMarket();
-        ProjectDeck deck = new ProjectDeck();
+        ProjectDeck projectDeck;
+        SituationDeck sdDeck;
         Locations location = new Locations();
         DiceForm DiceForm = new DiceForm();
         private bool picBox5WasClicked = false;
@@ -71,11 +72,13 @@ namespace ScrumAge
         public static Dictionary<int, string> RewardD;
         public static Dictionary<int, string> Cost;
 
-        public Placement_Board(List<Player> PlayerList, int stockPrice)
+        public Placement_Board(List<Player> PlayerList, int stockPrice, ProjectDeck projectDeck, SituationDeck sdDeck)
         {
             InitializeComponent();
             this.PlayerList = PlayerList;
             this.stockPrice = stockPrice;
+            this.projectDeck = projectDeck;
+            this.sdDeck = sdDeck;
             pictureBox5.Visible = false;
             pictureBox6.Visible = false;
             pictureBox7.Visible = false;
@@ -769,7 +772,7 @@ namespace ScrumAge
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            ProjectTile projectTile = deck.DrawCard();
+            ProjectTile projectTile = projectDeck.DrawCard();
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -791,7 +794,7 @@ namespace ScrumAge
             {
                 pictureBox5.Enabled = true;
                 picBox5WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
                 projectTileForm.Show();
                 
             }
@@ -802,7 +805,7 @@ namespace ScrumAge
         /// </summary>
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            ProjectTile projectTile = deck.DrawCard();
+            ProjectTile projectTile = projectDeck.DrawCard();
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -824,7 +827,7 @@ namespace ScrumAge
             {
                 pictureBox6.Enabled = false;
                 picBox6WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
                 projectTileForm.Show();
             }
         }
@@ -834,7 +837,7 @@ namespace ScrumAge
         /// </summary>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            ProjectTile projectTile = deck.DrawCard();
+            ProjectTile projectTile = projectDeck.DrawCard();
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -858,7 +861,7 @@ namespace ScrumAge
             {
                 pictureBox7.Enabled = true;
                 picBox7WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
                 projectTileForm.Show();
             }
         }
@@ -868,7 +871,7 @@ namespace ScrumAge
         /// </summary>
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            ProjectTile projectTile = deck.DrawCard();
+            ProjectTile projectTile = projectDeck.DrawCard();
             Description = projectTile.Description;
 
             foreach (KeyValuePair<int, string> value in projectTile.reward)
@@ -889,7 +892,7 @@ namespace ScrumAge
             {
                 pictureBox8.Enabled = true;
                 picBox8WasClicked = true;
-                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, deck, currentPlayer);
+                ProjectTileForm projectTileForm = new ProjectTileForm(projectTile, projectDeck, currentPlayer);
                 projectTileForm.Show();
 
             }
@@ -897,14 +900,11 @@ namespace ScrumAge
 
         public void setUpAfterTile(Player player, ProjectDeck deck)
         {
-            this.deck = deck;
+            this.projectDeck = deck;
             this.currentPlayer = player;
             setStatus();
             nextPlayer();
         }
-
-        private SituationDeck sdDeck = new SituationDeck();
-        
 
         private void beginActivation()
         {
@@ -971,17 +971,25 @@ namespace ScrumAge
                 
                 game.stockprice = stockPrice;
                 game.PlayerList = PlayerList;
-
-                this.Close();
+                game.projectDeck = projectDeck;
+                game.sdDeck = sdDeck;
+                Winners_Losers winners_Losers = new Winners_Losers();
+                winners_Losers.checkForEndOFGame(sdDeck, projectDeck);
+                this.Hide(); // <----- This because closing it won't work here. Threading Issue I believe --Austin
+                this.Dispose(); // <--- Supposed to remove from memory. But I don't think it is because of thread again.
+                game.DisplayPlacementBoardNextRound();                                            
             }
             else
             {
+                //set current player
                 currentPlayer = PlayerList[turn];
+
                 //Deduct points from the players 
                 chargeAndAdd();
                 //Draw a situational card for player
                 SituationCard sc = sdDeck.DrawCard();
                 this.currentPlayer = transferFunds(currentPlayer, sc);
+                sdDeck.UpdateDeck(sc);
                 PlayerList[turn] = currentPlayer;
                 // Open Situational Card Form and Pass sc to it
                 Game.DisplaySituationCardForm(currentPlayer, sc);

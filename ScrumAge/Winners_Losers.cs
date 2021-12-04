@@ -25,35 +25,21 @@ namespace ScrumAge
 {
     public partial class Winners_Losers : Form
     {
+        Game game = new Game();
         public Winners_Losers()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void checkForEndOFGame(SituationDeck situationDeck, ProjectDeck projectDeck)
         {
-
+            if(situationDeck == null || projectDeck == null)
+            {
+                game.endOfGame = true;
+            }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Winners_Losers_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
